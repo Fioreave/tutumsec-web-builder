@@ -1,5 +1,6 @@
 
 import React from 'react';
+import Navbar from '../components/Navbar';
 import HeroSection from '../components/HeroSection';
 import ProblemsSection from '../components/ProblemsSection';
 import RisksSection from '../components/RisksSection';
@@ -15,17 +16,20 @@ import Footer from '../components/Footer';
 const Index = () => {
   return (
     <div className="min-h-screen">
-      <HeroSection />
-      <ProblemsSection />
-      <RisksSection />
-      <ServicesSection />
-      <ResultsSection />
-      <ProcessSection />
-      <SuccessStoriesSection />
-      <TestimonialsSection />
-      <FAQSection />
-      <CTASection />
-      <Footer />
+      <Navbar />
+      <div className="pt-16">
+        <HeroSection />
+        <ProblemsSection />
+        <RisksSection />
+        <ServicesSection />
+        <ResultsSection />
+        <ProcessSection />
+        <SuccessStoriesSection />
+        <TestimonialsSection />
+        <FAQSection />
+        <CTASection />
+        <Footer />
+      </div>
     </div>
   );
 };

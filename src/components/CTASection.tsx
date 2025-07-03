@@ -5,9 +5,11 @@ import { Phone, MessageCircle } from 'lucide-react';
 
 const CTASection = () => {
   return (
-    <section className="py-20 px-6 bg-gradient-to-br from-blue-400 to-blue-600">
-      <div className="max-w-6xl mx-auto">
-        <div className="bg-gradient-to-r from-black via-blue-900 to-blue-800 rounded-3xl p-12 relative overflow-hidden">
+    <section className="py-20 px-6" style={{
+      background: 'linear-gradient(to bottom, #5eb9f0, #3886f4)'
+    }}>
+      <div className="max-w-6xl mx-auto relative">
+        <div className="bg-gradient-to-r from-black via-blue-900 to-blue-800 rounded-[2rem] p-12 relative overflow-hidden ml-auto max-w-4xl">
           {/* 3D Glass element */}
           <div className="absolute right-8 top-1/2 -translate-y-1/2 w-32 h-32 opacity-30">
             <div className="w-full h-full bg-gradient-to-br from-blue-300 to-cyan-300 rounded-full blur-sm"></div>
@@ -26,7 +28,11 @@ const CTASection = () => {
             <div className="flex flex-col sm:flex-row gap-4 items-start">
               <Button 
                 size="lg" 
-                className="bg-blue-500 hover:bg-blue-600 text-white px-8 py-4 text-lg rounded-full"
+                className="px-8 py-4 text-lg rounded-full"
+                style={{
+                  background: 'linear-gradient(to bottom, #5eb9f0, #3886f4)',
+                  color: 'white'
+                }}
               >
                 Reserva tu consultoría gratis →
               </Button>
@@ -37,6 +43,15 @@ const CTASection = () => {
               </div>
             </div>
           </div>
+        </div>
+        
+        {/* Graphic element positioned below and to the right */}
+        <div className="absolute -bottom-10 right-0 w-48 h-48 opacity-70">
+          <img 
+            src="/lovable-uploads/95446ecb-2f3b-4543-a34c-d5d0fb8449e5.png" 
+            alt="Graphic element"
+            className="w-full h-full object-contain"
+          />
         </div>
       </div>
     </section>

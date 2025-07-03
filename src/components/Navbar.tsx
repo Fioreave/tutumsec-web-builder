@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Menu, X } from 'lucide-react';
 
@@ -40,7 +39,12 @@ const Navbar = () => {
               <a href="#contacto" className="text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium transition-colors">
                 Contacto
               </a>
-              <button className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors font-medium">
+              <button 
+                className="px-6 py-2 rounded-full text-white font-medium transition-colors"
+                style={{
+                  background: 'linear-gradient(to bottom, #5eb9f0, #3886f4)'
+                }}
+              >
                 Auditoría Gratuita
               </button>
             </div>
@@ -97,7 +101,12 @@ const Navbar = () => {
             >
               Contacto
             </a>
-            <button className="w-full bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors font-medium mt-4">
+            <button 
+              className="w-full px-6 py-2 rounded-full text-white font-medium mt-4 transition-colors"
+              style={{
+                background: 'linear-gradient(to bottom, #5eb9f0, #3886f4)'
+              }}
+            >
               Auditoría Gratuita
             </button>
           </div>

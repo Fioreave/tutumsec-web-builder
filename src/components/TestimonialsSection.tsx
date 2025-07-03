@@ -5,38 +5,40 @@ import { Star } from 'lucide-react';
 const TestimonialsSection = () => {
   const testimonials = [
     {
-      text: "TutumSec ha transformado completamente la nostra estratègia de ciberseguretat. El seu enfocament professional i les solucions personalitzades han millorat significativament la nostra postura de seguretat.",
-      author: "Maria González",
-      position: "CTO, TechCorp"
+      text: "Pasamos de la incertidumbre a tener un SOC funcionando en 3 semanas. Hoy dormimos tranquilos.",
+      author: "CEO",
+      position: "Compañía industrial (120 empleados)"
     },
     {
-      text: "TutumSec ha transformado completamente la nostra estratègia de ciberseguretat. El seu enfocament professional i les solucions personalitzades han millorat significativament la nostra postura de seguretat.",
-      author: "Maria González", 
-      position: "CTO, TechCorp"
+      text: "Pasamos de la incertidumbre a tener un SOC funcionando en 3 semanas. Hoy dormimos tranquilos.",
+      author: "CEO", 
+      position: "Compañía industrial (120 empleados)"
     },
     {
-      text: "TutumSec ha transformado completamente la nostra estratègia de ciberseguretat. El seu enfocament professional i les solucions personalitzades han millorat significativament la nostra postura de seguretat.",
-      author: "Maria González",
-      position: "CTO, TechCorp"
+      text: "Pasamos de la incertidumbre a tener un SOC funcionando en 3 semanas. Hoy dormimos tranquilos.",
+      author: "CEO",
+      position: "Compañía industrial (120 empleados)"
     }
   ];
 
   return (
     <section className="py-20 px-6 bg-gray-100 relative overflow-hidden">
-      {/* Geometric background elements */}
-      <div className="absolute inset-0 opacity-5">
-        <div className="absolute top-20 left-10 w-32 h-32 border-4 border-gray-400 rotate-45"></div>
-        <div className="absolute bottom-20 right-10 w-24 h-24 border-4 border-gray-400 rotate-12"></div>
-        <div className="absolute top-1/2 left-1/4 w-16 h-16 border-4 border-gray-400 -rotate-12"></div>
+      {/* Background image */}
+      <div className="absolute inset-0 opacity-10">
+        <img 
+          src="/lovable-uploads/107bbe83-fc13-4220-af8c-9118a198c33e.png" 
+          alt="Background pattern"
+          className="w-full h-full object-cover"
+        />
       </div>
       
       <div className="max-w-6xl mx-auto relative">
         <div className="text-center mb-16">
           <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-            Què diuen els nostres <span className="text-blue-500">Clients</span>
+            Qué dicen nuestros <span className="text-blue-500">Clientes</span>
           </h2>
           <p className="text-xl text-gray-600">
-            La confiança dels nostres clients és el millor aval de la nostra qualitat i compromís
+            La confianza de nuestros clientes es el mejor aval de nuestra calidad y compromiso
           </p>
         </div>
         
@@ -59,13 +61,13 @@ const TestimonialsSection = () => {
                   <path d="M0 18h6l3-6V0H0v12h3l-3 6zm15 0h6l3-6V0h-9v12h3l-3 6z"/>
                 </svg>
                 <p className="text-gray-600 leading-relaxed text-sm">
-                  {testimonial.text}
+                  "{testimonial.text}"
                 </p>
               </div>
               
               <div className="flex items-center">
                 <div className="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center text-white font-bold text-lg mr-4">
-                  MG
+                  CEO
                 </div>
                 <div>
                   <div className="font-semibold text-gray-900">{testimonial.author}</div>
@@ -79,7 +81,7 @@ const TestimonialsSection = () => {
         <div className="text-center">
           <div className="flex items-center justify-center space-x-2 text-blue-500">
             <Star className="w-6 h-6 fill-current" />
-            <span className="text-xl font-semibold">4.9/5 valoració mitjana basada en 150+ ressenyes</span>
+            <span className="text-xl font-semibold">4.9/5 valoración media basada en 150+ reseñas</span>
           </div>
         </div>
       </div>

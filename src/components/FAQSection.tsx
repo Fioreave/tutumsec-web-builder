@@ -29,10 +29,13 @@ const FAQSection = () => {
 
   return (
     <section className="py-20 px-6 bg-gray-100 relative overflow-hidden">
-      {/* Geometric background elements */}
+      {/* Background image */}
       <div className="absolute inset-0 opacity-5">
-        <div className="absolute top-20 right-20 w-40 h-40 border-4 border-gray-400 rotate-12"></div>
-        <div className="absolute bottom-20 left-20 w-32 h-32 border-4 border-gray-400 -rotate-12"></div>
+        <img 
+          src="/lovable-uploads/e4fb4fee-7f3a-4129-a2c1-d08c44887324.png" 
+          alt="Background pattern"
+          className="w-full h-full object-cover"
+        />
       </div>
       
       <div className="max-w-4xl mx-auto relative">

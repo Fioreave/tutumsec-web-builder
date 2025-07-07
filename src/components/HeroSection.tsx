@@ -1,8 +1,11 @@
 
 import React from 'react';
 import { Button } from '@/components/ui/button';
+import { useTranslation } from '@/hooks/useTranslation';
 
 const HeroSection = () => {
+  const { t } = useTranslation();
+
   return (
     <section className="min-h-screen bg-gradient-to-br from-blue-50 to-white px-6 py-20 flex items-center">
       <div className="max-w-6xl mx-auto text-center">
@@ -19,27 +22,29 @@ const HeroSection = () => {
         </h1>
         
         <p className="text-xl text-gray-700 mb-6 max-w-4xl mx-auto">
-          El 60 % de las PYMEs que sufren un incidente crítico, cierran en menos de 6 meses.
+          {t('heroSubtitle')}
         </p>
         
         <p className="text-lg text-gray-600 mb-12 max-w-5xl mx-auto">
-          En TutumSec convertimos la ciberseguridad en un motor de crecimiento: consultoría estratégica 360°, 
-          CISO as a Service y vigilancia MDR/XDR 24×7 que te permiten dormir tranquilo y centrarte en el negocio.
+          {t('heroDescription')}
         </p>
         
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
           <Button 
             size="lg" 
-            className="bg-blue-500 hover:bg-blue-600 text-white px-8 py-4 text-lg rounded-full"
+            className="px-8 py-4 text-lg rounded-full text-white font-medium transition-colors"
+            style={{
+              background: 'linear-gradient(to bottom, #5eb9f0, #3886f4)'
+            }}
           >
-            Reserva tu consultoría gratuita →
+            {t('reserveConsultation')}
           </Button>
           <Button 
             variant="outline" 
             size="lg" 
-            className="border-gray-400 text-gray-700 px-8 py-4 text-lg rounded-full hover:bg-gray-50"
+            className="border-2 border-blue-500 text-blue-500 px-8 py-4 text-lg rounded-full hover:bg-blue-50 bg-transparent font-medium transition-colors"
           >
-            Solicita una auditoría
+            {t('requestAudit')}
           </Button>
         </div>
       </div>

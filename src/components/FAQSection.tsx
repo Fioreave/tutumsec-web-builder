@@ -6,8 +6,11 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from '@/components/ui/accordion';
+import { useTranslation } from '@/hooks/useTranslation';
 
 const FAQSection = () => {
+  const { t } = useTranslation();
+  
   const faqs = [
     {
       question: "¿Cuánto dura una auditoría completa?",
@@ -41,10 +44,10 @@ const FAQSection = () => {
       <div className="max-w-4xl mx-auto relative">
         <div className="text-center mb-16">
           <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-            Preguntas frecuentes
+            {t('faqTitle')}
           </h2>
           <p className="text-xl text-gray-600">
-            Resolvemos tus dudas sobre ciberseguridad
+            {t('faqSubtitle')}
           </p>
         </div>
         

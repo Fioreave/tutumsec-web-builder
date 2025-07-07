@@ -2,8 +2,11 @@
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Phone, MessageCircle } from 'lucide-react';
+import { useTranslation } from '@/hooks/useTranslation';
 
 const CTASection = () => {
+  const { t } = useTranslation();
+
   return (
     <section className="py-20 px-6" style={{
       background: 'linear-gradient(to bottom, #5eb9f0, #3886f4)'
@@ -18,23 +21,21 @@ const CTASection = () => {
           
           <div className="relative z-10 max-w-3xl">
             <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight">
-              Protege tu empresa HOY, no mañana.
+              {t('ctaTitle')}
             </h2>
             <p className="text-xl text-gray-200 mb-8">
-              Obtén tu auditoría inicial sin coste* y descubre<br />
-              los quick-wins que puedes implantar este mes.
+              {t('ctaSubtitle')}
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 items-start">
               <Button 
                 size="lg" 
-                className="px-8 py-4 text-lg rounded-full"
+                className="px-8 py-4 text-lg rounded-full text-white font-medium transition-colors"
                 style={{
-                  background: 'linear-gradient(to bottom, #5eb9f0, #3886f4)',
-                  color: 'white'
+                  background: 'linear-gradient(to bottom, #5eb9f0, #3886f4)'
                 }}
               >
-                Reserva tu consultoría gratis →
+                {t('reserveConsultation')}
               </Button>
               <div className="flex items-center space-x-4 text-white">
                 <Phone className="w-6 h-6" />

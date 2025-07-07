@@ -2,8 +2,10 @@
 import React, { useState } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { useTranslation } from '@/hooks/useTranslation';
 
 const SuccessStoriesSection = () => {
+  const { t } = useTranslation();
   const [selectedTab, setSelectedTab] = useState('partners');
   const [currentStory, setCurrentStory] = useState(0);
 
@@ -47,13 +49,13 @@ const SuccessStoriesSection = () => {
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
-            Casos de éxito
+            {t('successStoriesTitle')}
             <svg className="inline-block ml-4 w-16 h-8" viewBox="0 0 64 32" fill="none">
               <path d="M5 16 Q32 8 59 16" stroke="white" strokeWidth="3" fill="none"/>
             </svg>
           </h2>
           <p className="text-xl text-blue-100">
-            Descubre cómo hemos transformado la ciberseguridad de empresas como la tuya
+            {t('successStoriesSubtitle')}
           </p>
         </div>
 
@@ -115,10 +117,10 @@ const SuccessStoriesSection = () => {
                 className={`px-6 py-3 rounded-full text-lg font-medium transition-colors ${
                   selectedTab === tab
                     ? 'bg-white text-blue-600'
-                    : 'bg-white bg-opacity-20 text-white hover:bg-opacity-30'
+                    : 'bg-white bg-opacity-20 text-white hover:bg-white hover:text-blue-600'
                 }`}
               >
-                {tab}
+                {t(tab)}
               </button>
             ))}
           </div>

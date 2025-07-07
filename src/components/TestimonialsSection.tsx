@@ -1,8 +1,11 @@
 
 import React from 'react';
 import { Star } from 'lucide-react';
+import { useTranslation } from '@/hooks/useTranslation';
 
 const TestimonialsSection = () => {
+  const { t } = useTranslation();
+  
   const testimonials = [
     {
       text: "Pasamos de la incertidumbre a tener un SOC funcionando en 3 semanas. Hoy dormimos tranquilos.",
@@ -35,10 +38,10 @@ const TestimonialsSection = () => {
       <div className="max-w-6xl mx-auto relative">
         <div className="text-center mb-16">
           <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-            Qué dicen nuestros <span className="text-blue-500">Clientes</span>
+            {t('testimonialsTitle')}
           </h2>
           <p className="text-xl text-gray-600">
-            La confianza de nuestros clientes es el mejor aval de nuestra calidad y compromiso
+            {t('testimonialsSubtitle')}
           </p>
         </div>
         

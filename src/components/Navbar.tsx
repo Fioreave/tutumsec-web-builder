@@ -1,7 +1,5 @@
-
 import React, { useState } from 'react';
 import { Menu, X } from 'lucide-react';
-import LanguageSelector from './LanguageSelector';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -41,7 +39,6 @@ const Navbar = () => {
               <a href="#contacto" className="text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium transition-colors">
                 Contacto
               </a>
-              <LanguageSelector />
               <button 
                 className="px-6 py-2 rounded-full text-white font-medium transition-colors"
                 style={{
@@ -104,9 +101,6 @@ const Navbar = () => {
             >
               Contacto
             </a>
-            <div className="px-3 py-2">
-              <LanguageSelector />
-            </div>
             <button 
               className="w-full px-6 py-2 rounded-full text-white font-medium mt-4 transition-colors"
               style={{

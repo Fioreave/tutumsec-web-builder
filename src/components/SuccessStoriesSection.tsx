@@ -31,7 +31,13 @@ const SuccessStoriesSection = () => {
   ];
 
   const tabContent = {
-    partners: ['BLACKMDR', 'FORTINET', 'CROWDSTRIKE', 'Bitdefender', 'palo alto NETWORKS'],
+    partners: [
+      { name: 'Microsoft', logo: '/lovable-uploads/c26c5fdf-d2ac-4e75-8261-fc16741b6fe6.png' },
+      { name: 'Fortinet', logo: '/lovable-uploads/dfae3c84-6b3b-463a-8f75-277584e0c595.png' },
+      { name: 'CrowdStrike', logo: '/lovable-uploads/a12d96d0-9d49-42bf-b1ca-274b15c1217a.png' },
+      { name: 'Bitdefender', logo: '/lovable-uploads/56567670-5377-4e97-8720-b19538b0293a.png' },
+      { name: 'Palo Alto Networks', logo: '/lovable-uploads/53efb0a5-36c4-4059-b37d-ed75629934d2.png' }
+    ],
     certificados: ['ISO 27001', 'ENS', 'NIS2'],
     organizaciones: ['INCIBE', 'Acció', 'ASCICAT']
   };
@@ -126,14 +132,29 @@ const SuccessStoriesSection = () => {
           </div>
           
           <div className="flex flex-wrap justify-center items-center gap-8">
-            {tabContent[selectedTab as keyof typeof tabContent].map((item, index) => (
-              <div 
-                key={index}
-                className="text-white text-lg font-medium opacity-80 hover:opacity-100 transition-opacity"
-              >
-                {item}
-              </div>
-            ))}
+            {selectedTab === 'partners' ? (
+              tabContent.partners.map((partner, index) => (
+                <div 
+                  key={index}
+                  className="bg-white bg-opacity-10 rounded-lg p-4 hover:bg-opacity-20 transition-all duration-300"
+                >
+                  <img 
+                    src={partner.logo} 
+                    alt={partner.name}
+                    className="h-8 w-auto filter brightness-0 invert opacity-80 hover:opacity-100"
+                  />
+                </div>
+              ))
+            ) : (
+              tabContent[selectedTab as keyof typeof tabContent].map((item, index) => (
+                <div 
+                  key={index}
+                  className="text-white text-lg font-medium opacity-80 hover:opacity-100 transition-opacity"
+                >
+                  {item}
+                </div>
+              ))
+            )}
           </div>
         </div>
       </div>

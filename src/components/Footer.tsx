@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -47,10 +46,11 @@ const Footer = () => {
           {/* Brand Section */}
           <div className="lg:col-span-1">
             <div className="flex items-center mb-6">
-              <div className="w-8 h-8 bg-gradient-to-r from-blue-400 to-blue-600 rounded-lg flex items-center justify-center mr-3">
-                <span className="text-white font-bold text-sm">T</span>
-              </div>
-              <span className="text-2xl font-bold">TutumSec</span>
+              <img 
+                src="/lovable-uploads/28486bc8-b0a7-48de-a3dd-49f71e4a3f41.png" 
+                alt="TutumSec Logo" 
+                className="h-8 w-auto brightness-0 invert"
+              />
             </div>
             <p className="text-gray-300 mb-6 leading-relaxed">
               La seguretat digital és el nostre fil conductor. Experts en ciberseguretat i compliance per a empreses que exigeixen més.

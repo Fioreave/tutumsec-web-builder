@@ -12,7 +12,7 @@ const CTASection = () => {
       background: 'linear-gradient(to bottom, #5eb9f0, #3886f4)'
     }}>
       <div className="max-w-6xl mx-auto relative">
-        <div className="bg-gradient-to-r from-black via-blue-900 to-blue-800 rounded-[2rem] p-12 relative overflow-hidden ml-auto max-w-4xl">
+        <div className="bg-gradient-to-r from-black via-blue-900 to-blue-800 rounded-[2rem] p-12 relative overflow-hidden ml-auto max-w-4xl" style={{ marginLeft: '20px' }}>
           <div className="relative z-10 max-w-3xl">
             <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight">
               {t('ctaTitle')}
@@ -40,8 +40,8 @@ const CTASection = () => {
           </div>
         </div>
         
-        {/* Graphic element positioned below and to the right, moved up 10px */}
-        <div className="absolute -bottom-10 right-0 w-48 h-48 opacity-70">
+        {/* Graphic element positioned below and to the right, moved up 20px total */}
+        <div className="absolute bottom-0 right-0 w-48 h-48 opacity-70">
           <img 
             src="/lovable-uploads/95446ecb-2f3b-4543-a34c-d5d0fb8449e5.png" 
             alt="Graphic element"

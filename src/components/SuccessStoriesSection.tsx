@@ -39,7 +39,7 @@ const SuccessStoriesSection = () => {
       { name: 'Palo Alto Networks', logo: '/lovable-uploads/53efb0a5-36c4-4059-b37d-ed75629934d2.png' }
     ],
     certificados: ['ISO 27001', 'ENS', 'NIS2'],
-    organizaciones: ['INCIBE', 'Acció', 'ASCICAT']
+    organizaciones: ['INCIBE', 'Acción', 'ASCICAT']
   };
 
   const nextStory = () => {
@@ -131,17 +131,17 @@ const SuccessStoriesSection = () => {
             ))}
           </div>
           
-          <div className="flex flex-wrap justify-center items-center gap-8">
+          <div className="flex justify-center items-center gap-8">
             {selectedTab === 'partners' ? (
               tabContent.partners.map((partner, index) => (
                 <div 
                   key={index}
-                  className="bg-white bg-opacity-10 rounded-lg p-4 hover:bg-opacity-20 transition-all duration-300"
+                  className="hover:scale-105 transition-all duration-300"
                 >
                   <img 
                     src={partner.logo} 
                     alt={partner.name}
-                    className="h-8 w-auto filter brightness-0 invert opacity-80 hover:opacity-100"
+                    className="h-12 w-auto filter brightness-0 invert opacity-80 hover:opacity-100"
                   />
                 </div>
               ))

@@ -6,37 +6,37 @@ import { MapPin, Phone, Mail, Linkedin, Twitter, Facebook } from 'lucide-react';
 
 const Footer = () => {
   const services = [
-    'Auditories de Seguretat',
-    'Implementació GDPR', 
-    'Monitorització 24/7',
-    'Formació i Awareness',
-    'Resposta a Incidents',
-    'Consultoria Estratègica'
+    'Auditorías de Seguridad',
+    'Implementación del RGPD', 
+    'Monitorización 24/7',
+    'Formación y Concienciación',
+    'Respuesta ante Incidentes',
+    'Consultoría Estratégica'
   ];
 
   const company = [
-    'Sobre Nosaltres',
-    'El Nostre Equip',
-    'Certificacions',
-    'Casos d\'Èxit',
+    'Sobre Nosotros',
+    'Nuestro Equipo',
+    'Certificaciones',
+    'Casos de Éxito',
     'Blog',
-    'Carreres'
+    'Carreras'
   ];
 
   const resources = [
-    'Documentació',
+    'Documentación',
     'Whitepapers',
     'Webinars',
-    'Centre d\'Ajuda',
-    'Contacte',
-    'Suport Tècnic'
+    'Centro de Ayuda',
+    'Contacto',
+    'Soporte Técnico'
   ];
 
   const certifications = [
-    'ISO 27001 Certificat',
-    'GDPR Compliant', 
-    'SOC 2 Type II',
-    'CISSP Certified Team'
+    'ISO 27001 Certificado',
+    'Cumplimiento RGPD', 
+    'SOC 2 Tipo II',
+    'Equipo Certificado CISSP'
   ];
 
   return (
@@ -47,33 +47,34 @@ const Footer = () => {
           {/* Brand Section */}
           <div className="lg:col-span-1">
             <div className="flex items-center mb-6">
-              <div className="w-8 h-8 bg-gradient-to-r from-blue-400 to-blue-600 rounded-lg flex items-center justify-center mr-3">
-                <span className="text-white font-bold text-sm">T</span>
-              </div>
-              <span className="text-2xl font-bold">TutumSec</span>
+              <img 
+                src="/lovable-uploads/fb8d9ddd-cdaa-4f53-a077-13e62a21a942.png" 
+                alt="TutumSec Logo" 
+                className="h-8 w-auto mr-3"
+              />
             </div>
             <p className="text-gray-300 mb-6 leading-relaxed">
-              La seguretat digital és el nostre fil conductor. Experts en ciberseguretat i compliance per a empreses que exigeixen més.
+              La seguridad digital es nuestro hilo conductor. Expertos en ciberseguridad y cumplimiento normativo para empresas que exigen más.
             </p>
             <div className="space-y-3">
               <div className="flex items-center text-gray-300">
                 <Mail className="w-4 h-4 mr-3 text-blue-400" />
-                <span className="text-sm">info@tutumsec.com</span>
+                <span className="text-sm">hola@tutumsec.io</span>
               </div>
               <div className="flex items-center text-gray-300">
                 <Phone className="w-4 h-4 mr-3 text-blue-400" />
-                <span className="text-sm">+34 900 123 456</span>
+                <span className="text-sm">+376 862-762</span>
               </div>
               <div className="flex items-center text-gray-300">
                 <MapPin className="w-4 h-4 mr-3 text-blue-400" />
-                <span className="text-sm">Barcelona, Catalunya</span>
+                <span className="text-sm">Barcelona, Cataluña</span>
               </div>
             </div>
           </div>
 
           {/* Services */}
           <div>
-            <h4 className="text-lg font-semibold mb-6 text-white">Serveis</h4>
+            <h4 className="text-lg font-semibold mb-6 text-white">Servicios</h4>
             <ul className="space-y-3">
               {services.map((service, index) => (
                 <li key={index}>
@@ -119,19 +120,19 @@ const Footer = () => {
       <div className="bg-gradient-to-r from-slate-800 to-slate-700 border-t border-slate-700">
         <div className="max-w-7xl mx-auto px-6 py-12">
           <div className="text-center mb-8">
-            <h3 className="text-2xl font-bold mb-4">Mantingues-te Informat</h3>
+            <h3 className="text-2xl font-bold mb-4">Mantente Informado</h3>
             <p className="text-gray-300 max-w-2xl mx-auto">
-              Subscriu-te al nostre newsletter per rebre les últimes notícies sobre ciberseguretat i les nostres solucions
+              Suscríbete a nuestra newsletter para recibir las últimas noticias sobre ciberseguridad y nuestras soluciones
             </p>
           </div>
           
           <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
             <Input 
-              placeholder="El teu email"
+              placeholder="Tu correo electrónico"
               className="flex-1 bg-slate-600/50 border-slate-500 text-white placeholder:text-gray-400 rounded-full px-6 py-3 focus:ring-2 focus:ring-blue-400 focus:border-transparent"
             />
             <Button className="bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white px-8 py-3 rounded-full font-medium transition-all duration-200 shadow-lg hover:shadow-xl">
-              Subscriu-te
+              Suscribirse
             </Button>
           </div>
         </div>
@@ -153,9 +154,9 @@ const Footer = () => {
           {/* Social Links & Copyright */}
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="text-sm text-gray-400 mb-4 md:mb-0">
-              © 2025 TutumSec. Tots els drets reservats. | 
-              <a href="#" className="hover:text-blue-400 transition-colors ml-1">Política de Privacitat</a> | 
-              <a href="#" className="hover:text-blue-400 transition-colors ml-1">Termes i Condicions</a>
+              © 2025 TutumSec. Todos los derechos reservados. | 
+              <a href="#" className="hover:text-blue-400 transition-colors ml-1">Política de Privacidad</a> | 
+              <a href="#" className="hover:text-blue-400 transition-colors ml-1">Términos y Condiciones</a>
             </div>
             
             <div className="flex space-x-4">

@@ -31,7 +31,7 @@ const ProblemsSection = () => {
 
       <div className="max-w-6xl mx-auto relative">
         <div className="text-center mb-16">
-          <h2 className="text-4xl lg:text-5xl font-bold text-blue-500 mb-6 animate-fade-in transform hover:scale-105 transition-all duration-500">
+          <h2 className="text-4xl lg:text-5xl font-bold text-blue-500 mb-6 animate-fade-in transform hover:scale-102 transition-all duration-500">
             Los 4 errores que hoy<br />
             ponen en peligro tu continuidad
           </h2>
@@ -41,10 +41,10 @@ const ProblemsSection = () => {
           {problems.map((problem, index) => (
             <div 
               key={index}
-              className="bg-white p-8 rounded-2xl border border-blue-200 relative group hover:shadow-2xl transition-all duration-500 transform hover:scale-105 hover:-translate-y-2 animate-fade-in cursor-pointer"
+              className="bg-white p-8 rounded-2xl border border-blue-200 relative group hover:shadow-xl transition-all duration-500 transform hover:scale-102 hover:-translate-y-1 animate-fade-in cursor-pointer"
               style={{ animationDelay: `${index * 200}ms` }}
             >
-              <div className="absolute top-4 right-4 transition-all duration-500 group-hover:rotate-12 group-hover:scale-110">
+              <div className="absolute top-4 right-4 transition-all duration-500 group-hover:rotate-6 group-hover:scale-105">
                 <svg className="w-12 h-12 text-blue-200 group-hover:text-blue-400 transition-colors duration-300" viewBox="0 0 100 100" fill="none">
                   <path d="M20 20 Q50 10 80 20 Q90 50 80 80 Q50 90 20 80 Q10 50 20 20Z" stroke="currentColor" strokeWidth="2" fill="none"/>
                 </svg>
@@ -56,8 +56,8 @@ const ProblemsSection = () => {
                 {problem.description}
               </p>
               
-              {/* Hover border animation */}
-              <div className="absolute inset-0 border-2 border-blue-400 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-pulse"></div>
+              {/* Subtle hover border animation */}
+              <div className="absolute inset-0 border-2 border-blue-400 rounded-2xl opacity-0 group-hover:opacity-30 transition-opacity duration-500"></div>
             </div>
           ))}
         </div>

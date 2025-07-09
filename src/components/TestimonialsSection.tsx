@@ -37,10 +37,10 @@ const TestimonialsSection = () => {
 
       {/* Floating elements */}
       <div className="absolute inset-0">
-        {[...Array(15)].map((_, i) => (
+        {[...Array(10)].map((_, i) => (
           <div
             key={i}
-            className="absolute w-3 h-3 bg-blue-300 rounded-full opacity-30 animate-float"
+            className="absolute w-3 h-3 bg-blue-300 rounded-full opacity-20 animate-float"
             style={{
               left: `${Math.random() * 100}%`,
               top: `${Math.random() * 100}%`,
@@ -65,10 +65,10 @@ const TestimonialsSection = () => {
           {testimonials.map((testimonial, index) => (
             <div 
               key={index}
-              className="bg-white p-8 rounded-2xl shadow-sm hover:shadow-2xl transition-all duration-500 transform hover:scale-105 hover:-translate-y-4 animate-fade-in group cursor-pointer relative overflow-hidden"
+              className="bg-white p-8 rounded-2xl shadow-sm hover:shadow-lg transition-all duration-500 transform hover:scale-102 hover:-translate-y-2 animate-fade-in group cursor-pointer relative overflow-hidden"
               style={{ animationDelay: `${index * 300}ms` }}
             >
-              {/* Animated background gradient on hover */}
+              {/* Subtle animated background gradient on hover */}
               <div className="absolute inset-0 bg-gradient-to-br from-blue-50 to-purple-50 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               
               <div className="relative z-10">
@@ -77,7 +77,7 @@ const TestimonialsSection = () => {
                     {[...Array(5)].map((_, i) => (
                       <Star 
                         key={i} 
-                        className="w-5 h-5 fill-yellow-400 text-yellow-400 transition-all duration-300 transform group-hover:scale-110" 
+                        className="w-5 h-5 fill-yellow-400 text-yellow-400 transition-all duration-300 transform group-hover:scale-105" 
                         style={{ animationDelay: `${i * 100}ms` }}
                       />
                     ))}
@@ -85,7 +85,7 @@ const TestimonialsSection = () => {
                 </div>
                 
                 <div className="mb-6">
-                  <svg className="w-8 h-6 text-blue-400 mb-4 group-hover:text-blue-600 transition-colors duration-300 transform group-hover:scale-110" viewBox="0 0 24 18" fill="currentColor">
+                  <svg className="w-8 h-6 text-blue-400 mb-4 group-hover:text-blue-600 transition-colors duration-300 transform group-hover:scale-105" viewBox="0 0 24 18" fill="currentColor">
                     <path d="M0 18h6l3-6V0H0v12h3l-3 6zm15 0h6l3-6V0h-9v12h3l-3 6z"/>
                   </svg>
                   <p className="text-gray-600 leading-relaxed text-sm group-hover:text-gray-700 transition-colors duration-300">
@@ -94,7 +94,7 @@ const TestimonialsSection = () => {
                 </div>
                 
                 <div className="flex items-center">
-                  <div className="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center text-white font-bold text-lg mr-4 group-hover:bg-blue-600 transition-all duration-500 transform group-hover:scale-110 group-hover:rotate-6">
+                  <div className="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center text-white font-bold text-lg mr-4 group-hover:bg-blue-600 transition-all duration-500 transform group-hover:scale-105">
                     CEO
                   </div>
                   <div>
@@ -104,14 +104,14 @@ const TestimonialsSection = () => {
                 </div>
               </div>
 
-              {/* Shine effect */}
-              <div className="absolute top-0 -left-full w-full h-full bg-gradient-to-r from-transparent via-white to-transparent opacity-10 transform skew-x-12 group-hover:animate-shine"></div>
+              {/* Subtle shine effect */}
+              <div className="absolute top-0 -left-full w-full h-full bg-gradient-to-r from-transparent via-white to-transparent opacity-5 transform skew-x-12 group-hover:animate-shine"></div>
             </div>
           ))}
         </div>
         
         <div className="text-center animate-fade-in animation-delay-1000">
-          <div className="flex items-center justify-center space-x-2 text-blue-500 transform hover:scale-105 transition-all duration-300">
+          <div className="flex items-center justify-center space-x-2 text-blue-500 transform hover:scale-102 transition-all duration-300">
             <Star className="w-6 h-6 fill-current animate-pulse" />
             <span className="text-xl font-semibold">4.9/5 valoración media basada en 150+ reseñas</span>
           </div>

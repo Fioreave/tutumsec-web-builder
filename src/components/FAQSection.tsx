@@ -63,7 +63,7 @@ const FAQSection = () => {
             <AccordionItem 
               key={index} 
               value={`item-${index}`}
-              className="bg-gray-400 rounded-2xl px-6 border-none animate-fade-in transition-all duration-500 hover:bg-gray-500 hover:scale-102 hover:shadow-lg group"
+              className="bg-gray-400 rounded-2xl px-6 border-none animate-fade-in transition-all duration-500 hover:bg-gray-500 hover:scale-102 hover:shadow-md group"
               style={{ animationDelay: `${index * 200}ms` }}
             >
               <AccordionTrigger className="text-left text-lg text-white font-semibold hover:no-underline py-6 group-hover:text-blue-100 transition-colors duration-300 [&[data-state=open]]:text-blue-200">

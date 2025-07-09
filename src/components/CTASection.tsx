@@ -19,8 +19,8 @@ const CTASection = () => {
       </div>
 
       <div className="max-w-6xl mx-auto relative">
-        <div className="bg-gradient-to-r from-black via-blue-900 to-blue-800 rounded-[2rem] p-12 relative overflow-hidden ml-auto max-w-4xl transform hover:scale-105 transition-all duration-500 group">
-          {/* Animated background pattern */}
+        <div className="bg-gradient-to-r from-black via-blue-900 to-blue-800 rounded-[2rem] p-12 relative overflow-hidden ml-auto max-w-4xl transform hover:scale-102 transition-all duration-500 group">
+          {/* Subtle animated background pattern */}
           <div className="absolute inset-0 opacity-10">
             <div className="absolute inset-0" style={{
               backgroundImage: 'radial-gradient(circle at 20px 20px, rgba(255,255,255,0.3) 1px, transparent 0)',
@@ -40,7 +40,7 @@ const CTASection = () => {
             <div className="flex flex-col sm:flex-row gap-4 items-start animate-fade-in animation-delay-1000">
               <Button 
                 size="lg" 
-                className="px-8 py-4 text-lg rounded-full text-white font-medium transition-all duration-500 transform hover:scale-110 hover:shadow-xl animate-pulse"
+                className="px-8 py-4 text-lg rounded-full text-white font-medium transition-all duration-500 transform hover:scale-105 hover:shadow-lg"
                 style={{
                   background: 'linear-gradient(to bottom, #5eb9f0, #3886f4)'
                 }}
@@ -55,8 +55,8 @@ const CTASection = () => {
             </div>
           </div>
 
-          {/* Glow effect */}
-          <div className="absolute inset-0 bg-gradient-to-r from-blue-600/20 to-purple-600/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-[2rem]"></div>
+          {/* Subtle glow effect */}
+          <div className="absolute inset-0 bg-gradient-to-r from-blue-600/10 to-purple-600/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-[2rem]"></div>
         </div>
         
         {/* Graphic element positioned below and to the right, moved up 10px */}
@@ -64,7 +64,7 @@ const CTASection = () => {
           <img 
             src="/lovable-uploads/95446ecb-2f3b-4543-a34c-d5d0fb8449e5.png" 
             alt="Graphic element"
-            className="w-full h-full object-contain transform hover:scale-110 transition-transform duration-500"
+            className="w-full h-full object-contain transform hover:scale-105 transition-transform duration-500"
           />
         </div>
       </div>

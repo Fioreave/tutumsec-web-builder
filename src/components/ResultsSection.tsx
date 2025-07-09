@@ -32,11 +32,11 @@ const ResultsSection = () => {
       <div className="max-w-6xl mx-auto relative">
         <div className="grid lg:grid-cols-2 gap-12 items-start">
           <div className="animate-fade-in">
-            <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-8 transform hover:scale-105 transition-all duration-500">
+            <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-8 transform hover:scale-102 transition-all duration-500">
               Resultados que<br />
               hablan por nosotros
             </h2>
-            <p className="text-xl text-gray-600 italic transform hover:scale-105 transition-all duration-300">
+            <p className="text-xl text-gray-600 italic transform hover:scale-102 transition-all duration-300">
               "Reducimos un 30 % los incidentes críticos en menos de seis meses y pasamos todas las auditorías NIS2 sin sanciones."
             </p>
           </div>
@@ -45,10 +45,10 @@ const ResultsSection = () => {
             {results.map((result, index) => (
               <div 
                 key={index}
-                className={`bg-gradient-to-r ${result.gradient} p-8 rounded-2xl text-white relative group transition-all duration-500 transform hover:scale-105 hover:-translate-y-2 animate-fade-in cursor-pointer overflow-hidden`}
+                className={`bg-gradient-to-r ${result.gradient} p-8 rounded-2xl text-white relative group transition-all duration-500 transform hover:scale-102 hover:-translate-y-1 animate-fade-in cursor-pointer overflow-hidden`}
                 style={{ animationDelay: `${index * 300}ms` }}
               >
-                {/* Animated background pattern */}
+                {/* Subtle animated background pattern */}
                 <div className="absolute inset-0 opacity-10">
                   <div className="absolute inset-0" style={{
                     backgroundImage: 'repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(255,255,255,0.1) 10px, rgba(255,255,255,0.1) 20px)',
@@ -57,7 +57,7 @@ const ResultsSection = () => {
                 </div>
 
                 <div className="flex items-start gap-6 relative z-10">
-                  <div className="text-6xl font-bold opacity-80 group-hover:opacity-100 transition-all duration-500 transform group-hover:scale-110 group-hover:rotate-3">
+                  <div className="text-6xl font-bold opacity-80 group-hover:opacity-100 transition-all duration-500 transform group-hover:scale-105">
                     {result.number}
                   </div>
                   <div className="flex-1">
@@ -65,15 +65,15 @@ const ResultsSection = () => {
                       {result.title}
                     </p>
                   </div>
-                  <div className="text-white opacity-60 group-hover:opacity-100 transition-all duration-500 transform group-hover:rotate-45 group-hover:scale-110">
+                  <div className="text-white opacity-60 group-hover:opacity-100 transition-all duration-500 transform group-hover:rotate-12 group-hover:scale-105">
                     <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none">
                       <path d="M7 17L17 7M17 7H7M17 7V17" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                     </svg>
                   </div>
                 </div>
 
-                {/* Glow effect on hover */}
-                <div className="absolute inset-0 bg-white opacity-0 group-hover:opacity-10 transition-opacity duration-500 rounded-2xl"></div>
+                {/* Subtle glow effect on hover */}
+                <div className="absolute inset-0 bg-white opacity-0 group-hover:opacity-5 transition-opacity duration-500 rounded-2xl"></div>
               </div>
             ))}
           </div>

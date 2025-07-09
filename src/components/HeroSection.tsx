@@ -18,7 +18,7 @@ const HeroSection = () => {
       <div className="max-w-6xl mx-auto text-center relative z-10">
         <h1 className="text-5xl lg:text-6xl font-bold text-gray-900 mb-8 leading-tight animate-fade-in">
           ¿Y si mañana un{' '}
-          <span className="text-blue-500 relative animate-pulse">
+          <span className="text-blue-500 relative">
             ciberataque
             <svg className="absolute -bottom-2 left-0 w-full h-3 animate-draw" viewBox="0 0 300 12" fill="none">
               <path d="M5 6 Q150 1 295 6" stroke="#3B82F6" strokeWidth="3" fill="none" strokeDasharray="300" strokeDashoffset="300"/>
@@ -28,18 +28,18 @@ const HeroSection = () => {
           paraliza tu empresa?
         </h1>
         
-        <p className="text-xl text-gray-700 mb-6 max-w-4xl mx-auto animate-fade-in animation-delay-500 transform hover:scale-105 transition-all duration-300">
+        <p className="text-xl text-gray-700 mb-6 max-w-4xl mx-auto animate-fade-in animation-delay-500 transform hover:scale-102 transition-all duration-500">
           {t('heroSubtitle')}
         </p>
         
-        <p className="text-lg text-gray-600 mb-12 max-w-5xl mx-auto animate-fade-in animation-delay-1000 transform hover:scale-105 transition-all duration-300">
+        <p className="text-lg text-gray-600 mb-12 max-w-5xl mx-auto animate-fade-in animation-delay-1000 transform hover:scale-102 transition-all duration-500">
           {t('heroDescription')}
         </p>
         
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-fade-in animation-delay-1500">
           <Button 
             size="lg" 
-            className="px-8 py-4 text-lg rounded-full text-white font-medium transition-all duration-300 transform hover:scale-110 hover:shadow-xl animate-bounce-subtle"
+            className="px-8 py-4 text-lg rounded-full text-white font-medium transition-all duration-300 transform hover:scale-105 hover:shadow-lg"
             style={{
               background: 'linear-gradient(to bottom, #5eb9f0, #3886f4)'
             }}
@@ -49,7 +49,7 @@ const HeroSection = () => {
           <Button 
             variant="outline" 
             size="lg" 
-            className="border-2 border-blue-500 text-blue-500 px-8 py-4 text-lg rounded-full hover:bg-blue-50 bg-transparent font-medium transition-all duration-300 transform hover:scale-110 hover:shadow-lg hover:border-blue-600 hover:text-blue-600"
+            className="border-2 border-blue-500 text-blue-500 px-8 py-4 text-lg rounded-full hover:bg-blue-50 bg-transparent font-medium transition-all duration-300 transform hover:scale-105 hover:shadow-md hover:border-blue-600 hover:text-blue-600"
           >
             {t('requestAudit')}
           </Button>

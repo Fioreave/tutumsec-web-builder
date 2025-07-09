@@ -31,7 +31,7 @@ const ProcessSection = () => {
 
       <div className="max-w-6xl mx-auto relative">
         <div className="text-center mb-16">
-          <h2 className="text-4xl lg:text-5xl font-bold text-blue-500 mb-6 animate-fade-in transform hover:scale-105 transition-all duration-500">
+          <h2 className="text-4xl lg:text-5xl font-bold text-blue-500 mb-6 animate-fade-in transform hover:scale-102 transition-all duration-500">
             ¡Así de fácil protegemos tu negocio!
           </h2>
         </div>
@@ -40,12 +40,11 @@ const ProcessSection = () => {
           {steps.map((step, index) => (
             <div key={index} className="text-center relative animate-fade-in group" style={{ animationDelay: `${index * 400}ms` }}>
               <div className="inline-block mb-8 relative">
-                <div className="w-20 h-20 bg-blue-500 text-white rounded-full flex items-center justify-center text-3xl font-bold mb-4 relative z-10 transition-all duration-500 transform group-hover:scale-125 group-hover:rotate-12 group-hover:bg-blue-600">
+                <div className="w-20 h-20 bg-blue-500 text-white rounded-full flex items-center justify-center text-3xl font-bold mb-4 relative z-10 transition-all duration-500 transform group-hover:scale-110 group-hover:bg-blue-600">
                   {step.number}
                   
-                  {/* Pulsing ring effect */}
-                  <div className="absolute inset-0 rounded-full bg-blue-400 animate-ping opacity-75 group-hover:opacity-100"></div>
-                  <div className="absolute inset-0 rounded-full bg-blue-300 animate-ping opacity-50 animation-delay-500 group-hover:opacity-75"></div>
+                  {/* Subtle pulsing ring effect */}
+                  <div className="absolute inset-0 rounded-full bg-blue-400 animate-ping opacity-40 group-hover:opacity-60"></div>
                 </div>
 
                 {/* Animated connector for desktop */}

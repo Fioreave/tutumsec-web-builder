@@ -22,32 +22,16 @@ const RisksSection = () => {
   ];
 
   return (
-    <section className="py-20 px-6 bg-gradient-to-br from-gray-900 via-blue-900 to-black text-white relative overflow-hidden">
-      {/* Animated particles */}
-      <div className="absolute inset-0">
-        {[...Array(15)].map((_, i) => (
-          <div
-            key={i}
-            className="absolute w-2 h-2 bg-blue-400 rounded-full opacity-20 animate-float"
-            style={{
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-              animationDelay: `${Math.random() * 3}s`,
-              animationDuration: `${3 + Math.random() * 4}s`
-            }}
-          />
-        ))}
-      </div>
-
-      <div className="max-w-6xl mx-auto relative">
+    <section className="py-20 px-6 bg-gradient-to-br from-gray-900 via-blue-900 to-black text-white">
+      <div className="max-w-6xl mx-auto">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
-          <div className="animate-fade-in">
-            <h2 className="text-4xl lg:text-5xl font-bold mb-8 transform hover:scale-102 transition-all duration-500">
+          <div>
+            <h2 className="text-4xl lg:text-5xl font-bold mb-8">
               ¿Por qué tu empresa{' '}
               <span className="relative">
                 sigue expuesta?
-                <svg className="absolute -bottom-2 left-0 w-full h-3 animate-draw" viewBox="0 0 300 12" fill="none">
-                  <path d="M5 6 Q150 1 295 6" stroke="#3B82F6" strokeWidth="3" fill="none" strokeDasharray="300" strokeDashoffset="300"/>
+                <svg className="absolute -bottom-2 left-0 w-full h-3" viewBox="0 0 300 12" fill="none">
+                  <path d="M5 6 Q150 1 295 6" stroke="#3B82F6" strokeWidth="3" fill="none"/>
                 </svg>
               </span>
             </h2>
@@ -55,15 +39,11 @@ const RisksSection = () => {
           
           <div className="space-y-8">
             {risks.map((risk, index) => (
-              <div 
-                key={index} 
-                className="border-l-4 border-blue-400 pl-6 animate-fade-in transform hover:translate-x-2 transition-all duration-500 hover:bg-white hover:bg-opacity-5 hover:rounded-r-lg hover:py-4 hover:pr-4 cursor-pointer group"
-                style={{ animationDelay: `${(index + 1) * 300}ms` }}
-              >
-                <h3 className="text-xl font-semibold mb-2 text-blue-300 group-hover:text-blue-200 transition-colors duration-300">
+              <div key={index} className="border-l-4 border-blue-400 pl-6">
+                <h3 className="text-xl font-semibold mb-2 text-blue-300">
                   {risk.title}
                 </h3>
-                <p className="text-gray-300 leading-relaxed group-hover:text-gray-200 transition-colors duration-300">
+                <p className="text-gray-300 leading-relaxed">
                   {risk.description}
                 </p>
               </div>

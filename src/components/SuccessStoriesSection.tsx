@@ -53,26 +53,26 @@ const SuccessStoriesSection = () => {
   return (
     <section className="py-20 px-6 bg-gradient-to-br from-blue-400 to-blue-600 overflow-hidden">
       <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-16 animate-fade-in">
-          <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6 transform hover:scale-105 transition-transform duration-300">
+        <div className="text-center mb-16 opacity-0 animate-fade-in">
+          <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6 transform transition-all duration-500 hover:translate-y-1 hover:text-blue-100">
             {t('successStoriesTitle')}
-            <svg className="inline-block ml-4 w-16 h-8 animate-pulse" viewBox="0 0 64 32" fill="none">
+            <svg className="inline-block ml-4 w-16 h-8 transition-transform duration-300 hover:scale-110" viewBox="0 0 64 32" fill="none">
               <path d="M5 16 Q32 8 59 16" stroke="white" strokeWidth="3" fill="none"/>
             </svg>
           </h2>
-          <p className="text-xl text-blue-100 transform hover:translate-y-1 transition-transform duration-300">
+          <p className="text-xl text-blue-100 transform transition-all duration-500 hover:translate-y-1 hover:text-white">
             {t('successStoriesSubtitle')}
           </p>
         </div>
 
         {/* Success Stories Slider */}
-        <div className="bg-white bg-opacity-10 rounded-3xl p-8 mb-16 backdrop-blur-sm transform hover:scale-[1.02] transition-all duration-500 hover:shadow-2xl">
+        <div className="bg-white bg-opacity-10 rounded-3xl p-8 mb-16 backdrop-blur-sm transform transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:bg-opacity-15">
           <div className="flex items-center justify-between mb-6">
             <Button 
               onClick={prevStory}
               variant="ghost" 
               size="sm"
-              className="text-white hover:bg-white hover:bg-opacity-20 transform hover:scale-110 transition-all duration-300"
+              className="text-white hover:bg-white hover:bg-opacity-20 transform transition-all duration-300 hover:scale-110"
             >
               <ChevronLeft className="w-6 h-6" />
             </Button>
@@ -82,7 +82,7 @@ const SuccessStoriesSection = () => {
                   key={index}
                   onClick={() => setCurrentStory(index)}
                   className={`w-3 h-3 rounded-full transition-all duration-500 transform hover:scale-125 ${
-                    index === currentStory ? 'bg-white animate-pulse' : 'bg-white bg-opacity-40 hover:bg-opacity-70'
+                    index === currentStory ? 'bg-white animate-gentle-bounce' : 'bg-white bg-opacity-40 hover:bg-opacity-70'
                   }`}
                 />
               ))}
@@ -91,22 +91,22 @@ const SuccessStoriesSection = () => {
               onClick={nextStory}
               variant="ghost" 
               size="sm"
-              className="text-white hover:bg-white hover:bg-opacity-20 transform hover:scale-110 transition-all duration-300"
+              className="text-white hover:bg-white hover:bg-opacity-20 transform transition-all duration-300 hover:scale-110"
             >
               <ChevronRight className="w-6 h-6" />
             </Button>
           </div>
           
-          <div className="text-white transform transition-all duration-700 ease-in-out">
-            <h3 className="text-2xl font-bold mb-6 animate-fade-in">{stories[currentStory].title}</h3>
+          <div className="text-white transform transition-all duration-700">
+            <h3 className="text-2xl font-bold mb-6 opacity-0 animate-fade-in">{stories[currentStory].title}</h3>
             <div className="space-y-4">
-              <div className="transform hover:translate-x-2 transition-transform duration-300">
+              <div className="transform transition-all duration-500 hover:translate-x-2 hover:text-blue-100">
                 <strong className="text-blue-200">• Dolor inicial:</strong> {stories[currentStory].pain}
               </div>
-              <div className="transform hover:translate-x-2 transition-transform duration-300 delay-100">
+              <div className="transform transition-all duration-500 hover:translate-x-2 hover:text-blue-100">
                 <strong className="text-blue-200">• Acción TutumSec:</strong> {stories[currentStory].action}
               </div>
-              <div className="transform hover:translate-x-2 transition-transform duration-300 delay-200">
+              <div className="transform transition-all duration-500 hover:translate-x-2 hover:text-blue-100">
                 <strong className="text-blue-200">• Resultado:</strong> {stories[currentStory].result}
               </div>
             </div>
@@ -120,9 +120,9 @@ const SuccessStoriesSection = () => {
               <button
                 key={tab}
                 onClick={() => setSelectedTab(tab)}
-                className={`px-6 py-3 rounded-full text-lg font-medium transition-all duration-300 transform hover:scale-105 hover:-translate-y-1 ${
+                className={`px-6 py-3 rounded-full text-lg font-medium transition-all duration-300 transform hover:scale-105 hover:translate-y-1 ${
                   selectedTab === tab
-                    ? 'bg-white text-blue-600 shadow-lg animate-pulse'
+                    ? 'bg-white text-blue-600 shadow-lg animate-gentle-bounce'
                     : 'bg-white bg-opacity-20 text-white hover:bg-white hover:text-blue-600 hover:bg-opacity-100'
                 }`}
                 style={{ animationDelay: `${index * 100}ms` }}
@@ -137,7 +137,7 @@ const SuccessStoriesSection = () => {
               tabContent.partners.map((partner, index) => (
                 <div 
                   key={index}
-                  className="transform hover:scale-110 transition-all duration-500 hover:-translate-y-2 hover:rotate-2"
+                  className="transform transition-all duration-500 hover:scale-110 hover:translate-y-2"
                   style={{ animationDelay: `${index * 150}ms` }}
                 >
                   <img 
@@ -151,7 +151,7 @@ const SuccessStoriesSection = () => {
               tabContent[selectedTab as keyof typeof tabContent].map((item, index) => (
                 <div 
                   key={index}
-                  className="text-white text-lg font-medium opacity-80 hover:opacity-100 transition-all duration-300 transform hover:scale-110 hover:-translate-y-1"
+                  className="text-white text-lg font-medium opacity-80 hover:opacity-100 transition-all duration-300 transform hover:scale-110 hover:translate-y-1"
                   style={{ animationDelay: `${index * 100}ms` }}
                 >
                   {item}

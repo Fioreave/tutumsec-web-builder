@@ -50,22 +50,22 @@ const Footer = () => {
               <img 
                 src="/lovable-uploads/fb8d9ddd-cdaa-4f53-a077-13e62a21a942.png" 
                 alt="TutumSec Logo" 
-                className="h-12 w-auto mr-3 transition-transform duration-300 group-hover:scale-105"
+                className="h-16 w-auto mr-3 transition-all duration-500 group-hover:scale-110 filter brightness-110"
               />
             </div>
-            <p className="text-gray-300 mb-6 leading-relaxed">
+            <p className="text-gray-300 mb-6 leading-relaxed transition-colors duration-300 hover:text-gray-200">
               La seguridad digital es nuestro hilo conductor. Expertos en ciberseguridad y cumplimiento normativo para empresas que exigen más.
             </p>
             <div className="space-y-3">
-              <div className="flex items-center text-gray-300 transition-colors duration-200 hover:text-blue-400">
+              <div className="flex items-center text-gray-300 transition-all duration-300 hover:text-blue-400 hover:translate-x-1">
                 <Mail className="w-4 h-4 mr-3 text-blue-400" />
                 <span className="text-sm">hola@tutumsec.io</span>
               </div>
-              <div className="flex items-center text-gray-300 transition-colors duration-200 hover:text-blue-400">
+              <div className="flex items-center text-gray-300 transition-all duration-300 hover:text-blue-400 hover:translate-x-1">
                 <Phone className="w-4 h-4 mr-3 text-blue-400" />
                 <span className="text-sm">+376 862-762</span>
               </div>
-              <div className="flex items-center text-gray-300 transition-colors duration-200 hover:text-blue-400">
+              <div className="flex items-center text-gray-300 transition-all duration-300 hover:text-blue-400 hover:translate-x-1">
                 <MapPin className="w-4 h-4 mr-3 text-blue-400" />
                 <span className="text-sm">Barcelona, Cataluña</span>
               </div>
@@ -78,7 +78,7 @@ const Footer = () => {
             <ul className="space-y-3">
               {services.map((service, index) => (
                 <li key={index}>
-                  <a href="#" className="text-sm text-gray-300 hover:text-blue-400 transition-all duration-200 hover:translate-x-1">
+                  <a href="#" className="text-sm text-gray-300 hover:text-blue-400 transition-all duration-300 hover:translate-x-2 block">
                     {service}
                   </a>
                 </li>
@@ -92,7 +92,7 @@ const Footer = () => {
             <ul className="space-y-3">
               {company.map((item, index) => (
                 <li key={index}>
-                  <a href="#" className="text-sm text-gray-300 hover:text-blue-400 transition-all duration-200 hover:translate-x-1">
+                  <a href="#" className="text-sm text-gray-300 hover:text-blue-400 transition-all duration-300 hover:translate-x-2 block">
                     {item}
                   </a>
                 </li>
@@ -106,7 +106,7 @@ const Footer = () => {
             <ul className="space-y-3">
               {resources.map((resource, index) => (
                 <li key={index}>
-                  <a href="#" className="text-sm text-gray-300 hover:text-blue-400 transition-all duration-200 hover:translate-x-1">
+                  <a href="#" className="text-sm text-gray-300 hover:text-blue-400 transition-all duration-300 hover:translate-x-2 block">
                     {resource}
                   </a>
                 </li>
@@ -120,18 +120,18 @@ const Footer = () => {
       <div className="bg-gradient-to-r from-slate-800 to-slate-700 border-t border-slate-700">
         <div className="max-w-7xl mx-auto px-6 py-12">
           <div className="text-center mb-8">
-            <h3 className="text-2xl font-bold mb-4">Mantente Informado</h3>
-            <p className="text-gray-300 max-w-2xl mx-auto">
+            <h3 className="text-2xl font-bold mb-4 animate-fade-in">Mantente Informado</h3>
+            <p className="text-gray-300 max-w-2xl mx-auto animate-fade-in" style={{ animationDelay: '0.2s' }}>
               Suscríbete a nuestra newsletter para recibir las últimas noticias sobre ciberseguridad y nuestras soluciones
             </p>
           </div>
           
-          <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
+          <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto animate-fade-in" style={{ animationDelay: '0.4s' }}>
             <Input 
               placeholder="Tu correo electrónico"
-              className="flex-1 bg-slate-600/50 border-slate-500 text-white placeholder:text-gray-400 rounded-full px-6 py-3 focus:ring-2 focus:ring-blue-400 focus:border-transparent transition-all duration-200 focus:scale-105"
+              className="flex-1 bg-slate-600/50 border-slate-500 text-white placeholder:text-gray-400 rounded-full px-6 py-3 focus:ring-2 focus:ring-blue-400 focus:border-transparent transition-all duration-300 focus:scale-105"
             />
-            <Button className="bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white px-8 py-3 rounded-full font-medium transition-all duration-200 shadow-lg hover:shadow-xl hover:scale-105">
+            <Button className="bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white px-8 py-3 rounded-full font-medium transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105">
               Suscribirse
             </Button>
           </div>
@@ -144,8 +144,8 @@ const Footer = () => {
           {/* Certifications */}
           <div className="flex flex-wrap justify-center gap-6 mb-8">
             {certifications.map((cert, index) => (
-              <div key={index} className="flex items-center text-sm text-green-400 transition-all duration-200 hover:scale-105">
-                <div className="w-2 h-2 bg-green-400 rounded-full mr-2 animate-pulse"></div>
+              <div key={index} className="flex items-center text-sm text-green-400 transition-all duration-300 hover:scale-105 animate-fade-in" style={{ animationDelay: `${index * 0.1}s` }}>
+                <div className="w-2 h-2 bg-green-400 rounded-full mr-2 animate-gentle-bounce" style={{ animationDelay: `${index * 0.5}s` }}></div>
                 {cert}
               </div>
             ))}
@@ -155,18 +155,18 @@ const Footer = () => {
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="text-sm text-gray-400 mb-4 md:mb-0">
               © 2025 TutumSec. Todos los derechos reservados. | 
-              <a href="#" className="hover:text-blue-400 transition-colors duration-200 ml-1">Política de Privacidad</a> | 
-              <a href="#" className="hover:text-blue-400 transition-colors duration-200 ml-1">Términos y Condiciones</a>
+              <a href="#" className="hover:text-blue-400 transition-colors duration-300 ml-1">Política de Privacidad</a> | 
+              <a href="#" className="hover:text-blue-400 transition-colors duration-300 ml-1">Términos y Condiciones</a>
             </div>
             
             <div className="flex space-x-4">
-              <a href="#" className="w-10 h-10 bg-gradient-to-r from-blue-500 to-blue-600 rounded-full flex items-center justify-center hover:from-blue-600 hover:to-blue-700 transition-all duration-200 shadow-lg hover:shadow-xl hover:scale-110">
+              <a href="#" className="w-10 h-10 bg-gradient-to-r from-blue-500 to-blue-600 rounded-full flex items-center justify-center hover:from-blue-600 hover:to-blue-700 transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-110 animate-smooth-glow">
                 <Linkedin className="w-5 h-5 text-white" />
               </a>
-              <a href="#" className="w-10 h-10 bg-gradient-to-r from-blue-400 to-blue-500 rounded-full flex items-center justify-center hover:from-blue-500 hover:to-blue-600 transition-all duration-200 shadow-lg hover:shadow-xl hover:scale-110">
+              <a href="#" className="w-10 h-10 bg-gradient-to-r from-blue-400 to-blue-500 rounded-full flex items-center justify-center hover:from-blue-500 hover:to-blue-600 transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-110 animate-smooth-glow" style={{ animationDelay: '0.5s' }}>
                 <Twitter className="w-5 h-5 text-white" />
               </a>
-              <a href="#" className="w-10 h-10 bg-gradient-to-r from-blue-600 to-blue-700 rounded-full flex items-center justify-center hover:from-blue-700 hover:to-blue-800 transition-all duration-200 shadow-lg hover:shadow-xl hover:scale-110">
+              <a href="#" className="w-10 h-10 bg-gradient-to-r from-blue-600 to-blue-700 rounded-full flex items-center justify-center hover:from-blue-700 hover:to-blue-800 transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-110 animate-smooth-glow" style={{ animationDelay: '1s' }}>
                 <Facebook className="w-5 h-5 text-white" />
               </a>
             </div>

@@ -26,13 +26,11 @@ const RisksSection = () => {
       <div className="max-w-6xl mx-auto">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div className="transform transition-all duration-700 hover:translate-x-2">
-            <h2 className="text-4xl lg:text-5xl font-bold mb-8 transition-colors duration-500 hover:text-blue-300 leading-relaxed">
+            <h2 className="text-4xl lg:text-5xl font-bold mb-8 transition-colors duration-500 hover:text-blue-300 leading-[1.5]">
               ¿Por qué tu empresa{' '}
               <span className="relative group">
                 sigue expuesta?
-                <svg className="absolute -bottom-1 left-0 w-full h-3 transition-all duration-500 group-hover:scale-105" viewBox="0 0 300 12" fill="none">
-                  <path d="M5 8 Q150 3 295 8" stroke="#3B82F6" strokeWidth="3" fill="none"/>
-                </svg>
+                <span className="absolute left-0 w-full h-1 bg-blue-400 transition-all duration-500 group-hover:scale-105" style={{ top: '100%', marginTop: '8px' }}></span>
               </span>
             </h2>
           </div>
@@ -47,10 +45,10 @@ const RisksSection = () => {
                   animationFillMode: 'forwards' 
                 }}
               >
-                <h3 className="text-xl font-semibold mb-2 text-blue-300 transition-colors duration-300 hover:text-blue-200 leading-relaxed">
+                <h3 className="text-xl font-semibold mb-2 text-blue-300 transition-colors duration-300 hover:text-blue-200 leading-[1.5]">
                   {risk.title}
                 </h3>
-                <p className="text-gray-300 leading-relaxed transition-colors duration-300 hover:text-gray-200">
+                <p className="text-gray-300 leading-[1.5] transition-colors duration-300 hover:text-gray-200">
                   {risk.description}
                 </p>
               </div>

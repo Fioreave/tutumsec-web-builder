@@ -8,16 +8,16 @@ const CTASection = () => {
   const { t } = useTranslation();
 
   return (
-    <section className="py-20 px-6" style={{
+    <section className="py-20 px-6 overflow-hidden" style={{
       background: 'linear-gradient(to bottom, #5eb9f0, #3886f4)'
     }}>
       <div className="max-w-6xl mx-auto relative">
-        <div className="bg-gradient-to-r from-black via-blue-900 to-blue-800 rounded-[2rem] p-12 relative overflow-hidden ml-auto max-w-4xl transition-all duration-500 hover:shadow-2xl hover:scale-105">
+        <div className="bg-gradient-to-r from-black via-blue-900 to-blue-800 rounded-[2rem] p-12 relative overflow-hidden ml-auto w-[90%] h-[380px] transition-all duration-500 hover:shadow-2xl hover:scale-105 flex items-center">
           <div className="relative z-10 max-w-3xl">
-            <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight transition-colors duration-500 hover:text-blue-200">
+            <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6 leading-[1.5] transition-colors duration-500 hover:text-blue-200">
               {t('ctaTitle')}
             </h2>
-            <p className="text-xl text-gray-200 mb-8 transition-colors duration-300 hover:text-gray-100">
+            <p className="text-xl text-gray-200 mb-8 leading-[1.5] transition-colors duration-300 hover:text-gray-100">
               {t('ctaSubtitle')}
             </p>
             
@@ -40,8 +40,8 @@ const CTASection = () => {
           </div>
         </div>
         
-        {/* Graphic element positioned below and to the right, moved up 20px total */}
-        <div className="absolute -bottom-20 right-0 w-48 h-48 opacity-70 transition-all duration-500 hover:opacity-100 hover:scale-105">
+        {/* Imagen posicionada 20px más arriba */}
+        <div className="absolute right-0 w-48 h-48 opacity-70 transition-all duration-500 hover:opacity-100 hover:scale-105 transform translate-y-[-20px]" style={{ bottom: '0px' }}>
           <img 
             src="/lovable-uploads/95446ecb-2f3b-4543-a34c-d5d0fb8449e5.png" 
             alt="Graphic element"

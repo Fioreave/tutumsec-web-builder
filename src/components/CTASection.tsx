@@ -40,8 +40,8 @@ const CTASection = () => {
           </div>
         </div>
         
-        {/* Graphic element positioned below and to the right, moved up 10px */}
-        <div className="absolute -bottom-10 right-0 w-48 h-48 opacity-70 transition-all duration-500 hover:opacity-100 hover:scale-105">
+        {/* Graphic element positioned below and to the right, moved up 20px total */}
+        <div className="absolute -bottom-20 right-0 w-48 h-48 opacity-70 transition-all duration-500 hover:opacity-100 hover:scale-105">
           <img 
             src="/lovable-uploads/95446ecb-2f3b-4543-a34c-d5d0fb8449e5.png" 
             alt="Graphic element"

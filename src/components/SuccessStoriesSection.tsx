@@ -53,15 +53,16 @@ const SuccessStoriesSection = () => {
   return (
     <section className="py-20 px-6 bg-gradient-to-br from-blue-400 to-blue-600 overflow-hidden">
       <div className="max-w-7xl mx-auto">
+        {/* Título y subtítulo de casos de éxito */}
         <div className="text-center mb-16 opacity-0 animate-fade-in">
           <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6 transform transition-all duration-500 hover:translate-y-1 hover:text-blue-100">
-            {t('successStoriesTitle')}
+            Casos de éxito
             <svg className="inline-block ml-4 w-16 h-8 transition-transform duration-300 hover:scale-110" viewBox="0 0 64 32" fill="none">
               <path d="M5 16 Q32 8 59 16" stroke="white" strokeWidth="3" fill="none"/>
             </svg>
           </h2>
           <p className="text-xl text-blue-100 transform transition-all duration-500 hover:translate-y-1 hover:text-white">
-            {t('successStoriesSubtitle')}
+            Descubre cómo hemos transformado la ciberseguridad de empresas como la tuya
           </p>
         </div>
 
@@ -82,7 +83,7 @@ const SuccessStoriesSection = () => {
                   key={index}
                   onClick={() => setCurrentStory(index)}
                   className={`w-3 h-3 rounded-full transition-all duration-500 transform hover:scale-125 ${
-                    index === currentStory ? 'bg-white animate-gentle-bounce' : 'bg-white bg-opacity-40 hover:bg-opacity-70'
+                    index === currentStory ? 'bg-white' : 'bg-white bg-opacity-40 hover:bg-opacity-70'
                   }`}
                 />
               ))}
@@ -122,7 +123,7 @@ const SuccessStoriesSection = () => {
                 onClick={() => setSelectedTab(tab)}
                 className={`px-6 py-3 rounded-full text-lg font-medium transition-all duration-300 transform hover:scale-105 hover:translate-y-1 ${
                   selectedTab === tab
-                    ? 'bg-white text-blue-600 shadow-lg animate-gentle-bounce'
+                    ? 'bg-white text-blue-600 shadow-lg'
                     : 'bg-white bg-opacity-20 text-white hover:bg-white hover:text-blue-600 hover:bg-opacity-100'
                 }`}
                 style={{ animationDelay: `${index * 100}ms` }}

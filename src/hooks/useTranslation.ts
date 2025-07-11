@@ -1,5 +1,4 @@
-
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 type Language = 'es' | 'ca' | 'en' | 'fr';
 
@@ -129,8 +128,24 @@ const translations: Translations = {
   }
 };
 
+const detectBrowserLanguage = (): Language => {
+  const browserLang = navigator.language.toLowerCase();
+  
+  if (browserLang.startsWith('ca')) return 'ca';
+  if (browserLang.startsWith('en')) return 'en';
+  if (browserLang.startsWith('fr')) return 'fr';
+  
+  // Default to Spanish
+  return 'es';
+};
+
 export const useTranslation = () => {
   const [currentLanguage, setCurrentLanguage] = useState<Language>('es');
+
+  useEffect(() => {
+    const detectedLanguage = detectBrowserLanguage();
+    setCurrentLanguage(detectedLanguage);
+  }, []);
 
   const t = (key: string): string => {
     return translations[key]?.[currentLanguage] || key;

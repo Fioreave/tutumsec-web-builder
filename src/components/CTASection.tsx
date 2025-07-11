@@ -39,8 +39,8 @@ const CTASection = () => {
             </div>
           </div>
           
-          {/* Image positioned exactly on the bottom border and aligned to the right */}
-          <div className="absolute bottom-0 right-0 w-48 h-48 opacity-70 transition-all duration-500 hover:opacity-100 hover:scale-105" style={{ transform: 'translateY(50%)' }}>
+          {/* Image positioned exactly at the bottom border and aligned to the right */}
+          <div className="absolute bottom-0 right-0 w-48 h-48 opacity-70 transition-all duration-500 hover:opacity-100 hover:scale-105" style={{ transform: 'translateY(25%)' }}>
             <img 
               src="/lovable-uploads/95446ecb-2f3b-4543-a34c-d5d0fb8449e5.png" 
               alt="Graphic element"

@@ -10,7 +10,7 @@ const AdminLink = () => {
   if (!user || !profile) {
     return (
       <Button variant="ghost" size="sm" asChild>
-        <Link to="/auth">
+        <Link to="/blog-admin-access">
           <LogIn className="mr-1 h-3 w-3" />
           Iniciar Sesión
         </Link>

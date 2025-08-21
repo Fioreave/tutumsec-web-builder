@@ -27,8 +27,16 @@ export default {
 				foreground: 'hsl(var(--foreground))',
 				primary: {
 					DEFAULT: 'hsl(var(--primary))',
-					foreground: 'hsl(var(--primary-foreground))'
+					foreground: 'hsl(var(--primary-foreground))',
+					light: 'hsl(var(--primary-light))',
+					dark: 'hsl(var(--primary-dark))'
 				},
+				'tutumsec-blue': 'hsl(var(--tutumsec-blue))',
+				'tutumsec-blue-light': 'hsl(var(--tutumsec-blue-light))',
+				'tutumsec-blue-dark': 'hsl(var(--tutumsec-blue-dark))',
+				'tutumsec-gray-50': 'hsl(var(--tutumsec-gray-50))',
+				'tutumsec-gray-100': 'hsl(var(--tutumsec-gray-100))',
+				'tutumsec-gray-900': 'hsl(var(--tutumsec-gray-900))',
 				secondary: {
 					DEFAULT: 'hsl(var(--secondary))',
 					foreground: 'hsl(var(--secondary-foreground))'

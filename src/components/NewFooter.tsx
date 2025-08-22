@@ -1,43 +1,61 @@
-import React, { useState } from 'react';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { MapPin, Phone, Mail, Linkedin } from 'lucide-react';
-import { Link } from 'react-router-dom';
-import { useToast } from '@/hooks/use-toast';
+import React, { useState } from "react";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { MapPin, Phone, Mail, Linkedin } from "lucide-react";
+import { Link } from "react-router-dom";
+import { useToast } from "@/hooks/use-toast";
 
 const NewFooter = () => {
-  const [email, setEmail] = useState('');
+  const [email, setEmail] = useState("");
   const { toast } = useToast();
 
   const serviciosKey = [
-    { title: 'Gobernanza & vCISO', path: '/es/servicios/consultoria-ciso' },
-    { title: 'Auditorías & Pentesting', path: '/es/servicios/auditoria-compliance-nis2' },
-    { title: 'Transformación digital estratégica', path: '/es/servicios/transformacion-digital-estrategica' },
-    { title: 'Compliance NIS2 · ENS · ISO 27001', path: '/es/servicios/auditoria-compliance-nis2' },
-    { title: 'MDR / SOC 24×7', path: '/es/servicios/deteccion-soc-mdr-xdr' },
-    { title: 'Respuesta a Incidentes', path: '/es/servicios/respuesta-incidente' },
-    { title: 'Formación & Awareness', path: '/es/retainer/formacion-concienciacion' }
+    { title: "Gobernanza & vCISO", path: "/es/servicios/consultoria-ciso" },
+    {
+      title: "Auditorías & Pentesting",
+      path: "/es/servicios/auditoria-compliance-nis2",
+    },
+    {
+      title: "Transformación digital estratégica",
+      path: "/es/servicios/transformacion-digital-estrategica",
+    },
+    {
+      title: "Compliance NIS2 · ENS · ISO 27001",
+      path: "/es/servicios/auditoria-compliance-nis2",
+    },
+    { title: "MDR / SOC 24×7", path: "/es/servicios/deteccion-soc-mdr-xdr" },
+    {
+      title: "Respuesta a Incidentes",
+      path: "/es/servicios/respuesta-incidente",
+    },
+    {
+      title: "Formación & Awareness",
+      path: "/es/retainer/formacion-concienciacion",
+    },
   ];
 
   const recursos = [
-    { title: 'Blog / Insights', path: '/blog' },
-    { title: 'Preguntas frecuentes (FAQ)', path: '/#faq' },
-    { title: 'Glosario de Ciberseguridad', path: '/glosario' }
+    { title: "Blog / Insights", path: "/blog" },
+    { title: "Preguntas frecuentes (FAQ)", path: "/#faq" },
+    { title: "Glosario de Ciberseguridad", path: "/glosario" },
   ];
 
   const empresa = [
-    { title: 'Sobre nosotros', path: '/es/sobre-nosotros' },
-    { title: 'Cultura y valores', path: '/es/sobre-nosotros/equipo-valores' },
-    { title: 'Carreras (Trabaja con nosotros)', path: '/carreras' },
-    { title: 'Partners tecnológicos', path: '/es/sobre-nosotros/certificaciones-partners' }
+    { title: "Sobre nosotros", path: "/es/sobre-nosotros" },
+    { title: "Cultura y valores", path: "/es/sobre-nosotros/equipo-valores" },
+    { title: "Carreras (Trabaja con nosotros)", path: "/carreras" },
+    {
+      title: "Partners tecnológicos",
+      path: "/es/sobre-nosotros/certificaciones-partners",
+    },
   ];
 
   const legal = [
-    { title: 'Aviso legal', path: '/aviso-legal' },
-    { title: 'Política de privacidad', path: '/politica-privacidad' },
-    { title: 'Política de seguridad', path: '/politica-seguridad' },
-    { title: 'Política de cookies', path: '/politica-cookies' },
-    { title: 'Términos del servicio', path: '/terminos-servicio' }
+    { title: "Aviso legal", path: "/aviso-legal" },
+    { title: "Política de privacidad", path: "/politica-privacidad" },
+    { title: "Política de seguridad", path: "/politica-seguridad" },
+    { title: "Política de cookies", path: "/politica-cookies" },
+    { title: "Términos del servicio", path: "/terminos-servicio" },
   ];
 
   const handleNewsletterSubmit = (e: React.FormEvent) => {
@@ -47,7 +65,7 @@ const NewFooter = () => {
         title: "¡Suscripción exitosa!",
         description: "Recibirás ciber-consejos mensuales en tu email.",
       });
-      setEmail('');
+      setEmail("");
     }
   };
 
@@ -58,9 +76,9 @@ const NewFooter = () => {
           {/* Brand Section */}
           <div className="lg:col-span-1">
             <div className="flex items-center mb-6">
-              <img 
-                src="/lovable-uploads/28486bc8-b0a7-48de-a3dd-49f71e4a3f41.png" 
-                alt="TutumSec Logo" 
+              <img
+                src="/uploads/tutumsec-negativo.png"
+                alt="TutumSec Logo"
                 className="h-12 w-auto"
               />
             </div>
@@ -85,8 +103,8 @@ const NewFooter = () => {
             <ul className="space-y-3">
               {serviciosKey.map((servicio, index) => (
                 <li key={index}>
-                  <Link 
-                    to={servicio.path} 
+                  <Link
+                    to={servicio.path}
                     className="text-sm text-gray-300 hover:text-primary-light transition-colors duration-300 block"
                   >
                     {servicio.title}
@@ -102,8 +120,8 @@ const NewFooter = () => {
             <ul className="space-y-3">
               {recursos.map((recurso, index) => (
                 <li key={index}>
-                  <Link 
-                    to={recurso.path} 
+                  <Link
+                    to={recurso.path}
                     className="text-sm text-gray-300 hover:text-primary-light transition-colors duration-300 block"
                   >
                     {recurso.title}
@@ -119,8 +137,8 @@ const NewFooter = () => {
             <ul className="space-y-3">
               {empresa.map((item, index) => (
                 <li key={index}>
-                  <Link 
-                    to={item.path} 
+                  <Link
+                    to={item.path}
                     className="text-sm text-gray-300 hover:text-primary-light transition-colors duration-300 block"
                   >
                     {item.title}
@@ -132,7 +150,9 @@ const NewFooter = () => {
 
           {/* Newsletter */}
           <div>
-            <h4 className="text-lg font-semibold mb-6 text-white">Newsletter</h4>
+            <h4 className="text-lg font-semibold mb-6 text-white">
+              Newsletter
+            </h4>
             <p className="text-sm text-gray-300 mb-4">
               Suscríbete y recibe ciber-consejos mensuales
             </p>
@@ -145,7 +165,7 @@ const NewFooter = () => {
                 className="bg-slate-700 border-slate-600 text-white placeholder:text-gray-400"
                 required
               />
-              <Button 
+              <Button
                 type="submit"
                 className="w-full bg-primary hover:bg-primary-dark text-white"
               >
@@ -153,7 +173,8 @@ const NewFooter = () => {
               </Button>
             </form>
             <p className="text-xs text-gray-400 mt-2">
-              Incentivo: "Checklist de 10 acciones rápidas para reducir el riesgo"
+              Incentivo: "Checklist de 10 acciones rápidas para reducir el
+              riesgo"
             </p>
           </div>
         </div>
@@ -163,9 +184,9 @@ const NewFooter = () => {
           <h4 className="text-lg font-semibold mb-4 text-white">Legal</h4>
           <div className="flex flex-wrap gap-4">
             {legal.map((item, index) => (
-              <Link 
+              <Link
                 key={index}
-                to={item.path} 
+                to={item.path}
                 className="text-sm text-gray-300 hover:text-primary-light transition-colors duration-300"
               >
                 {item.title}
@@ -176,7 +197,9 @@ const NewFooter = () => {
 
         {/* Reconocimientos */}
         <div className="border-t border-slate-700 pt-8 mb-8">
-          <h4 className="text-lg font-semibold mb-4 text-white">Reconocimientos</h4>
+          <h4 className="text-lg font-semibold mb-4 text-white">
+            Reconocimientos
+          </h4>
           <div className="flex flex-wrap gap-6 text-sm text-gray-300">
             <span>• Certificaciones (ISO 27001)</span>
             <span>• INCIBE</span>
@@ -191,10 +214,10 @@ const NewFooter = () => {
             <div className="text-sm text-gray-400 mb-4 md:mb-0">
               © 2025 TutumSec · Cybersecurity Consulting & Strategy
             </div>
-            
+
             <div className="flex items-center space-x-4">
-              <a 
-                href="#" 
+              <a
+                href="#"
                 className="w-10 h-10 bg-primary/20 rounded-full flex items-center justify-center hover:bg-primary/30 transition-colors duration-300"
               >
                 <Linkedin className="w-5 h-5 text-primary-light" />

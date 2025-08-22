@@ -1,33 +1,35 @@
-import React from 'react';
+import React from "react";
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from '@/components/ui/accordion';
+} from "@/components/ui/accordion";
 
 const NewFAQSection = () => {
   const faqs = [
     {
       question: "¿TutumSec ofrece cobertura en toda España?",
-      answer: "Sí. Operamos desde Barcelona, Girona y Andorra, y damos servicio a todo el territorio nacional."
+      answer:
+        "Sí. Operamos desde Barcelona, Girona y Andorra, y damos servicio a todo el territorio nacional.",
     },
     {
       question: "¿Cuánto dura una auditoría completa?",
-      answer: "2–4 semanas dependiendo del alcance."
+      answer: "2–4 semanas dependiendo del alcance.",
     },
     {
       question: "¿Puedo contratar solo un servicio (por ejemplo, auditoría)?",
-      answer: "Sí. Trabajamos con servicios modulares y escalables. Solo pagas por lo que realmente necesitas."
+      answer:
+        "Sí. Trabajamos con servicios modulares y escalables. Solo pagas por lo que realmente necesitas.",
     },
     {
       question: "¿Necesito cambiar mi infraestructura?",
-      answer: "No siempre; priorizamos quick-wins."
+      answer: "No siempre; priorizamos quick-wins.",
     },
     {
       question: "¿Cómo cumplo NIS2 antes de la fecha límite?",
-      answer: "Roadmap TutumSec Compliance 360."
-    }
+      answer: "Roadmap TutumSec Compliance 360.",
+    },
   ];
 
   return (
@@ -38,13 +40,13 @@ const NewFAQSection = () => {
             Preguntas frecuentes
           </h2>
         </div>
-        
+
         <Accordion type="single" collapsible className="space-y-4">
           {faqs.map((faq, index) => (
-            <AccordionItem 
-              key={index} 
+            <AccordionItem
+              key={index}
               value={`item-${index}`}
-              className="bg-white rounded-2xl border border-gray-200 px-6 hover:shadow-md transition-shadow duration-300"
+              className="bg-gray-500/10 rounded-2xl border border-gray-300 px-6 hover:shadow-md transition-shadow duration-300"
             >
               <AccordionTrigger className="text-left font-semibold text-gray-800 hover:text-primary py-6">
                 {faq.question}
@@ -57,21 +59,21 @@ const NewFAQSection = () => {
         </Accordion>
 
         {/* Schema.org structured data for FAQ */}
-        <script 
+        <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "FAQPage",
-              "mainEntity": faqs.map(faq => ({
+              mainEntity: faqs.map((faq) => ({
                 "@type": "Question",
-                "name": faq.question,
-                "acceptedAnswer": {
+                name: faq.question,
+                acceptedAnswer: {
                   "@type": "Answer",
-                  "text": faq.answer
-                }
-              }))
-            })
+                  text: faq.answer,
+                },
+              })),
+            }),
           }}
         />
       </div>

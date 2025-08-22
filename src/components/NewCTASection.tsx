@@ -1,53 +1,52 @@
-import React, { useState } from 'react';
-import { Button } from '@/components/ui/button';
-import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog';
-import { ContactForm } from './ContactForm';
+import React from "react";
+import { Button } from "@/components/ui/button";
+import { Phone, MessageCircle } from "lucide-react";
+import { useTranslation } from "@/hooks/useTranslation";
 
 const NewCTASection = () => {
-  const [showContactForm, setShowContactForm] = useState(false);
-
-  const handleCalendlyClick = () => {
-    const calendlyUrl = process.env.NEXT_PUBLIC_CALENDLY_URL || "https://calendly.com";
-    window.open(calendlyUrl, '_blank');
-  };
+  const { t } = useTranslation();
 
   return (
-    <section className="py-20 px-6 bg-gradient-to-br from-primary to-primary-dark text-white">
-      <div className="max-w-4xl mx-auto text-center">
-        <h2 className="text-4xl lg:text-5xl font-bold mb-8 animate-slide-up leading-relaxed">
-          Protege tu empresa hoy, no mañana.
-        </h2>
-        
-        <p className="text-xl mb-12 opacity-90 animate-fade-in" style={{ animationDelay: '0.2s', animationFillMode: 'forwards' }}>
-          Obtén tu auditoría inicial sin coste* y descubre los quick-wins que puedes implantar este mes.
-        </p>
-        
-        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8 opacity-0 animate-fade-in" style={{ animationDelay: '0.4s', animationFillMode: 'forwards' }}>
-          <Button 
-            size="lg" 
-            onClick={handleCalendlyClick}
-            className="px-8 py-4 text-lg rounded-full bg-white text-primary hover:bg-gray-100 font-medium transition-all duration-300 hover:scale-105 hover:shadow-lg"
-          >
-            👉 Agenda tu sesión gratuita ahora → Abrir agenda Ayub en calendly
-          </Button>
-          
-          <Dialog open={showContactForm} onOpenChange={setShowContactForm}>
-            <DialogTrigger asChild>
-              <Button 
-                variant="outline" 
-                size="lg" 
-                className="border-2 border-white text-white px-8 py-4 text-lg rounded-full hover:bg-white/10 bg-transparent font-medium transition-all duration-300 hover:scale-105 hover:shadow-md"
+    <section
+      className="py-20 px-6"
+      style={{
+        background: "linear-gradient(to bottom, #5eb9f0, #3886f4)",
+      }}
+    >
+      <div className="max-w-6xl mx-auto relative">
+        <div className="bg-gradient-to-r from-black via-blue-900 to-blue-800 rounded-[2rem] p-12 relative overflow-hidden mx-auto max-w-5xl">
+          <div className="relative z-10 max-w-3xl">
+            <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
+              {t("ctaTitle")}
+            </h2>
+            <p className="text-xl text-gray-200 mb-8">{t("ctaSubtitle")}</p>
+
+            <div className="flex flex-col sm:flex-row gap-4 items-center">
+              <Button
+                size="lg"
+                className="px-8 py-4 text-lg rounded-full text-white font-medium transition-colors"
+                style={{
+                  background: "linear-gradient(to bottom, #5eb9f0, #3886f4)",
+                }}
               >
-                👉 Descarga la Checklist NIS2→ formulario contacto &gt;&gt; Descargar en PDF
+                {t("reserveConsultation")}
               </Button>
-            </DialogTrigger>
-            <DialogContent className="max-w-md">
-              <DialogHeader>
-                <DialogTitle>Descargar Checklist NIS2</DialogTitle>
-              </DialogHeader>
-              <ContactForm onSuccess={() => setShowContactForm(false)} />
-            </DialogContent>
-          </Dialog>
+              <div className="flex items-center space-x-4 text-white">
+                <Phone className="w-6 h-6" />
+                <div className="w-px h-8 bg-gray-400"></div>
+                <MessageCircle className="w-6 h-6" />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Graphic element positioned below and to the right, moved up 10px */}
+        <div className="absolute -bottom-5 right-16 w-48 h-48 opacity-70">
+          <img
+            src="/uploads/abstract.png"
+            alt="Graphic element"
+            className="w-full h-full object-contain"
+          />
         </div>
       </div>
     </section>

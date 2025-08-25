@@ -17,40 +17,58 @@ export type Database = {
       blogs: {
         Row: {
           author_id: string | null
+          canonical_url: string | null
           content: string
+          cover_alt: string | null
           created_at: string | null
           excerpt: string | null
           featured_image: string | null
           id: string
+          meta_description: string | null
+          meta_title: string | null
           published: boolean | null
           published_at: string | null
           slug: string
+          status: Database["public"]["Enums"]["post_status"] | null
+          tags: string[] | null
           title: string
           updated_at: string | null
         }
         Insert: {
           author_id?: string | null
+          canonical_url?: string | null
           content: string
+          cover_alt?: string | null
           created_at?: string | null
           excerpt?: string | null
           featured_image?: string | null
           id?: string
+          meta_description?: string | null
+          meta_title?: string | null
           published?: boolean | null
           published_at?: string | null
           slug: string
+          status?: Database["public"]["Enums"]["post_status"] | null
+          tags?: string[] | null
           title: string
           updated_at?: string | null
         }
         Update: {
           author_id?: string | null
+          canonical_url?: string | null
           content?: string
+          cover_alt?: string | null
           created_at?: string | null
           excerpt?: string | null
           featured_image?: string | null
           id?: string
+          meta_description?: string | null
+          meta_title?: string | null
           published?: boolean | null
           published_at?: string | null
           slug?: string
+          status?: Database["public"]["Enums"]["post_status"] | null
+          tags?: string[] | null
           title?: string
           updated_at?: string | null
         }
@@ -102,6 +120,7 @@ export type Database = {
       }
     }
     Enums: {
+      post_status: "DRAFT" | "PUBLISHED"
       user_role: "admin" | "editor" | "viewer"
     }
     CompositeTypes: {
@@ -230,6 +249,7 @@ export type CompositeTypes<
 export const Constants = {
   public: {
     Enums: {
+      post_status: ["DRAFT", "PUBLISHED"],
       user_role: ["admin", "editor", "viewer"],
     },
   },

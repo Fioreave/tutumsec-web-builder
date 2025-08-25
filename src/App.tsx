@@ -1,3 +1,4 @@
+import { lazy } from "react";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -20,6 +21,7 @@ import AuditoriaCompliance from "./pages/servicios/AuditoriaCompliance";
 import TransformacionDigital from "./pages/servicios/TransformacionDigital";
 import DeteccionSoc from "./pages/servicios/DeteccionSoc";
 import RespuestaIncidente from "./pages/servicios/RespuestaIncidente";
+import OficinaSeguridad from "./pages/servicios/OficinaSeguridad";
 
 // Retainer
 import Retainer from "./pages/retainer/Retainer";
@@ -77,7 +79,7 @@ const App = () => (
           {/* Retainer */}
           <Route path="/es/retainer" element={<Retainer />} />
           <Route path="/es/servicios/formacion-concienciacion" element={<FormacionConcienciacion />} />
-          <Route path="/es/servicios/oficina-seguridad-informacion-nis2" element={lazy(() => import('./pages/servicios/OficinaSeguridad'))} />
+          <Route path="/es/servicios/oficina-seguridad-informacion-nis2" element={<OficinaSeguridad />} />
           <Route path="/es/retainer/prevencion-recuperacion-backup" element={<PrevencionRecuperacion />} />
           
           {/* Industrias */}

@@ -6,44 +6,71 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
-import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
 import { Switch } from '@/components/ui/switch';
+import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
 import { Skeleton } from '@/components/ui/skeleton';
-import { ArrowLeft, Save, Upload, X } from 'lucide-react';
+import { Badge } from '@/components/ui/badge';
+import { ArrowLeft, Save, Eye, Plus, X } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
+import { useForm } from 'react-hook-form';
+import { zodResolver } from '@hookform/resolvers/zod';
+import * as z from 'zod';
+import BlogEditor from '@/components/BlogEditor';
+import ImageUpload from '@/components/ImageUpload';
+import SEOMetaTags from '@/components/SEOMetaTags';
 
-interface PostForm {
-  title: string;
-  slug: string;
-  excerpt: string;
-  content: string;
-  featured_image: string | null;
-  published: boolean;
-}
+const postSchema = z.object({
+  title: z.string().min(1, 'El título es obligatorio').max(200, 'Máximo 200 caracteres'),
+  slug: z.string().min(1, 'El slug es obligatorio').max(100, 'Máximo 100 caracteres').regex(/^[a-z0-9-]+$/, 'Solo letras minúsculas, números y guiones'),
+  excerpt: z.string().max(160, 'Máximo 160 caracteres').optional(),
+  content: z.any(),
+  featured_image: z.string().optional(),
+  cover_alt: z.string().optional(),
+  tags: z.array(z.string()).default([]),
+  meta_title: z.string().max(60, 'Máximo 60 caracteres').optional(),
+  meta_description: z.string().max(160, 'Máximo 160 caracteres').optional(),
+  canonical_url: z.string().url('URL inválida').optional().or(z.literal('')),
+  status: z.enum(['DRAFT', 'PUBLISHED']).default('DRAFT'),
+});
+
+type PostForm = z.infer<typeof postSchema>;
 
 const PostEditor = () => {
   const { id } = useParams();
-  const isEditing = Boolean(id);
-  const { user, profile, loading: authLoading } = useAuth();
-  const [form, setForm] = useState<PostForm>({
-    title: '',
-    slug: '',
-    excerpt: '',
-    content: '',
-    featured_image: null,
-    published: false,
-  });
-  const [loading, setLoading] = useState(false);
-  const [pageLoading, setPageLoading] = useState(isEditing);
-  const [imageFile, setImageFile] = useState<File | null>(null);
-  const [imagePreview, setImagePreview] = useState<string | null>(null);
   const navigate = useNavigate();
+  const { user, profile, loading: authLoading } = useAuth();
+  const [loading, setLoading] = useState(false);
+  const [pageLoading, setPageLoading] = useState(false);
+  const [currentTag, setCurrentTag] = useState('');
   const { toast } = useToast();
+  const isEditing = !!id;
+
+  const form = useForm<PostForm>({
+    resolver: zodResolver(postSchema),
+    defaultValues: {
+      title: '',
+      slug: '',
+      excerpt: '',
+      content: {},
+      featured_image: '',
+      cover_alt: '',
+      tags: [],
+      meta_title: '',
+      meta_description: '',
+      canonical_url: '',
+      status: 'DRAFT',
+    },
+  });
+
+  const { watch, setValue, handleSubmit, formState: { errors } } = form;
+  const watchedTitle = watch('title');
+  const watchedSlug = watch('slug');
+  const watchedTags = watch('tags');
 
   useEffect(() => {
     if (!authLoading) {
       if (!user) {
-        navigate('/auth');
+        navigate('/blog-admin-access');
         return;
       }
       
@@ -57,15 +84,16 @@ const PostEditor = () => {
         return;
       }
 
-      if (isEditing && id) {
+      if (isEditing) {
         fetchPost();
-      } else {
-        setPageLoading(false);
       }
     }
   }, [user, profile, authLoading, isEditing, id, navigate]);
 
   const fetchPost = async () => {
+    if (!id) return;
+    
+    setPageLoading(true);
     try {
       const { data, error } = await supabase
         .from('blogs')
@@ -75,20 +103,20 @@ const PostEditor = () => {
 
       if (error) throw error;
 
-      setForm({
-        title: data.title,
-        slug: data.slug,
-        excerpt: data.excerpt || '',
-        content: data.content,
-        featured_image: data.featured_image,
-        published: data.published,
-      });
-
-      if (data.featured_image) {
-        const { data: urlData } = supabase.storage
-          .from('blog-images')
-          .getPublicUrl(data.featured_image);
-        setImagePreview(urlData.publicUrl);
+      if (data) {
+        form.reset({
+          title: data.title,
+          slug: data.slug,
+          excerpt: data.excerpt || '',
+          content: data.content || {},
+          featured_image: data.featured_image || '',
+          cover_alt: data.cover_alt || '',
+          tags: data.tags || [],
+          meta_title: data.meta_title || '',
+          meta_description: data.meta_description || '',
+          canonical_url: data.canonical_url || '',
+          status: data.status || 'DRAFT',
+        });
       }
     } catch (error) {
       console.error('Error fetching post:', error);
@@ -97,7 +125,6 @@ const PostEditor = () => {
         description: "Error al cargar la publicación.",
         variant: "destructive",
       });
-      navigate('/admin');
     } finally {
       setPageLoading(false);
     }
@@ -120,67 +147,40 @@ const PostEditor = () => {
   };
 
   const handleTitleChange = (title: string) => {
-    setForm(prev => ({
-      ...prev,
-      title,
-      slug: prev.slug || generateSlug(title),
-    }));
-  };
-
-  const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const file = e.target.files?.[0];
-    if (file) {
-      if (file.size > 5 * 1024 * 1024) {
-        toast({
-          title: "Error",
-          description: "La imagen no puede ser mayor a 5MB.",
-          variant: "destructive",
-        });
-        return;
-      }
-
-      setImageFile(file);
-      const reader = new FileReader();
-      reader.onload = () => {
-        setImagePreview(reader.result as string);
-      };
-      reader.readAsDataURL(file);
+    setValue('title', title);
+    if (!isEditing || !watchedSlug) {
+      setValue('slug', generateSlug(title));
     }
   };
 
-  const uploadImage = async (file: File): Promise<string> => {
-    const fileExt = file.name.split('.').pop();
-    const fileName = `${Date.now()}-${Math.random().toString(36).slice(2)}.${fileExt}`;
-
-    const { error: uploadError } = await supabase.storage
-      .from('blog-images')
-      .upload(fileName, file);
-
-    if (uploadError) throw uploadError;
-
-    return fileName;
+  const addTag = () => {
+    if (currentTag.trim() && !watchedTags.includes(currentTag.trim())) {
+      setValue('tags', [...watchedTags, currentTag.trim()]);
+      setCurrentTag('');
+    }
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
+  const removeTag = (tagToRemove: string) => {
+    setValue('tags', watchedTags.filter(tag => tag !== tagToRemove));
+  };
+
+  const onSubmit = async (data: PostForm) => {
     setLoading(true);
 
     try {
-      let featured_image = form.featured_image;
-
-      // Upload new image if selected
-      if (imageFile) {
-        featured_image = await uploadImage(imageFile);
-      }
-
       const postData: any = {
-        ...form,
-        featured_image,
-        author_id: user!.id,
+        ...data,
+        content: data.content,
       };
 
-      if (form.published && !isEditing) {
+      // Set published_at when publishing
+      if (data.status === 'PUBLISHED' && !isEditing) {
         postData.published_at = new Date().toISOString();
+      }
+
+      // Generate canonical URL if not provided
+      if (!data.canonical_url) {
+        postData.canonical_url = `${window.location.origin}/blog/${data.slug}`;
       }
 
       if (isEditing) {
@@ -216,9 +216,23 @@ const PostEditor = () => {
     }
   };
 
+  const saveDraft = () => {
+    setValue('status', 'DRAFT');
+    handleSubmit(onSubmit)();
+  };
+
+  const publish = () => {
+    setValue('status', 'PUBLISHED');
+    handleSubmit(onSubmit)();
+  };
+
   if (authLoading || pageLoading) {
     return (
       <div className="min-h-screen bg-background p-8">
+        <SEOMetaTags
+          title="Editor de Posts"
+          noIndex={true}
+        />
         <div className="max-w-4xl mx-auto">
           <Skeleton className="h-8 w-64 mb-8" />
           <div className="space-y-6">
@@ -234,6 +248,11 @@ const PostEditor = () => {
 
   return (
     <div className="min-h-screen bg-background p-8">
+      <SEOMetaTags
+        title={isEditing ? 'Editar Post' : 'Nuevo Post'}
+        noIndex={true}
+      />
+      
       <div className="max-w-4xl mx-auto">
         <div className="flex items-center gap-4 mb-8">
           <Button variant="ghost" onClick={() => navigate('/admin')}>
@@ -245,34 +264,39 @@ const PostEditor = () => {
           </h1>
         </div>
 
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit(onSubmit)}>
+          {/* Información Básica */}
           <Card className="mb-8">
             <CardHeader>
               <CardTitle>Información Básica</CardTitle>
             </CardHeader>
             <CardContent className="space-y-6">
               <div>
-                <Label htmlFor="title">Título</Label>
+                <Label htmlFor="title">Título *</Label>
                 <Input
                   id="title"
-                  value={form.title}
+                  value={watchedTitle}
                   onChange={(e) => handleTitleChange(e.target.value)}
                   placeholder="Título de la publicación"
-                  required
                 />
+                {errors.title && (
+                  <p className="text-sm text-destructive mt-1">{errors.title.message}</p>
+                )}
               </div>
 
               <div>
-                <Label htmlFor="slug">URL (slug)</Label>
+                <Label htmlFor="slug">URL (slug) *</Label>
                 <Input
                   id="slug"
-                  value={form.slug}
-                  onChange={(e) => setForm({ ...form, slug: e.target.value })}
+                  value={watchedSlug}
+                  onChange={(e) => setValue('slug', e.target.value)}
                   placeholder="url-de-la-publicacion"
-                  required
                 />
+                {errors.slug && (
+                  <p className="text-sm text-destructive mt-1">{errors.slug.message}</p>
+                )}
                 <p className="text-sm text-muted-foreground mt-1">
-                  Esta será la URL de tu artículo: /blog/{form.slug}
+                  Esta será la URL de tu artículo: /blog/{watchedSlug}
                 </p>
               </div>
 
@@ -280,95 +304,145 @@ const PostEditor = () => {
                 <Label htmlFor="excerpt">Extracto</Label>
                 <Textarea
                   id="excerpt"
-                  value={form.excerpt}
-                  onChange={(e) => setForm({ ...form, excerpt: e.target.value })}
+                  {...form.register('excerpt')}
                   placeholder="Un breve resumen de la publicación..."
                   rows={3}
                 />
+                {errors.excerpt && (
+                  <p className="text-sm text-destructive mt-1">{errors.excerpt.message}</p>
+                )}
               </div>
 
               <div>
-                <Label htmlFor="image">Imagen destacada</Label>
-                <div className="mt-2">
-                  {imagePreview ? (
-                    <div className="relative inline-block">
-                      <img
-                        src={imagePreview}
-                        alt="Preview"
-                        className="max-w-md h-48 object-cover rounded-lg"
-                      />
-                      <Button
-                        type="button"
-                        variant="destructive"
-                        size="sm"
-                        className="absolute top-2 right-2"
-                        onClick={() => {
-                          setImagePreview(null);
-                          setImageFile(null);
-                          setForm({ ...form, featured_image: null });
-                        }}
-                      >
-                        <X className="h-4 w-4" />
-                      </Button>
-                    </div>
-                  ) : (
-                    <div className="border-2 border-dashed border-muted-foreground/25 rounded-lg p-8 text-center">
-                      <Upload className="mx-auto h-12 w-12 text-muted-foreground/50 mb-4" />
-                      <Label htmlFor="image-upload" className="cursor-pointer">
-                        <span className="text-primary hover:text-primary/80">
-                          Haz clic para subir una imagen
-                        </span>
-                      </Label>
-                      <p className="text-sm text-muted-foreground mt-2">
-                        PNG, JPG, GIF hasta 5MB
-                      </p>
-                    </div>
-                  )}
+                <Label>Tags</Label>
+                <div className="flex gap-2 mb-2">
                   <Input
-                    id="image-upload"
-                    type="file"
-                    accept="image/*"
-                    onChange={handleImageChange}
-                    className="hidden"
+                    value={currentTag}
+                    onChange={(e) => setCurrentTag(e.target.value)}
+                    placeholder="Agregar tag"
+                    onKeyPress={(e) => e.key === 'Enter' && (e.preventDefault(), addTag())}
                   />
+                  <Button type="button" onClick={addTag} size="sm">
+                    <Plus className="h-4 w-4" />
+                  </Button>
                 </div>
-              </div>
-
-              <div className="flex items-center space-x-2">
-                <Switch
-                  id="published"
-                  checked={form.published}
-                  onCheckedChange={(checked) => setForm({ ...form, published: checked })}
-                />
-                <Label htmlFor="published">Publicar inmediatamente</Label>
+                <div className="flex flex-wrap gap-2">
+                  {watchedTags.map((tag) => (
+                    <Badge key={tag} variant="secondary" className="flex items-center gap-1">
+                      {tag}
+                      <button
+                        type="button"
+                        onClick={() => removeTag(tag)}
+                        className="ml-1 hover:text-destructive"
+                      >
+                        <X className="h-3 w-3" />
+                      </button>
+                    </Badge>
+                  ))}
+                </div>
               </div>
             </CardContent>
           </Card>
 
+          {/* Imagen destacada */}
+          <Card className="mb-8">
+            <CardHeader>
+              <CardTitle>Imagen Destacada</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <ImageUpload
+                value={watch('featured_image')}
+                alt={watch('cover_alt')}
+                onImageChange={(url) => setValue('featured_image', url)}
+                onAltChange={(alt) => setValue('cover_alt', alt)}
+              />
+            </CardContent>
+          </Card>
+
+          {/* Contenido */}
           <Card className="mb-8">
             <CardHeader>
               <CardTitle>Contenido</CardTitle>
             </CardHeader>
             <CardContent>
-              <Textarea
-                value={form.content}
-                onChange={(e) => setForm({ ...form, content: e.target.value })}
-                placeholder="Escribe el contenido de tu publicación..."
-                rows={20}
-                className="resize-none"
-                required
+              <BlogEditor
+                content={watch('content')}
+                onChange={(content) => setValue('content', content)}
               />
             </CardContent>
           </Card>
 
+          {/* SEO */}
+          <Card className="mb-8">
+            <CardHeader>
+              <CardTitle>SEO y Metadatos</CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-6">
+              <div>
+                <Label htmlFor="meta_title">Meta Title</Label>
+                <Input
+                  id="meta_title"
+                  {...form.register('meta_title')}
+                  placeholder="Título SEO (si vacío, se usa el título del post)"
+                />
+                {errors.meta_title && (
+                  <p className="text-sm text-destructive mt-1">{errors.meta_title.message}</p>
+                )}
+              </div>
+
+              <div>
+                <Label htmlFor="meta_description">Meta Description</Label>
+                <Textarea
+                  id="meta_description"
+                  {...form.register('meta_description')}
+                  placeholder="Descripción SEO (si vacía, se usa el extracto)"
+                  rows={3}
+                />
+                {errors.meta_description && (
+                  <p className="text-sm text-destructive mt-1">{errors.meta_description.message}</p>
+                )}
+              </div>
+
+              <div>
+                <Label htmlFor="canonical_url">URL Canónica</Label>
+                <Input
+                  id="canonical_url"
+                  {...form.register('canonical_url')}
+                  placeholder="https://ejemplo.com/blog/slug (si vacía, se genera automáticamente)"
+                />
+                {errors.canonical_url && (
+                  <p className="text-sm text-destructive mt-1">{errors.canonical_url.message}</p>
+                )}
+              </div>
+            </CardContent>
+          </Card>
+
+          {/* Acciones */}
           <div className="flex items-center gap-4">
-            <Button type="submit" disabled={loading}>
+            <Button type="button" onClick={saveDraft} variant="outline" disabled={loading}>
               {loading && <Save className="mr-2 h-4 w-4 animate-spin" />}
-              {isEditing ? 'Actualizar Publicación' : 'Crear Publicación'}
+              Guardar Borrador
             </Button>
-            <Button type="button" variant="outline" onClick={() => navigate('/admin')}>
+            
+            <Button type="button" onClick={publish} disabled={loading}>
+              {loading && <Save className="mr-2 h-4 w-4 animate-spin" />}
+              {isEditing ? 'Actualizar y Publicar' : 'Publicar'}
+            </Button>
+
+            <Button type="button" variant="ghost" onClick={() => navigate('/admin')}>
               Cancelar
             </Button>
+
+            {watch('slug') && (
+              <Button 
+                type="button" 
+                variant="outline" 
+                onClick={() => window.open(`/blog/${watch('slug')}?preview=true`, '_blank')}
+              >
+                <Eye className="mr-2 h-4 w-4" />
+                Previsualizar
+              </Button>
+            )}
           </div>
         </form>
       </div>

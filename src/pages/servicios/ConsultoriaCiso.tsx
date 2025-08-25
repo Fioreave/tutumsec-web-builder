@@ -1,13 +1,16 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import Navbar from '@/components/Navbar';
+import LanguageTest from '@/components/LanguageTest';
 import Footer from '@/components/Footer';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { CheckCircle, Users, TrendingUp, Shield, Zap } from 'lucide-react';
+import { useTranslation } from '@/hooks/useTranslation';
 
 const ConsultoriaCiso = () => {
+  const { t } = useTranslation();
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "Service",
@@ -44,14 +47,17 @@ const ConsultoriaCiso = () => {
             { label: 'Consultoría CISO' }
           ]} />
 
+          
+          <LanguageTest />
+
           {/* BLOQUE 1 · HERO */}
           <section className="py-12">
             <div className="max-w-4xl mx-auto text-center">
               <h1 className="text-4xl lg:text-5xl font-bold text-foreground mb-6">
-                Consultoría CISO estratégica que impulsa tu ciberseguridad
+                {t('cisoConsultancyTitle')}
               </h1>
               <h2 className="text-xl lg:text-2xl text-muted-foreground mb-8">
-                Convertimos el riesgo en ventaja competitiva con un Servicio vCISO que reduce riesgos y garantiza normativas para PYMEs con alta exigencia digital de Barcelona, Girona, Andorra y resto de España.
+                {t('cisoConsultancySubtitle')}
               </h2>
               
               <div className="grid md:grid-cols-3 gap-6 mb-8">
@@ -75,10 +81,10 @@ const ConsultoriaCiso = () => {
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button size="lg" className="px-8">
-                  Reserva sesión gratis 15 min
+                  {t('bookFreeConsultation')}
                 </Button>
                 <Button variant="outline" size="lg" className="px-8">
-                  Descarga el « guía "7 pasos plan CISO" »
+                  {t('downloadGuide')}
                 </Button>
               </div>
             </div>

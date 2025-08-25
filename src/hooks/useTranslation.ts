@@ -304,12 +304,20 @@ const detectBrowserLanguage = (): Language => {
 };
 
 export const useTranslation = () => {
-  const [currentLanguage, setCurrentLanguage] = useState<Language>('es');
+  const [currentLanguage, setCurrentLanguage] = useState<Language>(() => {
+    // Try to get saved language from localStorage first
+    const savedLanguage = localStorage.getItem('tutumsec_language');
+    if (savedLanguage && ['es', 'ca', 'en', 'fr'].includes(savedLanguage)) {
+      return savedLanguage as Language;
+    }
+    // Otherwise, detect from browser
+    return detectBrowserLanguage();
+  });
 
   useEffect(() => {
-    const detectedLanguage = detectBrowserLanguage();
-    setCurrentLanguage(detectedLanguage);
-  }, []);
+    // Save language preference to localStorage whenever it changes
+    localStorage.setItem('tutumsec_language', currentLanguage);
+  }, [currentLanguage]);
 
   const t = (key: string): string => {
     return translations[key]?.[currentLanguage] || key;

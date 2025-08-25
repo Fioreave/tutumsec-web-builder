@@ -13,6 +13,9 @@ import Admin from "./pages/Admin";
 import PostEditor from "./pages/PostEditor";
 import Contacto from "./pages/Contacto";
 import ReservaConsultoria from "./pages/ReservaConsultoria";
+import ForgotPassword from "./pages/ForgotPassword";
+import ResetPassword from "./pages/ResetPassword";
+import SetupAdmin from "./pages/SetupAdmin";
 
 // Servicios
 import Servicios from "./pages/servicios/Servicios";
@@ -58,6 +61,9 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/blog-admin-access" element={<Auth />} />
+          <Route path="/forgot-password" element={<ForgotPassword />} />
+          <Route path="/reset-password" element={<ResetPassword />} />
+          <Route path="/setup-admin" element={<SetupAdmin />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/blog/:slug" element={<BlogPost />} />
           <Route path="/admin" element={<Admin />} />

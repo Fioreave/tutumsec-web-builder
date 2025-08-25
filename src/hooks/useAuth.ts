@@ -133,6 +133,52 @@ export function useAuth() {
     }
   };
 
+  const resetPassword = async (email: string) => {
+    try {
+      const { error } = await supabase.auth.resetPasswordForEmail(email, {
+        redirectTo: `${window.location.origin}/reset-password`,
+      });
+      
+      if (error) throw error;
+
+      toast({
+        title: "Enlace enviado",
+        description: "Se ha enviado un enlace de restablecimiento a tu correo electrónico.",
+      });
+
+      return { error: null };
+    } catch (error: any) {
+      toast({
+        title: "Error al enviar enlace",
+        description: error.message,
+        variant: "destructive",
+      });
+      return { error };
+    }
+  };
+
+  const updatePassword = async (password: string) => {
+    try {
+      const { error } = await supabase.auth.updateUser({ password });
+      
+      if (error) throw error;
+
+      toast({
+        title: "Contraseña actualizada",
+        description: "Tu contraseña ha sido actualizada correctamente.",
+      });
+
+      return { error: null };
+    } catch (error: any) {
+      toast({
+        title: "Error al actualizar contraseña",
+        description: error.message,
+        variant: "destructive",
+      });
+      return { error };
+    }
+  };
+
   const isEditor = profile?.role === 'editor' || profile?.role === 'admin';
   const isAdmin = profile?.role === 'admin';
 
@@ -144,6 +190,8 @@ export function useAuth() {
     signUp,
     signIn,
     signOut,
+    resetPassword,
+    updatePassword,
     isEditor,
     isAdmin,
   };

@@ -76,7 +76,8 @@ const App = () => (
           
           {/* Retainer */}
           <Route path="/es/retainer" element={<Retainer />} />
-          <Route path="/es/retainer/formacion-concienciacion" element={<FormacionConcienciacion />} />
+          <Route path="/es/servicios/formacion-concienciacion" element={<FormacionConcienciacion />} />
+          <Route path="/es/servicios/oficina-seguridad-informacion-nis2" element={lazy(() => import('./pages/servicios/OficinaSeguridad'))} />
           <Route path="/es/retainer/prevencion-recuperacion-backup" element={<PrevencionRecuperacion />} />
           
           {/* Industrias */}

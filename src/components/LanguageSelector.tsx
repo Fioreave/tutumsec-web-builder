@@ -31,17 +31,19 @@ const LanguageSelector = () => {
           <span className="ml-1 text-xs">{currentLang?.code.toUpperCase()}</span>
         </Button>
       </DropdownMenuTrigger>
-      <DropdownMenuContent align="end" className="w-40 bg-white border shadow-lg">
-        {languages.map((language) => (
-          <DropdownMenuItem
-            key={language.code}
-            onClick={() => changeLanguage(language.code as any)}
-            className="cursor-pointer hover:bg-gray-50 px-3 py-2"
-          >
-            <span className="mr-2">{language.flag}</span>
-            {language.name}
-          </DropdownMenuItem>
-        ))}
+      <DropdownMenuContent align="end" className="w-40 bg-background border border-border shadow-lg z-50">
+        {languages
+          .filter(language => language.code !== currentLanguage)
+          .map((language) => (
+            <DropdownMenuItem
+              key={language.code}
+              onClick={() => changeLanguage(language.code as any)}
+              className="cursor-pointer hover:bg-accent px-3 py-2"
+            >
+              <span className="mr-2">{language.flag}</span>
+              {language.name}
+            </DropdownMenuItem>
+          ))}
       </DropdownMenuContent>
     </DropdownMenu>
   );

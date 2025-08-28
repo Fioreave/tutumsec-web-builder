@@ -22,7 +22,7 @@ import Servicios from "./pages/servicios/Servicios";
 import ConsultoriaCiso from "./pages/servicios/ConsultoriaCiso";
 import AuditoriaCompliance from "./pages/servicios/AuditoriaCompliance";
 import TransformacionDigital from "./pages/servicios/TransformacionDigital";
-import DeteccionSoc from "./pages/servicios/DeteccionSoc";
+import FormacionConcienciacionServicios from "./pages/servicios/FormacionConcienciacion";
 import RespuestaIncidente from "./pages/servicios/RespuestaIncidente";
 import OficinaSeguridad from "./pages/servicios/OficinaSeguridad";
 
@@ -79,12 +79,12 @@ const App = () => (
           <Route path="/es/servicios/consultoria-ciso" element={<ConsultoriaCiso />} />
           <Route path="/es/servicios/auditoria-compliance-nis2" element={<AuditoriaCompliance />} />
           <Route path="/es/servicios/transformacion-digital-estrategica" element={<TransformacionDigital />} />
-          <Route path="/es/servicios/deteccion-soc-mdr-xdr" element={<DeteccionSoc />} />
+          <Route path="/es/servicios/formacion-concienciacion" element={<FormacionConcienciacionServicios />} />
           <Route path="/es/servicios/respuesta-incidente" element={<RespuestaIncidente />} />
           
           {/* Retainer */}
           <Route path="/es/retainer" element={<Retainer />} />
-          <Route path="/es/servicios/formacion-concienciacion" element={<FormacionConcienciacion />} />
+          <Route path="/es/retainer/formacion-concienciacion" element={<FormacionConcienciacion />} />
           <Route path="/es/servicios/oficina-seguridad-informacion-nis2" element={<OficinaSeguridad />} />
           <Route path="/es/retainer/prevencion-recuperacion-backup" element={<PrevencionRecuperacion />} />
           

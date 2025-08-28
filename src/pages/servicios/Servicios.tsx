@@ -25,10 +25,10 @@ const Servicios = () => {
       icon: '🚀'
     },
     {
-      title: 'Detección SOC/MDR/XDR',
-      description: 'Detección de amenazas 24/7',
-      path: '/es/servicios/deteccion-soc-mdr-xdr',
-      icon: '🛡️'
+      title: 'Formación y Concienciación',
+      description: 'Programa de concienciación en ciberseguridad',
+      path: '/es/servicios/formacion-concienciacion',
+      icon: '🎓'
     },
     {
       title: 'Respuesta a Incidentes',

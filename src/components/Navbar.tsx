@@ -1,15 +1,26 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { Menu, X } from "lucide-react";
+import { Menu, X, ChevronDown, ChevronRight } from "lucide-react";
 import LanguageSelector from "./LanguageSelector";
 import AdminLink from "./AdminLink";
 import NavbarDropdown from "./NavbarDropdown";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [expandedSections, setExpandedSections] = useState<Record<string, boolean>>({});
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
+    if (!isMenuOpen) {
+      setExpandedSections({});
+    }
+  };
+
+  const toggleSection = (section: string) => {
+    setExpandedSections(prev => ({
+      ...prev,
+      [section]: !prev[section]
+    }));
   };
 
   // Configuración de menús dropdown
@@ -143,10 +154,17 @@ const Navbar = () => {
             
             {/* Servicios Dropdown */}
             <div className="space-y-1">
-              <div className="text-gray-700 font-semibold px-3 py-2 text-base">
+              <button
+                onClick={() => toggleSection('servicios')}
+                className="w-full flex items-center justify-between text-gray-700 font-semibold px-3 py-2 text-base hover:text-blue-600 transition-colors"
+              >
                 Servicios
-              </div>
-              {serviciosItems.map((item, index) => (
+                {expandedSections.servicios ? 
+                  <ChevronDown className="h-4 w-4" /> : 
+                  <ChevronRight className="h-4 w-4" />
+                }
+              </button>
+              {expandedSections.servicios && serviciosItems.map((item, index) => (
                 <Link
                   key={index}
                   to={item.path}
@@ -160,10 +178,17 @@ const Navbar = () => {
 
             {/* Retainer Dropdown */}
             <div className="space-y-1">
-              <div className="text-gray-700 font-semibold px-3 py-2 text-base">
+              <button
+                onClick={() => toggleSection('retainer')}
+                className="w-full flex items-center justify-between text-gray-700 font-semibold px-3 py-2 text-base hover:text-blue-600 transition-colors"
+              >
                 Retainer
-              </div>
-              {retainerItems.map((item, index) => (
+                {expandedSections.retainer ? 
+                  <ChevronDown className="h-4 w-4" /> : 
+                  <ChevronRight className="h-4 w-4" />
+                }
+              </button>
+              {expandedSections.retainer && retainerItems.map((item, index) => (
                 <Link
                   key={index}
                   to={item.path}
@@ -177,10 +202,17 @@ const Navbar = () => {
 
             {/* Industrias Dropdown */}
             <div className="space-y-1">
-              <div className="text-gray-700 font-semibold px-3 py-2 text-base">
+              <button
+                onClick={() => toggleSection('industrias')}
+                className="w-full flex items-center justify-between text-gray-700 font-semibold px-3 py-2 text-base hover:text-blue-600 transition-colors"
+              >
                 Industrias
-              </div>
-              {industriasItems.map((item, index) => (
+                {expandedSections.industrias ? 
+                  <ChevronDown className="h-4 w-4" /> : 
+                  <ChevronRight className="h-4 w-4" />
+                }
+              </button>
+              {expandedSections.industrias && industriasItems.map((item, index) => (
                 <Link
                   key={index}
                   to={item.path}
@@ -194,10 +226,17 @@ const Navbar = () => {
 
             {/* Recursos Dropdown */}
             <div className="space-y-1">
-              <div className="text-gray-700 font-semibold px-3 py-2 text-base">
+              <button
+                onClick={() => toggleSection('recursos')}
+                className="w-full flex items-center justify-between text-gray-700 font-semibold px-3 py-2 text-base hover:text-blue-600 transition-colors"
+              >
                 Recursos
-              </div>
-              {recursosItems.map((item, index) => (
+                {expandedSections.recursos ? 
+                  <ChevronDown className="h-4 w-4" /> : 
+                  <ChevronRight className="h-4 w-4" />
+                }
+              </button>
+              {expandedSections.recursos && recursosItems.map((item, index) => (
                 <div key={index}>
                   {item.items ? (
                     <div className="space-y-1">
@@ -230,10 +269,17 @@ const Navbar = () => {
 
             {/* Sobre Nosotros Dropdown */}
             <div className="space-y-1">
-              <div className="text-gray-700 font-semibold px-3 py-2 text-base">
+              <button
+                onClick={() => toggleSection('sobreNosotros')}
+                className="w-full flex items-center justify-between text-gray-700 font-semibold px-3 py-2 text-base hover:text-blue-600 transition-colors"
+              >
                 Sobre Nosotros
-              </div>
-              {sobreNosotrosItems.map((item, index) => (
+                {expandedSections.sobreNosotros ? 
+                  <ChevronDown className="h-4 w-4" /> : 
+                  <ChevronRight className="h-4 w-4" />
+                }
+              </button>
+              {expandedSections.sobreNosotros && sobreNosotrosItems.map((item, index) => (
                 <Link
                   key={index}
                   to={item.path}

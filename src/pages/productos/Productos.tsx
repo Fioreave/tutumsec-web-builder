@@ -4,19 +4,25 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { Card, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 
-const Retainer = () => {
-  const servicios = [
+const Productos = () => {
+  const productos = [
     {
-      title: 'Formación y Concienciación',
-      description: 'Educación especializada y programas de awareness',
-      path: '/es/retainer/formacion-concienciacion',
-      icon: '📚'
+      title: 'Detección 24x7',
+      description: 'Monitorización y detección de amenazas las 24 horas',
+      path: '/es/productos/deteccion-24x7',
+      icon: '🔍'
+    },
+    {
+      title: 'Incidente Respuesta Retainer',
+      description: 'Respuesta a incidentes en menos de 15 minutos',
+      path: '/es/productos/incidente-respuesta-retainer',
+      icon: '🚨'
     },
     {
       title: 'Prevención y Recuperación Backup',
-      description: 'Soluciones completas de prevención y recuperación',
-      path: '/es/retainer/prevencion-recuperacion-backup',
-      icon: '💾'
+      description: 'Upsell - Prevención y recuperación integral',
+      path: '/es/productos/prevencion-recuperacion-backup',
+      icon: '🛡️'
     }
   ];
 
@@ -27,25 +33,25 @@ const Retainer = () => {
         <div className="container mx-auto px-4 py-12">
           <div className="text-center mb-12">
             <h1 className="text-4xl font-bold text-foreground mb-4">
-              Retainer - Bolsa de Horas
+              Nuestros Productos
             </h1>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Crédito prepago con SLA garantizado para servicios especializados
+              Productos especializados de ciberseguridad para la protección continua de tu organización
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {servicios.map((servicio, index) => (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {productos.map((producto, index) => (
               <Card key={index} className="hover:shadow-lg transition-shadow">
                 <CardHeader>
-                  <div className="text-4xl mb-4">{servicio.icon}</div>
+                  <div className="text-4xl mb-4">{producto.icon}</div>
                   <CardTitle className="text-xl mb-2">
-                    <Link to={servicio.path} className="hover:text-primary transition-colors">
-                      {servicio.title}
+                    <Link to={producto.path} className="hover:text-primary transition-colors">
+                      {producto.title}
                     </Link>
                   </CardTitle>
                   <CardDescription>
-                    {servicio.description}
+                    {producto.description}
                   </CardDescription>
                 </CardHeader>
               </Card>
@@ -58,4 +64,4 @@ const Retainer = () => {
   );
 };
 
-export default Retainer;
+export default Productos;

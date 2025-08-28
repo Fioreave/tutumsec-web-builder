@@ -25,7 +25,10 @@ const Navbar = () => {
 
   // Configuración de menús dropdown
   const serviciosItems = [
-    { title: "Consultoría CISO", path: "/es/servicios/consultoria-ciso" },
+    {
+      title: "Consultoría CISO",
+      path: "/es/servicios/consultoria-ciso",
+    },
     {
       title: "Auditoría & Compliance NIS2",
       path: "/es/servicios/auditoria-compliance-nis2",
@@ -35,23 +38,27 @@ const Navbar = () => {
       path: "/es/servicios/transformacion-digital-estrategica",
     },
     {
-      title: "Detección SOC/MDR/XDR",
-      path: "/es/servicios/deteccion-soc-mdr-xdr",
+      title: "Formación y Concienciación",
+      path: "/es/servicios/formacion-concienciacion",
     },
     {
-      title: "Respuesta a Incidentes",
-      path: "/es/servicios/respuesta-incidente",
+      title: "Oficina Seguridad Información",
+      path: "/es/servicios/oficina-seguridad-informacion-nis2",
     },
   ];
 
-  const retainerItems = [
+  const productosItems = [
     {
-      title: "Formación y Concienciación",
-      path: "/es/retainer/formacion-concienciacion",
+      title: "Detección 24x7",
+      path: "/es/productos/deteccion-24x7",
+    },
+    {
+      title: "Incidente Respuesta Retainer",
+      path: "/es/productos/incidente-respuesta-retainer",
     },
     {
       title: "Prevención y Recuperación Backup",
-      path: "/es/retainer/prevencion-recuperacion-backup",
+      path: "/es/productos/prevencion-recuperacion-backup",
     },
   ];
 
@@ -106,7 +113,7 @@ const Navbar = () => {
           <div className="hidden md:block">
             <div className="ml-10 flex items-baseline space-x-4 whitespace-nowrap">
               <NavbarDropdown title="Servicios" items={serviciosItems} />
-              <NavbarDropdown title="Retainer" items={retainerItems} />
+              <NavbarDropdown title="Productos" items={productosItems} />
               <NavbarDropdown title="Industrias" items={industriasItems} />
               <NavbarDropdown title="Recursos" items={recursosItems} />
               <NavbarDropdown
@@ -176,19 +183,19 @@ const Navbar = () => {
               ))}
             </div>
 
-            {/* Retainer Dropdown */}
+            {/* Productos Dropdown */}
             <div className="space-y-1">
               <button
-                onClick={() => toggleSection('retainer')}
+                onClick={() => toggleSection('productos')}
                 className="w-full flex items-center justify-between text-gray-700 font-semibold px-3 py-2 text-base hover:text-blue-600 transition-colors"
               >
-                Retainer
-                {expandedSections.retainer ? 
+                Productos
+                {expandedSections.productos ? 
                   <ChevronDown className="h-4 w-4" /> : 
                   <ChevronRight className="h-4 w-4" />
                 }
               </button>
-              {expandedSections.retainer && retainerItems.map((item, index) => (
+              {expandedSections.productos && productosItems.map((item, index) => (
                 <Link
                   key={index}
                   to={item.path}

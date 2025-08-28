@@ -26,10 +26,11 @@ import FormacionConcienciacionServicios from "./pages/servicios/FormacionConcien
 import RespuestaIncidente from "./pages/servicios/RespuestaIncidente";
 import OficinaSeguridad from "./pages/servicios/OficinaSeguridad";
 
-// Retainer
-import Retainer from "./pages/retainer/Retainer";
-import FormacionConcienciacion from "./pages/retainer/FormacionConcienciacion";
-import PrevencionRecuperacion from "./pages/retainer/PrevencionRecuperacion";
+// Productos
+import Productos from "./pages/productos/Productos";
+import Deteccion24x7 from "./pages/productos/Deteccion24x7";
+import IncidenteRespuestaRetainer from "./pages/productos/IncidenteRespuestaRetainer";
+import PrevencionRecuperacionBackup from "./pages/productos/PrevencionRecuperacionBackup";
 
 // Industrias
 import Industrias from "./pages/industrias/Industrias";
@@ -80,13 +81,13 @@ const App = () => (
           <Route path="/es/servicios/auditoria-compliance-nis2" element={<AuditoriaCompliance />} />
           <Route path="/es/servicios/transformacion-digital-estrategica" element={<TransformacionDigital />} />
           <Route path="/es/servicios/formacion-concienciacion" element={<FormacionConcienciacionServicios />} />
-          <Route path="/es/servicios/respuesta-incidente" element={<RespuestaIncidente />} />
-          
-          {/* Retainer */}
-          <Route path="/es/retainer" element={<Retainer />} />
-          <Route path="/es/retainer/formacion-concienciacion" element={<FormacionConcienciacion />} />
           <Route path="/es/servicios/oficina-seguridad-informacion-nis2" element={<OficinaSeguridad />} />
-          <Route path="/es/retainer/prevencion-recuperacion-backup" element={<PrevencionRecuperacion />} />
+          
+          {/* Productos */}
+          <Route path="/es/productos" element={<Productos />} />
+          <Route path="/es/productos/deteccion-24x7" element={<Deteccion24x7 />} />
+          <Route path="/es/productos/incidente-respuesta-retainer" element={<IncidenteRespuestaRetainer />} />
+          <Route path="/es/productos/prevencion-recuperacion-backup" element={<PrevencionRecuperacionBackup />} />
           
           {/* Industrias */}
           <Route path="/es/industrias" element={<Industrias />} />

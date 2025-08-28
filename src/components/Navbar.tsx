@@ -140,41 +140,111 @@ const Navbar = () => {
       {isMenuOpen && (
         <div className="md:hidden">
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white shadow-lg">
-            <Link
-              to="/es/servicios"
-              className="text-gray-700 hover:text-blue-600 block px-3 py-2 text-base font-medium transition-colors"
-              onClick={toggleMenu}
-            >
-              Servicios
-            </Link>
-            <Link
-              to="/es/retainer"
-              className="text-gray-700 hover:text-blue-600 block px-3 py-2 text-base font-medium transition-colors"
-              onClick={toggleMenu}
-            >
-              Retainer
-            </Link>
-            <Link
-              to="/es/industrias"
-              className="text-gray-700 hover:text-blue-600 block px-3 py-2 text-base font-medium transition-colors"
-              onClick={toggleMenu}
-            >
-              Industrias
-            </Link>
-            <Link
-              to="/es/recursos"
-              className="text-gray-700 hover:text-blue-600 block px-3 py-2 text-base font-medium transition-colors"
-              onClick={toggleMenu}
-            >
-              Recursos
-            </Link>
-            <Link
-              to="/es/sobre-nosotros"
-              className="text-gray-700 hover:text-blue-600 block px-3 py-2 text-base font-medium transition-colors"
-              onClick={toggleMenu}
-            >
-              Sobre Nosotros
-            </Link>
+            
+            {/* Servicios Dropdown */}
+            <div className="space-y-1">
+              <div className="text-gray-700 font-semibold px-3 py-2 text-base">
+                Servicios
+              </div>
+              {serviciosItems.map((item, index) => (
+                <Link
+                  key={index}
+                  to={item.path}
+                  className="text-gray-600 hover:text-blue-600 block px-6 py-2 text-sm transition-colors"
+                  onClick={toggleMenu}
+                >
+                  {item.title}
+                </Link>
+              ))}
+            </div>
+
+            {/* Retainer Dropdown */}
+            <div className="space-y-1">
+              <div className="text-gray-700 font-semibold px-3 py-2 text-base">
+                Retainer
+              </div>
+              {retainerItems.map((item, index) => (
+                <Link
+                  key={index}
+                  to={item.path}
+                  className="text-gray-600 hover:text-blue-600 block px-6 py-2 text-sm transition-colors"
+                  onClick={toggleMenu}
+                >
+                  {item.title}
+                </Link>
+              ))}
+            </div>
+
+            {/* Industrias Dropdown */}
+            <div className="space-y-1">
+              <div className="text-gray-700 font-semibold px-3 py-2 text-base">
+                Industrias
+              </div>
+              {industriasItems.map((item, index) => (
+                <Link
+                  key={index}
+                  to={item.path}
+                  className="text-gray-600 hover:text-blue-600 block px-6 py-2 text-sm transition-colors"
+                  onClick={toggleMenu}
+                >
+                  {item.title}
+                </Link>
+              ))}
+            </div>
+
+            {/* Recursos Dropdown */}
+            <div className="space-y-1">
+              <div className="text-gray-700 font-semibold px-3 py-2 text-base">
+                Recursos
+              </div>
+              {recursosItems.map((item, index) => (
+                <div key={index}>
+                  {item.items ? (
+                    <div className="space-y-1">
+                      <div className="text-gray-600 font-medium px-6 py-1 text-sm">
+                        {item.title}
+                      </div>
+                      {item.items.map((subItem, subIndex) => (
+                        <Link
+                          key={subIndex}
+                          to={subItem.path}
+                          className="text-gray-500 hover:text-blue-600 block px-8 py-1 text-sm transition-colors"
+                          onClick={toggleMenu}
+                        >
+                          {subItem.title}
+                        </Link>
+                      ))}
+                    </div>
+                  ) : (
+                    <Link
+                      to={item.path || '#'}
+                      className="text-gray-600 hover:text-blue-600 block px-6 py-2 text-sm transition-colors"
+                      onClick={toggleMenu}
+                    >
+                      {item.title}
+                    </Link>
+                  )}
+                </div>
+              ))}
+            </div>
+
+            {/* Sobre Nosotros Dropdown */}
+            <div className="space-y-1">
+              <div className="text-gray-700 font-semibold px-3 py-2 text-base">
+                Sobre Nosotros
+              </div>
+              {sobreNosotrosItems.map((item, index) => (
+                <Link
+                  key={index}
+                  to={item.path}
+                  className="text-gray-600 hover:text-blue-600 block px-6 py-2 text-sm transition-colors"
+                  onClick={toggleMenu}
+                >
+                  {item.title}
+                </Link>
+              ))}
+            </div>
+
             <Link
               to="/es/contacto"
               className="text-gray-700 hover:text-blue-600 block px-3 py-2 text-base font-medium transition-colors"

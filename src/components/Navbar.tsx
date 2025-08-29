@@ -71,16 +71,7 @@ const Navbar = () => {
   ];
 
   const recursosItems = [
-    {
-      title: "Blog",
-      items: [
-        { title: "Gobernanza", path: "/blog?categoria=gobernanza" },
-        { title: "Compliance", path: "/blog?categoria=compliance" },
-        { title: "Ransomware", path: "/blog?categoria=ransomware" },
-        { title: "OT/ICS", path: "/blog?categoria=ot-ics" },
-        { title: "Zero Trust", path: "/blog?categoria=zero-trust" },
-      ],
-    },
+    { title: "Blog", path: "/es/blog" },
     { title: "Whitepapers", path: "/es/recursos/whitepapers" },
     { title: "Casos de Éxito", path: "/es/recursos/casos-exito" },
   ];
@@ -244,33 +235,14 @@ const Navbar = () => {
                 }
               </button>
               {expandedSections.recursos && recursosItems.map((item, index) => (
-                <div key={index}>
-                  {item.items ? (
-                    <div className="space-y-1">
-                      <div className="text-gray-600 font-medium px-6 py-1 text-sm">
-                        {item.title}
-                      </div>
-                      {item.items.map((subItem, subIndex) => (
-                        <Link
-                          key={subIndex}
-                          to={subItem.path}
-                          className="text-gray-500 hover:text-blue-600 block px-8 py-1 text-sm transition-colors"
-                          onClick={toggleMenu}
-                        >
-                          {subItem.title}
-                        </Link>
-                      ))}
-                    </div>
-                  ) : (
-                    <Link
-                      to={item.path || '#'}
-                      className="text-gray-600 hover:text-blue-600 block px-6 py-2 text-sm transition-colors"
-                      onClick={toggleMenu}
-                    >
-                      {item.title}
-                    </Link>
-                  )}
-                </div>
+                <Link
+                  key={index}
+                  to={item.path}
+                  className="text-gray-600 hover:text-blue-600 block px-6 py-2 text-sm transition-colors"
+                  onClick={toggleMenu}
+                >
+                  {item.title}
+                </Link>
               ))}
             </div>
 

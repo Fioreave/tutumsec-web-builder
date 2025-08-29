@@ -9,6 +9,7 @@ import NotFound from "./pages/NotFound";
 import Auth from "./pages/Auth";
 import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
+import WordPressBlog from "./pages/WordPressBlog";
 import Admin from "./pages/Admin";
 import PostEditor from "./pages/PostEditor";
 import Contacto from "./pages/Contacto";
@@ -65,8 +66,9 @@ const App = () => (
           <Route path="/forgot-password" element={<ForgotPassword />} />
           <Route path="/reset-password" element={<ResetPassword />} />
           <Route path="/setup-admin" element={<SetupAdmin />} />
-          <Route path="/blog" element={<Blog />} />
+          <Route path="/blog" element={<WordPressBlog />} />
           <Route path="/blog/:slug" element={<BlogPost />} />
+          <Route path="/es/blog" element={<WordPressBlog />} />
           <Route path="/admin" element={<Admin />} />
           <Route path="/admin/posts/new" element={<PostEditor />} />
           <Route path="/admin/posts/:id/edit" element={<PostEditor />} />

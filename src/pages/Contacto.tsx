@@ -11,52 +11,79 @@ const Contacto = () => {
   return (
     <>
       <Navbar />
-      <main className="min-h-screen bg-background pt-20">
-        <div className="container mx-auto px-4 py-12">
-          <div className="text-center mb-12">
-            <h1 className="text-4xl font-bold text-foreground mb-4">
-              Contacto
-            </h1>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Ponte en contacto con nosotros para discutir tus necesidades de ciberseguridad
-            </p>
+      <main className="min-h-screen bg-tutumsec-gray-50 pt-20">
+        {/* Hero Section */}
+        <section className="bg-gradient-to-r from-primary to-primary-dark text-white py-16">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center">
+              <h1 className="text-4xl md:text-5xl font-bold mb-4 animate-fade-in">
+                Contacto
+              </h1>
+              <p className="text-xl md:text-2xl text-primary-light max-w-3xl mx-auto animate-slide-up">
+                Ponte en contacto con nosotros para discutir tus necesidades de ciberseguridad
+              </p>
+            </div>
           </div>
+        </section>
 
+        <div className="container mx-auto px-4 py-16">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* Formulario */}
-            <Card>
-              <CardHeader>
-                <CardTitle>Envíanos un mensaje</CardTitle>
+            <Card className="shadow-lg border-0 bg-card animate-fade-in">
+              <CardHeader className="bg-gradient-to-r from-primary-light/10 to-primary/10 border-b border-primary/20">
+                <CardTitle className="text-2xl text-primary">Envíanos un mensaje</CardTitle>
+                <p className="text-muted-foreground">Te responderemos en menos de 24 horas</p>
               </CardHeader>
-              <CardContent>
-                <form className="space-y-4">
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div>
-                      <Label htmlFor="nombre">Nombre</Label>
-                      <Input id="nombre" placeholder="Tu nombre" />
+              <CardContent className="p-8">
+                <form className="space-y-6">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div className="space-y-2">
+                      <Label htmlFor="nombre" className="text-sm font-medium text-foreground">Nombre</Label>
+                      <Input 
+                        id="nombre" 
+                        placeholder="Tu nombre" 
+                        className="border-primary/20 focus:border-primary focus:ring-primary/20"
+                      />
                     </div>
-                    <div>
-                      <Label htmlFor="apellidos">Apellidos</Label>
-                      <Input id="apellidos" placeholder="Tus apellidos" />
+                    <div className="space-y-2">
+                      <Label htmlFor="apellidos" className="text-sm font-medium text-foreground">Apellidos</Label>
+                      <Input 
+                        id="apellidos" 
+                        placeholder="Tus apellidos"
+                        className="border-primary/20 focus:border-primary focus:ring-primary/20"
+                      />
                     </div>
                   </div>
-                  <div>
-                    <Label htmlFor="email">Email</Label>
-                    <Input id="email" type="email" placeholder="tu@email.com" />
+                  <div className="space-y-2">
+                    <Label htmlFor="email" className="text-sm font-medium text-foreground">Email</Label>
+                    <Input 
+                      id="email" 
+                      type="email" 
+                      placeholder="tu@email.com"
+                      className="border-primary/20 focus:border-primary focus:ring-primary/20"
+                    />
                   </div>
-                  <div>
-                    <Label htmlFor="empresa">Empresa</Label>
-                    <Input id="empresa" placeholder="Tu empresa" />
+                  <div className="space-y-2">
+                    <Label htmlFor="empresa" className="text-sm font-medium text-foreground">Empresa</Label>
+                    <Input 
+                      id="empresa" 
+                      placeholder="Tu empresa"
+                      className="border-primary/20 focus:border-primary focus:ring-primary/20"
+                    />
                   </div>
-                  <div>
-                    <Label htmlFor="mensaje">Mensaje</Label>
+                  <div className="space-y-2">
+                    <Label htmlFor="mensaje" className="text-sm font-medium text-foreground">Mensaje</Label>
                     <Textarea 
                       id="mensaje" 
                       placeholder="Cuéntanos sobre tu proyecto..."
                       rows={5}
+                      className="border-primary/20 focus:border-primary focus:ring-primary/20"
                     />
                   </div>
-                  <Button type="submit" className="w-full">
+                  <Button 
+                    type="submit" 
+                    className="w-full bg-primary hover:bg-primary-dark text-white py-3 text-lg font-medium shadow-lg hover:shadow-xl transition-all duration-300"
+                  >
                     Enviar mensaje
                   </Button>
                 </form>
@@ -64,34 +91,101 @@ const Contacto = () => {
             </Card>
 
             {/* Información de contacto */}
-            <div className="space-y-8">
-              <Card>
-                <CardHeader>
-                  <CardTitle>Madrid</CardTitle>
+            <div className="space-y-8 animate-slide-up">
+              <Card className="shadow-lg border-0 bg-card hover:shadow-xl transition-shadow duration-300">
+                <CardHeader className="bg-gradient-to-r from-primary-light/10 to-primary/10 border-b border-primary/20">
+                  <CardTitle className="text-xl text-primary flex items-center gap-2">
+                    <span className="text-2xl">🏢</span>
+                    Barcelona
+                  </CardTitle>
                 </CardHeader>
-                <CardContent>
-                  <div className="space-y-2">
-                    <p>📍 Calle Ejemplo, 123</p>
-                    <p>28001 Madrid, España</p>
-                    <p>📞 +34 900 123 456</p>
-                    <p>✉️ madrid@tutorsec.com</p>
+                <CardContent className="p-6">
+                  <div className="space-y-3">
+                    <p className="flex items-center gap-3 text-foreground">
+                      <span className="text-primary">📍</span>
+                      Carrer de Provença, 385, 08025 Barcelona
+                    </p>
+                    <p className="flex items-center gap-3 text-foreground">
+                      <span className="text-primary">📞</span>
+                      +34 933 123 456
+                    </p>
+                    <p className="flex items-center gap-3 text-foreground">
+                      <span className="text-primary">✉️</span>
+                      barcelona@tutumsec.io
+                    </p>
                   </div>
                 </CardContent>
               </Card>
 
-              <Card>
-                <CardHeader>
-                  <CardTitle>Barcelona</CardTitle>
+              <Card className="shadow-lg border-0 bg-card hover:shadow-xl transition-shadow duration-300">
+                <CardHeader className="bg-gradient-to-r from-primary-light/10 to-primary/10 border-b border-primary/20">
+                  <CardTitle className="text-xl text-primary flex items-center gap-2">
+                    <span className="text-2xl">🏢</span>
+                    Girona
+                  </CardTitle>
                 </CardHeader>
-                <CardContent>
-                  <div className="space-y-2">
-                    <p>📍 Carrer Exemple, 456</p>
-                    <p>08001 Barcelona, España</p>
-                    <p>📞 +34 900 123 457</p>
-                    <p>✉️ barcelona@tutorsec.com</p>
+                <CardContent className="p-6">
+                  <div className="space-y-3">
+                    <p className="flex items-center gap-3 text-foreground">
+                      <span className="text-primary">📍</span>
+                      Carrer de la Força, 15, 17004 Girona
+                    </p>
+                    <p className="flex items-center gap-3 text-foreground">
+                      <span className="text-primary">📞</span>
+                      +34 972 234 567
+                    </p>
+                    <p className="flex items-center gap-3 text-foreground">
+                      <span className="text-primary">✉️</span>
+                      girona@tutumsec.io
+                    </p>
                   </div>
                 </CardContent>
               </Card>
+
+              <Card className="shadow-lg border-0 bg-card hover:shadow-xl transition-shadow duration-300">
+                <CardHeader className="bg-gradient-to-r from-primary-light/10 to-primary/10 border-b border-primary/20">
+                  <CardTitle className="text-xl text-primary flex items-center gap-2">
+                    <span className="text-2xl">🏔️</span>
+                    Andorra
+                  </CardTitle>
+                </CardHeader>
+                <CardContent className="p-6">
+                  <div className="space-y-3">
+                    <p className="flex items-center gap-3 text-foreground">
+                      <span className="text-primary">📍</span>
+                      Av. Carlemany, 77, AD700 Escaldes-Engordany
+                    </p>
+                    <p className="flex items-center gap-3 text-foreground">
+                      <span className="text-primary">📞</span>
+                      +376 890 123
+                    </p>
+                    <p className="flex items-center gap-3 text-foreground">
+                      <span className="text-primary">✉️</span>
+                      andorra@tutumsec.io
+                    </p>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+
+          {/* CTA Section */}
+          <div className="mt-16 text-center">
+            <div className="bg-gradient-to-r from-primary-light/10 to-primary/10 rounded-2xl p-8 border border-primary/20">
+              <h3 className="text-2xl font-bold text-primary mb-4">
+                ¿Necesitas una consulta urgente?
+              </h3>
+              <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
+                Reserva una consultoría gratuita de 15 minutos con nuestros expertos en ciberseguridad
+              </p>
+              <Button 
+                className="bg-primary hover:bg-primary-dark text-white px-8 py-3 text-lg font-medium shadow-lg hover:shadow-xl transition-all duration-300"
+                asChild
+              >
+                <a href="/es/reserva-consultoria">
+                  Reservar consultoría gratuita
+                </a>
+              </Button>
             </div>
           </div>
         </div>

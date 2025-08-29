@@ -127,7 +127,7 @@ const WordPressBlog = () => {
   );
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-tutumsec-gray-50">
       <SEOMetaTags
         title="Blog de Ciberseguridad | TutumSec"
         description="Artículos especializados sobre ciberseguridad, compliance NIS2, ransomware y transformación digital. Insights y mejores prácticas de nuestros expertos."
@@ -139,13 +139,13 @@ const WordPressBlog = () => {
       
       <main className="pt-16">
         {/* Hero Section */}
-        <section className="bg-gradient-to-r from-blue-600 to-blue-800 text-white py-16">
+        <section className="bg-gradient-to-r from-primary to-primary-dark text-white py-16">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center">
-              <h1 className="text-4xl md:text-5xl font-bold mb-4">
+              <h1 className="text-4xl md:text-5xl font-bold mb-4 animate-fade-in">
                 Blog de Ciberseguridad
               </h1>
-              <p className="text-xl md:text-2xl text-blue-100 max-w-3xl mx-auto">
+              <p className="text-xl md:text-2xl text-primary-light max-w-3xl mx-auto animate-slide-up">
                 Insights, análisis y mejores prácticas en ciberseguridad empresarial
               </p>
             </div>
@@ -156,14 +156,14 @@ const WordPressBlog = () => {
         <section className="py-16">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             {error && (
-              <div className="bg-red-50 border border-red-200 text-red-600 px-4 py-3 rounded-md mb-8">
+              <div className="bg-destructive/10 border border-destructive/20 text-destructive px-6 py-4 rounded-lg mb-8">
                 <p className="font-medium">Error al cargar el blog:</p>
                 <p className="text-sm">{error}</p>
                 <Button 
                   onClick={() => fetchPosts(1)} 
                   variant="outline" 
                   size="sm" 
-                  className="mt-2"
+                  className="mt-3 border-destructive text-destructive hover:bg-destructive hover:text-white"
                 >
                   Reintentar
                 </Button>
@@ -178,65 +178,71 @@ const WordPressBlog = () => {
               </div>
             ) : posts.length === 0 ? (
               <div className="text-center py-16">
-                <h3 className="text-xl font-semibold text-gray-900 mb-2">
+                <div className="text-6xl mb-4">📝</div>
+                <h3 className="text-2xl font-semibold text-foreground mb-4">
                   No hay artículos disponibles
                 </h3>
-                <p className="text-gray-600">
+                <p className="text-muted-foreground max-w-md mx-auto">
                   Vuelve pronto para leer nuestros últimos insights sobre ciberseguridad.
                 </p>
               </div>
             ) : (
               <>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                  {posts.map((post) => {
+                  {posts.map((post, index) => {
                     const featuredImage = post._embedded?.['wp:featuredmedia']?.[0];
                     const readingTime = wordpressApi.calculateReadingTime(post.excerpt.rendered);
                     
                     return (
-                      <Card key={post.id} className="overflow-hidden hover:shadow-lg transition-shadow">
+                      <Card 
+                        key={post.id} 
+                        className="overflow-hidden hover:shadow-xl transition-all duration-500 border-0 bg-card group hover:-translate-y-1 animate-fade-in"
+                        style={{ animationDelay: `${index * 0.05}s` }}
+                      >
                         {featuredImage && (
-                          <div className="aspect-video overflow-hidden">
+                          <div className="aspect-video overflow-hidden relative">
                             <img
                               src={featuredImage.source_url}
                               alt={featuredImage.alt_text || stripHtml(post.title.rendered)}
-                              className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                               loading="lazy"
                             />
+                            <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                           </div>
                         )}
                         
                         <CardContent className="p-6">
-                          <div className="flex items-center gap-4 text-sm text-gray-500 mb-3">
+                          <div className="flex items-center gap-4 text-sm text-muted-foreground mb-4">
                             <div className="flex items-center gap-1">
-                              <Calendar className="w-4 h-4" />
+                              <Calendar className="w-4 h-4 text-primary" />
                               <span>{formatDate(post.date)}</span>
                             </div>
                             <div className="flex items-center gap-1">
-                              <Clock className="w-4 h-4" />
+                              <Clock className="w-4 h-4 text-primary" />
                               <span>{readingTime} min lectura</span>
                             </div>
                           </div>
                           
-                          <h3 className="text-xl font-semibold text-gray-900 mb-3 line-clamp-2">
+                          <h3 className="text-xl font-semibold text-foreground mb-3 line-clamp-2 group-hover:text-primary transition-colors duration-300">
                             {stripHtml(post.title.rendered)}
                           </h3>
                           
-                          <p className="text-gray-600 mb-4 line-clamp-3">
+                          <p className="text-muted-foreground mb-6 line-clamp-3 leading-relaxed">
                             {stripHtml(post.excerpt.rendered)}
                           </p>
                           
                           <div className="flex items-center justify-between">
-                            <span className="text-sm font-medium text-blue-600 bg-blue-50 px-2 py-1 rounded">
+                            <span className="text-sm font-medium text-primary bg-primary/10 px-3 py-1 rounded-full">
                               Ciberseguridad
                             </span>
                             <a
                               href={wordpressApi.sanitizeLink(post.link)}
                               target="_blank"
                               rel="noopener noreferrer"
-                              className="inline-flex items-center gap-2 px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors text-sm font-medium"
+                              className="inline-flex items-center gap-2 px-4 py-2 bg-primary text-white rounded-lg hover:bg-primary-dark transition-all duration-300 text-sm font-medium shadow-md hover:shadow-lg group"
                             >
-                              Leer artículo completo
-                              <ExternalLink className="w-4 h-4" />
+                              Leer artículo
+                              <ExternalLink className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-300" />
                             </a>
                           </div>
                         </CardContent>
@@ -247,14 +253,22 @@ const WordPressBlog = () => {
 
                 {/* Load More Button */}
                 {hasMore && (
-                  <div className="text-center mt-12">
+                  <div className="text-center mt-16">
                     <Button
                       onClick={loadMore}
                       disabled={loadingMore}
                       size="lg"
-                      className="px-8"
+                      className="px-8 py-3 bg-primary hover:bg-primary-dark text-white shadow-lg hover:shadow-xl transition-all duration-300"
                     >
-                      {loadingMore ? 'Cargando...' : 'Cargar más artículos'}
+                      {loadingMore ? (
+                        <>
+                          <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                            <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                            <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                          </svg>
+                          Cargando...
+                        </> 
+                      ) : 'Cargar más artículos'}
                     </Button>
                   </div>
                 )}

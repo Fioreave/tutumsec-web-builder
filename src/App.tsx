@@ -22,14 +22,15 @@ import SetupAdmin from "./pages/SetupAdmin";
 import Servicios from "./pages/servicios/Servicios";
 import ConsultoriaCiso from "./pages/servicios/ConsultoriaCiso";
 import AuditoriaCompliance from "./pages/servicios/AuditoriaCompliance";
+import Deteccion24x7Service from "./pages/servicios/Deteccion24x7";
+import RespuestaIncidentes from "./pages/servicios/RespuestaIncidentes";
+import FormacionConcienciacion from "./pages/servicios/FormacionConcienciacion";
 import TransformacionDigital from "./pages/servicios/TransformacionDigital";
-import FormacionConcienciacionServicios from "./pages/servicios/FormacionConcienciacion";
-import RespuestaIncidente from "./pages/servicios/RespuestaIncidente";
 import OficinaSeguridad from "./pages/servicios/OficinaSeguridad";
 
 // Productos
 import Productos from "./pages/productos/Productos";
-import Deteccion24x7 from "./pages/productos/Deteccion24x7";
+import Deteccion24x7Product from "./pages/productos/Deteccion24x7";
 import IncidenteRespuestaRetainer from "./pages/productos/IncidenteRespuestaRetainer";
 import PrevencionRecuperacionBackup from "./pages/productos/PrevencionRecuperacionBackup";
 
@@ -62,6 +63,7 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
+          <Route path="/es/" element={<Index />} />
           <Route path="/blog-admin-access" element={<Auth />} />
           <Route path="/forgot-password" element={<ForgotPassword />} />
           <Route path="/reset-password" element={<ResetPassword />} />
@@ -74,41 +76,43 @@ const App = () => (
           <Route path="/admin/posts/:id/edit" element={<PostEditor />} />
           
           {/* Páginas principales */}
-          <Route path="/es/contacto" element={<Contacto />} />
-          <Route path="/es/reserva-consultoria" element={<ReservaConsultoria />} />
+          <Route path="/es/contacto/" element={<Contacto />} />
+          <Route path="/es/reserva-consultoria/" element={<ReservaConsultoria />} />
           
           {/* Servicios */}
-          <Route path="/es/servicios" element={<Servicios />} />
-          <Route path="/es/servicios/consultoria-ciso" element={<ConsultoriaCiso />} />
-          <Route path="/es/servicios/auditoria-compliance-nis2" element={<AuditoriaCompliance />} />
-          <Route path="/es/servicios/transformacion-digital-estrategica" element={<TransformacionDigital />} />
-          <Route path="/es/servicios/formacion-concienciacion" element={<FormacionConcienciacionServicios />} />
-          <Route path="/es/servicios/oficina-seguridad-informacion-nis2" element={<OficinaSeguridad />} />
+          <Route path="/es/servicios/" element={<Servicios />} />
+          <Route path="/es/servicios/consultoria-ciso/" element={<ConsultoriaCiso />} />
+          <Route path="/es/servicios/auditoria-compliance-nis2/" element={<AuditoriaCompliance />} />
+          <Route path="/es/servicios/deteccion-24x7-soc-mdr-xdr/" element={<Deteccion24x7Service />} />
+          <Route path="/es/servicios/respuesta-incidentes/" element={<RespuestaIncidentes />} />
+          <Route path="/es/servicios/formacion-concienciacion/" element={<FormacionConcienciacion />} />
+          <Route path="/es/servicios/transformacion-digital-estrategica/" element={<TransformacionDigital />} />
+          <Route path="/es/servicios/oficina-seguridad-informacion-nis2/" element={<OficinaSeguridad />} />
           
           {/* Productos */}
-          <Route path="/es/productos" element={<Productos />} />
-          <Route path="/es/productos/deteccion-24x7" element={<Deteccion24x7 />} />
-          <Route path="/es/productos/incidente-respuesta-retainer" element={<IncidenteRespuestaRetainer />} />
-          <Route path="/es/productos/prevencion-recuperacion-backup" element={<PrevencionRecuperacionBackup />} />
+          <Route path="/es/productos/" element={<Productos />} />
+          <Route path="/es/productos/deteccion-24x7/" element={<Deteccion24x7Product />} />
+          <Route path="/es/productos/incidente-respuesta-retainer/" element={<IncidenteRespuestaRetainer />} />
+          <Route path="/es/productos/prevencion-recuperacion-backup/" element={<PrevencionRecuperacionBackup />} />
           
           {/* Industrias */}
-          <Route path="/es/industrias" element={<Industrias />} />
-          <Route path="/es/industrias/finanzas" element={<Finanzas />} />
-          <Route path="/es/industrias/salud" element={<Salud />} />
-          <Route path="/es/industrias/industrial-ot" element={<IndustrialOt />} />
-          <Route path="/es/industrias/tecnologia-saas" element={<TecnologiaSaas />} />
-          <Route path="/es/industrias/sector-publico" element={<SectorPublico />} />
+          <Route path="/es/industrias/" element={<Industrias />} />
+          <Route path="/es/industrias/finanzas/" element={<Finanzas />} />
+          <Route path="/es/industrias/salud/" element={<Salud />} />
+          <Route path="/es/industrias/industrial-ot/" element={<IndustrialOt />} />
+          <Route path="/es/industrias/tecnologia/" element={<TecnologiaSaas />} />
+          <Route path="/es/industrias/sector-publico/" element={<SectorPublico />} />
           
           {/* Recursos */}
-          <Route path="/es/recursos" element={<Recursos />} />
-          <Route path="/es/recursos/whitepapers" element={<Whitepapers />} />
-          <Route path="/es/recursos/casos-exito" element={<CasosExito />} />
+          <Route path="/es/recursos/" element={<Recursos />} />
+          <Route path="/es/recursos/blog/" element={<WordPressBlog />} />
+          <Route path="/es/recursos/whitepapers-checklists/" element={<Whitepapers />} />
+          <Route path="/es/recursos/casos-exito/" element={<CasosExito />} />
           
           {/* Sobre Nosotros */}
-          <Route path="/es/sobre-nosotros" element={<SobreNosotros />} />
-          <Route path="/es/sobre-nosotros/historia" element={<Historia />} />
-          <Route path="/es/sobre-nosotros/equipo-valores" element={<EquipoValores />} />
-          <Route path="/es/sobre-nosotros/certificaciones-partners" element={<CertificacionesPartners />} />
+          <Route path="/es/sobre-nosotros/" element={<SobreNosotros />} />
+          <Route path="/es/sobre-nosotros/equipo-valores/" element={<EquipoValores />} />
+          <Route path="/es/sobre-nosotros/certificaciones-partners/" element={<CertificacionesPartners />} />
           
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />

@@ -1,10 +1,20 @@
 import React from 'react';
+import { Helmet } from 'react-helmet-async';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 
 const TecnologiaSaas = () => {
   return (
     <>
+      <Helmet>
+        <title>Ciberseguridad para empresas tecnológicas (SaaS/Tech) | TutumSec</title>
+        <meta name="description" content="Seguridad by design, hardening cloud y evidencias para auditorías. SOC/MDR y vCISO." />
+        <link rel="canonical" href="https://tutumsec.io/es/industrias/tecnologia/" />
+        <link rel="alternate" href="https://tutumsec.io/es/industrias/tecnologia/" hrefLang="es" />
+        <link rel="alternate" href="https://tutumsec.io/ca/industries/tecnologia/" hrefLang="ca" />
+        <link rel="alternate" href="https://tutumsec.io/en/industries/technology/" hrefLang="en" />
+        <link rel="alternate" href="https://tutumsec.io/es/industrias/tecnologia/" hrefLang="x-default" />
+      </Helmet>
       <Navbar />
       <main className="min-h-screen bg-background pt-20">
         <div className="container mx-auto px-4 py-12">

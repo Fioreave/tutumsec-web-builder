@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { Card, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
@@ -28,6 +29,15 @@ const Recursos = () => {
 
   return (
     <>
+      <Helmet>
+        <title>Blog de ciberseguridad y cumplimiento | TutumSec</title>
+        <meta name="description" content="Guías prácticas sobre NIS2, auditorías, SOC/MDR, CISO y cultura de seguridad." />
+        <link rel="canonical" href="https://tutumsec.io/es/recursos/blog/" />
+        <link rel="alternate" href="https://tutumsec.io/es/recursos/blog/" hrefLang="es" />
+        <link rel="alternate" href="https://tutumsec.io/ca/recursos/blog/" hrefLang="ca" />
+        <link rel="alternate" href="https://tutumsec.io/en/resources/blog/" hrefLang="en" />
+        <link rel="alternate" href="https://tutumsec.io/es/recursos/blog/" hrefLang="x-default" />
+      </Helmet>
       <Navbar />
       <main className="min-h-screen bg-background pt-20">
         <div className="container mx-auto px-4 py-12">

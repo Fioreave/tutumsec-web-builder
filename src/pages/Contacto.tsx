@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet-async';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
@@ -10,6 +11,15 @@ import { Textarea } from '@/components/ui/textarea';
 const Contacto = () => {
   return (
     <>
+      <Helmet>
+        <title>Contacto | TutumSec</title>
+        <meta name="description" content="Habla con un consultor y conoce el plan que mejor encaja con tu empresa." />
+        <link rel="canonical" href="https://tutumsec.io/es/contacto/" />
+        <link rel="alternate" href="https://tutumsec.io/es/contacto/" hrefLang="es" />
+        <link rel="alternate" href="https://tutumsec.io/ca/contacte/" hrefLang="ca" />
+        <link rel="alternate" href="https://tutumsec.io/en/contact/" hrefLang="en" />
+        <link rel="alternate" href="https://tutumsec.io/es/contacto/" hrefLang="x-default" />
+      </Helmet>
       <Navbar />
       <main className="min-h-screen bg-tutumsec-gray-50 pt-20">
         {/* Hero Section */}

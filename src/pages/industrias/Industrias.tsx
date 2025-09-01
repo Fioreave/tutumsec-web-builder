@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { Card, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
@@ -40,6 +41,15 @@ const Industrias = () => {
 
   return (
     <>
+      <Helmet>
+        <title>Ciberseguridad por industria: OT, salud, finanzas y más | TutumSec</title>
+        <meta name="description" content="Soluciones por sector con NIS2/ISO. Casos y rutas de servicio recomendadas." />
+        <link rel="canonical" href="https://tutumsec.io/es/industrias/" />
+        <link rel="alternate" href="https://tutumsec.io/es/industrias/" hrefLang="es" />
+        <link rel="alternate" href="https://tutumsec.io/ca/industries/" hrefLang="ca" />
+        <link rel="alternate" href="https://tutumsec.io/en/industries/" hrefLang="en" />
+        <link rel="alternate" href="https://tutumsec.io/es/industrias/" hrefLang="x-default" />
+      </Helmet>
       <Navbar />
       <main className="min-h-screen bg-background pt-20">
         <div className="container mx-auto px-4 py-12">

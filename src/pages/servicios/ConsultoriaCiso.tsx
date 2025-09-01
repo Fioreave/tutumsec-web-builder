@@ -28,15 +28,16 @@ const ConsultoriaCiso = () => {
   return (
     <>
       <Helmet>
-        <title>Consultoría CISO | vCISO Barcelona & Andorra – TutumSec</title>
-        <meta name="description" content="Servicio CISO externo premium para PYMEs de Cataluña, Andorra y España. Cumple NIS 2/ISO 27001 en < 90 días y reduce incidentes críticos un 30 %. Sesión gratis 15 min." />
-        <link rel="canonical" href="https://tutumsec.com/servicios/consultoria-ciso" />
+        <title>Consultoría CISO (vCISO) para PYMEs | TutumSec</title>
+        <meta name="description" content="Liderazgo CISO externo, KPIs y roadmap 12–36 meses. Gobierno de seguridad alineado al negocio. Agenda una consultoría gratis." />
+        <link rel="canonical" href="https://tutumsec.io/es/servicios/consultoria-ciso/" />
         <script type="application/ld+json">
           {JSON.stringify(structuredData)}
         </script>
-        <link rel="alternate" href="https://tutumsec.com/ca/serveis/consultoria-ciso" hrefLang="ca" />
-        <link rel="alternate" href="https://tutumsec.com/en/services/ciso-consultancy" hrefLang="en" />
-        <link rel="alternate" href="https://tutumsec.com/servicios/consultoria-ciso" hrefLang="es" />
+        <link rel="alternate" href="https://tutumsec.io/es/servicios/consultoria-ciso/" hrefLang="es" />
+        <link rel="alternate" href="https://tutumsec.io/ca/serveis/consultoria-ciso/" hrefLang="ca" />
+        <link rel="alternate" href="https://tutumsec.io/en/services/ciso-advisory/" hrefLang="en" />
+        <link rel="alternate" href="https://tutumsec.io/es/servicios/consultoria-ciso/" hrefLang="x-default" />
       </Helmet>
 
       <Navbar />

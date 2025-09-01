@@ -55,15 +55,16 @@ const AuditoriaCompliance = () => {
   return (
     <>
       <Helmet>
-        <title>Auditoría NIS 2 & Compliance | Gap-Analysis ISO 27001 – TutumSec</title>
-        <meta name="description" content="Cumple NIS 2, ISO 27001 y ENS con una sola auditoría. Diagnosticamos, implantamos y te acompañamos hasta la certificación. Reserva tu sesión gratis." />
-        <link rel="canonical" href="https://tutumsec.com/servicios/auditoria-compliance-nis2" />
+        <title>Auditoría & Compliance NIS2 para empresas | TutumSec</title>
+        <meta name="description" content="Gap-analysis NIS2 + auditoría técnica y plan de adecuación. Evidencias para auditorías y cadena de suministro." />
+        <link rel="canonical" href="https://tutumsec.io/es/servicios/auditoria-compliance-nis2/" />
         <script type="application/ld+json">
           {JSON.stringify([faqStructuredData, serviceStructuredData])}
         </script>
-        <link rel="alternate" href="https://tutumsec.com/ca/serveis/auditoria-compliance-nis2" hrefLang="ca" />
-        <link rel="alternate" href="https://tutumsec.com/en/services/audit-compliance-nis2" hrefLang="en" />
-        <link rel="alternate" href="https://tutumsec.com/servicios/auditoria-compliance-nis2" hrefLang="es" />
+        <link rel="alternate" href="https://tutumsec.io/es/servicios/auditoria-compliance-nis2/" hrefLang="es" />
+        <link rel="alternate" href="https://tutumsec.io/ca/serveis/auditoria-compliance-nis2/" hrefLang="ca" />
+        <link rel="alternate" href="https://tutumsec.io/en/services/nis2-audit-compliance/" hrefLang="en" />
+        <link rel="alternate" href="https://tutumsec.io/es/servicios/auditoria-compliance-nis2/" hrefLang="x-default" />
       </Helmet>
 
       <Navbar />

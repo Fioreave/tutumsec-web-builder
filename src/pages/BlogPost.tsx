@@ -119,7 +119,7 @@ const BlogPost = () => {
   const getImageUrl = (path: string | null) => {
     if (!path) return null;
     if (path.startsWith('http')) return path;
-    const { data } = supabase.storage.from('blog').getPublicUrl(path);
+    const { data } = supabase.storage.from('blog-images').getPublicUrl(path);
     return data.publicUrl;
   };
 

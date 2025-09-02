@@ -72,8 +72,8 @@ const IncidenteRespuestaRetainer = () => {
 
           {/* Del caos a la claridad */}
           <section className="mb-16">
-            <div className="bg-gradient-to-r from-red-50 to-orange-50 p-8 rounded-lg">
-              <h2 className="text-3xl font-bold text-foreground mb-6">
+            <div style={{ background: 'var(--gradient-hero)' }} className="p-8 rounded-lg border border-tutumsec-blue/20 shadow-lg">
+              <h2 className="text-3xl font-bold text-tutumsec-gray-900 mb-6">
                 Cuando pasa algo, necesitas decisiones, no alarmas
               </h2>
               <p className="text-lg text-muted-foreground">
@@ -89,69 +89,69 @@ const IncidenteRespuestaRetainer = () => {
             </h2>
             
             <div className="grid md:grid-cols-3 gap-8">
-              <Card>
-                <CardContent className="p-6">
+              <Card className="border-tutumsec-blue/20 shadow-lg hover:shadow-xl transition-shadow">
+                <CardContent className="p-6" style={{ background: 'linear-gradient(135deg, hsl(214 100% 97%), hsl(0 0% 100%))' }}>
                   <div className="flex items-center gap-3 mb-4">
-                    <Clock className="w-6 h-6 text-primary" />
-                    <h3 className="text-xl font-semibold">Primeras horas</h3>
+                    <Clock className="w-6 h-6 text-tutumsec-blue" />
+                    <h3 className="text-xl font-semibold text-tutumsec-gray-900">Primeras horas</h3>
                   </div>
                   <ul className="space-y-3 text-sm">
                     <li className="flex items-start gap-2">
-                      <CheckCircle className="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" />
+                      <CheckCircle className="w-4 h-4 text-tutumsec-blue mt-0.5 flex-shrink-0" />
                       <span>Canal directo con analistas senior (teléfono y mensajería segura)</span>
                     </li>
                     <li className="flex items-start gap-2">
-                      <CheckCircle className="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" />
+                      <CheckCircle className="w-4 h-4 text-tutumsec-blue mt-0.5 flex-shrink-0" />
                       <span>Contención inicial y visibilidad rápida sobre equipos y cuentas afectadas</span>
                     </li>
                     <li className="flex items-start gap-2">
-                      <CheckCircle className="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" />
+                      <CheckCircle className="w-4 h-4 text-tutumsec-blue mt-0.5 flex-shrink-0" />
                       <span>Recomendación de activar EDR compatible (Microsoft Defender, Bitdefender, Sophos, etc)</span>
                     </li>
                   </ul>
                 </CardContent>
               </Card>
 
-              <Card>
-                <CardContent className="p-6">
+              <Card className="border-tutumsec-blue/20 shadow-lg hover:shadow-xl transition-shadow">
+                <CardContent className="p-6" style={{ background: 'linear-gradient(135deg, hsl(214 100% 97%), hsl(0 0% 100%))' }}>
                   <div className="flex items-center gap-3 mb-4">
-                    <Shield className="w-6 h-6 text-primary" />
-                    <h3 className="text-xl font-semibold">Primer día</h3>
+                    <Shield className="w-6 h-6 text-tutumsec-blue" />
+                    <h3 className="text-xl font-semibold text-tutumsec-gray-900">Primer día</h3>
                   </div>
                   <ul className="space-y-3 text-sm">
                     <li className="flex items-start gap-2">
-                      <CheckCircle className="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" />
+                      <CheckCircle className="w-4 h-4 text-tutumsec-blue mt-0.5 flex-shrink-0" />
                       <span>Aislamiento donde haga falta y restauración segura cuando sea posible</span>
                     </li>
                     <li className="flex items-start gap-2">
-                      <CheckCircle className="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" />
+                      <CheckCircle className="w-4 h-4 text-tutumsec-blue mt-0.5 flex-shrink-0" />
                       <span>Coordinación con tu equipo (IT/dirección)</span>
                     </li>
                     <li className="flex items-start gap-2">
-                      <CheckCircle className="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" />
+                      <CheckCircle className="w-4 h-4 text-tutumsec-blue mt-0.5 flex-shrink-0" />
                       <span>Acompañamiento ejecutivo tipo vCISO si lo solicitas</span>
                     </li>
                   </ul>
                 </CardContent>
               </Card>
 
-              <Card>
-                <CardContent className="p-6">
+              <Card className="border-tutumsec-blue/20 shadow-lg hover:shadow-xl transition-shadow">
+                <CardContent className="p-6" style={{ background: 'linear-gradient(135deg, hsl(214 100% 97%), hsl(0 0% 100%))' }}>
                   <div className="flex items-center gap-3 mb-4">
-                    <FileText className="w-6 h-6 text-primary" />
-                    <h3 className="text-xl font-semibold">Siguientes días</h3>
+                    <FileText className="w-6 h-6 text-tutumsec-blue" />
+                    <h3 className="text-xl font-semibold text-tutumsec-gray-900">Siguientes días</h3>
                   </div>
                   <ul className="space-y-3 text-sm">
                     <li className="flex items-start gap-2">
-                      <CheckCircle className="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" />
+                      <CheckCircle className="w-4 h-4 text-tutumsec-blue mt-0.5 flex-shrink-0" />
                       <span>Análisis técnico y cronología del incidente</span>
                     </li>
                     <li className="flex items-start gap-2">
-                      <CheckCircle className="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" />
+                      <CheckCircle className="w-4 h-4 text-tutumsec-blue mt-0.5 flex-shrink-0" />
                       <span>Recomendaciones priorizadas por riesgo</span>
                     </li>
                     <li className="flex items-start gap-2">
-                      <CheckCircle className="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" />
+                      <CheckCircle className="w-4 h-4 text-tutumsec-blue mt-0.5 flex-shrink-0" />
                       <span>Soporte en avisos regulatorios si correspondiera</span>
                     </li>
                   </ul>
@@ -299,23 +299,23 @@ const IncidenteRespuestaRetainer = () => {
           </section>
 
           {/* CTAs de cierre */}
-          <section className="bg-gradient-to-r from-primary/10 to-primary/5 p-8 rounded-lg text-center">
-            <h2 className="text-3xl font-bold text-foreground mb-4">
+          <section style={{ background: 'var(--gradient-primary)' }} className="p-8 rounded-lg text-center shadow-lg">
+            <h2 className="text-3xl font-bold text-white mb-4">
               ¿Necesitas respuesta inmediata?
             </h2>
-            <p className="text-lg text-muted-foreground mb-8">
+            <p className="text-lg text-white/90 mb-8">
               Actúa ahora para proteger tu organización ante incidentes de ciberseguridad.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" variant="destructive" className="px-8">
+              <Button size="lg" className="px-8 bg-red-600 hover:bg-red-700 text-white">
                 <AlertCircle className="w-5 h-5 mr-2" />
                 Necesito ayuda ahora
               </Button>
-              <Button variant="outline" size="lg" className="px-8">
+              <Button variant="outline" size="lg" className="px-8 border-white text-white hover:bg-white hover:text-tutumsec-blue">
                 <Calendar className="w-5 h-5 mr-2" />
                 Hablar con un experto
               </Button>
-              <Button variant="secondary" size="lg" className="px-8">
+              <Button size="lg" className="px-8 bg-white text-tutumsec-blue hover:bg-tutumsec-gray-50">
                 <Shield className="w-5 h-5 mr-2" />
                 Quiero estar preparado (retainer)
               </Button>

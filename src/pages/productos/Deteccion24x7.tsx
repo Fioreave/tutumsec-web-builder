@@ -83,9 +83,9 @@ const Deteccion24x7 = () => {
         <BlackMDRHeroSection />
 
         {/* Problem Section */}
-        <section className="py-16 px-6 bg-destructive/5">
+        <section className="py-16 px-6" style={{ background: 'var(--gradient-hero)' }}>
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl font-bold text-foreground mb-6">
+            <h2 className="text-3xl font-bold text-tutumsec-gray-900 mb-6">
               La avalancha de alertas no es seguridad; la respuesta a tiempo, sí
             </h2>
             <p className="text-lg text-muted-foreground leading-relaxed">
@@ -99,58 +99,60 @@ const Deteccion24x7 = () => {
         {/* Differentials Section */}
         <section className="py-16 px-6">
           <div className="max-w-6xl mx-auto">
-            <h2 className="text-3xl font-bold text-foreground text-center mb-12">
+            <h2 className="text-3xl font-bold text-tutumsec-gray-900 text-center mb-12">
               Diferenciales que marcan la diferencia
             </h2>
             
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              <div className="p-6 bg-card border rounded-lg">
-                <Users className="w-12 h-12 text-primary mb-4" />
-                <h3 className="text-xl font-semibold mb-4">No "sustituimos" a tu equipo; lo potenciamos</h3>
+              <div className="p-6 border border-tutumsec-blue/20 rounded-lg shadow-lg hover:shadow-xl transition-shadow" style={{ background: 'linear-gradient(135deg, hsl(214 100% 97%), hsl(0 0% 100%))' }}>
+                <Users className="w-12 h-12 text-tutumsec-blue mb-4" />
+                <h3 className="text-xl font-semibold mb-4 text-tutumsec-gray-900">No "sustituimos" a tu equipo; lo potenciamos</h3>
                 <p className="text-muted-foreground">
                   Trabajo hombro a hombro con tu equipo (IT/CISO). Definimos responsabilidades (RACI), 
                   compartimos visibilidad y transferimos conocimiento para que tu equipo sea más fuerte cada mes.
                 </p>
               </div>
 
-              <div className="p-6 bg-card border rounded-lg">
-                <Zap className="w-12 h-12 text-primary mb-4" />
-                <h3 className="text-xl font-semibold mb-4">Nada de "caja negra"; acordamos qué acciones remotas ejecutamos</h3>
+              <div className="p-6 border border-tutumsec-blue/20 rounded-lg shadow-lg hover:shadow-xl transition-shadow" style={{ background: 'linear-gradient(135deg, hsl(214 100% 97%), hsl(0 0% 100%))' }}>
+                <Zap className="w-12 h-12 text-tutumsec-blue mb-4" />
+                <h3 className="text-xl font-semibold mb-4 text-tutumsec-gray-900">Nada de "caja negra"; acordamos qué acciones remotas ejecutamos</h3>
                 <p className="text-muted-foreground">
                   Runbooks co-firmados que autorizan de antemano las acciones remotas (aislar un endpoint, bloquear IOCs, 
                   purgar phishing, revocar sesiones…). Evita cuellos de botella y reduce MTTR con trazabilidad total.
                 </p>
               </div>
 
-              <div className="p-6 bg-card border rounded-lg">
-                <BarChart3 className="w-12 h-12 text-primary mb-4" />
-                <h3 className="text-xl font-semibold mb-4">Gobernanza: Seguridad gobernada desde dirección</h3>
+              <div className="p-6 border border-tutumsec-blue/20 rounded-lg shadow-lg hover:shadow-xl transition-shadow" style={{ background: 'linear-gradient(135deg, hsl(214 100% 97%), hsl(0 0% 100%))' }}>
+                <BarChart3 className="w-12 h-12 text-tutumsec-blue mb-4" />
+                <h3 className="text-xl font-semibold mb-4 text-tutumsec-gray-900">Gobernanza: Seguridad gobernada desde dirección</h3>
                 <p className="text-muted-foreground">
                   Comité con CISO/OSI, KPIs claros, priorización por riesgo, evidencias para auditorías y 
                   alineación con NIS2/ISO. Menos improvisación, más control.
                 </p>
               </div>
 
-              <div className="p-6 bg-card border rounded-lg">
-                <Target className="w-12 h-12 text-primary mb-4" />
-                <h3 className="text-xl font-semibold mb-4">Menos tiempo en alertas, más en decisiones</h3>
+              <div className="p-6 border border-tutumsec-blue/20 rounded-lg shadow-lg hover:shadow-xl transition-shadow" style={{ background: 'linear-gradient(135deg, hsl(214 100% 97%), hsl(0 0% 100%))' }}>
+                <Target className="w-12 h-12 text-tutumsec-blue mb-4" />
+                <h3 className="text-xl font-semibold mb-4 text-tutumsec-gray-900">Menos tiempo en alertas, más en decisiones</h3>
                 <p className="text-muted-foreground">
                   Enfoque en resultados, no solo en alertas: menos falsos positivos, incidentes contenidos a tiempo, 
                   backlog de hardening priorizado y decisiones de inversión con retorno. Informe ejecutivo mensual que entiende negocio.
                 </p>
               </div>
 
-              <div className="p-6 bg-card border rounded-lg md:col-span-2">
-                <Network className="w-12 h-12 text-primary mb-4" />
-                <h3 className="text-xl font-semibold mb-4">Aprovechamos lo que ya tienes</h3>
+              <div className="p-6 border border-tutumsec-blue/20 rounded-lg shadow-lg hover:shadow-xl transition-shadow md:col-span-2" style={{ background: 'var(--gradient-hero)' }}>
+                <Network className="w-12 h-12 text-tutumsec-blue mb-4" />
+                <h3 className="text-xl font-semibold mb-4 text-tutumsec-gray-900">Aprovechamos lo que ya tienes</h3>
                 <p className="text-muted-foreground">
                   (EDR/XDR, SIEM, M365, NGFW, Meraki, etc.) para acelerar despliegue y ROI, evitando compras innecesarias. 
                   Integramos y optimizamos antes de proponer nuevos tools.
                 </p>
-                <p className="text-sm text-muted-foreground mt-2">
-                  <strong>Nota:</strong> podemos integrar de salida con stacks líderes (p. ej., Microsoft Defender, SentinelOne, 
-                  CrowdStrike, Fortinet, Palo Alto, Microsoft Sentinel…). Ajustamos el alcance a tu realidad tecnológica.
-                </p>
+                <div className="bg-tutumsec-gray-50 p-4 rounded-lg border border-tutumsec-blue/10 mt-4">
+                  <p className="text-sm text-muted-foreground">
+                    <strong>Nota:</strong> podemos integrar de salida con stacks líderes (p. ej., Microsoft Defender, SentinelOne, 
+                    CrowdStrike, Fortinet, Palo Alto, Microsoft Sentinel…). Ajustamos el alcance a tu realidad tecnológica.
+                  </p>
+                </div>
               </div>
             </div>
           </div>

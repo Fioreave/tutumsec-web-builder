@@ -18,12 +18,12 @@ const BlackMDRHeroSection = () => {
   ];
 
   return (
-    <section className="pt-24 pb-16 px-6 bg-gradient-to-br from-primary/10 via-background to-secondary/5">
+    <section className="pt-24 pb-16 px-6" style={{ background: 'var(--gradient-hero)' }}>
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-12">
-          <h1 className="text-4xl md:text-6xl font-bold text-foreground mb-6 leading-tight">
+          <h1 className="text-4xl md:text-6xl font-bold text-tutumsec-gray-900 mb-6 leading-tight">
             BlackMDR 24x7 — Detección y respuesta gestionada que habla el idioma del{' '}
-            <span className="text-primary">negocio</span>
+            <span className="text-tutumsec-blue">negocio</span>
           </h1>
           <h2 className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-4xl mx-auto">
             Monitorización continua, hunting y contención remota para frenar amenazas antes de que impacten en el negocio.
@@ -32,9 +32,9 @@ const BlackMDRHeroSection = () => {
 
         <div className="grid md:grid-cols-3 gap-6 mb-12">
           {quickWins.map((win, index) => (
-            <div key={index} className="flex items-start gap-3 p-6 bg-card border rounded-lg">
-              <CheckCircle className="w-6 h-6 text-primary mt-1 flex-shrink-0" />
-              <p className="text-foreground">{win}</p>
+            <div key={index} className="flex items-start gap-3 p-6 bg-tutumsec-gray-50 border border-tutumsec-blue/20 rounded-lg shadow-lg">
+              <CheckCircle className="w-6 h-6 text-tutumsec-blue mt-1 flex-shrink-0" />
+              <p className="text-tutumsec-gray-900">{win}</p>
             </div>
           ))}
         </div>
@@ -43,7 +43,7 @@ const BlackMDRHeroSection = () => {
           <Button 
             size="lg" 
             onClick={handleCalendlyClick}
-            className="px-8 py-4 text-lg bg-primary hover:bg-primary/90"
+            className="px-8 py-4 text-lg bg-tutumsec-blue hover:bg-tutumsec-blue-dark text-white"
           >
             <Calendar className="w-5 h-5 mr-2" />
             Reserva consultoría gratis (15')
@@ -51,7 +51,7 @@ const BlackMDRHeroSection = () => {
           
           <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
             <DialogTrigger asChild>
-              <Button variant="outline" size="lg" className="px-8 py-4 text-lg">
+              <Button variant="outline" size="lg" className="px-8 py-4 text-lg border-tutumsec-blue text-tutumsec-blue hover:bg-tutumsec-blue hover:text-white">
                 <Download className="w-5 h-5 mr-2" />
                 Descarga la ficha técnica BlackMDR
               </Button>
@@ -66,7 +66,7 @@ const BlackMDRHeroSection = () => {
             </DialogContent>
           </Dialog>
 
-          <Button variant="ghost" size="lg" className="px-8 py-4 text-lg">
+          <Button variant="outline" size="lg" className="px-8 py-4 text-lg border-tutumsec-blue text-tutumsec-blue hover:bg-tutumsec-blue hover:text-white">
             <MessageCircle className="w-5 h-5 mr-2" />
             Solicita presupuesto
           </Button>

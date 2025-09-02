@@ -98,7 +98,6 @@ export const ContactForm: React.FC<ContactFormProps> = ({ onSuccess }) => {
       setFormData({ name: '', email: '', company: '', message: '' });
       rateLimit.reset(); // Reset on successful submission
     } catch (error: any) {
-      console.error('Error submitting contact form:', error);
       toast({
         title: "Error",
         description: "Ha ocurrido un error. Por favor, inténtalo de nuevo.",

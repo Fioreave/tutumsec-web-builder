@@ -83,7 +83,7 @@ export function useAuth() {
     } catch (error: any) {
       toast({
         title: "Error al crear cuenta",
-        description: error.message,
+        description: "No se pudo crear la cuenta. Verifica tus datos e inténtalo de nuevo.",
         variant: "destructive",
       });
       return { data: null, error };
@@ -108,7 +108,7 @@ export function useAuth() {
     } catch (error: any) {
       toast({
         title: "Error al iniciar sesión",
-        description: error.message,
+        description: "Credenciales incorrectas. Verifica tus datos.",
         variant: "destructive",
       });
       return { data: null, error };
@@ -127,7 +127,7 @@ export function useAuth() {
     } catch (error: any) {
       toast({
         title: "Error al cerrar sesión",
-        description: error.message,
+        description: "No se pudo cerrar la sesión. Inténtalo de nuevo.",
         variant: "destructive",
       });
     }
@@ -150,7 +150,7 @@ export function useAuth() {
     } catch (error: any) {
       toast({
         title: "Error al enviar enlace",
-        description: error.message,
+        description: "No se pudo enviar el enlace. Verifica tu email e inténtalo de nuevo.",
         variant: "destructive",
       });
       return { error };
@@ -172,7 +172,7 @@ export function useAuth() {
     } catch (error: any) {
       toast({
         title: "Error al actualizar contraseña",
-        description: error.message,
+        description: "No se pudo actualizar la contraseña. Inténtalo de nuevo.",
         variant: "destructive",
       });
       return { error };

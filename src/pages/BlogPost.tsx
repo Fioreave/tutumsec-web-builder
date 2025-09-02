@@ -10,7 +10,7 @@ import 'dayjs/locale/es';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import SEOMetaTags from '@/components/SEOMetaTags';
-import { useAuth } from '@/hooks/useAuth';
+
 import { sanitizeText } from '@/utils/sanitize';
 
 dayjs.locale('es');
@@ -43,8 +43,6 @@ const BlogPost = () => {
   const [loading, setLoading] = useState(true);
   const [notFound, setNotFound] = useState(false);
   const [relatedPosts, setRelatedPosts] = useState<BlogPost[]>([]);
-  const { user, profile } = useAuth();
-  
   const isPreview = searchParams.get('preview') === 'true';
 
   useEffect(() => {
@@ -65,14 +63,8 @@ const BlogPost = () => {
         `)
         .eq('slug', slug);
 
-      // Allow preview for authenticated editors/admins
-      if (isPreview) {
-        if (!user || !profile || (profile.role !== 'admin' && profile.role !== 'editor')) {
-          setNotFound(true);
-          setLoading(false);
-          return;
-        }
-      } else {
+      // Only show published posts
+      if (!isPreview) {
         query = query.eq('status', 'PUBLISHED');
       }
 

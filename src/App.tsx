@@ -6,16 +6,11 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
-import Auth from "./pages/Auth";
 import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
 import WordPressBlog from "./pages/WordPressBlog";
-import Admin from "./pages/Admin";
-import PostEditor from "./pages/PostEditor";
 import Contacto from "./pages/Contacto";
 import ReservaConsultoria from "./pages/ReservaConsultoria";
-import ForgotPassword from "./pages/ForgotPassword";
-import ResetPassword from "./pages/ResetPassword";
 
 
 // Servicios
@@ -64,16 +59,9 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/es/" element={<Index />} />
-          <Route path="/blog-admin-access" element={<Auth />} />
-          <Route path="/forgot-password" element={<ForgotPassword />} />
-          <Route path="/reset-password" element={<ResetPassword />} />
-          
           <Route path="/blog" element={<WordPressBlog />} />
           <Route path="/blog/:slug" element={<BlogPost />} />
           <Route path="/es/blog" element={<WordPressBlog />} />
-          <Route path="/admin" element={<Admin />} />
-          <Route path="/admin/posts/new" element={<PostEditor />} />
-          <Route path="/admin/posts/:id/edit" element={<PostEditor />} />
           
           {/* Páginas principales */}
           <Route path="/es/contacto/" element={<Contacto />} />

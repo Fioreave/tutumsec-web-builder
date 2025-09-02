@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { Menu, X, ChevronDown, ChevronRight } from "lucide-react";
 import LanguageSelector from "./LanguageSelector";
-import AdminLink from "./AdminLink";
+
 import NavbarDropdown from "./NavbarDropdown";
 
 const Navbar = () => {
@@ -277,9 +277,6 @@ const Navbar = () => {
             >
               Contacto
             </Link>
-            <div className="px-3 py-2">
-              <AdminLink />
-            </div>
             <div className="flex items-center gap-4">
               <Link
                 to="/es/reserva-consultoria"

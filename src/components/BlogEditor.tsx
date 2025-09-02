@@ -33,9 +33,22 @@ const BlogEditor: React.FC<BlogEditorProps> = ({ content, onChange }) => {
     },
   });
 
+  const validateUrl = (url: string): boolean => {
+    try {
+      const urlObj = new URL(url);
+      return ['http:', 'https:'].includes(urlObj.protocol);
+    } catch {
+      return false;
+    }
+  };
+
   const addImage = () => {
     const url = window.prompt('URL de la imagen');
     if (url && editor) {
+      if (!validateUrl(url)) {
+        alert('Por favor, ingresa una URL válida (http:// o https://)');
+        return;
+      }
       editor.chain().focus().setImage({ src: url }).run();
     }
   };
@@ -50,6 +63,11 @@ const BlogEditor: React.FC<BlogEditorProps> = ({ content, onChange }) => {
 
     if (url === '') {
       editor?.chain().focus().extendMarkRange('link').unsetLink().run();
+      return;
+    }
+
+    if (!validateUrl(url)) {
+      alert('Por favor, ingresa una URL válida (http:// o https://)');
       return;
     }
 

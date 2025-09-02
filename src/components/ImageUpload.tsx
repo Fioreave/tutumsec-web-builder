@@ -56,12 +56,12 @@ const ImageUpload: React.FC<ImageUploadProps> = ({
       const filePath = `public/${fileName}`;
 
       const { error: uploadError } = await supabase.storage
-        .from('blog')
+        .from('blog-images')
         .upload(filePath, file);
 
       if (uploadError) throw uploadError;
 
-      const { data } = supabase.storage.from('blog').getPublicUrl(filePath);
+      const { data } = supabase.storage.from('blog-images').getPublicUrl(filePath);
       
       setPreview(data.publicUrl);
       onImageChange(data.publicUrl);

@@ -16,7 +16,7 @@ import Contacto from "./pages/Contacto";
 import ReservaConsultoria from "./pages/ReservaConsultoria";
 import ForgotPassword from "./pages/ForgotPassword";
 import ResetPassword from "./pages/ResetPassword";
-import SetupAdmin from "./pages/SetupAdmin";
+
 
 // Servicios
 import Servicios from "./pages/servicios/Servicios";
@@ -67,7 +67,7 @@ const App = () => (
           <Route path="/blog-admin-access" element={<Auth />} />
           <Route path="/forgot-password" element={<ForgotPassword />} />
           <Route path="/reset-password" element={<ResetPassword />} />
-          <Route path="/setup-admin" element={<SetupAdmin />} />
+          
           <Route path="/blog" element={<WordPressBlog />} />
           <Route path="/blog/:slug" element={<BlogPost />} />
           <Route path="/es/blog" element={<WordPressBlog />} />

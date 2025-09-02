@@ -4,6 +4,7 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
 import { useToast } from '@/hooks/use-toast';
+import { supabase } from '@/integrations/supabase/client';
 
 interface ContactFormProps {
   onSuccess?: () => void;
@@ -24,12 +25,26 @@ export const ContactForm: React.FC<ContactFormProps> = ({ onSuccess }) => {
     setIsSubmitting(true);
 
     try {
-      // Simulate form submission
-      await new Promise(resolve => setTimeout(resolve, 1000));
+      // Validación básica
+      if (!formData.name.trim() || !formData.email.trim()) {
+        throw new Error('Nombre y email son requeridos');
+      }
+
+      // Guardar en la base de datos
+      const { error } = await supabase
+        .from('contact_submissions')
+        .insert([{
+          name: formData.name.trim(),
+          email: formData.email.trim(),
+          company: formData.company.trim() || null,
+          message: formData.message.trim()
+        }]);
+
+      if (error) throw error;
       
       // Trigger PDF download
       const link = document.createElement('a');
-      link.href = '/checklist-nis2.pdf'; // This would be the actual PDF file
+      link.href = '/checklist-nis2.pdf';
       link.download = 'checklist-nis2.pdf';
       document.body.appendChild(link);
       link.click();
@@ -42,10 +57,11 @@ export const ContactForm: React.FC<ContactFormProps> = ({ onSuccess }) => {
 
       onSuccess?.();
       setFormData({ name: '', email: '', company: '', message: '' });
-    } catch (error) {
+    } catch (error: any) {
+      console.error('Error submitting contact form:', error);
       toast({
         title: "Error",
-        description: "Ha ocurrido un error. Por favor, inténtalo de nuevo.",
+        description: error.message || "Ha ocurrido un error. Por favor, inténtalo de nuevo.",
         variant: "destructive",
       });
     } finally {

@@ -82,6 +82,36 @@ export type Database = {
           },
         ]
       }
+      contact_submissions: {
+        Row: {
+          company: string | null
+          created_at: string | null
+          email: string
+          id: string
+          message: string
+          name: string
+          updated_at: string | null
+        }
+        Insert: {
+          company?: string | null
+          created_at?: string | null
+          email: string
+          id?: string
+          message: string
+          name: string
+          updated_at?: string | null
+        }
+        Update: {
+          company?: string | null
+          created_at?: string | null
+          email?: string
+          id?: string
+          message?: string
+          name?: string
+          updated_at?: string | null
+        }
+        Relationships: []
+      }
       profiles: {
         Row: {
           created_at: string | null
@@ -114,6 +144,10 @@ export type Database = {
       [_ in never]: never
     }
     Functions: {
+      get_current_user_role: {
+        Args: Record<PropertyKey, never>
+        Returns: string
+      }
       has_role: {
         Args: { required_role: Database["public"]["Enums"]["user_role"] }
         Returns: boolean

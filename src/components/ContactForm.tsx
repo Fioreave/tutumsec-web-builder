@@ -4,6 +4,8 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
 import { useToast } from '@/hooks/use-toast';
+import { useRateLimit } from '@/hooks/useRateLimit';
+import { sanitizeText } from '@/utils/sanitize';
 import { supabase } from '@/integrations/supabase/client';
 
 interface ContactFormProps {
@@ -19,25 +21,62 @@ export const ContactForm: React.FC<ContactFormProps> = ({ onSuccess }) => {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
+  
+  const rateLimit = useRateLimit('contact-form', {
+    maxAttempts: 3,
+    windowMs: 15 * 60 * 1000, // 15 minutes
+    blockDurationMs: 30 * 60 * 1000, // 30 minutes
+  });
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    
+    // Check rate limiting
+    if (rateLimit.isBlocked) {
+      const minutes = Math.ceil(rateLimit.timeUntilReset / (1000 * 60));
+      toast({
+        title: "Demasiados intentos",
+        description: `Por favor, espera ${minutes} minutos antes de intentar de nuevo.`,
+        variant: "destructive",
+      });
+      return;
+    }
+
+    if (!rateLimit.attempt()) {
+      toast({
+        title: "Límite alcanzado",
+        description: "Has alcanzado el límite de envíos. Inténtalo más tarde.",
+        variant: "destructive",
+      });
+      return;
+    }
+
     setIsSubmitting(true);
 
     try {
-      // Validación básica
-      if (!formData.name.trim() || !formData.email.trim()) {
+      // Validación y sanitización
+      const sanitizedName = sanitizeText(formData.name.trim());
+      const sanitizedCompany = sanitizeText(formData.company.trim());
+      const sanitizedMessage = sanitizeText(formData.message.trim());
+      
+      if (!sanitizedName || !formData.email.trim()) {
         throw new Error('Nombre y email son requeridos');
+      }
+
+      // Email validation
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(formData.email.trim())) {
+        throw new Error('Por favor, ingresa un email válido');
       }
 
       // Guardar en la base de datos
       const { error } = await supabase
         .from('contact_submissions')
         .insert([{
-          name: formData.name.trim(),
-          email: formData.email.trim(),
-          company: formData.company.trim() || null,
-          message: formData.message.trim()
+          name: sanitizedName,
+          email: formData.email.trim().toLowerCase(),
+          company: sanitizedCompany || null,
+          message: sanitizedMessage
         }]);
 
       if (error) throw error;
@@ -57,11 +96,12 @@ export const ContactForm: React.FC<ContactFormProps> = ({ onSuccess }) => {
 
       onSuccess?.();
       setFormData({ name: '', email: '', company: '', message: '' });
+      rateLimit.reset(); // Reset on successful submission
     } catch (error: any) {
       console.error('Error submitting contact form:', error);
       toast({
         title: "Error",
-        description: error.message || "Ha ocurrido un error. Por favor, inténtalo de nuevo.",
+        description: "Ha ocurrido un error. Por favor, inténtalo de nuevo.",
         variant: "destructive",
       });
     } finally {

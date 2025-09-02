@@ -11,6 +11,7 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import SEOMetaTags from '@/components/SEOMetaTags';
 import { useAuth } from '@/hooks/useAuth';
+import { sanitizeText } from '@/utils/sanitize';
 
 dayjs.locale('es');
 
@@ -172,20 +173,20 @@ const BlogPost = () => {
           return (
             <figure className="mb-6">
               <img
-                src={node.attrs?.src}
-                alt={node.attrs?.alt || ''}
+                src={sanitizeText(node.attrs?.src || '')}
+                alt={sanitizeText(node.attrs?.alt || '')}
                 className="w-full h-auto rounded-lg"
                 loading="lazy"
               />
               {node.attrs?.title && (
                 <figcaption className="text-sm text-muted-foreground mt-2 text-center">
-                  {node.attrs.title}
+                  {sanitizeText(node.attrs.title)}
                 </figcaption>
               )}
             </figure>
           );
         case 'text':
-          let text = node.text || '';
+          let text = sanitizeText(node.text || '');
           let element: React.ReactNode = text;
           
           if (node.marks) {
@@ -203,7 +204,7 @@ const BlogPost = () => {
                 case 'link':
                   element = (
                     <a
-                      href={mark.attrs?.href}
+                      href={sanitizeText(mark.attrs?.href || '')}
                       target="_blank"
                       rel="noopener nofollow"
                       className="text-primary hover:text-primary/80 underline"

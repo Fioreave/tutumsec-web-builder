@@ -4,15 +4,23 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from '@/components/ui/card';
-
 import { useAuth } from '@/hooks/useAuth';
+import { useRateLimit } from '@/hooks/useRateLimit';
+import { useToast } from '@/hooks/use-toast';
 import { Loader2 } from 'lucide-react';
 
 const Auth = () => {
   const [loginForm, setLoginForm] = useState({ email: '', password: '' });
   const [loading, setLoading] = useState(false);
   const { signIn, user } = useAuth();
+  const { toast } = useToast();
   const navigate = useNavigate();
+
+  const rateLimit = useRateLimit('auth-login', {
+    maxAttempts: 5,
+    windowMs: 15 * 60 * 1000, // 15 minutes
+    blockDurationMs: 30 * 60 * 1000, // 30 minutes
+  });
 
   useEffect(() => {
     if (user) {
@@ -22,15 +30,52 @@ const Auth = () => {
 
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
-    setLoading(true);
     
-    const { error } = await signIn(loginForm.email, loginForm.password);
-    
-    if (!error) {
-      navigate('/');
+    // Check rate limiting
+    if (rateLimit.isBlocked) {
+      const minutes = Math.ceil(rateLimit.timeUntilReset / (1000 * 60));
+      toast({
+        title: "Demasiados intentos",
+        description: `Por favor, espera ${minutes} minutos antes de intentar iniciar sesión de nuevo.`,
+        variant: "destructive",
+      });
+      return;
+    }
+
+    if (!rateLimit.attempt()) {
+      toast({
+        title: "Límite alcanzado",
+        description: "Has alcanzado el límite de intentos de inicio de sesión. Inténtalo más tarde.",
+        variant: "destructive",
+      });
+      return;
     }
     
-    setLoading(false);
+    setLoading(true);
+    
+    try {
+      const { error } = await signIn(loginForm.email, loginForm.password);
+      
+      if (!error) {
+        rateLimit.reset(); // Reset on successful login
+        navigate('/');
+      } else {
+        // Don't reveal specific error details
+        toast({
+          title: "Error de acceso",
+          description: "Credenciales incorrectas. Por favor, verifica tu email y contraseña.",
+          variant: "destructive",
+        });
+      }
+    } catch (error) {
+      toast({
+        title: "Error",
+        description: "Ha ocurrido un error inesperado. Inténtalo de nuevo.",
+        variant: "destructive",
+      });
+    } finally {
+      setLoading(false);
+    }
   };
 
 

@@ -6,6 +6,9 @@ import { Label } from '@/components/ui/label';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from '@/components/ui/card';
 import { useAuth } from '@/hooks/useAuth';
 import { useTranslation } from '@/hooks/useTranslation';
+import { PasswordStrength } from '@/components/PasswordStrength';
+import { isValidPassword } from '@/utils/sanitize';
+import { useToast } from '@/hooks/use-toast';
 import { Loader2, ArrowLeft } from 'lucide-react';
 
 const ResetPassword = () => {
@@ -14,6 +17,7 @@ const ResetPassword = () => {
   const [loading, setLoading] = useState(false);
   const { updatePassword, user } = useAuth();
   const { t } = useTranslation();
+  const { toast } = useToast();
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -26,24 +30,45 @@ const ResetPassword = () => {
     e.preventDefault();
     
     if (password !== confirmPassword) {
-      alert('Las contraseñas no coinciden');
+      toast({
+        title: "Error",
+        description: "Las contraseñas no coinciden",
+        variant: "destructive",
+      });
       return;
     }
 
-    if (password.length < 6) {
-      alert('La contraseña debe tener al menos 6 caracteres');
+    const passwordValidation = isValidPassword(password);
+    if (!passwordValidation.isValid) {
+      toast({
+        title: "Contraseña no válida",
+        description: passwordValidation.errors[0],
+        variant: "destructive",
+      });
       return;
     }
 
     setLoading(true);
     
-    const { error } = await updatePassword(password);
-    
-    if (!error) {
-      navigate('/admin');
+    try {
+      const { error } = await updatePassword(password);
+      
+      if (!error) {
+        toast({
+          title: "Éxito",
+          description: "Contraseña actualizada correctamente",
+        });
+        navigate('/admin');
+      }
+    } catch (error) {
+      toast({
+        title: "Error",
+        description: "Ha ocurrido un error inesperado",
+        variant: "destructive",
+      });
+    } finally {
+      setLoading(false);
     }
-    
-    setLoading(false);
   };
 
   if (!user) {
@@ -79,8 +104,9 @@ const ResetPassword = () => {
                   onChange={(e) => setPassword(e.target.value)}
                   required
                   placeholder="Ingresa tu nueva contraseña"
-                  minLength={6}
+                  minLength={8}
                 />
+                <PasswordStrength password={password} />
               </div>
               <div className="space-y-2">
                 <Label htmlFor="confirmPassword">{t('confirmPassword')}</Label>
@@ -91,7 +117,7 @@ const ResetPassword = () => {
                   onChange={(e) => setConfirmPassword(e.target.value)}
                   required
                   placeholder="Confirma tu nueva contraseña"
-                  minLength={6}
+                  minLength={8}
                 />
               </div>
             </CardContent>

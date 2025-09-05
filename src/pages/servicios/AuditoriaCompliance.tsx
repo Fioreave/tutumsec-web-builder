@@ -68,8 +68,8 @@ const AuditoriaCompliance = () => {
       </Helmet>
 
       <Navbar />
-      <main className="min-h-screen flex items-center bg-background pt-20">
-        <div className="min-h-screen flex items-center mx-auto px-4">
+      <main className="min-h-screen bg-background pt-20">
+        <div className="container mx-auto px-4">
           <Breadcrumbs items={[
             { label: 'Servicios', href: '/es/servicios' },
             { label: 'Auditoría & Compliance NIS2' }

@@ -68,7 +68,7 @@ const AuditoriaCompliance = () => {
       </Helmet>
 
       <Navbar />
-      <main className="min-h-screen bg-background pt-20">
+      <main className="w-full bg-background pt-20">
         <div className="container mx-auto px-4">
           <Breadcrumbs items={[
             { label: 'Servicios', href: '/es/servicios' },

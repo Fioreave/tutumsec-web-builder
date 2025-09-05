@@ -30,7 +30,7 @@ const NavbarDropdown: React.FC<NavbarDropdownProps> = ({ title, items, className
         {title}
         <ChevronDown className="ml-1 h-3 w-3" />
       </DropdownMenuTrigger>
-      <DropdownMenuContent align="start" className="w-56">
+      <DropdownMenuContent align="start" className="w-64">
         {items.map((item, index) => {
           if (item.items) {
             return (

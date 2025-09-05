@@ -7,6 +7,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
+import { MapPin, Phone, Mail, Building2 } from 'lucide-react';
 
 const Contacto = () => {
   return (
@@ -23,8 +24,8 @@ const Contacto = () => {
       <Navbar />
       <main className="min-h-screen bg-tutumsec-gray-50 pt-20">
         {/* Hero Section */}
-        <section className="bg-gradient-to-r from-primary to-primary-dark text-white py-16">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <section className="w-full bg-gradient-to-r from-primary to-primary-dark text-white py-16">
+          <div className="max-w-7xl mx-auto px-6">
             <div className="text-center">
               <h1 className="text-4xl md:text-5xl font-bold mb-4 animate-fade-in">
                 Contacto
@@ -36,7 +37,8 @@ const Contacto = () => {
           </div>
         </section>
 
-        <div className="container mx-auto px-4 py-16">
+        <div className="w-full">
+          <div className="max-w-7xl mx-auto px-6 py-16">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* Formulario */}
             <Card className="shadow-lg border-0 bg-card animate-fade-in">
@@ -104,23 +106,23 @@ const Contacto = () => {
             <div className="space-y-8 animate-slide-up">
               <Card className="shadow-lg border-0 bg-card hover:shadow-xl transition-shadow duration-300">
                 <CardHeader className="bg-gradient-to-r from-primary-light/10 to-primary/10 border-b border-primary/20">
-                  <CardTitle className="text-xl text-primary flex items-center gap-2">
-                    <span className="text-2xl">🏢</span>
+                  <CardTitle className="text-xl text-primary flex items-center gap-3">
+                    <Building2 className="w-6 h-6 text-primary" />
                     Barcelona
                   </CardTitle>
                 </CardHeader>
                 <CardContent className="p-6">
                   <div className="space-y-3">
                     <p className="flex items-center gap-3 text-foreground">
-                      <span className="text-primary">📍</span>
+                      <MapPin className="w-5 h-5 text-primary" />
                       Carrer de Provença, 385, 08025 Barcelona
                     </p>
                     <p className="flex items-center gap-3 text-foreground">
-                      <span className="text-primary">📞</span>
+                      <Phone className="w-5 h-5 text-primary" />
                       +34 933 123 456
                     </p>
                     <p className="flex items-center gap-3 text-foreground">
-                      <span className="text-primary">✉️</span>
+                      <Mail className="w-5 h-5 text-primary" />
                       barcelona@tutumsec.io
                     </p>
                   </div>
@@ -129,23 +131,23 @@ const Contacto = () => {
 
               <Card className="shadow-lg border-0 bg-card hover:shadow-xl transition-shadow duration-300">
                 <CardHeader className="bg-gradient-to-r from-primary-light/10 to-primary/10 border-b border-primary/20">
-                  <CardTitle className="text-xl text-primary flex items-center gap-2">
-                    <span className="text-2xl">🏢</span>
+                  <CardTitle className="text-xl text-primary flex items-center gap-3">
+                    <Building2 className="w-6 h-6 text-primary" />
                     Girona
                   </CardTitle>
                 </CardHeader>
                 <CardContent className="p-6">
                   <div className="space-y-3">
                     <p className="flex items-center gap-3 text-foreground">
-                      <span className="text-primary">📍</span>
+                      <MapPin className="w-5 h-5 text-primary" />
                       Carrer de la Força, 15, 17004 Girona
                     </p>
                     <p className="flex items-center gap-3 text-foreground">
-                      <span className="text-primary">📞</span>
+                      <Phone className="w-5 h-5 text-primary" />
                       +34 972 234 567
                     </p>
                     <p className="flex items-center gap-3 text-foreground">
-                      <span className="text-primary">✉️</span>
+                      <Mail className="w-5 h-5 text-primary" />
                       girona@tutumsec.io
                     </p>
                   </div>
@@ -154,23 +156,23 @@ const Contacto = () => {
 
               <Card className="shadow-lg border-0 bg-card hover:shadow-xl transition-shadow duration-300">
                 <CardHeader className="bg-gradient-to-r from-primary-light/10 to-primary/10 border-b border-primary/20">
-                  <CardTitle className="text-xl text-primary flex items-center gap-2">
-                    <span className="text-2xl">🏔️</span>
+                  <CardTitle className="text-xl text-primary flex items-center gap-3">
+                    <Building2 className="w-6 h-6 text-primary" />
                     Andorra
                   </CardTitle>
                 </CardHeader>
                 <CardContent className="p-6">
                   <div className="space-y-3">
                     <p className="flex items-center gap-3 text-foreground">
-                      <span className="text-primary">📍</span>
+                      <MapPin className="w-5 h-5 text-primary" />
                       Av. Carlemany, 77, AD700 Escaldes-Engordany
                     </p>
                     <p className="flex items-center gap-3 text-foreground">
-                      <span className="text-primary">📞</span>
+                      <Phone className="w-5 h-5 text-primary" />
                       +376 890 123
                     </p>
                     <p className="flex items-center gap-3 text-foreground">
-                      <span className="text-primary">✉️</span>
+                      <Mail className="w-5 h-5 text-primary" />
                       andorra@tutumsec.io
                     </p>
                   </div>
@@ -197,6 +199,7 @@ const Contacto = () => {
                 </a>
               </Button>
             </div>
+          </div>
           </div>
         </div>
       </main>

@@ -64,17 +64,19 @@ const ConsultoriaCiso = () => {
 
       <Navbar />
       <main className="min-h-screen bg-background pt-20">
-        <div className="mx-auto">
-          <Breadcrumbs className="p-6"
-            items={[
-              { label: "Servicios", href: "/es/servicios" },
-              { label: "Consultoría CISO" },
-            ]}
-          />
+        <div className="w-full">
+          <div className="max-w-7xl mx-auto px-6">
+            <Breadcrumbs
+              items={[
+                { label: "Servicios", href: "/es/servicios" },
+                { label: "Consultoría CISO" },
+              ]}
+            />
+          </div>
 
           {/* BLOQUE 1 · HERO */}
-          <section className="py-12">
-            <div className="max-w-7xl mx-auto text-center">
+          <section className="w-full py-12">
+            <div className="max-w-7xl mx-auto px-6 text-center">
               <h1 className="text-4xl lg:text-5xl font-bold text-foreground mb-6">
                 {t("cisoConsultancyTitle")}
               </h1>
@@ -120,8 +122,8 @@ const ConsultoriaCiso = () => {
           </section>
 
           {/* BLOQUE 2 · PAIN → VISIÓN */}
-          <section className="py-12 bg-muted">
-            <div className="max-w-6xl mx-auto">
+          <section className="w-full py-12 bg-muted">
+            <div className="max-w-6xl mx-auto px-6">
               <h2 className="text-3xl font-bold text-center mb-8">
                 Da un paso adelante: de la preocupación constante a la confianza
                 digital
@@ -139,8 +141,8 @@ const ConsultoriaCiso = () => {
           </section>
 
           {/* BLOQUE 3 · BENEFICIOS CLAVE */}
-          <section className="py-12">
-            <div className="max-w-6xl mx-auto">
+          <section className="w-full py-12">
+            <div className="max-w-6xl mx-auto px-6">
               <h2 className="text-3xl font-bold text-center mb-12">
                 Cinco ventajas decisivas para tu comité de dirección
               </h2>
@@ -215,8 +217,8 @@ const ConsultoriaCiso = () => {
           </section>
 
           {/* BLOQUE 4 · PROCESO EN 4 PASOS */}
-          <section className="py-12 bg-muted">
-            <div className="max-w-4xl mx-auto">
+          <section className="w-full py-12 bg-muted">
+            <div className="max-w-4xl mx-auto px-6">
               <h2 className="text-3xl font-bold text-center mb-12">
                 Metodología PDCA + Zero Trust en 4 pasos
               </h2>
@@ -274,8 +276,8 @@ const ConsultoriaCiso = () => {
           </section>
 
           {/* BLOQUE 5 · TESTIMONIOS & CASOS */}
-          <section className="py-12">
-            <div className="max-w-4xl mx-auto">
+          <section className="w-full py-12">
+            <div className="max-w-4xl mx-auto px-6">
               <h3 className="text-2xl font-bold text-center mb-8">
                 Clientes que confían en TutumSec
               </h3>
@@ -320,7 +322,7 @@ const ConsultoriaCiso = () => {
 
           {/* CTA Final */}
           <section className="w-full bg-primary py-12 text-white">
-            <div className="max-w-4xl mx-auto text-center">
+            <div className="max-w-4xl mx-auto px-6 text-center">
               <h2 className="text-3xl font-bold mb-6">
                 ¿Listo para impulsar tu ciberseguridad?
               </h2>

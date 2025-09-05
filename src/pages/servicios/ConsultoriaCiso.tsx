@@ -65,7 +65,7 @@ const ConsultoriaCiso = () => {
       <Navbar />
       <main className="min-h-screen bg-background pt-20">
         <div className="mx-auto">
-          <Breadcrumbs
+          <Breadcrumbs className="p-6"
             items={[
               { label: "Servicios", href: "/es/servicios" },
               { label: "Consultoría CISO" },

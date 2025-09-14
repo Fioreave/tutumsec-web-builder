@@ -1,16 +1,22 @@
-import React from 'react';
-import Navbar from '@/components/Navbar';
-import Footer from '@/components/Footer';
-import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
+import React from "react";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+import {
+  Card,
+  CardHeader,
+  CardTitle,
+  CardDescription,
+  CardContent,
+} from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
 
 const Whitepapers = () => {
   const whitepapers = [
     {
-      title: 'Checklist NIS2',
-      description: 'Guía completa de cumplimiento NIS2 para tu organización',
-      downloadUrl: '/checklist-nis2.pdf'
-    }
+      title: "Checklist NIS2",
+      description: "Guía completa de cumplimiento NIS2 para tu organización",
+      downloadUrl: "/checklist-nis2.pdf",
+    },
   ];
 
   return (

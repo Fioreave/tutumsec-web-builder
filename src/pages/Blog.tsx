@@ -1,14 +1,20 @@
-import React, { useState, useEffect } from 'react';
-import { Link, useSearchParams } from 'react-router-dom';
-import { supabase } from '@/integrations/supabase/client';
-import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
-import { Badge } from '@/components/ui/badge';
-import { Skeleton } from '@/components/ui/skeleton';
-import { Calendar, User } from 'lucide-react';
-import { format } from 'date-fns';
-import { es } from 'date-fns/locale';
-import Navbar from '@/components/Navbar';
-import Footer from '@/components/Footer';
+import React, { useState, useEffect } from "react";
+import { Link, useSearchParams } from "react-router-dom";
+import { supabase } from "@/integrations/supabase/client";
+import {
+  Card,
+  CardHeader,
+  CardTitle,
+  CardDescription,
+  CardContent,
+} from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { Skeleton } from "@/components/ui/skeleton";
+import { Calendar, User } from "lucide-react";
+import { format } from "date-fns";
+import { es } from "date-fns/locale";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
 interface BlogPost {
   id: string;
@@ -27,7 +33,7 @@ const Blog = () => {
   const [posts, setPosts] = useState<BlogPost[]>([]);
   const [loading, setLoading] = useState(true);
   const [searchParams] = useSearchParams();
-  const search = searchParams.get('search') || '';
+  const search = searchParams.get("search") || "";
 
   useEffect(() => {
     fetchPosts();
@@ -36,8 +42,9 @@ const Blog = () => {
   const fetchPosts = async () => {
     try {
       let query = supabase
-        .from('blogs')
-        .select(`
+        .from("blogs")
+        .select(
+          `
           id,
           title,
           slug,
@@ -48,9 +55,10 @@ const Blog = () => {
           profiles:author_id (
             full_name
           )
-        `)
-        .eq('published', true)
-        .order('published_at', { ascending: false });
+        `
+        )
+        .eq("published", true)
+        .order("published_at", { ascending: false });
 
       if (search) {
         query = query.or(`title.ilike.%${search}%,excerpt.ilike.%${search}%`);
@@ -61,7 +69,7 @@ const Blog = () => {
       if (error) throw error;
       setPosts(data || []);
     } catch (error) {
-      console.error('Error fetching posts:', error);
+      console.error("Error fetching posts:", error);
     } finally {
       setLoading(false);
     }
@@ -69,15 +77,15 @@ const Blog = () => {
 
   const getImageUrl = (path: string | null) => {
     if (!path) return null;
-    if (path.startsWith('http')) return path;
-    const { data } = supabase.storage.from('blog-images').getPublicUrl(path);
+    if (path.startsWith("http")) return path;
+    const { data } = supabase.storage.from("blog-images").getPublicUrl(path);
     return data.publicUrl;
   };
 
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
-      
+
       <div className="pt-20 pb-16">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Header */}
@@ -86,7 +94,8 @@ const Blog = () => {
               Blog de Ciberseguridad
             </h1>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Mantente al día con las últimas tendencias, consejos y noticias en ciberseguridad
+              Mantente al día con las últimas tendencias, consejos y noticias en
+              ciberseguridad
             </p>
           </div>
 
@@ -106,7 +115,9 @@ const Blog = () => {
           ) : posts.length === 0 ? (
             <div className="text-center py-16">
               <h2 className="text-2xl font-semibold text-muted-foreground mb-4">
-                {search ? 'No se encontraron resultados' : 'No hay publicaciones disponibles'}
+                {search
+                  ? "No se encontraron resultados"
+                  : "No hay publicaciones disponibles"}
               </h2>
               {search && (
                 <p className="text-muted-foreground">
@@ -117,11 +128,16 @@ const Blog = () => {
           ) : (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {posts.map((post) => (
-                <Card key={post.id} className="overflow-hidden hover:shadow-lg transition-shadow group">
+                <Card
+                  key={post.id}
+                  className="overflow-hidden hover:shadow-lg transition-shadow group"
+                >
                   {post.featured_image && (
                     <div className="aspect-video overflow-hidden">
                       <img
-                        src={getImageUrl(post.featured_image) || '/placeholder.svg'}
+                        src={
+                          getImageUrl(post.featured_image) || "/placeholder.svg"
+                        }
                         alt={post.title}
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                       />
@@ -131,7 +147,9 @@ const Blog = () => {
                     <div className="flex items-center gap-4 text-sm text-muted-foreground mb-2">
                       <div className="flex items-center gap-1">
                         <Calendar className="h-4 w-4" />
-                        {format(new Date(post.published_at), 'dd MMM yyyy', { locale: es })}
+                        {format(new Date(post.published_at), "dd MMM yyyy", {
+                          locale: es,
+                        })}
                       </div>
                       {post.profiles?.full_name && (
                         <div className="flex items-center gap-1">
@@ -141,9 +159,7 @@ const Blog = () => {
                       )}
                     </div>
                     <CardTitle className="line-clamp-2 group-hover:text-primary transition-colors">
-                      <Link to={`/blog/${post.slug}`}>
-                        {post.title}
-                      </Link>
+                      <Link to={`/blog/${post.slug}`}>{post.title}</Link>
                     </CardTitle>
                     {post.excerpt && (
                       <CardDescription className="line-clamp-3">

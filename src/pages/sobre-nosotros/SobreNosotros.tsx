@@ -1,29 +1,34 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import Navbar from '@/components/Navbar';
-import Footer from '@/components/Footer';
-import { Card, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
+import React from "react";
+import { Link } from "react-router-dom";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+import {
+  Card,
+  CardHeader,
+  CardTitle,
+  CardDescription,
+} from "@/components/ui/card";
 
 const SobreNosotros = () => {
   const secciones = [
     {
-      title: 'Historia',
-      description: 'Nuestra trayectoria y evolución',
-      path: '/es/sobre-nosotros/historia',
-      icon: '📖'
+      title: "Historia",
+      description: "Nuestra trayectoria y evolución",
+      path: "/es/sobre-nosotros/historia",
+      icon: "📖",
     },
     {
-      title: 'Equipo y Valores',
-      description: 'Conoce a nuestro equipo y valores corporativos',
-      path: '/es/sobre-nosotros/equipo-valores',
-      icon: '👥'
+      title: "Equipo y Valores",
+      description: "Conoce a nuestro equipo y valores corporativos",
+      path: "/es/sobre-nosotros/equipo-valores",
+      icon: "👥",
     },
     {
-      title: 'Certificaciones y Partners',
-      description: 'Nuestras certificaciones y alianzas estratégicas',
-      path: '/es/sobre-nosotros/certificaciones-partners',
-      icon: '🏅'
-    }
+      title: "Certificaciones y Partners",
+      description: "Nuestras certificaciones y alianzas estratégicas",
+      path: "/es/sobre-nosotros/certificaciones-partners",
+      icon: "🏅",
+    },
   ];
 
   return (
@@ -36,7 +41,8 @@ const SobreNosotros = () => {
               Sobre Nosotros
             </h1>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Conoce más sobre TutorSec y nuestro compromiso con la ciberseguridad
+              Conoce más sobre TutorSec y nuestro compromiso con la
+              ciberseguridad
             </p>
           </div>
 
@@ -46,13 +52,14 @@ const SobreNosotros = () => {
                 <CardHeader>
                   <div className="text-4xl mb-4">{seccion.icon}</div>
                   <CardTitle className="text-xl mb-2">
-                    <Link to={seccion.path} className="hover:text-primary transition-colors">
+                    <Link
+                      to={seccion.path}
+                      className="hover:text-primary transition-colors"
+                    >
                       {seccion.title}
                     </Link>
                   </CardTitle>
-                  <CardDescription>
-                    {seccion.description}
-                  </CardDescription>
+                  <CardDescription>{seccion.description}</CardDescription>
                 </CardHeader>
               </Card>
             ))}

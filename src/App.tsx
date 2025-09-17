@@ -16,7 +16,7 @@ import ReservaConsultoria from "./pages/ReservaConsultoria";
 import Servicios from "./pages/servicios/Servicios";
 import ConsultoriaCiso from "./pages/servicios/ConsultoriaCiso";
 import AuditoriaCompliance from "./pages/servicios/AuditoriaCompliance";
-import Deteccion24x7Service from "./pages/servicios/Deteccion24x7";
+//import Deteccion24x7Service from "./pages/servicios/Deteccion24x7";
 import RespuestaIncidentes from "./pages/servicios/RespuestaIncidentes";
 import FormacionConcienciacion from "./pages/servicios/FormacionConcienciacion";
 import TransformacionDigital from "./pages/servicios/TransformacionDigital";
@@ -81,10 +81,6 @@ const App = () => (
           <Route
             path="/es/servicios/auditoria-compliance-nis2/"
             element={<AuditoriaCompliance />}
-          />
-          <Route
-            path="/es/servicios/deteccion-24x7-soc-mdr-xdr/"
-            element={<Deteccion24x7Service />}
           />
           <Route
             path="/es/servicios/respuesta-incidentes/"

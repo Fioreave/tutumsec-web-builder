@@ -1,65 +1,132 @@
+import React from "react";
+import { Users, Shield, CheckCircle, Eye, GraduationCap } from "lucide-react";
 
-import React from 'react';
-import { Shield, Users, FileCheck, Eye } from 'lucide-react';
-
+// Servicios en mosaico (2 filas: 1+2 y 3 iguales) con fondo de imagen
+// Usa <ServicesSection /> y ajusta las rutas del array `images` si es necesario.
 const ServicesSection = () => {
   const services = [
     {
-      title: "Audit & Pentest 360°",
-      description: "Visibilidad real de riesgos IT-OT.",
-      icon: Shield
+      title:
+        "Consultoría estratégica en Ciberseguridad y transformación digital",
+      benefit: "Diagnóstico integral + roadmap con quick-wins.",
+      icon: Users,
+      href: "#consultoria",
     },
     {
-      title: "vCISO",
-      description: "Estrategia y reporting ejecutivo sin contratar un C-level interno. Micro-copy dentro de cada card: beneficio + keyword principal.",
-      icon: Users
+      title: "vCISO (CISO as a Service)",
+      benefit:
+        "Gobernanza estratégica, cuadros de mando, control presupuestario y decisiones basadas en datos.",
+      icon: Shield,
+      href: "#vciso",
     },
     {
-      title: "Compliance NIS2 / ISO 27001 / ENS",
-      description: "Gap-analysis, implantación y auditoría.",
-      icon: FileCheck
+      title: "Auditoría Técnica + Compliance (NIS2, ENS, ISO 27001)",
+      benefit:
+        "Evaluamos tu estado real y definimos un plan de mejora. Evita sanciones y fortalece tu reputación. Pentesting para la visibilidad real de riesgos IT-OT.",
+      icon: CheckCircle,
+      href: "#auditoria",
     },
     {
-      title: "MDR 24/7 + SOCaaS",
-      description: "Detección y contención en < 15 min.",
-      icon: Eye
-    }
+      title: "SOC / MDR 24×7",
+      benefit:
+        "Detección y respuesta en tiempo real con SLA ≤ 15 minutos. Cobertura total sin ampliar plantilla.",
+      icon: Eye,
+      href: "#soc-mdr",
+    },
+    {
+      title: "Formación & Awareness",
+      benefit: "Simulaciones de phishing y micro-learning gamificado.",
+      icon: GraduationCap,
+      href: "#formacion",
+    },
   ];
 
-  return (
-    <section className="py-20 px-6 bg-gray-50">
-      <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-16 transform transition-all duration-700 hover:translate-y-1">
-          <h2 className="text-4xl lg:text-5xl font-bold text-blue-500 mb-6 transition-colors duration-500 hover:text-blue-600">
-            Ciberseguridad premium<br />
-            que crece contigo
-          </h2>
+  // Imágenes de fondo; se ciclan si hay más cards que imágenes
+  const images = [
+    "/uploads/fusion-05.jpeg",
+    "/uploads/dispersion-04.jpeg",
+    "/uploads/dispersion-02.jpeg",
+  ];
+
+  const getImage = (i: number) => images[i % images.length];
+
+  const Card = ({ item, idx, className = "" }) => {
+    const Wrapper = ({ children }) =>
+      item.href ? (
+        <a
+          href={item.href}
+          className={`relative rounded-2xl overflow-hidden shadow-lg group min-h-[220px] block focus:outline-none focus-visible:ring-2 focus-visible:ring-white/80 ${className}`}
+          aria-label={`Ir a ${item.title}`}
+        >
+          {children}
+        </a>
+      ) : (
+        <div
+          className={`relative rounded-2xl overflow-hidden shadow-lg group min-h-[220px] ${className}`}
+        >
+          {children}
         </div>
-        
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {services.map((service, index) => {
-            const IconComponent = service.icon;
-            return (
-              <div 
-                key={index}
-                className="bg-gray-400 p-8 rounded-2xl text-white relative group hover:bg-gray-500 transition-all duration-500 transform hover:translate-y-2 hover:shadow-lg opacity-0 animate-slide-up"
-                style={{ 
-                  animationDelay: `${index * 0.15}s`, 
-                  animationFillMode: 'forwards' 
-                }}
-              >
-                <div className="w-12 h-12 bg-blue-500 rounded-lg mb-6 flex items-center justify-center transition-all duration-300 group-hover:scale-110 group-hover:bg-blue-400">
-                  <IconComponent className="w-6 h-6 text-white transition-transform duration-300 group-hover:rotate-3" />
-                </div>
-                <h3 className="text-xl font-semibold mb-4 transition-colors duration-300 group-hover:text-blue-100">
-                  {service.title}
-                </h3>
-                <p className="text-gray-100 leading-relaxed text-sm transition-colors duration-300 group-hover:text-gray-50">
-                  {service.description}
-                </p>
-              </div>
-            );
-          })}
+      );
+
+    return (
+      <Wrapper>
+        {/* Fondo con imagen */}
+        <div
+          className="absolute inset-0 bg-center bg-cover"
+          style={{ backgroundImage: `url(${getImage(idx)})` }}
+        />
+        {/* Overlay para contraste */}
+        <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-black/30 group-hover:from-black/80 transition-colors" />
+
+        {/* Contenido */}
+        <div className="relative p-8 text-white flex items-start gap-5 h-full">
+          <div className="flex-1">
+            <h4 className="text-xl font-semibold leading-relaxed mb-2">
+              {item.title}
+            </h4>
+            <p className="text-white/90 leading-relaxed">{item.benefit}</p>
+          </div>
+          <div className="ml-auto text-white/80">
+            <svg
+              className="w-6 h-6"
+              viewBox="0 0 24 24"
+              fill="none"
+              aria-hidden
+            >
+              <path
+                d="M7 17L17 7M17 7H7M17 7V17"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+          </div>
+        </div>
+      </Wrapper>
+    );
+  };
+
+  return (
+    <section className="py-20 px-6 bg-white">
+      <div className="max-w-6xl mx-auto">
+        <div className="text-left mb-10">
+          <h3 className="text-4xl lg:text-5xl font-bold text-gray-900 leading-relaxed">
+            Haz crecer tu negocio
+          </h3>
+        </div>
+
+        {/* FILA 1: 2 columnas asimétricas (1 col y 2 cols) */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6 items-stretch">
+          <Card item={services[0]} idx={0} className="md:col-span-1" />
+          <Card item={services[1]} idx={1} className="md:col-span-2" />
+        </div>
+
+        {/* FILA 2: 3 columnas iguales */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-stretch">
+          <Card item={services[2]} idx={2} />
+          <Card item={services[3]} idx={3} />
+          <Card item={services[4]} idx={4} />
         </div>
       </div>
     </section>

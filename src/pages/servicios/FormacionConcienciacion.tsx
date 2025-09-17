@@ -1,13 +1,14 @@
 import React from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import Breadcrumbs from "@/components/Breadcrumbs";
+import SEOMetaTags from "@/components/SEOMetaTags";
 import { Button } from "@/components/ui/button";
 import {
   Card,
   CardHeader,
   CardTitle,
   CardDescription,
-  CardContent,
 } from "@/components/ui/card";
 import {
   Accordion,
@@ -24,9 +25,17 @@ import {
   Wrench,
   Smartphone,
   Compass,
+  AlertTriangle,
+  Shield,
+  Clock,
+  TrendingUp,
+  ArrowUpRight,
+  LineChart,
+  ShieldCheck,
+  Bug,
+  AlarmClock,
 } from "lucide-react";
-import Breadcrumbs from "@/components/Breadcrumbs";
-import SEOMetaTags from "@/components/SEOMetaTags";
+import RoleItinerariesCarousel from "./RoleItinerariesGrid";
 
 const FormacionConcienciacion = () => {
   const breadcrumbItems = [
@@ -47,105 +56,56 @@ const FormacionConcienciacion = () => {
     "Informes de formación listos para auditorías (NIS2/ISO/ENS)",
   ];
 
-  const solutionCards = [
+  const solucion = [
     {
       title: "Microlearning mensual (10')",
       description:
         "Píldoras breves y accionables, con ejemplos reales del día a día (oficina, campo, planta).",
-      deliverables:
-        'vídeos/carruseles, mini-quizzes, guía "1 página" por tema.',
+      icon: AlertTriangle,
     },
     {
       title: "Phishing simulado con corrección guiada",
       description:
         "Campañas periódicas según riesgo del área; informes con métricas y plan de mejora por equipo.",
-      deliverables:
-        "informe ejecutivo, métricas (tasa de clics, reportes), recomendaciones.",
+      icon: Shield,
     },
     {
       title: "Talleres por rol y casos reales",
       description:
         'Sesiones presenciales o por videollamada, con ejercicios prácticos, role-play de incidentes y "qué hacer si…".',
-      deliverables:
-        "material de apoyo, pósters/infografías, checklist de buenas prácticas.",
+      icon: Clock,
     },
     {
       title: "Coaching de dirección (comité/gerencia)",
       description:
         "Gobernanza, indicadores y decisiones de negocio: cómo priorizar, cómo responder y qué exigir a TI/partners.",
-      deliverables:
-        "briefing trimestral, guía de decisiones, hoja de ruta de cultura.",
+      icon: TrendingUp,
     },
   ];
-
-  const roleItineraries = [
+  const ritm = [
     {
-      icon: <Compass className="w-6 h-6" />,
-      title: "Dirección / Comité",
-      objective: "Tomar decisiones y medir avance.",
-      contents: [
-        "Riesgo y negocio: impacto, apetito de riesgo, prioridades.",
-        "Requisitos mínimos NIS2/ISO 27001 y evidencias de cultura.",
-        "Gestión de crisis y reputación (mensajes, stakeholders).",
-      ],
-      deliverables:
-        "Guía de decisiones (1 pág.), dashboard de cultura, briefing trimestral.",
+      title: "Frecuencia:",
+      description: "microlearning mensual (10').",
     },
     {
-      icon: <Users className="w-6 h-6" />,
-      title: "Managers / Mandos intermedios",
-      objective: "Bajar políticas a procesos y equipos.",
-      contents: [
-        "Políticas prácticas (accesos, datos, terceros) y reporting.",
-        "Seguridad en procesos y trabajo híbrido.",
-        "Cómo liderar la cultura (refuerzo positivo, hábitos).",
-      ],
-      deliverables:
-        "Fichas de proceso, checklist de equipo, plantilla de reporte.",
+      title: "Campañas de phishing:",
+      description: "trimestrales y/o semestrales según riesgo.",
     },
     {
-      icon: <Monitor className="w-6 h-6" />,
-      title: "Staff de oficina",
-      objective: "Reducir clics de riesgo y fugas de información.",
-      contents: [
-        "Phishing real vs. simulado: señales y reacción.",
-        "Contraseñas y MFA; compartición segura.",
-        "Datos personales y documentos: lo que sí y lo que no.",
-      ],
-      deliverables: "Píldoras + cartelera de buenas prácticas, mini-quiz.",
+      title: "Talleres/coaching:",
+      description: "agenda flexible (mañanas 9–14h, tardes 15–17h).",
     },
     {
-      icon: <Factory className="w-6 h-6" />,
-      title: "OT / Planta",
-      objective: "Minimizar fallos humanos en sistemas industriales.",
-      contents: [
-        "Uso de USB y mantenimiento; principio de mínimo privilegio.",
-        "Red segregada y protocolos en planta.",
-        "Qué hacer ante comportamientos anómalos.",
-      ],
-      deliverables: "Taller in situ, pósters por zona, checklist de turno.",
+      title: "Modos:",
+      description: "presencial, videollamada y contenidos SaaS.",
     },
     {
-      icon: <Wrench className="w-6 h-6" />,
-      title: "IT / Helpdesk",
-      objective: "Convertir IT en motor de cultura.",
-      contents: [
-        "Hardening básico de usuario y dispositivos.",
-        "Onboarding/Offboarding seguro y JML.",
-        "Playbooks de respuesta de primer nivel.",
-      ],
-      deliverables: "Guías operativas, playbooks L1, lista de verificación.",
+      title: "Idiomas:",
+      description: "Idiomas: español y catalán.",
     },
     {
-      icon: <Smartphone className="w-6 h-6" />,
-      title: "Comercial / Campo",
-      objective: "Cierre seguro sin fricciones.",
-      contents: [
-        "Email y movilidad segura; redes públicas.",
-        "Compartición con terceros y NDAs.",
-        "Protección de información sensible en visitas.",
-      ],
-      deliverables: "Kit móvil (checklist + tips), micro-training itinerante.",
+      title: "Comunicación:",
+      description: "Comunicación: y soporte continuo.",
     },
   ];
 
@@ -199,75 +159,27 @@ const FormacionConcienciacion = () => {
       title: "Consultoría CISO (vCISO)",
       description: "Gobierno, KPIs y cultura",
       path: "/es/servicios/consultoria-ciso",
+      icon: LineChart,
     },
     {
       title: "Auditoría & Compliance NIS2",
       description: "Gap-Analysis + plan de adecuación",
       path: "/es/servicios/auditoria-compliance-nis2",
+      icon: ShieldCheck,
     },
     {
       title: "Auditoría técnica & Pentesting",
       description: "Validación ofensiva",
       path: "/es/servicios/auditoria-compliance-nis2",
+      icon: Bug,
     },
     {
       title: "SOC / MDR 24×7",
       description: "Vigilancia y respuesta gestionada",
       path: "/es/servicios/respuesta-incidente",
+      icon: AlarmClock,
     },
   ];
-
-  const faqStructuredData = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    mainEntity: faqs.map((faq) => ({
-      "@type": "Question",
-      name: faq.question,
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: faq.answer,
-      },
-    })),
-  };
-
-  const serviceStructuredData = {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    name: "Formación y Concienciación en Ciberseguridad",
-    serviceType:
-      "Programa de formación y concienciación en ciberseguridad (awareness NIS2)",
-    provider: {
-      "@type": "Organization",
-      name: "TutumSec",
-    },
-    areaServed: ["ES-CT", "ES-GI", "AD"],
-    description:
-      "Programa de concienciación NIS2 con microlearning mensual, phishing simulado y coaching directivo. Informes para auditoría y resultados medibles.",
-  };
-
-  const breadcrumbStructuredData = {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    itemListElement: [
-      {
-        "@type": "ListItem",
-        position: 1,
-        name: "Home",
-        item: "/",
-      },
-      {
-        "@type": "ListItem",
-        position: 2,
-        name: "Servicios",
-        item: "/es/servicios",
-      },
-      {
-        "@type": "ListItem",
-        position: 3,
-        name: "Formación y Concienciación",
-      },
-    ],
-  };
 
   return (
     <>
@@ -276,319 +188,470 @@ const FormacionConcienciacion = () => {
         description="Programa de concienciación NIS2 con microlearning mensual, phishing simulado y coaching directivo. Informes para auditoría y resultados medibles. Diagnóstico gratis."
       />
 
-      <script type="application/ld+json">
-        {JSON.stringify(faqStructuredData)}
-      </script>
-      <script type="application/ld+json">
-        {JSON.stringify(serviceStructuredData)}
-      </script>
-      <script type="application/ld+json">
-        {JSON.stringify(breadcrumbStructuredData)}
-      </script>
-
       <Navbar />
-      <main className="min-h-screen bg-background pt-20">
-        <div className="container mx-auto px-4 py-8">
-          <Breadcrumbs items={breadcrumbItems} />
+      <main className="min-h-screen bg-background">
+        <div>
+          {/*<Breadcrumbs items={breadcrumbItems} />
 
-          {/* BLOQUE 1 · HERO */}
-          <section className="mb-16">
-            <div className="text-center mb-8">
-              <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-                Formación y concienciación en ciberseguridad que cambian hábitos
+           ====== HERO (idéntico patrón visual a la home) ====== */}
+          <section className="relative min-h-screen isolate overflow-hidden mt-6 ">
+            {/* base */}
+            <div className="absolute inset-0 z-0 bg-[#0a0f1c]" />
+            {/* gradiente */}
+            <div
+              className="absolute inset-0 z-10"
+              style={{
+                background:
+                  "linear-gradient(120deg, rgba(14,24,46,0) 0%, rgba(89,116,189,0.35) 45%, rgba(182,185,193,0) 100%)",
+              }}
+            />
+            {/* glows */}
+            <div className="pointer-events-none absolute -top-24 -left-24 w-[60vw] h-[60vw] bg-blue-600/20 rounded-full blur-3xl z-10" />
+            <div className="pointer-events-none absolute -right-40 top-10 w-[50vw] h-[50vw] bg-blue-400/20 rounded-full blur-3xl z-10" />
+            {/* hilo */}
+            <img
+              src="/uploads/hilo.png"
+              alt=""
+              aria-hidden
+              className="pointer-events-none select-none absolute left-0 -top-12 w-[1200px] max-w-none opacity-60 mix-blend-screen z-20"
+            />
+            {/* contenido */}
+            <div className="relative z-30 px-6 py-12 md:py-16 text-center mt-20">
+              <h1 className="container max-w-6xl text-4xl md:text-5xl font-bold text-white mb-4 mt-20 pt-20">
+                Formación y concienciación <br />
+                en ciberseguridad que cambian hábitos
               </h1>
-              <h2 className="text-xl md:text-2xl text-muted-foreground mb-6">
+              <h2 className="container max-w-5xl text-xl md:text-2xl text-white/80 mb-8">
                 De los clics por costumbre a una cultura de seguridad real:
                 microlearning mensual, phishing simulado y talleres por rol con
                 reportes para auditorías.
               </h2>
 
               <div className="flex flex-wrap justify-center gap-2 mb-8">
-                {badges.map((badge, index) => (
-                  <Badge key={index} variant="outline" className="text-sm">
+                {badges.map((badge, i) => (
+                  <Badge
+                    key={i}
+                    variant="outline"
+                    className="text-sm bg-white/10 border-white/20 text-white"
+                  >
                     {badge}
                   </Badge>
                 ))}
               </div>
 
-              <div className="mb-8">
-                <h3 className="text-lg font-semibold mb-4">Quick-wins:</h3>
-                <ul className="text-left max-w-4xl mx-auto space-y-2">
-                  {quickWins.map((win, index) => (
-                    <li key={index} className="flex items-start">
-                      <CheckCircle className="w-5 h-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
-                      <span>{win}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button size="lg" className="text-lg">
+                <Button size="lg" className="rounded-full text-lg px-8">
                   Reserva diagnóstico gratuito 15'
                 </Button>
-                <Button variant="outline" size="lg" className="text-lg">
+                <Button
+                  variant="outline"
+                  size="lg"
+                  className="text-lg rounded-full px-8 bg-white/10 text-white border-white/20 hover:bg-white/20"
+                >
                   Descarga el Kit Anti-Phishing
                 </Button>
               </div>
             </div>
           </section>
 
-          {/* BLOQUE 2 · PAIN → PROBLEM */}
-          <section className="mb-16">
-            <h2 className="text-3xl font-bold text-foreground mb-6">
-              El factor humano sigue siendo el eslabón más débil
-            </h2>
-            <p className="text-lg text-muted-foreground">
-              La mayoría de incidentes empiezan con un clic impulsivo o una mala
-              práctica: contraseñas reutilizadas, adjuntos abiertos sin validar,
-              uso de USB en planta, sesiones sin bloqueo… En PYMEs y
-              organizaciones reguladas, esto se traduce en riesgos operativos y
-              sanciones potenciales. Sin una formación continua y por rol, el
-              cambio de hábitos no sucede.
-            </p>
+          <section className="bg-gray-500/5 pb-6 pt-12">
+            <div className="mb-8 max-w-7xl mx-auto ">
+              <div className="grid lg:grid-cols-3 gap-12 items-center text-left space-y-2">
+                {quickWins.map((win, i) => (
+                  <li key={i} className="flex items-start text-dark/90">
+                    <CheckCircle className="w-5 h-5 text-blue-300 mr-2 mt-0.5 flex-shrink-0" />
+                    <span>{win}</span>
+                  </li>
+                ))}
+              </div>
+            </div>
           </section>
 
-          {/* BLOQUE 3 · LA SOLUCIÓN TUTUMSEC */}
-          <section className="mb-16">
-            <h2 className="text-3xl font-bold text-foreground mb-8">
-              Un programa continuo, práctico y medible
-            </h2>
-            <div className="grid md:grid-cols-2 gap-6">
-              {solutionCards.map((card, index) => (
-                <Card key={index}>
-                  <CardHeader>
-                    <CardTitle className="text-xl">{card.title}</CardTitle>
-                    <CardDescription className="text-base mb-4">
-                      {card.description}
-                    </CardDescription>
-                    <div className="text-sm">
-                      <strong>Entregables:</strong> {card.deliverables}
-                    </div>
-                  </CardHeader>
-                </Card>
-              ))}
+          {/* ====== SOLUCIÓN (cards limpias como home) ====== */}
+          <section className="container py-12">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl lg:text-5xl mt-20 font-bold text-gray-900 mb-6 animate-slide-up leading-relaxed">
+                Un programa continuo, práctico y medible{" "}
+              </h2>
             </div>
-            <div className="mt-6 p-4 bg-muted rounded-lg">
+            <div className="grid md:grid-cols-2 gap-8">
+              {solucion.map((solucion, index) => {
+                const IconComponent = solucion.icon;
+                return (
+                  <div
+                    key={index}
+                    className="bg-white p-8 rounded-2xl border border-gray-200 group hover:shadow-lg transition-all duration-500 hover:-translate-y-1 animate-fade-in"
+                    style={{
+                      animationDelay: `${index * 0.2}s`,
+                      animationFillMode: "forwards",
+                      opacity: 0,
+                    }}
+                  >
+                    <div className="flex items-start space-x-4">
+                      <div className="w-20 h-20 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:bg-primary/20 transition-colors duration-300">
+                        <IconComponent className="w-14 h-14 text-primary" />
+                      </div>
+                      <div>
+                        <h3 className="text-xl font-semibold text-gray-800 mb-3 transition-colors duration-300 group-hover:text-primary leading-relaxed">
+                          {solucion.title}
+                        </h3>
+                        <p className="text-gray-600 leading-relaxed transition-colors duration-300 group-hover:text-gray-700">
+                          {solucion.description}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+            <div className="mt-20 p-5 bg-muted rounded-2xl border border-gray-200 max-w-5xl mx-auto">
               <p className="text-sm">
                 <strong>Nota legal/compliance:</strong> Incluimos informe de
                 formación apto para evidencias de auditoría (NIS2/ISO 27001).
               </p>
             </div>
           </section>
+          {/* ====== BLOQUE PROBLEMA ====== */}
+          <section className=" py-20 px-6 text-blue">
+            <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
+              <div className="transform transition-all duration-700 hover:translate-x-2">
+                <h2 className="text-3xl lg:text-4xl mb-2 font-bold transition-colors duration-500 hover:text-primary-light leading-relaxed">
+                  El factor humano sigue siendo el eslabón más débil
+                </h2>
+              </div>
+              <div className="border-l-4 border-blue-400 text-sm pl-6 prose prose-lg max-w-none text-left">
+                <p>
+                  La mayoría de incidentes empiezan con un clic impulsivo o una
+                  mala práctica: contraseñas reutilizadas, adjuntos abiertos sin
+                  validar, uso de USB en planta, sesiones sin bloqueo… En PYMEs
+                  y organizaciones reguladas, esto se traduce en riesgos
+                  operativos y sanciones potenciales. Sin una formación continua
+                  y por rol, el cambio de hábitos no sucede.
+                </p>
+              </div>
+            </div>
+          </section>
 
-          {/* BLOQUE 4 · ITINERARIOS POR ROL */}
-          <section className="mb-16">
-            <h2 className="text-3xl font-bold text-foreground mb-8">
-              El contenido adecuado para cada persona
-            </h2>
-            <Accordion
-              type="single"
-              collapsible
-              className="w-full"
-              defaultValue="item-0"
-            >
-              {roleItineraries.map((role, index) => (
-                <AccordionItem key={index} value={`item-${index}`}>
-                  <AccordionTrigger className="text-left">
-                    <div className="flex items-center">
-                      {role.icon}
-                      <span className="ml-3 text-lg font-semibold">
-                        {role.title}
-                      </span>
-                    </div>
-                  </AccordionTrigger>
-                  <AccordionContent>
-                    <div className="pl-9">
-                      <p className="mb-4">
-                        <strong>Objetivo:</strong> {role.objective}
-                      </p>
-                      <div className="mb-4">
-                        <strong>Contenidos clave:</strong>
-                        <ul className="mt-2 space-y-1">
-                          {role.contents.map((content, idx) => (
-                            <li key={idx} className="flex items-start">
-                              <span className="mr-2">•</span>
-                              <span>{content}</span>
-                            </li>
-                          ))}
-                        </ul>
+          {/* ====== METODOLOGÍA (estilo “Resultados”) ====== */}
+          <section className="py-20">
+            <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-10 items-start">
+              {/* Columna izquierda: título + subtítulo opcional */}
+              <div className="px-2">
+                <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-8">
+                  De la intención al hábito:
+                  <br className="hidden md:block" /> método TutumSec
+                </h2>
+                <p className="mt-6 text-lg text-muted-foreground italic">
+                  {/* Puedes quitar esta línea si no quieres subtítulo */}
+                  “Pasos claros, responsables claros y métricas sencillas por
+                  rol.”
+                </p>
+              </div>
+
+              {/* Columna derecha: tarjetas gradiente como en tu “Resultados” */}
+              <div className="space-y-6">
+                {methodologySteps.map((raw, i) => {
+                  // Partimos solo para formatear visualmente (NO tocamos el texto)
+                  const [titlePart, ...rest] = raw.split(":");
+                  const title = titlePart.trim();
+                  const desc = rest.join(":").trim(); // puede quedar vacío si no hay ":" (2º paso)
+                  // Paletas en azul (como tu screenshot)
+                  const gradients = [
+                    "from-[#2563eb] via-[#1e3a8a] to-[#0b1220]",
+                    "from-[#1f3b8a] via-[#1d3fa7] to-[#1b2b59]",
+                    "from-[#3b82f6] via-[#2450b2] to-[#0f1b37]",
+                    "from-[#1e40af] via-[#1d4ed8] to-[#0b1220]",
+                    "from-[#2563eb] via-[#1e3a8a] to-[#0b1220]",
+                  ];
+                  const g = gradients[i % gradients.length];
+
+                  return (
+                    <div
+                      key={i}
+                      className={`relative w-full rounded-2xl p-6 md:p-8 text-white bg-gradient-to-r ${g} shadow-lg`}
+                    >
+                      <div className="flex items-start gap-6">
+                        {/* Número grande a la izquierda */}
+                        <div className="shrink-0">
+                          <div className="text-5xl md:text-6xl font-extrabold leading-none opacity-90">
+                            {i + 1}
+                          </div>
+                        </div>
+
+                        {/* Texto a la derecha */}
+                        <div className="flex-1">
+                          <div className="text-lg md:text-xl font-semibold">
+                            {title}
+                            {desc && ":"}
+                          </div>
+                          {desc && (
+                            <p className="mt-2 text-sm md:text-base text-white/85 leading-relaxed">
+                              {desc}
+                            </p>
+                          )}
+                        </div>
+
+                        {/* Flecha decorativa (como en Resultados) */}
+                        <ArrowUpRight className="w-6 h-6 opacity-70 mt-1" />
                       </div>
-                      <p>
-                        <strong>Entregables:</strong> {role.deliverables}
-                      </p>
                     </div>
-                  </AccordionContent>
-                </AccordionItem>
-              ))}
-            </Accordion>
-          </section>
-
-          {/* BLOQUE 5 · CALENDARIO, FORMATOS Y LENGUAS */}
-          <section className="mb-16">
-            <h2 className="text-3xl font-bold text-foreground mb-6">
-              Ritmo y formatos que no interrumpen el negocio
-            </h2>
-            <div className="grid md:grid-cols-2 gap-8">
-              <div>
-                <ul className="space-y-3">
-                  <li>
-                    <strong>Frecuencia:</strong> microlearning mensual (10').
-                  </li>
-                  <li>
-                    <strong>Campañas de phishing:</strong> trimestrales y/o
-                    semestrales según riesgo.
-                  </li>
-                  <li>
-                    <strong>Talleres/coaching:</strong> agenda flexible (mañanas
-                    9–14h, tardes 15–17h).
-                  </li>
-                </ul>
-              </div>
-              <div>
-                <ul className="space-y-3">
-                  <li>
-                    <strong>Modos:</strong> presencial, videollamada y
-                    contenidos SaaS.
-                  </li>
-                  <li>
-                    <strong>Idiomas:</strong> español y catalán
-                  </li>
-                  <li>
-                    <strong>Comunicación:</strong> y soporte continuo.
-                  </li>
-                </ul>
+                  );
+                })}
               </div>
             </div>
           </section>
 
-          {/* BLOQUE 6 · METODOLOGÍA EN 5 PASOS */}
-          <section className="mb-16">
-            <h2 className="text-3xl font-bold text-foreground mb-8">
-              De la intención al hábito: método TutumSec
-            </h2>
-            <div className="space-y-4">
-              {methodologySteps.map((step, index) => (
-                <div key={index} className="flex items-start">
-                  <div className="flex-shrink-0 w-8 h-8 bg-primary text-primary-foreground rounded-full flex items-center justify-center font-bold mr-4">
-                    {index + 1}
-                  </div>
-                  <p className="text-lg">{step}</p>
+          <RoleItinerariesCarousel />
+
+          {/* ====== CALENDARIO / FORMATOS ====== */}
+          <section className="py-20 px-6 bg-gradient-to-br from-gray-900 via-blue-900 to-black text-white">
+            <div className="max-w-6xl mx-auto">
+              <div className="grid lg:grid-cols-2 gap-12 items-start">
+                <div className="transform transition-all duration-700 hover:translate-x-2">
+                  <h2 className="text-3xl lg:text-4xl font-bold mb-8 transition-colors duration-500 hover:text-primary-light leading-relaxed">
+                    Ritmo y formatos que no interrumpen
+                    <span className="relative group p-2">
+                      el negocio
+                      <svg
+                        className="absolute -bottom-1 left-0 w-full h-3 transition-all duration-500 group-hover:scale-105"
+                        viewBox="0 0 300 12"
+                        fill="none"
+                      >
+                        <path
+                          d="M5 8 Q150 3 295 8"
+                          stroke="hsl(var(--primary))"
+                          strokeWidth="3"
+                          fill="none"
+                        />
+                      </svg>
+                    </span>
+                  </h2>
                 </div>
-              ))}
+
+                <div className="space-y-8">
+                  <div className="overflow-x-auto">
+                    <table className="w-full">
+                      <thead></thead>
+                      <tbody>
+                        <div className="space-y-8">
+                          {ritm.map((ritm, index) => (
+                            <div
+                              key={index}
+                              className="border-l-4 border-blue-400 pl-6"
+                            >
+                              <h3 className="text-xl font-semibold mb-2 text-blue-300">
+                                {ritm.title}
+                              </h3>
+                              <p className="text-gray-200 leading-relaxed">
+                                {ritm.description}
+                              </p>
+                            </div>
+                          ))}
+                        </div>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
             </div>
           </section>
 
-          {/* BLOQUE 7 · RESULTADOS ESPERADOS */}
-          <section className="mb-16">
-            <h2 className="text-3xl font-bold text-foreground mb-6">
-              Lo que verás en 3-6 meses
-            </h2>
-            <ul className="space-y-3">
-              {expectedResults.map((result, index) => (
-                <li key={index} className="flex items-start">
-                  <CheckCircle className="w-5 h-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
-                  <span className="text-lg">{result}</span>
-                </li>
-              ))}
-            </ul>
-            <p className="mt-4 text-muted-foreground">
-              (Las cifras exactas se miden en tu entorno; trabajamos objetivos
-              realistas por fase.)
-            </p>
-          </section>
+          {/* ====== RESULTADOS (estilo tarjetas gradiente) ====== */}
+          <section className="py-16">
+            <div className="max-w-6xl mx-auto">
+              <h2 className="text-4xl font-extrabold text-foreground mb-8">
+                Lo que verás en 3-6 meses
+              </h2>
 
-          {/* BLOQUE 8 · RECURSOS DESCARGABLES */}
-          <section className="mb-16">
-            <h2 className="text-3xl font-bold text-foreground mb-6">
-              Empieza hoy a cambiar hábitos
-            </h2>
-            <div className="grid md:grid-cols-2 gap-6">
-              <Card>
-                <CardHeader>
-                  <CardTitle>Kit Anti-Phishing</CardTitle>
-                  <CardDescription>
-                    Plantillas + política lista para adaptar
-                  </CardDescription>
-                </CardHeader>
-              </Card>
-              <Card>
-                <CardHeader>
-                  <CardTitle>
-                    Checklist "Cultura de Seguridad en 30 días"
-                  </CardTitle>
-                  <CardDescription>
-                    Guía paso a paso para implementar una cultura de seguridad
-                  </CardDescription>
-                </CardHeader>
-              </Card>
-            </div>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8">
-              <Button size="lg">Solicitar diagnóstico gratuito</Button>
-              <Button variant="outline" size="lg">
-                Descargar Kit Anti-Phishing
-              </Button>
+              <div className="grid md:grid-cols-3 gap-6">
+                {expectedResults.map((text, i) => {
+                  const gradients = [
+                    "from-[#3B82F6] to-[#1E3A8A]",
+                    "from-[#1E3A8A] to-[#1D4ED8]",
+                    "from-[#1E3A8A] to-[#00040B]",
+                  ];
+                  return (
+                    <div
+                      key={i}
+                      className={`rounded-2xl p-6 md:p-8 text-white bg-gradient-to-r ${
+                        gradients[i % gradients.length]
+                      } shadow-[0_10px_30px_rgba(2,6,23,0.15)]`}
+                    >
+                      <div className="flex items-start gap-6">
+                        {/* número grande */}
+                        <div className="text-5xl md:text-6xl font-extrabold leading-none opacity-95">
+                          {i + 1}
+                        </div>
+
+                        {/* texto */}
+                        <div className="flex-1">
+                          <p className="text-lg leading-relaxed">{text}</p>
+                        </div>
+
+                        {/* icono flecha */}
+                        <ArrowUpRight className="w-6 h-6 opacity-70 mt-1" />
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+
+              <p className="mt-6 text-sm text-muted-foreground italic">
+                (Las cifras exactas se miden en tu entorno; trabajamos objetivos
+                realistas por fase.)
+              </p>
             </div>
           </section>
 
-          {/* BLOQUE 9 · CTA + LEAD MAGNET */}
-          <section className="mb-16 bg-muted p-8 rounded-lg text-center">
-            <h2 className="text-3xl font-bold text-foreground mb-6">
-              ¿Empezamos con un piloto de 90 días?
-            </h2>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-4">
-              <Button size="lg">Reserva diagnóstico gratuito 15'</Button>
-              <Button variant="outline" size="lg">
-                Descarga el Kit Anti-Phishing
-              </Button>
-            </div>
-            <p className="text-sm text-muted-foreground">
-              <strong>Nota:</strong> Solicita presupuesto
-            </p>
-          </section>
-
-          {/* BLOQUE 10 · FAQ */}
-          <section className="mb-16">
-            <h2 className="text-3xl font-bold text-foreground mb-8">
-              Preguntas frecuentes
-            </h2>
-            <Accordion type="single" collapsible className="w-full">
-              {faqs.map((faq, index) => (
-                <AccordionItem key={index} value={`faq-${index}`}>
-                  <AccordionTrigger className="text-left">
-                    <h3 className="text-lg font-semibold">{faq.question}</h3>
-                  </AccordionTrigger>
-                  <AccordionContent>
-                    <p className="text-base">{faq.answer}</p>
-                  </AccordionContent>
-                </AccordionItem>
-              ))}
-            </Accordion>
-          </section>
-
-          {/* BLOQUE 11 · CROSS-SELL */}
-          <section className="mb-16">
-            <h2 className="text-3xl font-bold text-foreground mb-8">
-              La cultura es tu primera línea de defensa
-            </h2>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
-              <Button size="lg">Solicitar diagnóstico gratuito</Button>
-              <Button variant="outline" size="lg">
-                Solicitar presupuesto
-              </Button>
-            </div>
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {crossSellServices.map((service, index) => (
-                <Card
-                  key={index}
-                  className="hover:shadow-lg transition-shadow cursor-pointer"
-                >
+          {/* ====== RECURSOS DESCARGABLES (cards) ====== 
+          <section className="py-12">
+            <div className="max-w-6xl mx-auto">
+              <h2 className="text-3xl font-bold text-foreground mb-6">
+                Empieza hoy a cambiar hábitos
+              </h2>
+              <div className="grid md:grid-cols-2 gap-6">
+                <Card className="hover:shadow-md transition-shadow">
                   <CardHeader>
-                    <CardTitle className="text-lg">{service.title}</CardTitle>
-                    <CardDescription>{service.description}</CardDescription>
+                    <CardTitle>Kit Anti-Phishing</CardTitle>
+                    <CardDescription>
+                      Plantillas + política lista para adaptar
+                    </CardDescription>
                   </CardHeader>
                 </Card>
-              ))}
+                <Card className="hover:shadow-md transition-shadow">
+                  <CardHeader>
+                    <CardTitle>
+                      Checklist "Cultura de Seguridad en 30 días"
+                    </CardTitle>
+                    <CardDescription>
+                      Guía paso a paso para implementar una cultura de seguridad
+                    </CardDescription>
+                  </CardHeader>
+                </Card>
+              </div>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8">
+                <Button size="lg">Solicitar diagnóstico gratuito</Button>
+                <Button variant="outline" size="lg">
+                  Descargar Kit Anti-Phishing
+                </Button>
+              </div>
+            </div>
+          </section>*/}
+
+          {/* ====== CULTURA ====== */}
+          <section className="py-20 bg-slate-50">
+            <div className="max-w-6xl mx-auto px-6">
+              <h2 className="text-4xl text-center font-bold text-blue-600">
+                La cultura es tu primera línea de defensa
+              </h2>
+
+              <div className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                {crossSellServices.map((s, i) => (
+                  <Card
+                    key={i}
+                    className="h-full rounded-2xl border border-slate-200 bg-white shadow-sm hover:shadow-md transition-shadow cursor-pointer"
+                  >
+                    <CardHeader className="items-center text-center">
+                      {/* Icono opcional: si s.icon existe lo pintamos dentro del círculo */}
+                      <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-blue-50">
+                        {s.icon ? (
+                          <s.icon className="h-7 w-7 text-blue-600" />
+                        ) : (
+                          <svg
+                            className="h-7 w-7 text-blue-600"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="2"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                          >
+                            <circle cx="11" cy="11" r="8" />
+                            <path d="m21 21-4.3-4.3" />
+                          </svg>
+                        )}
+                      </div>
+
+                      <CardTitle className="text-xl font-semibold text-slate-900">
+                        {s.title}
+                      </CardTitle>
+                      <CardDescription className="mt-3 text-slate-600 leading-relaxed">
+                        {s.description}
+                      </CardDescription>
+                    </CardHeader>
+                  </Card>
+                ))}
+              </div>
+
+              <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
+                <Button className="rounded-full px-6" size="lg">
+                  Solicitar diagnóstico gratuito
+                </Button>
+                <Button
+                  className="rounded-full px-6"
+                  variant="outline"
+                  size="lg"
+                >
+                  Solicitar presupuesto
+                </Button>
+              </div>
+            </div>
+          </section>
+
+          {/* === BLOQUE 9 · FAQ (mismo patrón visual que la home) === */}
+          <section className="py-20 px-6 bg-gray-100 relative overflow-hidden bg-[url('/uploads/background.png')] bg-cover bg-center">
+            <div className="max-w-4xl mx-auto">
+              <div className="text-center mb-16">
+                <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6 animate-slide-up leading-relaxed">
+                  Preguntas frecuentes
+                </h2>
+              </div>
+
+              <div className="space-y-4">
+                {faqs.map((faq, index) => (
+                  <div
+                    key={index}
+                    className="bg-gray-200/80 rounded-2xl border border-gray-300 px-6 hover:shadow-md transition-shadow duration-300"
+                  >
+                    <details>
+                      <summary className="cursor-pointer py-6 font-semibold text-gray-800 hover:text-primary">
+                        {faq.question}
+                      </summary>
+                      <div className="cursor-pointer py-6 font-semibold text-gray-800 hover:text-primary">
+                        {faq.answer}
+                      </div>
+                    </details>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="max-w-6xl mt-20 mx-auto relative">
+              <div className="bg-gradient-to-r from-black via-blue-900 to-blue-800 rounded-[2rem] p-12 relative overflow-hidden mx-auto max-w-5xl">
+                <div className="relative z-10 max-w-3xl text-center mx-auto">
+                  <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6">
+                    ¿Empezamos con un piloto de 90 días?
+                  </h2>
+                  <div className="flex flex-col sm:flex-row gap-4 justify-center mb-4">
+                    <Button className="rounded-full" size="lg">
+                      Reserva diagnóstico gratuito 15'
+                    </Button>
+                    <Button
+                      variant="outline"
+                      size="lg"
+                      className="bg-white/10 text-white rounded-full border-white/20 hover:bg-white/20"
+                    >
+                      Descarga el Kit Anti-Phishing
+                    </Button>
+                  </div>
+                </div>
+                <img
+                  src="/uploads/abstract.png"
+                  alt=""
+                  className="absolute -right-8 -bottom-8 w-48 opacity-50"
+                  aria-hidden
+                />
+              </div>
             </div>
           </section>
         </div>

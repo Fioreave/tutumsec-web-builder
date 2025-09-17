@@ -33,7 +33,7 @@ const NewFAQSection = () => {
   ];
 
   return (
-    <section className="py-20 px-6 bg-tutumsec-gray-50">
+    <section className="py-20 px-6 bg-gray-100 relative overflow-hidden bg-[url('/uploads/background.png')] bg-cover bg-center">
       <div className="max-w-4xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6 animate-slide-up leading-relaxed">
@@ -46,7 +46,7 @@ const NewFAQSection = () => {
             <AccordionItem
               key={index}
               value={`item-${index}`}
-              className="bg-gray-500/10 rounded-2xl border border-gray-300 px-6 hover:shadow-md transition-shadow duration-300"
+              className="bg-gray-200/80 rounded-2xl border border-gray-300 px-6 hover:shadow-md transition-shadow duration-300"
             >
               <AccordionTrigger className="text-left font-semibold text-gray-800 hover:text-primary py-6">
                 {faq.question}

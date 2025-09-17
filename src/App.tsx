@@ -6,6 +6,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
+import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
 import WordPressBlog from "./pages/WordPressBlog";
 import Contacto from "./pages/Contacto";
@@ -24,8 +25,9 @@ import OficinaSeguridad from "./pages/servicios/OficinaSeguridad";
 // Productos
 import Productos from "./pages/productos/Productos";
 import Deteccion24x7Product from "./pages/productos/Deteccion24x7";
+import PrevencionBackup from "./pages/productos/PrevencionBackup";
 import IncidenteRespuestaRetainer from "./pages/productos/IncidenteRespuestaRetainer";
-import PrevencionRecuperacionBackup from "./pages/productos/PrevencionRecuperacionBackup";
+import RecuperacionBackup from "./pages/productos/RecuperacionBackup";
 
 // Industrias
 import Industrias from "./pages/industrias/Industrias";
@@ -45,6 +47,7 @@ import SobreNosotros from "./pages/sobre-nosotros/SobreNosotros";
 import Historia from "./pages/sobre-nosotros/Historia";
 import EquipoValores from "./pages/sobre-nosotros/EquipoValores";
 import CertificacionesPartners from "./pages/sobre-nosotros/CertificacionesPartners";
+import CookieBanner from "./pages/CookieBanner";
 
 const queryClient = new QueryClient();
 
@@ -54,12 +57,13 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
+        <CookieBanner />
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/es/" element={<Index />} />
-          {/*<Route path="/blog" element={<WordPressBlog />} />
+          <Route path="/blog" element={<WordPressBlog />} />
           <Route path="/blog/:slug" element={<BlogPost />} />
-          <Route path="/blog/es" element={<WordPressBlog />} />*/}
+          <Route path="/es/blog" element={<WordPressBlog />} />
 
           {/* Páginas principales */}
           <Route path="/es/contacto/" element={<Contacto />} />
@@ -106,12 +110,16 @@ const App = () => (
             element={<Deteccion24x7Product />}
           />
           <Route
+            path="/es/productos/prevencion/"
+            element={<PrevencionBackup />}
+          />
+          <Route
             path="/es/productos/incidente-respuesta-retainer/"
             element={<IncidenteRespuestaRetainer />}
           />
           <Route
-            path="/es/productos/prevencion-recuperacion-backup/"
-            element={<PrevencionRecuperacionBackup />}
+            path="/es/productos/recuperacion-backup/"
+            element={<RecuperacionBackup />}
           />
 
           {/* Industrias */}
@@ -142,6 +150,7 @@ const App = () => (
 
           {/* Sobre Nosotros */}
           <Route path="/es/sobre-nosotros/" element={<SobreNosotros />} />
+          <Route path="/es/sobre-nosotros/historia/" element={<Historia />} />
           <Route
             path="/es/sobre-nosotros/equipo-valores/"
             element={<EquipoValores />}

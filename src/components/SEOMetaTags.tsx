@@ -93,7 +93,7 @@ const SEOMetaTags: React.FC<SEOMetaTagsProps> = ({
               name: "TutumSec",
               logo: {
                 "@type": "ImageObject",
-                url: "https://tutorsec.com/logo.png",
+                url: "https://tutumsec.com/logo.png",
               },
             },
           })}

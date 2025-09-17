@@ -1,92 +1,49 @@
-import React, { useState } from "react";
-import { useTranslation } from "@/hooks/useTranslation";
+import React from "react";
 
-const SocialProofSection = () => {
-  const { t } = useTranslation();
-  const [selectedTab, setSelectedTab] = useState("partners");
-  const [currentStory, setCurrentStory] = useState(0);
-
-  const tabContent = {
-    partners: [
-      { name: "BlackMDR", logo: "/uploads/blackmdr.png" },
-      { name: "Fortinet", logo: "/uploads/fortinet.png" },
-      { name: "CrowdStrike", logo: "/uploads/crowdstrike.png" },
-      { name: "Bitdefender", logo: "/uploads/bitdefender.png" },
-      { name: "Palo Alto Networks", logo: "/uploads/paloalto.png" },
-    ],
-    certificados: [
-      { name: "ISO27001", logo: "/uploads/certificados/ISO27001.png" },
-      { name: "Fortinet", logo: "/uploads/certificados/ENS.png" },
-      { name: "CrowdStrike", logo: "/uploads/certificados/nis2" },
-    ],
-    organizaciones: [
-      {
-        name: "ISO27001",
-        logo: "/uploads/c26c5fdf-d2ac-4e75-8261-fc16741b6fe6.png",
-      },
-      {
-        name: "Fortinet",
-        logo: "/uploads/dfae3c84-6b3b-463a-8f75-277584e0c595.png",
-      },
-      {
-        name: "CrowdStrike",
-        logo: "/uploads/a12d96d0-9d49-42bf-b1ca-274b15c1217a.png",
-      },
-    ],
-  };
+/**
+ * SocialProofSection
+ * Carrusel continuo de logos (tipo marquee) sólo con CSS.
+ * Usa el mismo logo en todas las posiciones: "/uploads/fortinet.png".
+ * Copia este archivo y úsalo directamente.
+ */
+const SocialProofSection = ({ speed = "30s", height = 40, count = 12 }) => {
+  // Genera N copias del logo
+  const logos = Array.from({ length: count }, () => ({
+    src: "/uploads/fortinet.png",
+    alt: "Fortinet",
+  }));
+  const strip = [...logos, ...logos]; // duplicado para bucle perfecto
 
   return (
-    <section className="py-20 px-6 bg-white ">
-      <div className="max-w-6xl mx-auto">
-        <div>
-          <h2 className="text-xl lg:text-2xl font-bold text-blue-600 flex justify-center pb-6">
-            Confía en un equipo certificado y respaldado por los líderes del
-            sector
-          </h2>
-        </div>
-        {/* Tabs Section */}
-        <div className="text-center">
-          <div className="flex justify-center space-x-4 mb-8 ">
-            {Object.keys(tabContent).map((tab) => (
-              <button
-                key={tab}
-                onClick={() => setSelectedTab(tab)}
-                className={`px-6 py-3 rounded-full text-lg font-medium transition-colors ${
-                  selectedTab === tab
-                    ? "bg-gray-400/30 text-blue-600 hover:bg-blue-600 hover:text-white"
-                    : "bg-white bg-opacity-20 text-gray-400 hover:bg-white hover:text-blue-600"
-                }`}
-              >
-                {t(tab)}
-              </button>
-            ))}
-          </div>
+    <section className="relative w-full py-8 overflow-hidden bg-white">
+      {/* Fades laterales elegantes */}
+      <div className="pointer-events-none absolute left-0 top-0 h-full w-24 bg-gradient-to-r from-white to-transparent" />
+      <div className="pointer-events-none absolute right-0 top-0 h-full w-24 bg-gradient-to-l from-white to-transparent" />
 
-          <div className="flex justify-center items-center gap-8">
-            {selectedTab === "partners"
-              ? tabContent.partners.map((partner, index) => (
-                  <div
-                    key={index}
-                    className="bg-white bg-opacity-10 rounded-lg p-4 hover:bg-opacity-20 transition-all duration-300"
-                  >
-                    <img
-                      src={partner.logo}
-                      alt={partner.name}
-                      className="h-8 w-auto filter brightness-0 invert opacity-80 hover:opacity-100"
-                    />
-                  </div>
-                ))
-              : tabContent[selectedTab as keyof typeof tabContent].map(
-                  (item, index) => (
-                    <div
-                      key={index}
-                      className="text-white text-lg font-medium opacity-80 hover:opacity-100 transition-opacity"
-                    ></div>
-                  )
-                )}
-          </div>
-        </div>
+      <div className="marquee relative">
+        <ul className="marquee-track flex items-center gap-16">
+          {strip.map((logo, i) => (
+            <li key={i} className="shrink-0">
+              <img
+                src={logo.src}
+                alt={logo.alt}
+                style={{ height: height, width: "auto" }}
+                className="opacity-80 hover:opacity-100 transition-opacity"
+                loading="lazy"
+              />
+            </li>
+          ))}
+        </ul>
       </div>
+
+      {/* Estilos del marquee */}
+      <style>{`
+        .marquee { mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent); }
+        .marquee-track { width: max-content; animation: marquee var(--marquee-duration, 30s) linear infinite; }
+        .marquee:hover .marquee-track { animation-play-state: paused; }
+        @media (prefers-reduced-motion: reduce) { .marquee-track { animation: none; } }
+        @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+      `}</style>
     </section>
   );
 };

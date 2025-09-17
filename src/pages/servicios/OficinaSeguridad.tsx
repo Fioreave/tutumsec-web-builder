@@ -18,7 +18,35 @@ import {
   FileText,
   Users,
   Settings,
+  Map,
+  Search,
+  TrendingUp,
+  ArrowUpRight,
 } from "lucide-react";
+import { Link } from "react-router-dom";
+
+const faqs = [
+  {
+    question: "¿Es obligatorio tener una OSI con NIS2?",
+    answer:
+      "No impone un nombre concreto, pero exige gobernanza, medidas y reporting; una OSI formaliza y prueba el cumplimiento.",
+  },
+  {
+    question: "¿Cuáles son los plazos de notificación?",
+    answer:
+      "Alerta 24 h, notificación 72 h, informe 1 mes (o intermedio si procede).",
+  },
+  {
+    question: "¿Qué sanciones hay?",
+    answer: "Hasta 10 M€ o 2 % (esenciales) y 7 M€ o 1,4 % (importantes).",
+  },
+];
+
+const methodologySteps = [
+  "Oficina completa: No solo CISO, gobernanza + cumplimiento + evidencias listas.",
+  "Enfoque humano y ejecutivo: Formamos a la dirección para la toma de decisiones informadas.",
+  "Alineado con marcos locales: ISO 27001, ENS y guías de INCIBE-CERT.",
+];
 
 const OficinaSeguridad = () => {
   const faqStructuredData = {
@@ -51,6 +79,55 @@ const OficinaSeguridad = () => {
       },
     ],
   };
+
+  const quickWins = [
+    "Aprobamos con tu dirección el charter OSI y el plan de riesgos.",
+    "Runbooks NIS2 con alerta temprana en 24 h y notificación a 72 h.",
+    "Tablero C-Level con KPIs de ciberseguridad y evidencias de cumplimiento.",
+  ];
+  const steps = [
+    {
+      title: "Diagnóstico OSI & Gap NIS2",
+      description:
+        "(políticas, riesgos, cadena de suministro, incident response).",
+      number: "1",
+    },
+    {
+      title: "Hoja de ruta 12-36 meses",
+      description: "con prioridades/ROI y métricas.",
+      number: "2",
+    },
+    {
+      title: "Implantación",
+      description: "Políticas, procesos y herramientas personalizadas",
+      number: "3",
+    },
+    {
+      title: "Operación continua",
+      description:
+        "(comité OSI trimestral, auditoría interna, ejercicios de crisis y mejora continua).",
+      number: "4",
+    },
+  ];
+
+  const servicios = [
+    {
+      title: "Consultoría CISO",
+      description: "(vCISO / CISO as a Service)",
+    },
+    {
+      title: "Auditoría & Compliance NIS2",
+      description: "Gap-Analysis completo",
+    },
+    {
+      title: "Transformación Digital Estratégica",
+      description: "Digitalización segura",
+    },
+    {
+      title: "Detección 24/7",
+      description: "(SOC/MDR/XDR)",
+    },
+  ];
 
   const serviceStructuredData = {
     "@context": "https://schema.org",
@@ -101,76 +178,71 @@ const OficinaSeguridad = () => {
       </Helmet>
 
       <Navbar />
-      <main className="min-h-screen bg-background pt-20">
-        <div className="container mx-auto px-4">
-          <Breadcrumbs
-            items={[
-              { label: "Servicios", href: "/es/servicios" },
-              { label: "Oficina de Seguridad de la Información (OSI) – NIS2" },
-            ]}
-          />
+      <main className="min-h-screen bg-background">
+        <div>
+          <section className="relative isolate overflow-hidden mt-6 flex items-center">
+            {/* base */}
+            <div className="absolute inset-0 z-0 bg-[#0a0f1c]" />
+            {/* gradiente */}
+            <div
+              className="absolute inset-0 z-10"
+              style={{
+                background:
+                  "linear-gradient(120deg, rgba(14,24,46,0) 0%, rgba(89,116,189,0.35) 45%, rgba(182,185,193,0) 100%)",
+              }}
+            />
+            {/* glows */}
+            <div className="pointer-events-none absolute -top-24 -left-24 w-[60vw] h-[60vw] bg-blue-600/20 rounded-full blur-3xl z-10" />
+            <div className="pointer-events-none absolute -right-40 top-10 w-[50vw] h-[50vw] bg-blue-400/20 rounded-full blur-3xl z-10" />
+            {/* hilo */}
+            <img
+              src="/uploads/hilo.png"
+              alt=""
+              aria-hidden
+              className="pointer-events-none select-none absolute left-0 -top-12 w-[1200px] max-w-none opacity-60 mix-blend-screen z-20"
+            />
 
-          {/* BLOQUE 1 · HERO */}
-          <section className="py-12">
-            <div className="max-w-4xl mx-auto text-center">
-              <h1 className="text-4xl lg:text-5xl font-bold text-foreground mb-6">
-                Oficina de Seguridad de la Información (OSI) para cumplir NIS2
-              </h1>
-              <h2 className="text-xl lg:text-2xl text-muted-foreground mb-8">
-                Gobernanza, riesgo y cumplimiento activados desde el día uno:
-                políticas, métricas y respuesta en 24/72 h.
-              </h2>
+            {/* contenido centrado */}
+            <div
+              className="relative z-30 w-full grid place-items-center text-center px-6"
+              style={{ minHeight: "calc(100vh - 96px)" }} // ajusta 96px al alto real de tu navbar si es fija
+            >
+              <div>
+                <h1 className="mx-auto max-w-6xl text-4xl md:text-5xl font-bold text-white mb-4">
+                  Oficina de Seguridad de la
+                  <br /> Información (OSI) para cumplir NIS2
+                </h1>
 
-              <div className="grid md:grid-cols-3 gap-6 mb-8">
-                <div className="flex items-center justify-center gap-2 p-4 bg-muted rounded-lg">
-                  <CheckCircle className="w-5 h-5 text-primary" />
-                  <span className="text-sm font-medium">
-                    Aprobamos con tu dirección el charter OSI y el plan de
-                    riesgos.
-                  </span>
-                </div>
-                <div className="flex items-center justify-center gap-2 p-4 bg-muted rounded-lg">
-                  <CheckCircle className="w-5 h-5 text-primary" />
-                  <span className="text-sm font-medium">
-                    Runbooks NIS2 con alerta temprana en 24 h y notificación a
-                    72 h.
-                  </span>
-                </div>
-                <div className="flex items-center justify-center gap-2 p-4 bg-muted rounded-lg">
-                  <CheckCircle className="w-5 h-5 text-primary" />
-                  <span className="text-sm font-medium">
-                    Tablero C-Level con KPIs de ciberseguridad y evidencias de
-                    cumplimiento.
-                  </span>
-                </div>
-              </div>
+                <h2 className="mx-auto max-w-5xl text-xl md:text-2xl text-white/80 mb-8">
+                  Gobernanza, riesgo y cumplimiento activados <br /> desde el
+                  día uno: políticas, métricas y respuesta en 24/72 h.
+                </h2>
 
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button size="lg" className="px-8">
-                  Reserva consultoría gratis 15'
-                </Button>
-                <Button variant="outline" size="lg" className="px-8">
-                  Descarga "Checklist OSI NIS2 (24/72/30)"
-                </Button>
+                <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                  <Button size="lg" className="rounded-full text-lg px-8">
+                    Reserva consultoría gratis 15'
+                  </Button>
+                  <Button
+                    variant="outline"
+                    size="lg"
+                    className="text-lg rounded-full px-8 bg-white/10 text-white border-white/20 hover:bg-white/20"
+                  >
+                    Descarga "Checklist OSI NIS2 (24/72/30)"
+                  </Button>
+                </div>
               </div>
             </div>
           </section>
-
-          {/* BLOQUE 2 · DOLOR → IMPACTO NEGOCIO */}
-          <section className="py-12 bg-muted">
-            <div className="max-w-4xl mx-auto">
-              <h2 className="text-3xl font-bold text-center mb-8">
-                ¿Tu empresa podría notificar un incidente en 24 horas hoy?
-              </h2>
-              <div className="prose prose-lg max-w-none text-center">
-                <p>
-                  Con NIS2, las entidades deben cumplir medidas técnicas y
-                  organizativas y reportar incidentes significativos siguiendo
-                  plazos estrictos (24 h/72 h/1 mes). Además, la dirección es
-                  responsable de aprobar y supervisar la gestión de riesgos. No
-                  llegar a tiempo o carecer de evidencias puede traducirse en
-                  sanciones y en pérdida de confianza de clientes y reguladores.
-                </p>
+          {/* quickwins */}
+          <section className="bg-gray-500/5 pb-6 pt-12">
+            <div className="mb-8 max-w-7xl mx-auto ">
+              <div className="grid lg:grid-cols-3 gap-12 items-center text-left space-y-2">
+                {quickWins.map((win, i) => (
+                  <li key={i} className="flex items-start text-dark/90">
+                    <CheckCircle className="w-5 h-5 text-blue-300 mr-2 mt-0.5 flex-shrink-0" />
+                    <span>{win}</span>
+                  </li>
+                ))}
               </div>
             </div>
           </section>
@@ -243,46 +315,69 @@ const OficinaSeguridad = () => {
             </div>
           </section>
 
-          {/* BLOQUE 4 · CÓMO TRABAJAMOS */}
-          <section className="py-12 bg-muted">
-            <div className="max-w-4xl mx-auto">
-              <h2 className="text-3xl font-bold text-center mb-12">
-                Metodología en 4 pasos
-              </h2>
+          {/* BLOQUE 2 · DOLOR → IMPACTO NEGOCIO */}
+          <section className=" py-20 px-6 text-blue">
+            <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
+              <div className="transform transition-all duration-700 hover:translate-x-2">
+                <h2 className="text-3xl lg:text-4xl mb-2 font-bold transition-colors duration-500 hover:text-primary-light leading-relaxed">
+                  ¿Tu empresa podría notificar un incidente en 24 horas hoy?
+                </h2>
+              </div>
+              <div className="border-l-4 border-blue-400 text-sm pl-6 prose prose-lg max-w-none text-left">
+                <p>
+                  Con NIS2, las entidades deben cumplir medidas técnicas y
+                  organizativas y reportar incidentes significativos siguiendo
+                  plazos estrictos (24 h/72 h/1 mes). Además, la dirección es
+                  responsable de aprobar y supervisar la gestión de riesgos. No
+                  llegar a tiempo o carecer de evidencias puede traducirse en
+                  sanciones y en pérdida de confianza de clientes y reguladores.
+                </p>
+              </div>
+            </div>
+          </section>
 
-              <div className="space-y-6">
-                {[
-                  {
-                    step: 1,
-                    title: "Diagnóstico OSI & Gap NIS2",
-                    desc: "(políticas, riesgos, cadena de suministro, incident response).",
-                  },
-                  {
-                    step: 2,
-                    title: "Hoja de ruta 12-36 meses",
-                    desc: "con prioridades/ROI y métricas.",
-                  },
-                  {
-                    step: 3,
-                    title: "Implantación",
-                    desc: "(políticas aprobadas por dirección, controles y tablero ejecutivo).",
-                  },
-                  {
-                    step: 4,
-                    title: "Operación continua",
-                    desc: "(comité OSI trimestral, auditoría interna, ejercicios de crisis y mejora continua).",
-                  },
-                ].map((item) => (
-                  <div key={item.step} className="flex items-start gap-4">
-                    <div className="w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center font-bold flex-shrink-0">
-                      {item.step}
+          <section className="py-20 px-6 bg-tutumsec-gray-50">
+            <div className="max-w-6xl mx-auto">
+              <div className="text-center mb-16">
+                <h2 className="text-6xl lg:text-4xl font-bold text-blue-500 mb-6">
+                  Metodología en 4 pasos
+                </h2>
+                {/*<p className="text-xl text-gray-600 mb-4">
+            4 pasos PDCA + Zero Trust
+          </p>
+          <p className="text-lg text-gray-500">
+            Basado en marcos CIS, ISO 27001, NIST i ENS
+          </p>*/}
+              </div>
+
+              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                {steps.map((step, index) => {
+                  return (
+                    <div
+                      key={index}
+                      className="bg-white p-8 rounded-2xl border border-gray-200 group hover:shadow-lg transition-all duration-500 hover:-translate-y-2 animate-fade-in relative"
+                      style={{
+                        animationDelay: `${index * 0.15}s`,
+                        animationFillMode: "forwards",
+                        opacity: 0,
+                      }}
+                    >
+                      <div className="text-center">
+                        <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-primary/20 transition-colors duration-300 relative">
+                          <span className="w-8 h-8 text-primary text-2xl font-bold items-center">
+                            {step.number}
+                          </span>
+                        </div>
+                        <h3 className="text-lg font-semibold text-gray-800 mb-3 transition-colors duration-300 group-hover:text-primary leading-tight">
+                          {step.title}
+                        </h3>
+                        <p className="text-gray-600 text-sm leading-relaxed transition-colors duration-300 group-hover:text-gray-700">
+                          {step.description}
+                        </p>
+                      </div>
                     </div>
-                    <div>
-                      <h3 className="text-lg font-semibold">{item.title}</h3>
-                      <p className="text-muted-foreground">{item.desc}</p>
-                    </div>
-                  </div>
-                ))}
+                  );
+                })}
               </div>
             </div>
           </section>
@@ -312,48 +407,69 @@ const OficinaSeguridad = () => {
             </div>
           </section>
 
-          {/* BLOQUE 6 · DIFERENCIALES TUTUMSEC */}
-          <section className="py-12 bg-muted">
-            <div className="max-w-4xl mx-auto">
-              <h2 className="text-3xl font-bold text-center mb-8">
-                Por qué nos eligen
-              </h2>
+          <section className="py-20">
+            <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-10 items-start">
+              {/* Columna izquierda: título + subtítulo opcional */}
+              <div className="px-2">
+                <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-8">
+                  Por qué nos eligen
+                </h2>
+              </div>
 
-              <div className="grid md:grid-cols-3 gap-6">
-                <div className="text-center">
-                  <Shield className="w-12 h-12 text-primary mx-auto mb-4" />
-                  <h3 className="text-lg font-semibold mb-2">
-                    Oficina completa
-                  </h3>
-                  <p className="text-muted-foreground text-sm">
-                    no "solo" CISO: gobernanza + cumplimiento + evidencias
-                    listas.
-                  </p>
-                </div>
-                <div className="text-center">
-                  <Users className="w-12 h-12 text-primary mx-auto mb-4" />
-                  <h3 className="text-lg font-semibold mb-2">
-                    Enfoque humano y ejecutivo
-                  </h3>
-                  <p className="text-muted-foreground text-sm">
-                    formamos a la dirección para la toma de decisiones
-                    informadas.
-                  </p>
-                </div>
-                <div className="text-center">
-                  <CheckCircle className="w-12 h-12 text-primary mx-auto mb-4" />
-                  <h3 className="text-lg font-semibold mb-2">
-                    Alineado con marcos locales
-                  </h3>
-                  <p className="text-muted-foreground text-sm">
-                    ISO 27001, ENS y guías de INCIBE-CERT.
-                  </p>
-                </div>
+              {/* Columna derecha: tarjetas gradiente como en tu “Resultados” */}
+              <div className="space-y-6">
+                {methodologySteps.map((raw, i) => {
+                  // Partimos solo para formatear visualmente (NO tocamos el texto)
+                  const [titlePart, ...rest] = raw.split(":");
+                  const title = titlePart.trim();
+                  const desc = rest.join(":").trim(); // puede quedar vacío si no hay ":" (2º paso)
+                  // Paletas en azul (como tu screenshot)
+                  const gradients = [
+                    "from-[#2563eb] via-[#1e3a8a] to-[#0b1220]",
+                    "from-[#1f3b8a] via-[#1d3fa7] to-[#1b2b59]",
+                    "from-[#3b82f6] via-[#2450b2] to-[#0f1b37]",
+                    "from-[#1e40af] via-[#1d4ed8] to-[#0b1220]",
+                    "from-[#2563eb] via-[#1e3a8a] to-[#0b1220]",
+                  ];
+                  const g = gradients[i % gradients.length];
+
+                  return (
+                    <div
+                      key={i}
+                      className={`relative w-full rounded-2xl p-6 md:p-8 text-white bg-gradient-to-r ${g} shadow-lg`}
+                    >
+                      <div className="flex items-start gap-6">
+                        {/* Número grande a la izquierda */}
+                        <div className="shrink-0">
+                          <div className="text-5xl md:text-6xl font-extrabold leading-none opacity-90">
+                            {i + 1}
+                          </div>
+                        </div>
+
+                        {/* Texto a la derecha */}
+                        <div className="flex-1">
+                          <div className="text-lg md:text-xl font-semibold">
+                            {title}
+                            {desc && ":"}
+                          </div>
+                          {desc && (
+                            <p className="mt-2 text-sm md:text-base text-white/85 leading-relaxed">
+                              {desc}
+                            </p>
+                          )}
+                        </div>
+
+                        {/* Flecha decorativa (como en Resultados) */}
+                        <ArrowUpRight className="w-6 h-6 opacity-70 mt-1" />
+                      </div>
+                    </div>
+                  );
+                })}
               </div>
             </div>
           </section>
 
-          {/* BLOQUE 7 · CASOS DE ÉXITO */}
+          {/* BLOQUE 7 · CASOS DE ÉXITO 
           <section className="py-12">
             <div className="max-w-4xl mx-auto">
               <div className="grid md:grid-cols-2 gap-8">
@@ -381,103 +497,116 @@ const OficinaSeguridad = () => {
                 </Card>
               </div>
             </div>
-          </section>
-
-          {/* BLOQUE 8 · FAQ */}
-          <section className="py-12 bg-muted">
-            <div className="max-w-4xl mx-auto">
-              <h2 className="text-3xl font-bold text-center mb-8">FAQ</h2>
-
-              <Accordion type="single" collapsible className="w-full">
-                <AccordionItem value="item-1">
-                  <AccordionTrigger>
-                    ¿Es obligatorio tener una OSI con NIS2?
-                  </AccordionTrigger>
-                  <AccordionContent>
-                    No impone un nombre concreto, pero exige gobernanza, medidas
-                    y reporting; una OSI formaliza y prueba el cumplimiento.
-                  </AccordionContent>
-                </AccordionItem>
-                <AccordionItem value="item-2">
-                  <AccordionTrigger>
-                    ¿Cuáles son los plazos de notificación?
-                  </AccordionTrigger>
-                  <AccordionContent>
-                    Alerta 24 h, notificación 72 h, informe 1 mes (o intermedio
-                    si procede).
-                  </AccordionContent>
-                </AccordionItem>
-                <AccordionItem value="item-3">
-                  <AccordionTrigger>¿Qué sanciones hay?</AccordionTrigger>
-                  <AccordionContent>
-                    Hasta 10 M€ o 2 % (esenciales) y 7 M€ o 1,4 % (importantes).
-                  </AccordionContent>
-                </AccordionItem>
-              </Accordion>
-            </div>
-          </section>
-
-          {/* BLOQUE 9 · CTAs */}
-          <section className="py-12">
-            <div className="max-w-4xl mx-auto text-center">
-              <div className="flex flex-col sm:flex-row gap-4 justify-center mb-4">
-                <Button size="lg" className="px-8">
-                  Reserva consultoría gratis 15'
-                </Button>
-                <Button variant="outline" size="lg" className="px-8">
-                  Descarga "Checklist OSI NIS2 (24/72/30)"
-                </Button>
-              </div>
-              <Button variant="link" className="text-sm">
-                Solicita ejemplo de "Charter OSI" (PDF)
-              </Button>
-            </div>
-          </section>
+          </section>*/}
 
           {/* BLOQUE 10 · Enlaces internos */}
-          <section className="py-12 bg-muted">
+          <section className="py-20 px-6 bg-gradient-to-br from-gray-900 via-blue-900 to-black text-white">
             <div className="max-w-6xl mx-auto">
-              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <Card>
-                  <CardContent className="p-6 text-center">
-                    <h3 className="text-lg font-semibold mb-3">
-                      Consultoría CISO
-                    </h3>
-                    <p className="text-muted-foreground text-sm">
-                      (vCISO / CISO as a Service)
-                    </p>
-                  </CardContent>
-                </Card>
-                <Card>
-                  <CardContent className="p-6 text-center">
-                    <h3 className="text-lg font-semibold mb-3">
-                      Auditoría & Compliance NIS2
-                    </h3>
-                    <p className="text-muted-foreground text-sm">
-                      Gap-Analysis completo
-                    </p>
-                  </CardContent>
-                </Card>
-                <Card>
-                  <CardContent className="p-6 text-center">
-                    <h3 className="text-lg font-semibold mb-3">
-                      Transformación Digital Estratégica
-                    </h3>
-                    <p className="text-muted-foreground text-sm">
-                      Digitalización segura
-                    </p>
-                  </CardContent>
-                </Card>
-                <Card>
-                  <CardContent className="p-6 text-center">
-                    <h3 className="text-lg font-semibold mb-3">
-                      Detección 24/7
-                    </h3>
-                    <p className="text-muted-foreground text-sm">
-                      (SOC/MDR/XDR)
-                    </p>
-                  </CardContent>
-                </Card>
+              <div className="grid lg:grid-cols-2 md:grid-cols-2 gap-12 items-start">
+                <div className="transform transition-all duration-700 hover:translate-x-2">
+                  <h2 className="text-3xl lg:text-4xl font-bold mb-8 transition-colors duration-500 hover:text-primary-light leading-relaxed">
+                    <span className="relative group p-2">
+                      Servicios
+                      <svg
+                        className="absolute -bottom-1 left-0 w-full h-3 transition-all duration-500 group-hover:scale-105"
+                        viewBox="0 0 300 12"
+                        fill="none"
+                      >
+                        <path
+                          d="M5 8 Q150 3 295 8"
+                          stroke="hsl(var(--primary))"
+                          strokeWidth="3"
+                          fill="none"
+                        />
+                      </svg>
+                    </span>
+                  </h2>
+                </div>
+
+                <div className="space-y-8">
+                  <div className="overflow-x-auto">
+                    <table className="w-full">
+                      <thead></thead>
+                      <tbody>
+                        <div className="space-y-8">
+                          {servicios.map((servicios, index) => (
+                            <div
+                              key={index}
+                              className="border-l-4 border-blue-400 pl-6"
+                            >
+                              <h3 className="text-xl font-semibold mb-2 text-blue-300">
+                                {servicios.title}
+                              </h3>
+                              <p className="text-gray-200 leading-relaxed">
+                                {servicios.description}
+                              </p>
+                            </div>
+                          ))}
+                        </div>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* === BLOQUE 9 · FAQ (mismo patrón visual que la home) === */}
+          <section className="py-20 px-6 bg-gray-100 relative overflow-hidden bg-[url('/uploads/background.png')] bg-cover bg-center">
+            <div className="max-w-4xl mx-auto">
+              <div className="text-center mb-16">
+                <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6 animate-slide-up leading-relaxed">
+                  Preguntas frecuentes
+                </h2>
+              </div>
+
+              <div className="space-y-4">
+                {faqs.map((faq, index) => (
+                  <div
+                    key={index}
+                    className="bg-gray-200/80 rounded-2xl border border-gray-300 px-6 hover:shadow-md transition-shadow duration-300"
+                  >
+                    <details>
+                      <summary className="cursor-pointer py-6 font-semibold text-gray-800 hover:text-primary">
+                        {faq.question}
+                      </summary>
+                      <div className="cursor-pointer py-6 font-semibold text-gray-800 hover:text-primary">
+                        {faq.answer}
+                      </div>
+                    </details>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="max-w-6xl mt-20 mx-auto relative">
+              <div className="bg-gradient-to-r from-black via-blue-900 to-blue-800 rounded-[2rem] p-12 relative overflow-hidden mx-auto max-w-5xl">
+                <div className="relative z-10 max-w-3xl text-center mx-auto">
+                  <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6">
+                    ¿Empezamos?
+                  </h2>
+                  <div className="flex flex-col sm:flex-row gap-4 justify-center mb-4">
+                    <Button className="rounded-full" size="lg">
+                      Reserva consultoría gratis 15'
+                    </Button>
+                    <Button
+                      variant="outline"
+                      size="lg"
+                      className="bg-white/10 text-white rounded-full border-white/20 hover:bg-white/20"
+                    >
+                      Solicita ejemplo de "Charter OSI" (PDF)
+                    </Button>
+                  </div>
+                  <Button variant="link" className="text-sm">
+                    Solicita ejemplo de "Charter OSI" (PDF)
+                  </Button>
+                </div>
+                {/*<img
+                  src="/uploads/abstract.png"
+                  alt=""
+                  className="absolute -right-8 -bottom-8 w-48 opacity-50"
+                  aria-hidden
+                />*/}
               </div>
             </div>
           </section>

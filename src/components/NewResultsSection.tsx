@@ -1,28 +1,155 @@
-import React from "react";
-import { TrendingDown, Clock, DollarSign, Award } from "lucide-react";
+// NewResultsSection.tsx
+import React, { useEffect, useRef, useState } from "react";
+import { TrendingDown, Clock, DollarSign } from "lucide-react";
 
-const NewResultsSection = () => {
-  const results = [
+/* -------------------- CountUp (sin librerías, tipado TS) -------------------- */
+function easeOutCubic(t: number) {
+  return 1 - Math.pow(1 - t, 3);
+}
+
+type CountUpOpts = {
+  duration?: number; // ms
+  decimals?: number; // nº de decimales
+  startOnView?: boolean; // empieza al entrar en viewport
+};
+
+function useCountUp(
+  end: number,
+  { duration = 1200, decimals = 0, startOnView = true }: CountUpOpts = {}
+) {
+  const [value, setValue] = useState<number>(0);
+  const [hasPlayed, setHasPlayed] = useState<boolean>(false);
+
+  const ref = useRef<HTMLSpanElement | null>(null);
+  const rafRef = useRef<number | null>(null);
+  const startTimeRef = useRef<number>(0);
+
+  const start = () => {
+    if (hasPlayed) return;
+
+    // Respeta reduced motion
+    if (
+      typeof window !== "undefined" &&
+      window.matchMedia?.("(prefers-reduced-motion: reduce)").matches
+    ) {
+      setValue(end);
+      setHasPlayed(true);
+      return;
+    }
+
+    setHasPlayed(true);
+    startTimeRef.current = performance.now();
+
+    const tick = (now: number) => {
+      const elapsed = now - startTimeRef.current;
+      const t = Math.min(1, elapsed / duration);
+      const eased = easeOutCubic(t);
+      const current = end * eased;
+
+      setValue(Number(current.toFixed(decimals)));
+
+      if (t < 1) {
+        rafRef.current = requestAnimationFrame(tick);
+      }
+    };
+
+    rafRef.current = requestAnimationFrame(tick);
+  };
+
+  // Inicia cuando entra en viewport
+  useEffect(() => {
+    if (!startOnView) {
+      start();
+      return;
+    }
+    const el = ref.current;
+    if (!el) return;
+
+    const io = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((e) => e.isIntersecting && start());
+      },
+      { rootMargin: "0px 0px -20% 0px", threshold: 0.2 }
+    );
+
+    io.observe(el);
+    return () => {
+      io.disconnect();
+      if (rafRef.current !== null) cancelAnimationFrame(rafRef.current);
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [end, duration, decimals, startOnView]);
+
+  // Limpieza en unmount por si acaso
+  useEffect(() => {
+    return () => {
+      if (rafRef.current !== null) cancelAnimationFrame(rafRef.current);
+    };
+  }, []);
+
+  return { value, ref };
+}
+
+type CountUpProps = {
+  end: number;
+  prefix?: string;
+  suffix?: string;
+  decimals?: number;
+  duration?: number;
+  className?: string;
+};
+
+const CountUp: React.FC<CountUpProps> = ({
+  end,
+  prefix = "",
+  suffix = "",
+  decimals = 0,
+  duration = 1200,
+  className = "",
+}) => {
+  const { value, ref } = useCountUp(end, { duration, decimals });
+  return (
+    <span
+      ref={ref}
+      className={className}
+      aria-label={`${prefix}${end}${suffix}`}
+    >
+      {prefix}
+      {value}
+      {suffix}
+    </span>
+  );
+};
+/* ------------------ /CountUp ------------------ */
+
+const NewResultsSection: React.FC = () => {
+  const results: Array<{
+    end: number;
+    prefix?: string;
+    suffix?: string;
+    title: string;
+    subtitle: string;
+    gradient: string;
+  }> = [
     {
-      number: "98%",
+      end: 98,
+      suffix: "%",
       title: "De alertas gestionadas",
       subtitle: "dentro del SLA del SOC 24×7.",
-      icon: TrendingDown,
       gradient: "from-blue-900 to-black",
     },
     {
-      number: "22%",
+      end: 22,
+      suffix: "%",
       title: "Ahorro medio en costes IT",
       subtitle: "gracias a la automatización IA/RPA",
-      icon: DollarSign,
       gradient: "from-blue-950 to-blue-800",
     },
-
     {
-      number: "+10",
+      end: 10,
+      prefix: "+",
       title: "Sectores regulados",
       subtitle: "auditados con éxito.",
-      icon: Clock,
       gradient: "from-blue-500 to-blue-950",
     },
   ];
@@ -44,19 +171,18 @@ const NewResultsSection = () => {
           </div>
 
           <div className="space-y-6">
-            {results.map((result, index) => (
+            {results.map((r, i) => (
               <div
-                key={index}
-                className={`bg-gradient-to-r ${result.gradient} p-8 rounded-2xl text-white relative group`}
+                key={i}
+                className={`bg-gradient-to-r ${r.gradient} p-8 rounded-2xl text-white relative group`}
               >
                 <div className="flex items-start gap-6">
-                  <div className="text-6xl font-bold opacity-80">
-                    {result.number}
+                  <div className="text-6xl font-bold opacity-80 min-w-[5ch]">
+                    <CountUp end={r.end} prefix={r.prefix} suffix={r.suffix} />
                   </div>
                   <div className="flex-1">
-                    <p className="text-lg leading-relaxed">{result.title}</p>
-
-                    <p className="text-lG text-gray-200">{result.subtitle}</p>
+                    <p className="text-lg leading-relaxed">{r.title}</p>
+                    <p className="text-lG text-gray-200">{r.subtitle}</p>
                   </div>
                   <div className="text-white opacity-60">
                     <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none">

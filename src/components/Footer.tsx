@@ -8,9 +8,6 @@ const Footer = () => {
     "Auditorías de Seguridad",
     "Implementación del RGPD",
     "Monitorización 24/7",
-    "Formación y Concienciación",
-    "Respuesta ante Incidentes",
-    "Consultoría Estratégica",
   ];
 
   const company = [
@@ -63,12 +60,8 @@ const Footer = () => {
                 <span className="text-sm">hola@tutumsec.io</span>
               </div>
               <div className="flex items-center text-gray-300 transition-all duration-300 hover:text-blue-400 hover:translate-x-1">
-                <Phone className="w-4 h-4 mr-3 text-blue-400" />
-                <span className="text-sm">+376 862-762</span>
-              </div>
-              <div className="flex items-center text-gray-300 transition-all duration-300 hover:text-blue-400 hover:translate-x-1">
                 <MapPin className="w-4 h-4 mr-3 text-blue-400" />
-                <span className="text-sm">Barcelona, Cataluña</span>
+                <span className="text-sm">Andorra - Barcelona - Girona</span>
               </div>
             </div>
           </div>
@@ -126,7 +119,7 @@ const Footer = () => {
         </div>
       </div>
 
-      {/* Newsletter Section */}
+      {/* Newsletter Section 
       <div className="bg-gradient-to-r from-slate-800 to-slate-700 border-t border-slate-700">
         <div className="max-w-7xl mx-auto px-6 py-12">
           <div className="text-center mb-8">
@@ -155,7 +148,7 @@ const Footer = () => {
             </Button>
           </div>
         </div>
-      </div>
+      </div>*/}
 
       {/* Bottom Section */}
       <div className="bg-slate-900 border-t border-slate-700">
@@ -203,6 +196,7 @@ const Footer = () => {
               >
                 <Linkedin className="w-5 h-5 text-white" />
               </a>
+              {/*
               <a
                 href="#"
                 className="w-10 h-10 bg-gradient-to-r from-blue-400 to-blue-500 rounded-full flex items-center justify-center hover:from-blue-500 hover:to-blue-600 transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-110"
@@ -214,7 +208,7 @@ const Footer = () => {
                 className="w-10 h-10 bg-gradient-to-r from-blue-600 to-blue-700 rounded-full flex items-center justify-center hover:from-blue-700 hover:to-blue-800 transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-110"
               >
                 <Facebook className="w-5 h-5 text-white" />
-              </a>
+              </a>*/}
             </div>
           </div>
         </div>

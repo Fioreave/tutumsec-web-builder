@@ -4,14 +4,17 @@ import Navbar from "../components/Navbar";
 import NewHeroSection from "../components/NewHeroSection";
 import NewProblemsSection from "../components/NewProblemsSection";
 import NewRisksSection from "../components/NewRisksSection";
-import NewServicesSection from "../components/NewServicesSection";
+import ServicesSection from "../components/ServicesSection";
 import NewResultsSection from "../components/NewResultsSection";
 import NewProcessSection from "../components/NewProcessSection";
-import NewSuccessStoriesSection from "../components/NewSuccessStoriesSection";
+//import NewSuccessStoriesSection from "../components/NewSuccessStoriesSection";
 import NewFAQSection from "../components/NewFAQSection";
 import NewCTASection from "../components/NewCTASection";
-import NewFooter from "../components/NewFooter";
-import TestimonialsSection from "@/components/TestimonialsSection";
+import Footer from "../components/Footer";
+//import TestimonialsSection from "@/components/TestimonialsSection";
+import BenefitsSection from "@/components/BeneficiosSection";
+import SuccessStoriesSection from "@/components/SuccessStoriesSection";
+import PartnersSection from "./PartnersSection";
 
 const Index = () => {
   return (
@@ -36,17 +39,18 @@ const Index = () => {
       <Navbar />
       <main className="pt-16">
         <NewHeroSection />
+        <BenefitsSection />
         <NewProblemsSection />
         <NewRisksSection />
-        <NewServicesSection />
-        <NewResultsSection />
         <NewProcessSection />
-        <NewSuccessStoriesSection />
-        <TestimonialsSection />
-        <NewFAQSection />
+        <ServicesSection />
+        <NewResultsSection />
+        <SuccessStoriesSection />
         <NewCTASection />
+        <NewFAQSection />
+        <PartnersSection />
       </main>
-      <NewFooter />
+      <Footer />
     </div>
   );
 };

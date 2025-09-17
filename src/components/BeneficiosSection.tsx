@@ -1,64 +1,67 @@
 import React from "react";
 
-const BeneficiosSection = () => {
-  const steps = [
-    {
-      number: "1",
-      description: "Cumplimiento NIS2 / ISO 27001 en menos de 90 días.",
-    },
-    {
-      number: "2",
-      description: "Reducción del 30 % de incidentes críticos en 6 meses",
-    },
-    {
-      number: "3",
-      description: "Cuadros de mando ejecutivo en tiempo real",
-    },
-  ];
+const steps = [
+  {
+    number: "1",
+    description: "Cumplimiento NIS2 / ISO 27001 en menos de 90 días.",
+    gradient: "from-blue-500 to-blue-950",
+  },
+  {
+    number: "2",
+    description: "Reducción del 30 % de incidentes críticos en 6 meses",
+    gradient: "from-blue-950 to-blue-800",
+  },
+  {
+    number: "3",
+    description: "Cuadros de mando ejecutivo en tiempo real",
+    gradient: "from-blue-900 to-black",
+  },
+];
 
+const BenefitsSection = () => {
   return (
-    <section className="pb-10">
+    <section className="pb-6 bg-white mt-20">
       <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-6">
-          <h2 className="text-xl lg:text-3xl text-gray-700 font-bold pt-10">
+        <div className="mb-10 text-center lg:text-left">
+          <h2 className="text-4xl lg:text-5xl font-bold text-gray-900">
             Beneficios inmediatos
           </h2>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-12 items-start">
-          {steps.map((step, index) => (
-            <div key={index} className="text-center relative">
-              <div className="inline-block mb-8">
-                <div className="w-20 h-20 bg-blue-500 text-white rounded-full flex items-center justify-center text-3xl font-bold ">
-                  {step.number}
-                </div>
-                {index < steps.length - 1 && (
-                  <div
-                    className="hidden md:block absolute top-10 left-full w-full h-0.5 bg-blue-200 -translate-y-1/2"
-                    style={{ width: "calc(100% - 5rem)" }}
-                  ></div>
-                )}
+        {/* Tres columnas lado a lado en desktop */}
+        <div className="grid grid-cols-3 md:grid-cols-3 sm:grid-cols-1 gap-6 items-stretch">
+          {steps.map((step, idx) => (
+            <div
+              key={idx}
+              className={`bg-gradient-to-r ${step.gradient} rounded-2xl text-white relative group shadow-lg p-8 flex`}
+            >
+              {/* Columna izquierda: número grande */}
+              <div className="text-5xl font-extrabold leading-none mr-6 opacity-90 w-20 shrink-0 flex items-center justify-center">
+                {step.number}
               </div>
-              <p className="text-gray-600 leading-relaxed">
-                {step.description}
-              </p>
-              {/* Curved arrow for mobile */}
-              {index < steps.length - 1 && (
-                <div className="md:hidden flex justify-center mt-8">
-                  <svg
-                    className="w-8 h-12 text-blue-400"
-                    viewBox="0 0 24 48"
-                    fill="none"
-                  >
-                    <path
-                      d="M12 4 Q20 20 12 44"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      fill="none"
-                    />
-                  </svg>
-                </div>
-              )}
+
+              {/* Columna derecha: descripción */}
+              <div className="flex-1 flex flex-col justify-center">
+                <p className="text-lg leading-relaxed">{step.description}</p>
+              </div>
+
+              {/* Flecha estética como en el ejemplo */}
+              <div className="ml-4 self-start text-white/70">
+                <svg
+                  className="w-6 h-6"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  aria-hidden
+                >
+                  <path
+                    d="M7 17L17 7M17 7H7M17 7V17"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+              </div>
             </div>
           ))}
         </div>
@@ -67,4 +70,4 @@ const BeneficiosSection = () => {
   );
 };
 
-export default BeneficiosSection;
+export default BenefitsSection;

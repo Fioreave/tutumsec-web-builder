@@ -205,6 +205,9 @@ const Footer = () => {
 
             <div className="flex space-x-4">
               <a
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="TutumSec en LinkedIn (se abre en una pestaña nueva)"
                 href="https://www.linkedin.com/company/tutumsec/posts/?feedView=all"
                 className="w-10 h-10 bg-gradient-to-r from-blue-500 to-blue-600 rounded-full flex items-center justify-center hover:from-blue-600 hover:to-blue-700 transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-110"
               >

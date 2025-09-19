@@ -4,8 +4,31 @@ import Footer from "@/components/Footer";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import SEOMetaTags from "@/components/SEOMetaTags";
 import { Button } from "@/components/ui/button";
-import { ArrowUpRight, CheckCircle } from "lucide-react";
+import {
+  ArrowUpRight,
+  CheckCircle,
+  Users,
+  Settings,
+  BarChart3,
+  Zap,
+  RotateCcw,
+  Monitor,
+  Shield,
+  Globe,
+  Cloud,
+  Cog,
+  Network,
+  Eye,
+  Target,
+  FileText,
+  AlertTriangle,
+  Database,
+  Search,
+  ChevronRight,
+  FileCheck,
+} from "lucide-react";
 import PartnersSection from "../PartnersSection";
+import { Link } from "react-router-dom";
 
 const Deteccion24x7 = () => {
   const breadcrumbItems = [
@@ -17,6 +40,22 @@ const Deteccion24x7 = () => {
     "Recopilación de Datos: Recopilamos logs y eventos de todos los sistemas y dispositivos.",
     "Análisis Inteligente: Analizamos patrones y comportamientos para identificar amenazas.",
     "Respuesta Inmediata: Alertamos y activamos los protocolos de respuesta necesarios.",
+  ];
+
+  const reporte = [
+    {
+      title: "Informe mensual:",
+      description: "incidentes, acciones realizadas, recomendaciones.",
+    },
+    {
+      title: "Panel ejecutivo: ",
+      description:
+        "tendencias, fuentes cubiertas, top TTPs, backlog de hardening.",
+    },
+    {
+      title: "Comité trimestral:",
+      description: "con *CISO/OSI para alinear seguridad con negocio.",
+    },
   ];
 
   const caract = [
@@ -117,16 +156,18 @@ const Deteccion24x7 = () => {
               </div>
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button size="lg" className="px-8">
+                <Link
+                  to={"/es/contacto"}
+                  className="bg-primary rounded-full text-white text-medium content-center text-center justify-center px-8"
+                >
                   Reserva consultoría gratis 15'
-                </Button>
-                <Button
-                  variant="outline"
-                  size="lg"
-                  className="px-8 bg-primary/10 text-blue/85 border-blue/20 hover:bg-white/20"
+                </Link>
+                <Link
+                  to={"/es/contacto"}
+                  className="bg-white border py-2 border-primary rounded-full text-primary text-medium content-center text-center justify-center px-8"
                 >
                   Descarga la ficha técnica BlackMDR{" "}
-                </Button>
+                </Link>
               </div>
             </div>
           </section>
@@ -152,7 +193,7 @@ const Deteccion24x7 = () => {
             </div>
           </section>
 
-          {/* === BLOQUE: Vigilancia Continua === */}
+          {/* === BLOQUE: Vigilancia Continua ===
           <section className="bg-muted/50 pt-20 pb-20  mb-20">
             <div className="container max-w-7xl grid md:grid-cols-12">
               <div className="col-span-4 mr-20">
@@ -167,7 +208,6 @@ const Deteccion24x7 = () => {
                 </p>
               </div>
 
-              {/* Características */}
               <div className="col-span-4">
                 <h3 className="text-xl font-semibold mb-4">
                   Características principales:
@@ -182,7 +222,7 @@ const Deteccion24x7 = () => {
                 </div>
               </div>
 
-              {/* Beneficios */}
+               
               <div className="col-span-4">
                 <h3 className="text-xl font-semibold mb-4">Beneficios:</h3>
                 <div className="space-y-6">
@@ -195,10 +235,9 @@ const Deteccion24x7 = () => {
                 </div>
               </div>
             </div>
-          </section>
+          </section> */}
 
           {/* === PROCESO — timeline con pasos numerados === */}
-
           <section className="py-20">
             <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-10 items-start">
               {/* Columna izquierda: título + subtítulo opcional */}
@@ -258,37 +297,437 @@ const Deteccion24x7 = () => {
               </div>
             </div>
           </section>
-          {/* === CTA final — tarjeta con gradiente === 
-          <section className="mt-16 mb-20">
-            <div className="max-w-4xl mt-6 mb-10 mx-auto relative">
-              <div className="h-[27vh] bg-gradient-to-r from-black via-blue-900 to-blue-800 rounded-[5rem] p-12 relative overflow-hidden mx-auto max-w-5xl">
-                <div className="relative z-10 max-w-3xl text-center mx-auto">
-                  <div>
-                    <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6">
-                      ¿Necesitas protección continua?
-                    </h2>
-                    <p className="text-lg text-white/85 mb-6">
-                      Contacta con nosotros para implementar nuestro servicio de
-                      detección 24x7
-                    </p>
+
+          {/* === BLOQUE 3 · QUÉ HACE DIFERENTE A BLACK MDR === */}
+          <section className="py-20 px-6 bg-tutumsec-gray-50">
+            <div className="max-w-6xl mx-auto">
+              <div className="text-center mb-16">
+                <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6 animate-slide-up leading-relaxed">
+                  Diferenciales que marcan la diferencia
+                </h2>
+              </div>
+
+              <div className="space-y-8">
+                {[
+                  {
+                    title: 'No "sustituimos" a tu equipo; lo potenciamos',
+                    description:
+                      "Trabajo hombro a hombro con tu equipo (IT/CISO). Definimos responsabilidades (RACI), compartimos visibilidad y transferimos conocimiento para que tu equipo sea más fuerte cada mes.",
+                    icon: Users,
+                  },
+                  {
+                    title:
+                      'Nada de "caja negra"; acordamos qué acciones remotas ejecutamos',
+                    description:
+                      "Runbooks co-firmados que autorizan de antemano las acciones remotas (aislar un endpoint, bloquear IOCs, purgar phishing, revocar sesiones…). Evita cuellos de botella y reduce MTTR con trazabilidad total.",
+                    icon: Settings,
+                  },
+                  {
+                    title: "Gobernanza: Seguridad gobernada desde dirección",
+                    description:
+                      "Comité con CISO/OSI, KPIs claros, priorización por riesgo, evidencias para auditorías y alineación con NIS2/ISO. Menos improvisación, más control.",
+                    icon: BarChart3,
+                  },
+                  {
+                    title: "Menos tiempo en alertas, más en decisiones",
+                    description:
+                      "Enfoque en resultados, no solo en alertas: menos falsos positivos, incidentes contenidos a tiempo, backlog de hardening priorizado y decisiones de inversión con retorno. Informe ejecutivo mensual que entiende negocio.",
+                    icon: Zap,
+                  },
+                  {
+                    title: "Aprovechamos lo que ya tienes",
+                    description:
+                      "EDR/XDR, SIEM, M365, NGFW, Meraki, etc. para acelerar despliegue y ROI, evitando compras innecesarias. Integramos y optimizamos antes de proponer nuevos tools.",
+                    icon: RotateCcw,
+                  },
+                ].map((item, index) => (
+                  <div
+                    key={index}
+                    className="bg-white p-8 rounded-2xl border border-gray-200 group hover:shadow-lg transition-all duration-500 hover:-translate-y-1 animate-fade-in"
+                    style={{
+                      animationDelay: `${index * 0.1}s`,
+                      animationFillMode: "forwards",
+                      opacity: 0,
+                    }}
+                  >
+                    <div className="flex items-start space-x-6">
+                      <div className="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:bg-primary/20 transition-colors duration-300">
+                        <item.icon className="w-8 h-8 text-primary" />
+                      </div>
+                      <div className="flex-1">
+                        <h3 className="text-xl font-semibold text-gray-800 mb-3 transition-colors duration-300 group-hover:text-primary leading-relaxed">
+                          {item.title}
+                        </h3>
+                        <p className="text-gray-600 leading-relaxed transition-colors duration-300 group-hover:text-gray-700">
+                          {item.description}
+                        </p>
+                      </div>
+                    </div>
                   </div>
-                  <div className="flex flex-col sm:flex-row gap-4 pb-20 justify-center">
-                    <button className="bg-primary text-primary-foreground px-8 py-3 rounded-full hover:bg-primary/90 transition-colors">
-                      {" "}
-                      Solicitar Información{" "}
-                    </button>{" "}
-                    <button className="border border-primary text-primary px-8 py-3 rounded-full hover:bg-primary/10 transition-colors">
-                      {" "}
-                      Ver Demo{" "}
-                    </button>
+                ))}
+              </div>
+
+              <div className="mt-12 text-center">
+                <p className="text-sm text-gray-500 italic">
+                  <strong>Nota:</strong> podemos integrar de salida con stacks
+                  líderes (p. ej., Microsoft Defender, SentinelOne, CrowdStrike,
+                  Fortinet, Palo Alto, Microsoft Sentinel…). Ajustamos el
+                  alcance a tu realidad tecnológica.
+                </p>
+              </div>
+            </div>
+          </section>
+
+          {/* === BLOQUE 4 · COBERTURA E INTEGRACIONES === */}
+          <section className="py-20 px-6 bg-white">
+            <div className="max-w-6xl mx-auto">
+              <div className="text-center mb-16">
+                <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-relaxed">
+                  Cobertura de extremo a extremo, <br /> integraciones reales
+                </h2>
+              </div>
+
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {[
+                  {
+                    category: "Endpoint / EDR/XDR",
+                    items:
+                      "Microsoft Defender for Endpoint, SentinelOne, CrowdStrike, Sophos, Bitdefender, Malwarebytes, Webroot…",
+                    icon: Monitor,
+                  },
+                  {
+                    category: "Identidad & Email",
+                    items:
+                      "Microsoft 365/Entra, reglas de purga y revocación de sesiones.",
+                    icon: Shield,
+                  },
+                  {
+                    category: "Red & Perímetro",
+                    items:
+                      "Fortinet, SonicWall, WatchGuard, Cisco Meraki (eventos de firewall/telemetría).",
+                    icon: Globe,
+                  },
+                  {
+                    category: "Cloud & Workloads",
+                    items:
+                      "Microsoft Sentinel, Azure/AWS; Elastic SIEM si aplica.",
+                    icon: Cloud,
+                  },
+                  {
+                    category: "OT/ICS",
+                    items:
+                      "Enfoque segmentado y reglas de contención seguras (si procede).",
+                    icon: Cog,
+                  },
+                ].map((item, index) => (
+                  <div
+                    key={index}
+                    className="bg-tutumsec-gray-50 p-6 rounded-2xl border border-gray-200 group hover:shadow-lg transition-all duration-500 hover:-translate-y-2"
+                  >
+                    <div className="text-center">
+                      <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-primary/20 transition-colors duration-300">
+                        <item.icon className="w-8 h-8 text-primary" />
+                      </div>
+                      <h3 className="text-lg font-semibold text-gray-800 mb-3 transition-colors duration-300 group-hover:text-primary leading-tight">
+                        {item.category}
+                      </h3>
+                      <p className="text-gray-600 text-sm leading-relaxed transition-colors duration-300 group-hover:text-gray-700">
+                        {item.items}
+                      </p>
+                    </div>
                   </div>
-                  {/*<img
-                  src="/uploads/abstract.png"
-                  alt=""
-                  className="absolute -right-8 -bottom-8 w-48 opacity-50"
-                  aria-hidden
-                />
+                ))}
+              </div>
+
+              <div className="mt-12 text-center">
+                <p className="text-sm text-gray-500 italic">
+                  <strong>Nota de transparencia:</strong> mostramos
+                  compatibilidad técnica; "compatible" no implica relación de
+                  partnership salvo indicación expresa.
+                </p>
+              </div>
+            </div>
+          </section>
+
+          {/* === BLOQUE 5 · CÓMO FUNCIONA (Pipeline) === */}
+          <section className="py-40 px-6 bg-tutumsec-gray-50">
+            <div className="max-w-7xl mx-auto">
+              <div className="text-center mb-16">
+                <h2 className="text-4xl lg:text-5xl font-bold text-primary mb-6 leading-relaxed">
+                  Detección y respuesta 24/7
+                </h2>
+              </div>
+
+              <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-3">
+                {[
+                  {
+                    step: "1",
+                    title: "Ingesta & Normalización",
+                    description:
+                      "De telemetría (endpoint, identidad, cloud, red).",
+                  },
+                  {
+                    step: "2",
+                    title: "Detección",
+                    description:
+                      "Detección (reglas, ML y correlación) + hunting proactivo.",
+                  },
+                  {
+                    step: "3",
+                    title: "Validación humana",
+                    description:
+                      "Por analistas para eliminar falsos positivos.",
+                  },
+                  {
+                    step: "4",
+                    title: "Respuesta remota",
+                    description:
+                      "Aislamiento, bloqueo IOC, kill process, revocación de sesión, reset de credenciales, reglas de contención, etc.",
+                  },
+                  {
+                    step: "5",
+                    title: "Lecciones aprendidas",
+                    description:
+                      "Tuning de reglas, hardening y asesoría al equipo IT/CISO.",
+                  },
+                ].map((item, index) => (
+                  <div
+                    key={index}
+                    className="bg-white p-6 rounded-2xl border border-gray-200 group hover:shadow-lg transition-all duration-500 hover:-translate-y-2 relative"
+                  >
+                    <div className="text-center">
+                      <div className="w-12 h-12 bg-primary/80 text-white rounded-full flex items-center justify-center mx-auto mb-4 text-lg font-bold">
+                        {item.step}
+                      </div>
+                      <h3 className="text-lg font-semibold text-gray-800 mb-3 transition-colors duration-300 group-hover:text-primary leading-tight">
+                        {item.title}
+                      </h3>
+                      <p className="text-gray-600 text-sm leading-relaxed transition-colors duration-300 group-hover:text-gray-700">
+                        {item.description}
+                      </p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+
+          {/* === BLOQUE 6 · ONBOARDING ÁGIL === */}
+          <section className="py-20 px-6 bg-white">
+            <div className="max-w-6xl mx-auto">
+              <div className="text-center mb-16">
+                <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-relaxed">
+                  Puesta en marcha rápida, segura y sin "sorpresas"
+                </h2>
+              </div>
+
+              <div className="space-y-6">
+                {[
+                  {
+                    period: "Día 1–3",
+                    title: "Arquitectura e inventario",
+                    description:
+                      "arquitectura, inventario de fuentes e IT-readiness.",
+                    gradient: "from-blue-900 to-black",
+                  },
+                  {
+                    period: "Sem 2",
+                    title: "Despliegue inicial",
+                    description: "agentes/conectores + runbooks co-aprobados.",
+                    gradient: "from-blue-950 to-blue-800",
+                  },
+                  {
+                    period: "Día 30",
+                    title: "Primer informe",
+                    description:
+                      "tuning inicial y primer informe (técnico + ejecutivo).",
+                    gradient: "from-blue-500 to-blue-950",
+                  },
+                  {
+                    period: "Día 90",
+                    title: "Validación completa",
+                    description:
+                      "simulacro, revisión de KPIs y roadmap de madurez.",
+                    gradient: "from-blue-600 to-blue-900",
+                  },
+                ].map((item, index) => (
+                  <div
+                    key={index}
+                    className={`bg-gradient-to-r ${item.gradient} p-8 rounded-2xl text-white relative group`}
+                  >
+                    <div className="flex items-start gap-6">
+                      <div className="text-4xl font-bold opacity-80 min-w-[6ch]">
+                        {item.period}
+                      </div>
+                      <div className="flex-1">
+                        <h3 className="text-xl font-semibold mb-2">
+                          {item.title}
+                        </h3>
+                        <p className="text-gray-200 leading-relaxed">
+                          {item.description}
+                        </p>
+                      </div>
+                      <div className="text-white opacity-60">
+                        <CheckCircle className="w-8 h-8" />
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+
+          {/* === BLOQUE 7 · ALCANCE DE RESPUESTA === */}
+          <section className="py-20 px-6 bg-tutumsec-gray-50">
+            <div className="max-w-6xl mx-auto">
+              <div className="text-center mb-16">
+                <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-relaxed">
+                  De la alerta a la contención
+                </h2>
+              </div>
+
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {[
+                  {
+                    title: "Aislamiento de endpoint",
+                    description: "afectado.",
+                    icon: Shield,
+                  },
+                  {
+                    title: "Bloqueo y erradicación",
+                    description: "(IOC, procesos, persistencia conocida).",
+                    icon: AlertTriangle,
+                  },
+                  {
+                    title: "Medidas en identidad",
+                    description:
+                      "(deshabilitar sesión, MFA, restablecer contraseñas).",
+                    icon: Users,
+                  },
+                  {
+                    title: "Email",
+                    description:
+                      "(bloqueo, retracto, purga de campañas de phishing).",
+                    icon: Network,
+                  },
+                  {
+                    title: "Red/Perímetro",
+                    description:
+                      "(reglas temporales, segmentación de emergencia).",
+                    icon: Globe,
+                  },
+                  {
+                    title: "Recomendaciones de recuperación",
+                    description: "y comunicación con tu equipo.",
+                    icon: RotateCcw,
+                  },
+                ].map((item, index) => (
+                  <div
+                    key={index}
+                    className="bg-white p-6 rounded-2xl border border-gray-200 group hover:shadow-lg transition-all duration-500 hover:-translate-y-2"
+                  >
+                    <div className="text-center">
+                      <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-primary/20 transition-colors duration-300">
+                        <item.icon className="w-8 h-8 text-primary" />
+                      </div>
+                      <h3 className="text-lg font-semibold text-gray-800 mb-3 transition-colors duration-300 group-hover:text-primary leading-tight">
+                        {item.title}
+                      </h3>
+                      <p className="text-gray-600 text-sm leading-relaxed transition-colors duration-300 group-hover:text-gray-700">
+                        {item.description}
+                      </p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              <div className="mt-12 text-center">
+                <p className="text-lg text-gray-700 font-medium">
+                  <strong>DFIR / Retainer:</strong> disponible como servicio
+                  aparte para análisis forense profundo y acompañamiento en
+                  crisis.
+                </p>
+              </div>
+            </div>
+          </section>
+
+          {/* PAIN → VISIÓN */}
+          <section className=" py-20 px-6 bg-gray-500/5 text-blue">
+            <div className="max-w-6xl mx-auto grid lg:grid-cols-3 gap-12 items-center">
+              <div className="transform col-span-1 transition-all duration-700 hover:translate-x-2">
+                <h2 className="text-3xl lg:text-3xl mb-2 font-bold transition-colors duration-500 hover:text-primary-light leading-relaxed">
+                  Hunting proactivo sobre <br />
+                  TTPs críticos
+                </h2>
+              </div>
+              <div className="border-l-4 col-span-2 ml-20 border-blue-400 text-sm pl-6 prose prose-lg max-w-none text-left">
+                <p>
+                  Búsqueda recurrente de comportamientos (MITRE ATT&CK) centrada
+                  en acceso inicial, movimiento lateral, escalado de privilegios
+                  y exfiltración. Los hallazgos generan acciones y reglas nuevas
+                  para tu entorno.
+                </p>
+              </div>
+            </div>
+          </section>
+
+          {/* === BLOQUE 9 · REPORTING & KPIs === */}
+          <section className="py-20 px-6 bg-gradient-to-br from-gray-900 via-blue-900 to-black text-white">
+            <div className="max-w-6xl mx-auto">
+              <div className="grid lg:grid-cols-2 lex-start gap-12 items-center">
+                <div>
+                  <h2 className="text-4xl lg:text-4xl font-bold mb-2">
+                    Reporte semanal y <br />
+                    <span className="relative">
+                      foco ejecutivo{" "}
+                      <svg
+                        className="absolute -bottom-4 left-0 w-full h-3"
+                        viewBox="0 0 300 12"
+                        fill="none"
+                      >
+                        <path
+                          d="M5 6 Q150 1 295 6"
+                          stroke="#3B82F6"
+                          strokeWidth="3"
+                          fill="none"
+                        />
+                      </svg>
+                    </span>
+                  </h2>
                 </div>
+
+                <div className="space-y-8">
+                  {reporte.map((risk, index) => (
+                    <div
+                      key={index}
+                      className="border-l-4 border-blue-400 pl-6"
+                    >
+                      <h3 className="text-xl font-semibold mb-2 text-blue-300">
+                        {risk.title}
+                      </h3>
+                      <p className="text-white-700 leading-relaxed">
+                        {risk.description}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* === BLOQUE 11 · CUMPLIMIENTO & NIS2 === 
+          <section className="py-20 px-6 bg-tutumsec-gray-50">
+            <div className="max-w-6xl mx-auto text-center">
+              <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-8 leading-relaxed">
+                MDR que ayuda a cumplir NIS2
+              </h2>
+              <div className="max-w-4xl mx-auto">
+                <p className="text-xl text-gray-600 leading-relaxed">
+                  Mapeamos el servicio a controles de detección y respuesta,
+                  notificación de incidentes y mejora continua. Entregamos
+                  evidencias y facilitamos la coordinación con CISO/OSI y
+                  Auditoría & Compliance.
+                </p>
               </div>
             </div>
           </section>*/}

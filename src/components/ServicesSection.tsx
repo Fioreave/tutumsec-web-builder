@@ -112,7 +112,7 @@ const ServicesSection = () => {
       <div className="max-w-6xl mx-auto">
         <div className="text-left mb-10">
           <h3 className="text-4xl lg:text-5xl font-bold text-gray-900 leading-relaxed">
-            Haz crecer tu negocio
+            Nuestros Servicios{" "}
           </h3>
         </div>
 

@@ -2,6 +2,7 @@ import React from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { MapPin, Phone, Mail, Linkedin, Twitter, Facebook } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   const services = [
@@ -14,19 +15,10 @@ const Footer = () => {
     "Sobre Nosotros",
     "Nuestro Equipo",
     "Certificaciones",
-    "Casos de Éxito",
     "Blog",
-    "Carreras",
   ];
 
-  const resources = [
-    "Documentación",
-    "Whitepapers",
-    "Webinars",
-    "Centro de Ayuda",
-    "Contacto",
-    "Soporte Técnico",
-  ];
+  const resources = ["Documentación", "Contacto", "Soporte Técnico"];
 
   const certifications = [
     "ISO 27001 Certificado",
@@ -38,10 +30,10 @@ const Footer = () => {
   return (
     <footer className="bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white">
       {/* Main Footer Content */}
-      <div className="max-w-7xl mx-auto px-6 py-16">
-        <div className="grid lg:grid-cols-4 gap-12 mb-12">
+      <div className="max-w-7xl mx-auto px-2 py-16">
+        <div className="grid lg:grid-cols-5 gap-6 mb-12">
           {/* Brand Section */}
-          <div className="lg:col-span-1">
+          <div className="lg:col-span-2">
             <div className="flex items-center mb-6 group">
               <img
                 src="/uploads/tutumsec-negativo.png"
@@ -69,51 +61,73 @@ const Footer = () => {
           {/* Services */}
           <div>
             <h4 className="text-lg font-semibold mb-6 text-white">Servicios</h4>
-            <ul className="space-y-3">
-              {services.map((service, index) => (
-                <li key={index}>
-                  <a
-                    href="#"
-                    className="text-sm text-gray-300 hover:text-blue-400 transition-all duration-300 hover:translate-x-2 block"
-                  >
-                    {service}
-                  </a>
-                </li>
-              ))}
+            <ul className="space-y-3 text-sm text-gray-300 hover:text-blue-400 transition-all duration-300 hover:translate-x-2 block">
+              <li>
+                <Link to="/es/servicios/consultoria-ciso">
+                  Consultoría CISO
+                </Link>
+              </li>
+              <li>
+                <Link to="/es/servicios/auditoria-compliance-nis2">
+                  Auditoría & Compliance NIS2
+                </Link>
+              </li>
+              <li>
+                <Link to="/es/servicios/transformacion-digital-estrategica">
+                  Transformación Digital Estratégica
+                </Link>
+              </li>
+              <li>
+                <Link to="/es/servicios/formacion-concienciacion">
+                  Formación y Concienciación
+                </Link>
+              </li>
+              <li>
+                <Link to="/es/servicios/oficina-seguridad-informacion-nis2">
+                  Oficina Seguridad Información
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 className="text-lg font-semibold mb-6 text-white">Productos</h4>
+            <ul className="space-y-3 text-sm text-gray-300 hover:text-blue-400 transition-all duration-300 hover:translate-x-2 block">
+              <li>
+                <Link to="/es/productos/deteccion-24x7">Detección 24x7</Link>
+              </li>
+              <li>
+                <Link to="/es/productos/prevencion">Prevención</Link>
+              </li>
+              <li>
+                <Link to="/es/productos/incidente-respuesta-retainer">
+                  Respuesta &lt;15'
+                </Link>
+              </li>
+              <li>
+                <Link to="/es/productos/recuperacion-backup">Recuperación</Link>
+              </li>
             </ul>
           </div>
 
           {/* Company */}
           <div>
             <h4 className="text-lg font-semibold mb-6 text-white">Empresa</h4>
-            <ul className="space-y-3">
-              {company.map((item, index) => (
-                <li key={index}>
-                  <a
-                    href="#"
-                    className="text-sm text-gray-300 hover:text-blue-400 transition-all duration-300 hover:translate-x-2 block"
-                  >
-                    {item}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Resources */}
-          <div>
-            <h4 className="text-lg font-semibold mb-6 text-white">Recursos</h4>
-            <ul className="space-y-3">
-              {resources.map((resource, index) => (
-                <li key={index}>
-                  <a
-                    href="#"
-                    className="text-sm text-gray-300 hover:text-blue-400 transition-all duration-300 hover:translate-x-2 block"
-                  >
-                    {resource}
-                  </a>
-                </li>
-              ))}
+            <ul className="space-y-3 text-sm text-gray-300 hover:text-blue-400 transition-all duration-300 hover:translate-x-2 block">
+              <li>
+                <Link to="/es/sobre-nosotros/historia">Historia</Link>
+              </li>
+              <li>
+                <Link to="/es/sobre-nosotros/equipo-valores">
+                  Equipo y Valores
+                </Link>
+              </li>
+              <li>
+                <Link to="/es/blog">Blog</Link>
+              </li>
+              <li>
+                <Link to="/es/contacto">Contacto</Link>
+              </li>
             </ul>
           </div>
         </div>
@@ -191,7 +205,7 @@ const Footer = () => {
 
             <div className="flex space-x-4">
               <a
-                href="#"
+                href="https://www.linkedin.com/company/tutumsec/posts/?feedView=all"
                 className="w-10 h-10 bg-gradient-to-r from-blue-500 to-blue-600 rounded-full flex items-center justify-center hover:from-blue-600 hover:to-blue-700 transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-110"
               >
                 <Linkedin className="w-5 h-5 text-white" />

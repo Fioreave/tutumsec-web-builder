@@ -48,6 +48,7 @@ import Historia from "./pages/sobre-nosotros/Historia";
 import EquipoValores from "./pages/sobre-nosotros/EquipoValores";
 import CertificacionesPartners from "./pages/sobre-nosotros/CertificacionesPartners";
 import CookieBanner from "./pages/CookieBanner";
+import ScrollToTop from "./ScrollToTop";
 
 const queryClient = new QueryClient();
 
@@ -57,6 +58,8 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
+        <ScrollToTop />
+
         <CookieBanner />
         <Routes>
           <Route path="/" element={<Index />} />

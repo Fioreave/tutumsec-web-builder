@@ -7,19 +7,9 @@ const NewCTASection = () => {
 
   return (
     <section className="py-16 sm:py-20 px-4 sm:px-6 bg-gray-50">
-      <div className="max-w-screen-xl mx-auto">
-        {/* Tarjeta CTA */}
-        <div
-          className="
-            relative isolate overflow-hidden
-            rounded-[2rem]
-            bg-gradient-to-r from-black via-blue-900 to-blue-700
-            px-6 py-10 sm:p-12 lg:px-16 lg:py-14
-            pr-28 sm:pr-40 lg:pr-64 pb-24
-          "
-        >
-          {/* Contenido */}
-          <div className="max-w-3xl">
+      <div className="max-w-screen-xl mt-20 mx-auto relative">
+        <div className="bg-gradient-to-r from-black via-blue-900 to-blue-800 rounded-[2rem] p-12 relative overflow-hidden mx-auto max-w-5xl">
+          <div className="max-w-5xl">
             <h2
               className="
                 font-bold text-white mb-4
@@ -38,7 +28,7 @@ const NewCTASection = () => {
               {t("ctaSubtitle")}
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 sm:items-center">
+            <div className="flex flex-col sm:flex-row gap-4 justify-left mb-4">
               <Link
                 to="https://calendly.com/ayub-tutumsec/30min"
                 aria-label={t("reserveConsultation")}
@@ -57,27 +47,11 @@ const NewCTASection = () => {
               </Link>
             </div>
           </div>
-
-          {/* Gráfico fijo en la esquina inferior derecha */}
           <img
             src="/uploads/abstract.png"
             alt=""
-            className="
-              pointer-events-none select-none
-              absolute right-4 bottom-4
-              w-[120px] sm:w-[180px] lg:w-[260px]
-              h-auto object-contain opacity-90
-              max-w-[35%] sm:max-w-none
-            "
-          />
-
-          {/* Glow sutil de fondo (ornamental) */}
-          <div
-            className="
-              absolute -right-40 -bottom-40 h-[360px] w-[360px]
-              rounded-full bg-blue-500/10 blur-3xl
-            "
-            aria-hidden="true"
+            className="absolute -right-8 -bottom-8 w-48 opacity-50"
+            aria-hidden
           />
         </div>
       </div>

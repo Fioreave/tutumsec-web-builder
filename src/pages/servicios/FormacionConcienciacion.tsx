@@ -36,6 +36,7 @@ import {
   AlarmClock,
 } from "lucide-react";
 import RoleItinerariesCarousel from "./RoleItinerariesGrid";
+import { Link } from "react-router-dom";
 
 const FormacionConcienciacion = () => {
   const breadcrumbItems = [
@@ -240,9 +241,19 @@ const FormacionConcienciacion = () => {
               </div>
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button size="lg" className="rounded-full text-lg px-8">
+                <Link
+                  to="https://calendly.com/ayub-tutumsec/30min"
+                  className="px-6 py-2 rounded-full text-lg text-white font-medium transition-transform whitespace-nowrap hover:scale-[1.03] shadow-[0_8px_30px_rgba(59,130,246,0.35)]"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{
+                    background:
+                      "linear-gradient(180deg, #60a5fa 0%, #3b82f6 100%)", // blue-400 -> blue-500
+                  }}
+                >
+                  {" "}
                   Reserva diagnóstico gratuito 15'
-                </Button>
+                </Link>
                 <Button
                   variant="outline"
                   size="lg"
@@ -584,9 +595,18 @@ const FormacionConcienciacion = () => {
               </div>
 
               <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
-                <Button className="rounded-full px-6" size="lg">
-                  Solicitar diagnóstico gratuito
-                </Button>
+                <Link
+                  to="https://calendly.com/ayub-tutumsec/30min"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-6 py-2 rounded-full text-lg text-white font-medium transition-transform whitespace-nowrap hover:scale-[1.03] shadow-[0_8px_30px_rgba(59,130,246,0.35)]"
+                  style={{
+                    background:
+                      "linear-gradient(180deg, #60a5fa 0%, #3b82f6 100%)", // blue-400 -> blue-500
+                  }}
+                >
+                  Reserva tu consultoría gratuita →
+                </Link>
                 <Button
                   className="rounded-full px-6"
                   variant="outline"

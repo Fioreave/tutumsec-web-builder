@@ -16,6 +16,7 @@ import {
   Map,
   Settings,
 } from "lucide-react";
+import { Link } from "react-router-dom";
 
 /* === DATA (sin tocar tu contenido) === */
 const faqs = [
@@ -201,14 +202,29 @@ const TransformacionDigital = () => {
                 </div>
               </div>
 
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button size="lg" className="px-8">
+              <div
+                className="flex flex-col sm:flex-row gap-4 justify-center items-center opacity-0 animate-fade-in"
+                style={{
+                  animationDelay: "0.9s",
+                  animationFillMode: "forwards",
+                }}
+              >
+                <Link
+                  to="https://calendly.com/ayub-tutumsec/30min"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-6 py-2 rounded-full text-lg text-white font-medium transition-transform whitespace-nowrap hover:scale-[1.03] shadow-[0_8px_30px_rgba(59,130,246,0.35)]"
+                  style={{
+                    background:
+                      "linear-gradient(180deg, #60a5fa 0%, #3b82f6 100%)", // blue-400 -> blue-500
+                  }}
+                >
                   Reserva diagnóstico gratuito 30'
-                </Button>
+                </Link>
                 <Button
                   variant="outline"
                   size="lg"
-                  className="px-8 bg-white/10 text-white border-white/20 hover:bg-white/20"
+                  className="px-4 py-2 text-md rounded-full"
                 >
                   Descarga Checklist de Digitalización 2025
                 </Button>
@@ -492,13 +508,18 @@ const TransformacionDigital = () => {
                     Empieza hoy tu transformación digital con garantías
                   </h2>
                   <div className="space-y-4">
-                    <Button
-                      size="lg"
-                      variant="secondary"
-                      className="rounded-full px-8"
+                    <Link
+                      to="https://calendly.com/ayub-tutumsec/30min"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="px-6 py-2 rounded-full text-lg text-white font-medium transition-transform whitespace-nowrap hover:scale-[1.03] shadow-[0_8px_30px_rgba(59,130,246,0.35)]"
+                      style={{
+                        background:
+                          "linear-gradient(180deg, #60a5fa 0%, #3b82f6 100%)", // blue-400 -> blue-500
+                      }}
                     >
                       Reserva tu sesión gratis
-                    </Button>
+                    </Link>
                   </div>
                 </div>
               </div>

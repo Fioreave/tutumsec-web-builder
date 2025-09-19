@@ -349,8 +349,6 @@ const Historia = () => {
           </div>
         </section>
 
-        <ServicesSection />
-
         <section className="mb-20 container">
           <div className="text-left mt-20 ">
             <h3 className="text-5xl font-bold text-center mb-20 text-primary">

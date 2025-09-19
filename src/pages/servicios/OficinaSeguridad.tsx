@@ -219,9 +219,18 @@ const OficinaSeguridad = () => {
                 </h2>
 
                 <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                  <Button size="lg" className="rounded-full text-lg px-8">
-                    Reserva consultoría gratis 15'
-                  </Button>
+                  <Link
+                    to="https://calendly.com/ayub-tutumsec/30min"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-6 py-2 rounded-full text-lg text-white font-medium transition-transform whitespace-nowrap hover:scale-[1.03] shadow-[0_8px_30px_rgba(59,130,246,0.35)]"
+                    style={{
+                      background:
+                        "linear-gradient(180deg, #60a5fa 0%, #3b82f6 100%)", // blue-400 -> blue-500
+                    }}
+                  >
+                    Reserva tu consultoría gratuita →
+                  </Link>
                   <Button
                     variant="outline"
                     size="lg"
@@ -586,9 +595,18 @@ const OficinaSeguridad = () => {
                     ¿Empezamos?
                   </h2>
                   <div className="flex flex-col sm:flex-row gap-4 justify-center mb-4">
-                    <Button className="rounded-full" size="lg">
-                      Reserva consultoría gratis 15'
-                    </Button>
+                    <Link
+                      to="https://calendly.com/ayub-tutumsec/30min"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="px-6 py-2 rounded-full text-lg text-white font-medium transition-transform whitespace-nowrap hover:scale-[1.03] shadow-[0_8px_30px_rgba(59,130,246,0.35)]"
+                      style={{
+                        background:
+                          "linear-gradient(180deg, #60a5fa 0%, #3b82f6 100%)", // blue-400 -> blue-500
+                      }}
+                    >
+                      Reserva tu consultoría gratuita →
+                    </Link>
                     <Button
                       variant="outline"
                       size="lg"

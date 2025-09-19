@@ -32,6 +32,8 @@ const NewCTASection = () => {
               <Link
                 to="https://calendly.com/ayub-tutumsec/30min"
                 aria-label={t("reserveConsultation")}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="
                   w-full sm:w-auto
                   rounded-full px-7 sm:px-8 py-4 text-base sm:text-lg

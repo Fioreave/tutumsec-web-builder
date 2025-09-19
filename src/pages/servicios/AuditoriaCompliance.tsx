@@ -267,6 +267,8 @@ const AuditoriaCompliance = () => {
               >
                 <Link
                   to="https://calendly.com/ayub-tutumsec/30min"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="px-6 py-2 rounded-full text-lg text-white font-medium transition-transform whitespace-nowrap hover:scale-[1.03] shadow-[0_8px_30px_rgba(59,130,246,0.35)]"
                   style={{
                     background:
@@ -518,6 +520,8 @@ const AuditoriaCompliance = () => {
               </h2>
               <Link
                 to="https://calendly.com/ayub-tutumsec/30min"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="px-6 py-2 rounded-full text-lg text-white font-medium transition-transform whitespace-nowrap hover:scale-[1.03] shadow-[0_8px_30px_rgba(59,130,246,0.35)]"
                 style={{
                   background:

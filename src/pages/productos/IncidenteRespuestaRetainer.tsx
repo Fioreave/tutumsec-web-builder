@@ -140,13 +140,13 @@ const PrevencionBackup = () => {
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link
-                  to={"/contacto"}
+                  to={"/es/contacto"}
                   className="bg-primary rounded-full text-white text-medium content-center text-center justify-center px-8"
                 >
                   Necesito ayuda ahora{" "}
                 </Link>
                 <Link
-                  to={"/contacto"}
+                  to={"/es/contacto"}
                   className="bg-white border py-2 border-primary rounded-full text-primary text-medium content-center text-center justify-center px-8"
                 >
                   Hablar con un experto{" "}

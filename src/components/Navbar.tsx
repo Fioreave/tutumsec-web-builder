@@ -122,6 +122,8 @@ const Navbar = () => {
             <LanguageSelector />
             <Link
               to="https://calendly.com/ayub-tutumsec/30min"
+              target="_blank"
+              rel="noopener noreferrer"
               className="px-6 py-2 rounded-full text-white font-medium transition-colors whitespace-nowrap"
               style={{
                 background: "linear-gradient(to bottom, #5eb9f0, #3886f4)",
@@ -259,6 +261,8 @@ const Navbar = () => {
             <div className="flex items-center gap-4">
               <Link
                 to="https://calendly.com/ayub-tutumsec/30min"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-full px-6 py-2 rounded-full text-white font-medium mt-4 transition-colors inline-block text-center"
                 style={{
                   background: "linear-gradient(to bottom, #5eb9f0, #3886f4)",

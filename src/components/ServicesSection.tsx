@@ -6,38 +6,38 @@ import { Users, Shield, CheckCircle, Eye, GraduationCap } from "lucide-react";
 const ServicesSection = () => {
   const services = [
     {
-      title:
-        "Consultoría estratégica en Ciberseguridad y transformación digital",
-      benefit: "Diagnóstico integral + roadmap con quick-wins.",
-      icon: Users,
-      href: "#consultoria",
-    },
-    {
       title: "vCISO (CISO as a Service)",
       benefit:
         "Gobernanza estratégica, cuadros de mando, control presupuestario y decisiones basadas en datos.",
       icon: Shield,
-      href: "#vciso",
+      href: "/es/servicios/consultoria-ciso",
+    },
+    {
+      title:
+        "Consultoría estratégica en Ciberseguridad y transformación digital",
+      benefit: "Diagnóstico integral + roadmap con quick-wins.",
+      icon: Users,
+      href: "/es/servicios/transformacion-digital-estrategica",
     },
     {
       title: "Auditoría Técnica + Compliance (NIS2, ENS, ISO 27001)",
       benefit:
         "Evaluamos tu estado real y definimos un plan de mejora. Evita sanciones y fortalece tu reputación. Pentesting para la visibilidad real de riesgos IT-OT.",
       icon: CheckCircle,
-      href: "#auditoria",
+      href: "/es/servicios/auditoria-compliance-nis2",
     },
     {
       title: "SOC / MDR 24×7",
       benefit:
         "Detección y respuesta en tiempo real con SLA ≤ 15 minutos. Cobertura total sin ampliar plantilla.",
       icon: Eye,
-      href: "#soc-mdr",
+      href: "/es/servicios/formacion-concienciacion",
     },
     {
-      title: "Formación & Awareness",
-      benefit: "Simulaciones de phishing y micro-learning gamificado.",
+      title: "Oficina Técnica",
+      benefit: "Oficina de Seguridad de la Información (OSI) para cumplir NIS2",
       icon: GraduationCap,
-      href: "#formacion",
+      href: "/es/servicios/oficina-seguridad-informacion-nis2",
     },
   ];
 

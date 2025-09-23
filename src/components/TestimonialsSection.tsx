@@ -1,6 +1,6 @@
 import React from "react";
 import { Star } from "lucide-react";
-import { useTranslation } from "@/hooks/useTranslation";
+import { useTranslation } from "@/hooks/old.useTranslation";
 
 const TestimonialsSection = () => {
   const { t } = useTranslation();

@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { useTranslation } from "@/hooks/useTranslation";
+import { useTranslation } from "@/hooks/old.useTranslation";
 
 const NewCTASection = () => {
   const { t } = useTranslation();

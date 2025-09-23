@@ -17,7 +17,7 @@ import {
   Settings,
   Map,
 } from "lucide-react";
-import { useTranslation } from "@/hooks/useTranslation";
+import { useTranslation } from "@/hooks/old.useTranslation";
 import { Link } from "react-router-dom";
 
 const ciso = [

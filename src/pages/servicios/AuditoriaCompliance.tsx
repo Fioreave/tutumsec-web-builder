@@ -19,7 +19,7 @@ import {
   Map,
   Clock,
 } from "lucide-react";
-import { useTranslation } from "@/hooks/useTranslation";
+import { useTranslation } from "@/hooks/old.useTranslation";
 import { Link } from "react-router-dom";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import PartnersSection from "../PartnersSection";

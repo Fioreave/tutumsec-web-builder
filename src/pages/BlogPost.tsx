@@ -1,16 +1,16 @@
-import React, { useState, useEffect } from 'react';
-import { useParams, Link } from 'react-router-dom';
-import { supabase } from '@/integrations/supabase/client';
-import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
-import { Badge } from '@/components/ui/badge';
-import { Skeleton } from '@/components/ui/skeleton';
-import { Button } from '@/components/ui/button';
-import { Calendar, User, ArrowLeft } from 'lucide-react';
-import { format } from 'date-fns';
-import { es } from 'date-fns/locale';
-import Navbar from '@/components/Navbar';
-import Footer from '@/components/Footer';
-import { useTranslation } from '@/hooks/useTranslation';
+import React, { useState, useEffect } from "react";
+import { useParams, Link } from "react-router-dom";
+import { supabase } from "@/integrations/supabase/client";
+import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { Skeleton } from "@/components/ui/skeleton";
+import { Button } from "@/components/ui/button";
+import { Calendar, User, ArrowLeft } from "lucide-react";
+import { format } from "date-fns";
+import { es } from "date-fns/locale";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+import { useTranslation } from "@/hooks/old.useTranslation";
 
 interface BlogPost {
   id: string;
@@ -42,8 +42,9 @@ const BlogPost = () => {
   const fetchPost = async () => {
     try {
       const { data, error } = await supabase
-        .from('blogs')
-        .select(`
+        .from("blogs")
+        .select(
+          `
           id,
           title,
           slug,
@@ -55,13 +56,14 @@ const BlogPost = () => {
           profiles:author_id (
             full_name
           )
-        `)
-        .eq('slug', slug)
-        .eq('published', true)
+        `
+        )
+        .eq("slug", slug)
+        .eq("published", true)
         .single();
 
       if (error) {
-        if (error.code === 'PGRST116') {
+        if (error.code === "PGRST116") {
           setNotFound(true);
         } else {
           throw error;
@@ -70,7 +72,7 @@ const BlogPost = () => {
         setPost(data);
       }
     } catch (error) {
-      console.error('Error fetching post:', error);
+      console.error("Error fetching post:", error);
       setNotFound(true);
     } finally {
       setLoading(false);
@@ -79,8 +81,8 @@ const BlogPost = () => {
 
   const getImageUrl = (path: string | null) => {
     if (!path) return null;
-    if (path.startsWith('http')) return path;
-    const { data } = supabase.storage.from('blog-images').getPublicUrl(path);
+    if (path.startsWith("http")) return path;
+    const { data } = supabase.storage.from("blog-images").getPublicUrl(path);
     return data.publicUrl;
   };
 
@@ -134,7 +136,7 @@ const BlogPost = () => {
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
-      
+
       <div className="pt-20 pb-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Back button */}
@@ -150,7 +152,7 @@ const BlogPost = () => {
             {post.featured_image && (
               <div className="aspect-[21/9] overflow-hidden rounded-lg mb-8">
                 <img
-                  src={getImageUrl(post.featured_image) || '/placeholder.svg'}
+                  src={getImageUrl(post.featured_image) || "/placeholder.svg"}
                   alt={post.title}
                   className="w-full h-full object-cover"
                 />
@@ -162,15 +164,19 @@ const BlogPost = () => {
               <h1 className="text-4xl font-bold text-foreground mb-4 leading-tight">
                 {post.title}
               </h1>
-              
+
               <div className="flex items-center gap-6 text-muted-foreground">
                 <div className="flex items-center gap-2">
                   <Calendar className="h-4 w-4" />
                   <time dateTime={post.published_at}>
-                    {format(new Date(post.published_at), 'dd \'de\' MMMM \'de\' yyyy', { locale: es })}
+                    {format(
+                      new Date(post.published_at),
+                      "dd 'de' MMMM 'de' yyyy",
+                      { locale: es }
+                    )}
                   </time>
                 </div>
-                
+
                 {post.profiles?.full_name && (
                   <div className="flex items-center gap-2">
                     <User className="h-4 w-4" />
@@ -188,7 +194,7 @@ const BlogPost = () => {
 
             {/* Article content */}
             <div className="prose prose-lg max-w-none prose-headings:text-foreground prose-p:text-foreground prose-li:text-foreground prose-strong:text-foreground">
-              {post.content.split('\n').map((paragraph, index) => (
+              {post.content.split("\n").map((paragraph, index) => (
                 <p key={index} className="mb-4 leading-relaxed">
                   {paragraph}
                 </p>

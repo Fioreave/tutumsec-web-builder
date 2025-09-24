@@ -25,9 +25,8 @@ declare global {
   }
 }
 
-/** === CONFIG SIN process.env (usa tus valores) === */
 const API_URL = "https://api.tutumsec.io/contact";
-const RECAPTCHA_SITE_KEY = "6LfR6dErAAAAADMXBfld78aCMe4IJDNI1lqmSeSy2"; // tu Site Key v3
+const RECAPTCHA_SITE_KEY = "6LfTSNIrAAAAACUlwWFW7FR2V2XpodcvXgpZznmz";
 const POLICY_URL = "/politica-de-privacidad";
 
 /** Sedes */

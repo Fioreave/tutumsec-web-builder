@@ -158,7 +158,7 @@ export default function TestimonialsSection({
     >
       {/* Encabezado */}
       <div className="mx-auto max-w-6xl px-4 pt-10 pb-6">
-        <h2 className="text-4xl md:text-5xl font-semibold text-[#0b1f36] tracking-tight text-white">
+        <h2 className="text-4xl md:text-4xl font-semibold text-[#0b1f36] tracking-tight text-white">
           Asegurando lo mejor de lo mejor
         </h2>
         <p className="mt-3 max-w-4xl text-xl text-[#0b1f36] pt-2 pb-6">

@@ -55,6 +55,15 @@ const Footer = () => {
                 <MapPin className="w-4 h-4 mr-3 text-blue-400" />
                 <span className="text-sm">Barcelona - Girona - Andorra</span>
               </div>
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="TutumSec en LinkedIn (se abre en una pestaña nueva)"
+                href="https://www.linkedin.com/company/tutumsec/posts/?feedView=all"
+                className="w-10 h-10 bg-gradient-to-r from-blue-500 to-blue-600 rounded-full flex items-center justify-center hover:from-blue-600 hover:to-blue-700 transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-110"
+              >
+                <Linkedin className="w-5 h-5 text-white" />
+              </a>
             </div>
           </div>
 
@@ -216,15 +225,14 @@ const Footer = () => {
             </div>
 
             <div className="flex space-x-4">
-              <a
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="TutumSec en LinkedIn (se abre en una pestaña nueva)"
-                href="https://www.linkedin.com/company/tutumsec/posts/?feedView=all"
-                className="w-10 h-10 bg-gradient-to-r from-blue-500 to-blue-600 rounded-full flex items-center justify-center hover:from-blue-600 hover:to-blue-700 transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-110"
-              >
-                <Linkedin className="w-5 h-5 text-white" />
-              </a>
+              <div className="align-right items-right gap-8 mb-">
+            <div className="transition-all duration-300 hover:scale-5">
+              <img
+                src="/uploads/certifications/iso27001.svg"
+                alt="ISO 27001 Certificado"
+                className="h-12 px-2 py-2 w-auto opacity-60 hover:opacity-80 transition-opacity duration-300"
+              />
+            </div>
               {/*
               <a
                 href="#"

@@ -160,24 +160,6 @@ const EquipoValores = () => {
               acompañan de verdad. <br /> Nuestro objetivo: que la
               ciberseguridad se entienda en minutos y se note en semanas.
             </p>
-            <div
-              className="flex flex-col sm:flex-row gap-4 justify-center items-center opacity-0 animate-fade-in"
-              style={{
-                animationDelay: "0.9s",
-                animationFillMode: "forwards",
-              }}
-            >
-              <Link
-                to="https://calendly.com/ayub-tutumsec/30min"
-                className="mt-6 px-6 py-2 rounded-full text-lg text-white font-medium transition-transform whitespace-nowrap hover:scale-[1.03] shadow-[0_8px_30px_rgba(59,130,246,0.35)]"
-                style={{
-                  background:
-                    "linear-gradient(320deg, #082343ff 0%, #1d52a8ff 100%)", // blue-400 -> blue-500
-                }}
-              >
-                Reserva tu consultoría gratuita →
-              </Link>
-            </div>{" "}
           </div>
         </section>
 

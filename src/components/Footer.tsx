@@ -233,6 +233,8 @@ const Footer = () => {
                 className="h-12 px-2 py-2 w-auto opacity-60 hover:opacity-80 transition-opacity duration-300"
               />
             </div>
+                            </div>
+
               {/*
               <a
                 href="#"

@@ -131,7 +131,7 @@ const Footer = () => {
             </ul>
           </div>
         </div>
-        <div className="justify-right items-center gap-8 mb-">
+        <div className="align-right items-right gap-8 mb-">
             <div className="transition-all duration-300 hover:scale-105">
               <img
                 src="/uploads/certifications/iso27001.svg"

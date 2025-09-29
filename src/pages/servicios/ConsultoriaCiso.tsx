@@ -118,9 +118,10 @@ const ConsultoriaCiso = () => {
   ];
 
   const images = [
-    "/uploads/fusion-05.jpeg",
-    "/uploads/dispersion-04.jpeg",
-    "/uploads/dispersion-02.jpeg",
+    "/uploads/dispersion-05.jpg",
+    "/uploads/dispersion-04.jpg",
+    "/uploads/dispersion-06.jpg",
+    "/uploads/dispersion-07.jpg",
   ];
 
   const getImage = (i: number) => images[i % images.length];

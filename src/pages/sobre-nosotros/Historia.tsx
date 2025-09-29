@@ -127,7 +127,7 @@ const Historia = () => {
             <h1 className="animate-slide-up text-5xl font-bold text-white mx-auto bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">
               Historia de Tutumsec
             </h1>
-            <p className="mt-2 animate-slide-up text-white text-medium text-lg m-2">
+            <p className="mt-6 animate-slide-up text-white font-medium text-xl m-2">
               TutumSec nace como spin-off premium de BDR Group, con un objetivo
               sencillo: transformar casi tres décadas de trabajo en TIC y
               software en servicios de ciberseguridad especializados que se

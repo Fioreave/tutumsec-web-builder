@@ -152,10 +152,10 @@ const EquipoValores = () => {
       <main className="min-h-screen ">
         <section className="relative flex items-center min-h-screen py-20 px-6 bg-gray-100 relative overflow-hidden bg-[url('/uploads/background/bg-security.png')] bg-cover w-full bg-center">
           <div className="justify-center container max-w-5xl text-center ">
-            <h1 className="animate-slide-up text-5xl mb-6 font-bold text-white mx-auto bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">
+            <h1 className="animate-slide-up text-6xl mb-6 font-bold text-white mx-auto bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">
               ¿Quiénes somos?{" "}
             </h1>
-            <p className="mt-2 animate-slide-up text-white text-medium text-lg m-2">
+            <p className="mt-6 animate-slide-up text-white font-medium text-xl m-2">
               Personas cercanas y expertas que hablan claro, actúan rápido y
               acompañan de verdad. <br /> Nuestro objetivo: que la
               ciberseguridad se entienda en minutos y se note en semanas.

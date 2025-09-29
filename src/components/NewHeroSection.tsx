@@ -54,13 +54,17 @@ const NewHeroSection = () => {
         className="pointer-events-none select-none absolute left-0 top-[-80px] w-[1200px] max-w-none opacity-60 mix-blend-screen -z-0"
       />
 
-      <div className="max-w-6xl mx-auto text-center relative">
-        <h1 className="text-5xl lg:text-6xl font-bold text-white mb-8 leading-tight animate-slide-up pb-2">
-          Transformamos la ciberseguridad
-          <br />
-          en ventaja competitiva
+      <div className="max-w-5xl mx-auto text-center relative">
+        <h1 className="text-4xl lg:text-6xl font-bold text-white mb-8 leading-tight animate-slide-up pb-2">
+          Convierte la ciberseguridad <br />
+          en tu mejor ventaja competitiva
         </h1>
-
+        <h2 className="text-lg lg:text-xl font-medium text-white mb-8 leading-tight animate-slide-up pb-2">
+          Usamos las mejores estrategias de ciberseguridad para hacer crecer tu
+          negocio y evitar incidentes críticos: consultoría que impulsa
+          resultados, diseño y ejecución 360º para bajar incidentes críticos y
+          centrarte en lo esencial.
+        </h2>
         <div
           className="flex flex-col sm:flex-row gap-4 justify-center items-center opacity-0 animate-fade-in"
           style={{ animationDelay: "0.9s", animationFillMode: "forwards" }}

@@ -43,9 +43,10 @@ const ServicesSection = () => {
 
   // Imágenes de fondo; se ciclan si hay más cards que imágenes
   const images = [
-    "/uploads/fusion-05.jpeg",
-    "/uploads/dispersion-04.jpeg",
-    "/uploads/dispersion-02.jpeg",
+    "/uploads/dispersion-05.jpg",
+    "/uploads/dispersion-04.jpg",
+    "/uploads/dispersion-06.jpg",
+    "/uploads/dispersion-07.jpg",
   ];
 
   const getImage = (i: number) => images[i % images.length];
@@ -76,7 +77,7 @@ const ServicesSection = () => {
           style={{ backgroundImage: `url(${getImage(idx)})` }}
         />
         {/* Overlay para contraste */}
-        <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-black/30 group-hover:from-black/80 transition-colors" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-black/40 group-hover:from-black/80 transition-colors" />
 
         {/* Contenido */}
         <div className="relative p-8 text-white flex items-start gap-5 h-full">

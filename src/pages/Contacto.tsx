@@ -26,19 +26,11 @@ declare global {
 }
 
 const API_URL = "https://api.tutumsec.io/contact";
-const RECAPTCHA_SITE_KEY = "6LfTSNIrAAAAACUlwWFW7FR2V2XpodcvXgpZznmz";
+//const RECAPTCHA_SITE_KEY = "6LfTSNIrAAAAACUlwWFW7FR2V2XpodcvXgpZznmz";
 const POLICY_URL = "/politica-de-privacidad";
 
 /** Sedes */
 const locations = [
-  {
-    name: "Andorra",
-    address1: "Passeig de l'Arnaldaeta de Caboet, 11, 2n 2a",
-    address2: "AD700 Escaldes Engordany",
-    phone: "+376 862 762",
-    mapSrc:
-      "https://www.google.com/maps?q=Passeig%20de%20l'Arnaldaeta%20de%20Caboet%2011%20Escaldes%20Engordany&output=embed",
-  },
   {
     name: "Barcelona",
     address1: "Carrer de l'Aprestadora, 12, entlo 1",
@@ -55,6 +47,14 @@ const locations = [
     mapSrc:
       "https://www.google.com/maps?q=Carrer%20Pic%20de%20Peguera%2011%20Girona&output=embed",
   },
+  {
+    name: "Andorra",
+    address1: "Passeig de l'Arnaldaeta de Caboet, 11, 2n 2a",
+    address2: "AD700 Escaldes Engordany",
+    phone: "+376 862 762",
+    mapSrc:
+      "https://www.google.com/maps?q=Passeig%20de%20l'Arnaldaeta%20de%20Caboet%2011%20Escaldes%20Engordany&output=embed",
+  },
 ];
 
 const Contacto: React.FC = () => {
@@ -70,7 +70,8 @@ const Contacto: React.FC = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [sentOk, setSentOk] = useState(false);
   const [errorMsg, setErrorMsg] = useState<string | null>(null);
-
+  {
+    /*
   // Cargar script reCAPTCHA v3
   useEffect(() => {
     if (!RECAPTCHA_SITE_KEY) return;
@@ -97,7 +98,8 @@ const Contacto: React.FC = () => {
           reject(err);
         }
       });
-    });
+    });*/
+  }
 
   const downloadPdf = (path: string, name: string) => {
     const link = document.createElement("a");
@@ -128,7 +130,7 @@ const Contacto: React.FC = () => {
 
     setIsSubmitting(true);
     try {
-      const token = await getRecaptchaToken();
+      //const token = await getRecaptchaToken();
 
       const res = await fetch(API_URL, {
         method: "POST",
@@ -140,7 +142,7 @@ const Contacto: React.FC = () => {
           company,
           message,
           privacy: true,
-          recaptcha_token: token,
+          //recaptcha_token: token,
         }),
       });
 

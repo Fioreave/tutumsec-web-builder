@@ -53,7 +53,7 @@ const Footer = () => {
               </div>
               <div className="flex items-center text-gray-300 transition-all duration-300 hover:text-blue-400 hover:translate-x-1">
                 <MapPin className="w-4 h-4 mr-3 text-blue-400" />
-                <span className="text-sm">Andorra - Barcelona - Girona</span>
+                <span className="text-sm">Barcelona - Girona - Andorra</span>
               </div>
             </div>
           </div>
@@ -61,28 +61,28 @@ const Footer = () => {
           {/* Services */}
           <div>
             <h4 className="text-lg font-semibold mb-6 text-white">Servicios</h4>
-            <ul className="space-y-3 text-sm text-gray-300 hover:text-blue-400 transition-all duration-300 hover:translate-x-2 block">
-              <li>
+            <ul className="space-y-3 text-sm text-gray-300">
+              <li className="hover:text-blue-400 transition-all duration-300 hover:translate-x-2 block">
                 <Link to="/es/servicios/consultoria-ciso">
                   Consultoría CISO
                 </Link>
               </li>
-              <li>
+              <li className="hover:text-blue-400 transition-all duration-300 hover:translate-x-2 block">
                 <Link to="/es/servicios/auditoria-compliance-nis2">
                   Auditoría & Compliance NIS2
                 </Link>
               </li>
-              <li>
+              <li className="hover:text-blue-400 transition-all duration-300 hover:translate-x-2 block">
                 <Link to="/es/servicios/transformacion-digital-estrategica">
                   Transformación Digital Estratégica
                 </Link>
               </li>
-              <li>
+              <li className="hover:text-blue-400 transition-all duration-300 hover:translate-x-2 block">
                 <Link to="/es/servicios/formacion-concienciacion">
                   Formación y Concienciación
                 </Link>
               </li>
-              <li>
+              <li className="hover:text-blue-400 transition-all duration-300 hover:translate-x-2 block">
                 <Link to="/es/servicios/oficina-seguridad-informacion-nis2">
                   Oficina Seguridad Información
                 </Link>
@@ -92,19 +92,19 @@ const Footer = () => {
 
           <div>
             <h4 className="text-lg font-semibold mb-6 text-white">Productos</h4>
-            <ul className="space-y-3 text-sm text-gray-300 hover:text-blue-400 transition-all duration-300 hover:translate-x-2 block">
-              <li>
+            <ul className="space-y-3 text-sm text-gray-300">
+              <li className="hover:text-blue-400 transition-all duration-300 hover:translate-x-2 block">
                 <Link to="/es/productos/deteccion-24x7">Detección 24x7</Link>
               </li>
-              <li>
+              <li className="hover:text-blue-400 transition-all duration-300 hover:translate-x-2 block">
                 <Link to="/es/productos/prevencion">Prevención</Link>
               </li>
-              <li>
+              <li className="hover:text-blue-400 transition-all duration-300 hover:translate-x-2 block">
                 <Link to="/es/productos/incidente-respuesta-retainer">
                   Respuesta &lt;15'
                 </Link>
               </li>
-              <li>
+              <li className="hover:text-blue-400 transition-all duration-300 hover:translate-x-2 block">
                 <Link to="/es/productos/recuperacion-backup">Recuperación</Link>
               </li>
             </ul>
@@ -113,19 +113,19 @@ const Footer = () => {
           {/* Company */}
           <div>
             <h4 className="text-lg font-semibold mb-6 text-white">Empresa</h4>
-            <ul className="space-y-3 text-sm text-gray-300 hover:text-blue-400 transition-all duration-300 hover:translate-x-2 block">
-              <li>
+            <ul className="space-y-3 text-sm text-gray-300 ">
+              <li className="hover:text-blue-400 transition-all duration-300 hover:translate-x-2 block">
                 <Link to="/es/sobre-nosotros/historia">Historia</Link>
               </li>
-              <li>
+              <li className="hover:text-blue-400 transition-all duration-300 hover:translate-x-2 block">
                 <Link to="/es/sobre-nosotros/equipo-valores">
                   Equipo y Valores
                 </Link>
               </li>
-              <li>
+              <li className="hover:text-blue-400 transition-all duration-300 hover:translate-x-2 block">
                 <Link to="/es/blog">Blog</Link>
               </li>
-              <li>
+              <li className="hover:text-blue-400 transition-all duration-300 hover:translate-x-2 block">
                 <Link to="/es/contacto">Contacto</Link>
               </li>
             </ul>
@@ -189,17 +189,17 @@ const Footer = () => {
             <div className="text-sm text-gray-400 mb-4 md:mb-0">
               © 2025 TutumSec. Todos los derechos reservados. |
               <a
-                href="#"
+                href="/privacy-policy"
                 className="hover:text-blue-400 transition-colors duration-300 ml-1"
               >
                 Política de Privacidad
               </a>{" "}
               |
               <a
-                href="#"
+                href="/aviso-legal"
                 className="hover:text-blue-400 transition-colors duration-300 ml-1"
               >
-                Términos y Condiciones
+                Aviso Legal{" "}
               </a>
             </div>
 

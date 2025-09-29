@@ -49,6 +49,8 @@ import EquipoValores from "./pages/sobre-nosotros/EquipoValores";
 import CertificacionesPartners from "./pages/sobre-nosotros/CertificacionesPartners";
 import CookieBanner from "./pages/CookieBanner";
 import ScrollToTop from "./ScrollToTop";
+import AvisoLegal from "./components/AvisoLegal";
+import PrivacyPolicy from "./components/PrivacyPolicy";
 
 const queryClient = new QueryClient();
 
@@ -67,6 +69,9 @@ const App = () => (
           <Route path="/blog" element={<WordPressBlog />} />
           <Route path="/blog/:slug" element={<BlogPost />} />
           <Route path="/es/blog" element={<WordPressBlog />} />
+
+          <Route path="/aviso-legal" element={<AvisoLegal />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
 
           {/* Páginas principales */}
           <Route path="/es/contacto/" element={<Contacto />} />

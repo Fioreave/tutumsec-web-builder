@@ -3,18 +3,17 @@ import React from "react";
 const PartnersSection: React.FC = () => {
   const logos = [
     //{ src: "/uploads/fortinet.png", alt: "Cliente 1" },
-    { src: "/uploads/partners/paloalto.png", alt: "Cliente 2" },
-    { src: "/uploads/partners/blackmdr.png", alt: "Cliente 4" },
-    { src: "/uploads/partners/office.png", alt: "Cliente 7" },
-    { src: "/uploads/partners/bitdefender.png", alt: "Cliente 5" },
-    { src: "/uploads/partners/paloalto.png", alt: "Cliente 6" },
-    { src: "/uploads/partners/azure.png", alt: "Cliente 7" },
-    { src: "/uploads/partners/crowdstrike.png", alt: "Cliente 7" },
-    { src: "/uploads/partners/odoo.png", alt: "Cliente 7" },
-    { src: "/uploads/partners/ubiquiti.png", alt: "Cliente 7" },
-    { src: "/uploads/partners/veeam.png", alt: "Cliente 7" },
-    { src: "/uploads/partners/fortinet.png", alt: "Cliente 7" },
-    { src: "/uploads/partners/proxmox.png", alt: "Cliente 7" },
+    { src: "/uploads/partners/paloalto.png", alt: "Paloalto" },
+    { src: "/uploads/partners/blackmdr.svg", alt: "Blackmdr" },
+    { src: "/uploads/partners/Office.svg", alt: "Office365" },
+    { src: "/uploads/partners/bitdefender.svg", alt: "Bitdefender" },
+    { src: "/uploads/partners/azure.svg", alt: "Azure" },
+    { src: "/uploads/partners/crowdstrike.svg", alt: "Crowdstrike" },
+    { src: "/uploads/partners/odoo.svg", alt: "Cliente 7" },
+    { src: "/uploads/partners/ubiquiti.svg", alt: "Ubiquiti" },
+    { src: "/uploads/partners/veeam.svg", alt: "Veeam" },
+    { src: "/uploads/partners/fortinet.svg", alt: "Fortinet" },
+    { src: "/uploads/partners/proxmox.svg", alt: "Proxmox" },
   ];
 
   const strip = [...logos, ...logos];
@@ -26,7 +25,6 @@ const PartnersSection: React.FC = () => {
     animationIterationCount: "infinite",
     willChange: "transform",
   };
-
   return (
     <section className="relative w-full overflow-hidden py-10 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 ">
       {/* Fades laterales (opcional) 
@@ -52,7 +50,8 @@ const PartnersSection: React.FC = () => {
       {/* CSS de animación */}
       <style>{`
         /* Asegura que el UL mida por contenido para el scroll infinito */
-        section > div > ul { width: max-content; }
+        section > div > ul { width: 24; 
+        align: center;}
         @keyframes partners-marquee {
           from { transform: translateX(0); }
           to   { transform: translateX(-50%); }

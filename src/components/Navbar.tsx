@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { Menu, X, ChevronDown, ChevronRight } from "lucide-react";
-import LanguageSelector from "./LanguageSelector";
-
 import NavbarDropdown from "./NavbarDropdown";
 
 const Navbar = () => {
@@ -12,10 +10,12 @@ const Navbar = () => {
   >({});
 
   const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-    if (!isMenuOpen) {
-      setExpandedSections({});
-    }
+    setIsMenuOpen((prev) => {
+      const next = !prev;
+      // reset de desplegables al CERRAR el menú
+      if (!next) setExpandedSections({});
+      return next;
+    });
   };
 
   const toggleSection = (section: string) => {
@@ -25,12 +25,8 @@ const Navbar = () => {
     }));
   };
 
-  // Configuración de menús dropdown
   const serviciosItems = [
-    {
-      title: "Consultoría CISO",
-      path: "/es/servicios/consultoria-ciso",
-    },
+    { title: "Consultoría CISO", path: "/es/servicios/consultoria-ciso" },
     {
       title: "Auditoría & Compliance NIS2",
       path: "/es/servicios/auditoria-compliance-nis2",
@@ -50,22 +46,13 @@ const Navbar = () => {
   ];
 
   const productosItems = [
-    {
-      title: "Detección 24x7",
-      path: "/es/productos/deteccion-24x7",
-    },
-    {
-      title: "Prevención",
-      path: "/es/productos/prevencion",
-    },
+    { title: "Detección 24x7", path: "/es/productos/deteccion-24x7" },
+    { title: "Prevención", path: "/es/productos/prevencion" },
     {
       title: "Respuesta <15'",
       path: "/es/productos/incidente-respuesta-retainer",
     },
-    {
-      title: "Recuperación",
-      path: "/es/productos/recuperacion-backup",
-    },
+    { title: "Recuperación", path: "/es/productos/recuperacion-backup" },
   ];
 
   const industriasItems = [
@@ -77,7 +64,6 @@ const Navbar = () => {
   ];
 
   const recursosItems = [{ title: "Blog", path: "/es/blog" }];
-
   const sobreNosotrosItems = [
     { title: "Historia", path: "/es/sobre-nosotros/historia" },
     { title: "Equipo y Valores", path: "/es/sobre-nosotros/equipo-valores" },
@@ -87,7 +73,7 @@ const Navbar = () => {
     <nav className="bg-white shadow-lg fixed w-full top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
-          {/* Logo - Left */}
+          {/* Logo */}
           <div className="flex items-center">
             <Link to="/">
               <img
@@ -98,7 +84,7 @@ const Navbar = () => {
             </Link>
           </div>
 
-          {/* Desktop Menu - Center */}
+          {/* Desktop */}
           <div className="hidden md:block">
             <div className="flex items-baseline space-x-4 whitespace-nowrap">
               <NavbarDropdown title="Servicios" items={serviciosItems} />
@@ -117,11 +103,10 @@ const Navbar = () => {
             </div>
           </div>
 
-          {/* Language and CTA - Right */}
+          {/* Right / CTA (desktop) */}
           <div className="hidden md:flex items-center space-x-4">
-            <LanguageSelector />
-            <Link
-              to="https://calendly.com/ayub-tutumsec/30min"
+            <a
+              href="https://calendly.com/ayub-tutumsec/30min"
               target="_blank"
               rel="noopener noreferrer"
               className="px-6 py-2 rounded-full text-white font-medium transition-colors whitespace-nowrap"
@@ -130,24 +115,29 @@ const Navbar = () => {
               }}
             >
               Auditoría Gratuita
-            </Link>
+            </a>
           </div>
 
-          {/* Mobile menu button */}
+          {/* Botón móvil */}
           <div className="md:hidden flex items-center space-x-2">
-            <LanguageSelector />
-            <button className="text-gray-700 hover:text-blue-600 focus:outline-none focus:text-blue-600">
+            <button
+              onClick={toggleMenu}
+              className="text-gray-700 hover:text-blue-600 focus:outline-none focus:text-blue-600"
+              aria-label={isMenuOpen ? "Cerrar menú" : "Abrir menú"}
+              aria-expanded={isMenuOpen}
+              aria-controls="mobile-menu"
+            >
               {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
           </div>
         </div>
       </div>
 
-      {/* Mobile Menu */}
+      {/* Menú móvil */}
       {isMenuOpen && (
-        <div className="md:hidden">
+        <div id="mobile-menu" className="md:hidden">
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white shadow-lg">
-            {/* Servicios Dropdown */}
+            {/* Servicios */}
             <div className="space-y-1">
               <button
                 onClick={() => toggleSection("servicios")}
@@ -173,7 +163,7 @@ const Navbar = () => {
                 ))}
             </div>
 
-            {/* Productos Dropdown */}
+            {/* Productos */}
             <div className="space-y-1">
               <button
                 onClick={() => toggleSection("productos")}
@@ -199,7 +189,7 @@ const Navbar = () => {
                 ))}
             </div>
 
-            {/* Recursos Dropdown */}
+            {/* Recursos */}
             <div className="space-y-1">
               <button
                 onClick={() => toggleSection("recursos")}
@@ -225,7 +215,7 @@ const Navbar = () => {
                 ))}
             </div>
 
-            {/* Sobre Nosotros Dropdown */}
+            {/* Sobre Nosotros */}
             <div className="space-y-1">
               <button
                 onClick={() => toggleSection("sobreNosotros")}
@@ -258,9 +248,10 @@ const Navbar = () => {
             >
               Contacto
             </Link>
+
             <div className="flex items-center gap-4">
-              <Link
-                to="https://calendly.com/ayub-tutumsec/30min"
+              <a
+                href="https://calendly.com/ayub-tutumsec/30min"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-full px-6 py-2 rounded-full text-white font-medium mt-4 transition-colors inline-block text-center"
@@ -270,7 +261,7 @@ const Navbar = () => {
                 onClick={toggleMenu}
               >
                 Auditoría Gratuita
-              </Link>
+              </a>
             </div>
           </div>
         </div>

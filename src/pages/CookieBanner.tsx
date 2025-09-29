@@ -51,7 +51,7 @@ export default function CookieBanner() {
       buttonStyle={{ color: "#111", background: "#fff", fontWeight: 700 }}
       declineButtonStyle={{
         color: "#fff",
-        background: "#444",
+        background: "#080320ff",
         fontWeight: 600,
       }}
       onAccept={() => {

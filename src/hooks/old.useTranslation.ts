@@ -115,13 +115,13 @@ const translations: Translations = {
   },
   // CTA Section
   ctaTitle: {
-    es: "Protege tu empresa HOY, no mañana.",
+    es: "Protege tu empresa HOY.",
     ca: "Protegeix la teva empresa AVUI, no demà.",
     en: "Protect your company TODAY, not tomorrow.",
     fr: "Protégez votre entreprise AUJOURD'HUI, pas demain.",
   },
   ctaSubtitle: {
-    es: "Obtén tu auditoría inicial sin coste* y descubre los quick-wins que puedes implantar este mes.",
+    es: "Descubre los quick-wins que puedes implantar este mes.",
     ca: "Obtén la teva auditoria inicial sense cost* i descobreix els quick-wins que pots implantar aquest mes.",
     en: "Get your initial audit at no cost* and discover the quick-wins you can implement this month.",
     fr: "Obtenez votre audit initial sans coût* et découvrez les quick-wins que vous pouvez implémenter ce mois-ci.",

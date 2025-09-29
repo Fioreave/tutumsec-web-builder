@@ -6,13 +6,13 @@ const NewCTASection = () => {
   const { t } = useTranslation();
 
   return (
-    <section className="py-16 sm:py-20 px-4 sm:px-6 bg-gray-50">
+    <section className="pb-20 sm:px-6 bg-gray-50">
       <div className="max-w-screen-xl mt-20 mx-auto relative">
         <div className="bg-gradient-to-r from-black via-blue-900 to-blue-800 rounded-[2rem] p-12 relative overflow-hidden mx-auto max-w-5xl">
           <div className="max-w-5xl">
             <h2
               className="
-                font-bold text-white mb-4
+                font-bold text-white mb-2
                 text-[clamp(28px,4.2vw,56px)] leading-[1.05]
               "
             >
@@ -21,8 +21,8 @@ const NewCTASection = () => {
 
             <p
               className="
-                text-gray-200 mb-8
-                text-[clamp(16px,2.1vw,22px)] leading-relaxed
+                text-gray-200
+                text-[clamp(16px,2.1vw,22px)] leading-relaxed py-6
               "
             >
               {t("ctaSubtitle")}
@@ -48,6 +48,9 @@ const NewCTASection = () => {
                 {t("reserveConsultation")}
               </Link>
             </div>
+            <p className="text-gray-500 pl-2">
+              * Primera consultoría 30min sin coste.
+            </p>
           </div>
           <img
             src="/uploads/abstract.png"

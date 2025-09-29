@@ -3,17 +3,17 @@ import React from "react";
 const steps = [
   {
     number: "1",
-    description: "Cumplimiento NIS2 / ISO 27001 en menos de 90 días.",
+    description: "Logra el cumplimiento NIS2 e ISO 27001 en menos de 90 día",
     gradient: "from-blue-500 to-blue-950",
   },
   {
     number: "2",
-    description: "Reducción del 30 % de incidentes críticos en 6 meses",
+    description: "Reduce un 30 % los incidentes críticos en 6 meses",
     gradient: "from-blue-950 to-blue-800",
   },
   {
     number: "3",
-    description: "Cuadros de mando ejecutivo en tiempo real",
+    description: "Decide en tiempo real con cuadros de mando ejecutivos",
     gradient: "from-blue-900 to-black",
   },
 ];
@@ -22,21 +22,21 @@ const BenefitsSection = () => {
   return (
     <section className="pb-6 bg-white mt-20">
       <div className="max-w-6xl mx-auto">
-        <div className="mb-10 text-center lg:text-left">
+        {/*<div className="mb-10 text-center lg:text-left">
           <h2 className="text-4xl lg:text-5xl font-bold text-gray-900">
             Beneficios inmediatos
           </h2>
-        </div>
+        </div>*/}
 
         {/* Tres columnas lado a lado en desktop */}
-        <div className="grid grid-cols-3 md:grid-cols-3 sm:grid-cols-1 gap-6 items-stretch">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 items-stretch mx-6">
           {steps.map((step, idx) => (
             <div
               key={idx}
               className={`bg-gradient-to-r ${step.gradient} rounded-2xl text-white relative group shadow-lg p-8 flex`}
             >
               {/* Columna izquierda: número grande */}
-              <div className="text-5xl font-extrabold leading-none mr-6 opacity-90 w-20 shrink-0 flex items-center justify-center">
+              <div className="text-5xl font-extrabold leading-none mr-2 opacity-90 w-20 shrink-0 flex items-center justify-center">
                 {step.number}
               </div>
 

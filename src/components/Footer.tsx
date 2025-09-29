@@ -30,7 +30,7 @@ const Footer = () => {
   return (
     <footer className="bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white">
       {/* Main Footer Content */}
-      <div className="max-w-7xl mx-auto px-2 py-16">
+      <div className="max-w-7xl mx-auto px-2 py-10">
         <div className="grid lg:grid-cols-5 gap-6 mb-12">
           {/* Brand Section */}
           <div className="lg:col-span-2">
@@ -55,7 +55,7 @@ const Footer = () => {
                 <MapPin className="w-4 h-4 mr-3 text-blue-400" />
                 <span className="text-sm">Barcelona - Girona - Andorra</span>
               </div>
-              <div className="pt-20">
+              <div className="pt-6">
               <a
                 target="_blank"
                 rel="noopener noreferrer"

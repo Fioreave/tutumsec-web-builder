@@ -131,6 +131,15 @@ const Footer = () => {
             </ul>
           </div>
         </div>
+        <div className="flex flex-wrap justify-center items-center gap-8 mb-8">
+            <div className="transition-all duration-300 hover:scale-105">
+              <img
+                src="/uploads/certifications/iso27001.svg"
+                alt="ISO 27001 Certificado"
+                className="h-12 w-auto opacity-60 hover:opacity-80 transition-opacity duration-300"
+              />
+            </div>
+          </div>
       </div>
 
       {/* Newsletter Section 
@@ -168,15 +177,7 @@ const Footer = () => {
       <div className="bg-slate-900 border-t border-slate-700">
         <div className="max-w-7xl mx-auto px-6 py-8">
           {/* Certification Logos */}
-          <div className="flex flex-wrap justify-center items-center gap-8 mb-8">
-            <div className="transition-all duration-300 hover:scale-105">
-              <img
-                src="/uploads/certifications/iso27001.svg"
-                alt="ISO 27001 Certificado"
-                className="h-12 w-auto opacity-60 hover:opacity-80 transition-opacity duration-300"
-              />
-            </div>
-          </div>
+          
 
           {/* Certifications */}
           <div className="flex flex-wrap justify-center gap-6 mb-8">

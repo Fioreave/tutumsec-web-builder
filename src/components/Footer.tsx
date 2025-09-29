@@ -55,6 +55,7 @@ const Footer = () => {
                 <MapPin className="w-4 h-4 mr-3 text-blue-400" />
                 <span className="text-sm">Barcelona - Girona - Andorra</span>
               </div>
+              <div className="pt-20">
               <a
                 target="_blank"
                 rel="noopener noreferrer"
@@ -63,6 +64,8 @@ const Footer = () => {
                 className="w-10 h-10 bg-gradient-to-r from-blue-400 to-blue-500 rounded-full flex items-center justify-center hover:from-blue-500 hover:to-blue-600 transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-110"
               >
                 <Linkedin className="w-5 h-5 text-white" />
+                              </div>
+
               </a>
             </div>
           </div>

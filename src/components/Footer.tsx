@@ -131,8 +131,10 @@ const Footer = () => {
             </ul>
           </div>
         </div>
-        <div className="align-right items-right gap-8 mb-">
-            <div className="transition-all duration-300 hover:scale-105">
+        
+      </div>
+<div className="align-right items-right gap-8 mb-">
+            <div className="transition-all duration-300 hover:scale-5">
               <img
                 src="/uploads/certifications/iso27001.svg"
                 alt="ISO 27001 Certificado"
@@ -140,8 +142,6 @@ const Footer = () => {
               />
             </div>
           </div>
-      </div>
-
       {/* Newsletter Section 
       <div className="bg-gradient-to-r from-slate-800 to-slate-700 border-t border-slate-700">
         <div className="max-w-7xl mx-auto px-6 py-12">

@@ -227,15 +227,36 @@ const Footer = () => {
             </div>
 
             <div className="flex space-x-4">
-              <div className="align-right items-right gap-8 mb-">
-            <div className="transition-all duration-300 hover:scale-5">
-              <img
-                src="/uploads/certifications/iso27001.svg"
-                alt="ISO 27001 Certificado"
-                className="h-12 px-2 py-2 w-auto opacity-60 hover:opacity-80 transition-opacity duration-300"
-              />
-            </div>
-                            </div>
+              <div className="flex items-center gap-4">
+                <div className="transition-all duration-300 hover:scale-105">
+                  <img
+                    src="/uploads/certifications/iso27001.svg"
+                    alt="ISO 27001 Certificado"
+                    className="h-12 px-2 py-2 w-auto opacity-60 hover:opacity-80 transition-opacity duration-300"
+                  />
+                </div>
+                <div className="transition-all duration-300 hover:scale-105">
+                  <img
+                    src="/uploads/certifications/incibe.svg"
+                    alt="INCIBE Certificado"
+                    className="h-12 px-2 py-2 w-auto opacity-60 hover:opacity-80 transition-opacity duration-300"
+                  />
+                </div>
+                <div className="transition-all duration-300 hover:scale-105">
+                  <img
+                    src="/uploads/certifications/ASCICAT.svg"
+                    alt="ASCICAT Certificado"
+                    className="h-12 px-2 py-2 w-auto opacity-60 hover:opacity-80 transition-opacity duration-300"
+                  />
+                </div>
+                <div className="transition-all duration-300 hover:scale-105">
+                  <img
+                    src="/uploads/certifications/agenciacat.svg"
+                    alt="Agencia Catalana Certificado"
+                    className="h-12 px-2 py-2 w-auto opacity-60 hover:opacity-80 transition-opacity duration-300"
+                  />
+                </div>
+              </div>
 
               {/*
               <a

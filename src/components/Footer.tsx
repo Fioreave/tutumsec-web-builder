@@ -138,7 +138,7 @@ const Footer = () => {
               <img
                 src="/uploads/certifications/iso27001.svg"
                 alt="ISO 27001 Certificado"
-                className="h-12 w-auto opacity-60 hover:opacity-80 transition-opacity duration-300"
+                className="h-12 px-2 py-2 w-auto opacity-60 hover:opacity-80 transition-opacity duration-300"
               />
             </div>
           </div>

@@ -71,9 +71,10 @@ const RoleItinerariesCarousel = () => {
 
   // Imágenes de fondo (se repiten en bucle)
   const bgs = [
-    "/uploads/fusion-05.jpeg",
-    "/uploads/dispersion-04.jpeg",
-    "/uploads/dispersion-02.jpeg",
+    "/uploads/dispersion-05.jpg",
+    "/uploads/dispersion-04.jpg",
+    "/uploads/dispersion-06.jpg",
+    "/uploads/dispersion-07.jpg",
   ];
 
   // Autoplay continuo
@@ -159,7 +160,7 @@ const Card = ({ role, imageUrl, showContent = true }) => {
       )}
 
       {/* Overlays */}
-      <div className="absolute inset-0 bg-gradient-to-r from-black/50 via-black/25 to-black/10" />
+      <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/65 to-black/50" />
 
       {showContent ? (
         <div className="relative h-full p-10 text-white flex flex-col justify-center">

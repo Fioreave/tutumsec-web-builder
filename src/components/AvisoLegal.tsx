@@ -94,20 +94,17 @@ export default function AvisoLegal() {
                 numero 920400X &amp; Paseig Zona Franca 169-171, 8º 1ª 08038
                 Barcelona (España) con el Registro de Comercio numero B61678207.
                 Contacto: la dirección mencionada o el correo electrónico{" "}
-                <a href="mailto:info@bdrinformatica.com">
-                  info@bdrinformatica.com
-                </a>
-                .
+                <a href="mailto:hola@tutumsec.io">hola@tutumsec.io </a>.
               </p>
 
               <p>
                 El contenido del portal Web{" "}
                 <a
-                  href="https://www.bdrinformatica.com"
+                  href="https://www.tutumsec.io"
                   target="_blank"
                   rel="noreferrer"
                 >
-                  www.bdrinformatica.com
+                  www.tutumsec.io
                 </a>{" "}
                 constituye un sistema de información de los diversos servicios
                 de consultoría que ofrece, a fin de mantener contacto con usted
@@ -122,28 +119,28 @@ export default function AvisoLegal() {
                 atribuye la condición de Usuario, e implica que ha leído y
                 acepta, sin reserva alguna, todas y cada una de las
                 disposiciones incluidas en este Aviso Legal, en la versión
-                publicada por BDR, que en cada momento se encuentren vigentes en
-                la Web.
+                publicada por Tutumsec, que en cada momento se encuentren
+                vigentes en la Web.
               </p>
 
               <p>
-                BDR se reserva el derecho de modificar, añadir o eliminar parte
-                o partes del presente Aviso Legal, en cualquier momento y sin
-                previa notificación. En consecuencia, se recomienda que el
+                Tutumsec se reserva el derecho de modificar, añadir o eliminar
+                parte o partes del presente Aviso Legal, en cualquier momento y
+                sin previa notificación. En consecuencia, se recomienda que el
                 Usuario lea atentamente el presente Aviso Legal en cada una de
                 las ocasiones en las que se proponga utilizar la Web.
               </p>
 
               <h3 id="links">INFORMACIÓN SOBRE LOS VÍNCULOS “LINKS”</h3>
               <p>
-                BDR no será responsable de las webs no propias o de terceros, a
-                las que se pueda acceder mediante vínculos “links”, así como de
-                ningún otro contenido puesto a disposición por terceros.
-                Cualquier uso de un vínculo o acceso a una Web no propia se
-                considera efectuado por voluntad y riesgo exclusivo del usuario
-                y BDR no recomienda ni garantiza información obtenida a través
-                de un vínculo ajeno a la Web de bdrinformatica.com, ni se
-                responsabiliza de ningún perjuicio derivado del uso de un
+                Tutumsec no será responsable de las webs no propias o de
+                terceros, a las que se pueda acceder mediante vínculos “links”,
+                así como de ningún otro contenido puesto a disposición por
+                terceros. Cualquier uso de un vínculo o acceso a una Web no
+                propia se considera efectuado por voluntad y riesgo exclusivo
+                del usuario y Tutumsec no recomienda ni garantiza información
+                obtenida a través de un vínculo ajeno a la Web de Tutumsec.io,
+                ni se responsabiliza de ningún perjuicio derivado del uso de un
                 vínculo, o de la información obtenida a través de él, incluyendo
                 otros vínculos o webs, ni de la interrupción en el servicio o en
                 el acceso de estos terceros vínculos.
@@ -152,7 +149,7 @@ export default function AvisoLegal() {
               <h3 id="modificaciones">MODIFICACIONES DEL PORTAL WEB</h3>
               <p>
                 La información y servicios contenidos en el portal Web pueden
-                presentar incorrecciones o errores tipográficos. BDR puede
+                presentar incorrecciones o errores tipográficos. Tutumsec puede
                 introducir en cualquier momento mejoras y/o cambios en el
                 referido contenido.
               </p>
@@ -162,21 +159,21 @@ export default function AvisoLegal() {
                 CONTENIDO
               </h3>
               <p>
-                BDR declina toda responsabilidad en caso de que se produzcan
-                interrupciones o mal funcionamiento de los servicios o
+                Tutumsec declina toda responsabilidad en caso de que se
+                produzcan interrupciones o mal funcionamiento de los servicios o
                 contenidos ofrecidos en Internet, cualquiera que sea su causa.
-                Asimismo, BDR no será responsable por caídas de la red o
+                Asimismo, Tutumsec no será responsable por caídas de la red o
                 suspensiones temporales del fluido eléctrico o de cualquier otro
                 tipo, así como de las posibles pérdidas de negocio fruto de
                 estas incidencias.
               </p>
 
               <p>
-                BDR no garantiza que los servicios o contenidos no sean
+                Tutumsec no garantiza que los servicios o contenidos no sean
                 interrumpidos o estén libres de errores, que los defectos sean
                 corregidos, o que el servicio o servidor que lo pone a
                 disposición estén libres de virus u otros componentes nocivos,
-                sin perjuicio de que BDR realiza sus mejores esfuerzos para
+                sin perjuicio de que Tutumsec realiza sus mejores esfuerzos para
                 evitar todo percance. Se recomienda la comprobación de la
                 información recibida con otras fuentes.
               </p>
@@ -188,8 +185,8 @@ export default function AvisoLegal() {
                 El código fuente, los diseños gráficos, las imágenes, las
                 fotografías, el software, los textos, así como la información y
                 el resto de contenidos recogidos en
-                <a href="https://www.bdrinformatica.com" rel="noreferrer">
-                  www.bdrinformatica.com
+                <a href="https://www.tutumsec.io" rel="noreferrer">
+                  www.tutumsec.io
                 </a>{" "}
                 están protegidos por la legislación andorrana en materia de
                 derechos de propiedad intelectual e industrial, y no se permite
@@ -207,15 +204,15 @@ export default function AvisoLegal() {
               </p>
 
               <p>
-                Salvo autorización expresa de BDR, no está permitido el enlace a
-                “páginas finales”, el “frame” ni cualquier otra manipulación
-                similar. Los enlaces deben estar siempre en la página principal
-                o “home page” bdrinformatica.com.
+                Salvo autorización expresa de Tutumsec, no está permitido el
+                enlace a “páginas finales”, el “frame” ni cualquier otra
+                manipulación similar. Los enlaces deben estar siempre en la
+                página principal o “home page” tutumsec.io.
               </p>
 
               <p>
                 Todos los derechos derivados de la Propiedad Intelectual están
-                expresamente reservados por BDR. “BDR” velará por el
+                expresamente reservados por Tutumsec. “Tutumsec” velará por el
                 cumplimiento de las anteriores estipulaciones y por la debida
                 utilización de los contenidos presentes en su portal, ejerciendo
                 todas las acciones civiles y penales que le asistan en el caso
@@ -227,15 +224,12 @@ export default function AvisoLegal() {
                 Cualquier incidencia, sugerencia o reclamación respecto a
                 derechos de propiedad intelectual debe remitirse a través del
                 correo electrónico
-                <a href="mailto:info@bdrinformatica.com">
-                  info@bdrinformatica.com
-                </a>
-                .
+                <a href="mailto:hola@tutumsec.io">hola@tutumsec.io</a>.
               </p>
 
               <p>
-                Los signos distintivos (marcas, nombres comerciales) de BDR,
-                están igualmente protegidos por derechos de propiedad
+                Los signos distintivos (marcas, nombres comerciales) de
+                Tutumsec, están igualmente protegidos por derechos de propiedad
                 industrial, quedando prohibida la utilización o manipulación de
                 cualesquiera de éstos, salvo autorización expresa y por escrito.
               </p>
@@ -249,20 +243,20 @@ export default function AvisoLegal() {
 
               <p>
                 El acceso a la página Web o su uso no implica una recogida de
-                datos personales del usuario por parte de BDR. No obstante, se
-                comunica que, en caso de que “BDR” solicite datos personales, se
-                informará debidamente al usuario conforme a la legislación
-                vigente en materia de Protección de Datos y demás normativa que
-                resulte de aplicación.
+                datos personales del usuario por parte Tutumsec. No obstante, se
+                comunica que, en caso de que “Tutumsec” solicite datos
+                personales, se informará debidamente al usuario conforme a la
+                legislación vigente en materia de Protección de Datos y demás
+                normativa que resulte de aplicación.
               </p>
 
               <p>
-                Los Datos Personales que recoge “BDR” en los diferentes tipos de
-                formulario serán tratados con la finalidad de dar respuesta a la
-                solicitud realizada por el interesado, así como para el
-                mantenimiento de la relación que en su caso se establezca y la
-                gestión, administración, información, prestación y mejora de los
-                servicios que decida contratar.
+                Los Datos Personales que recoge “Tutumsec” en los diferentes
+                tipos de formulario serán tratados con la finalidad de dar
+                respuesta a la solicitud realizada por el interesado, así como
+                para el mantenimiento de la relación que en su caso se
+                establezca y la gestión, administración, información, prestación
+                y mejora de los servicios que decida contratar.
               </p>
 
               <p>
@@ -287,7 +281,7 @@ export default function AvisoLegal() {
               </p>
 
               <p>
-                BDR ha tomado las medidas de índole técnica y organizativa
+                Tutumsec ha tomado las medidas de índole técnica y organizativa
                 necesarias para garantizar la seguridad de los datos y evitar su
                 alteración, pérdida, tratamiento o acceso no autorizado,
                 teniendo en cuenta el estado de la tecnología, la naturaleza de
@@ -302,10 +296,8 @@ export default function AvisoLegal() {
                 otros servicios de nuestra empresa que puedan ser de su interés.
                 Si bien podrá en cualquier momento oponerse a este tipo de
                 envíos, enviando un correo electrónico a la dirección
-                <a href="mailto:info@bdrinformatica.com">
-                  info@bdrinformatica.com
-                </a>
-                , indicando en el asunto "BAJA DE LA LISTA DE DISTRIBUCIÓN".
+                <a href="mailto:hola@tutumsec.io">hola@tutumsec.io</a>,
+                indicando en el asunto "BAJA DE LA LISTA DE DISTRIBUCIÓN".
               </p>
 
               <p>
@@ -314,12 +306,9 @@ export default function AvisoLegal() {
                 enviando un escrito a la siguiente dirección: C/ Baixada del
                 Molí, 20, 1-1, AD500 ANDORRA LA VELLA (ANDORRA) o bien un correo
                 electrónico a{" "}
-                <a href="mailto:info@bdrinformatica.com">
-                  info@bdrinformatica.com
-                </a>
-                , a ambos acompañado de una fotocopia de su DNI o documento
-                acreditativo equivalente e indicando en el asunto "PROTECCIÓN DE
-                DATOS".
+                <a href="mailto:hola@tutumsec.io">hola@tutumsec.io</a>, a ambos
+                acompañado de una fotocopia de su DNI o documento acreditativo
+                equivalente e indicando en el asunto "PROTECCIÓN DE DATOS".
               </p>
 
               <p>
@@ -335,18 +324,19 @@ export default function AvisoLegal() {
               </p>
 
               <p>
-                BDR procederá a notificar su decisión en el plazo de un mes. Si
-                fuese en sentido afirmativo, el interesado podrá acceder a la
-                referida información en el plazo de los 10 días siguientes a su
-                notificación.
+                Tutumsec procederá a notificar su decisión en el plazo de un
+                mes. Si fuese en sentido afirmativo, el interesado podrá acceder
+                a la referida información en el plazo de los 10 días siguientes
+                a su notificación.
               </p>
 
               <p>
                 El derecho de rectificación y cancelación podrán ser ejercitados
                 siempre que el interesado considere que los datos recogidos en
                 nuestros tratamientos son inexactos, incumplidos, inadecuados o
-                excesivos. BDR procederá a la rectificación o cancelación dentro
-                de los 10 días siguientes al de la recepción de la solicitud.
+                excesivos. Tutumsec procederá a la rectificación o cancelación
+                dentro de los 10 días siguientes al de la recepción de la
+                solicitud.
               </p>
 
               <p>
@@ -375,8 +365,8 @@ export default function AvisoLegal() {
 
               <h4 className="mt-6">Cambio de Normativa</h4>
               <p>
-                BDR se reserva el derecho de modificar la presente política con
-                el objeto de adaptarla a las novedades legislativas o
+                Tutumsec se reserva el derecho de modificar la presente política
+                con el objeto de adaptarla a las novedades legislativas o
                 jurisprudenciales, así como las directrices que pudieran
                 derivarse de “códigos tipos” existentes en la materia. Tales
                 cambios serán comunicados con la antelación que sea necesaria en
@@ -389,10 +379,7 @@ export default function AvisoLegal() {
                 Cualquier duda, pregunta o comentarios que pudiera albergar en
                 referencia a la presente normativa, no dude en consultarlas
                 dirigiendo su comunicación al respecto en:
-                <a href="mailto:info@bdrinformatica.com">
-                  info@bdrinformatica.com
-                </a>
-                .
+                <a href="mailto:hola@tutumsec.io">hola@tutumsec.io</a>.
               </p>
             </section>
 
@@ -481,25 +468,25 @@ export default function AvisoLegal() {
               </ul>
 
               <p>
-                BDR en su dominio Web no utiliza ningún tipo de “cookies” para
-                el tratamiento de datos personales, que permitan la
+                Tutumsec en su dominio Web no utiliza ningún tipo de “cookies”
+                para el tratamiento de datos personales, que permitan la
                 identificación de personas físicas concretas.
               </p>
 
               <div className="mt-8">
                 <a
-                  href="mailto:info@bdrinformatica.com"
+                  href="mailto:hola@tutumsec.io"
                   className="inline-block px-4 py-2 border rounded-md text-sm hover:bg-gray-100"
                 >
-                  Contactar: info@bdrinformatica.com
+                  Contactar: hola@tutumsec.io
                 </a>
               </div>
             </section>
 
             <footer className="mt-12 border-t pt-6 text-sm text-gray-600">
               <p>
-                © {new Date().getFullYear()} BDR Informática y Comunicaciones.
-                Todos los derechos reservados.
+                © {new Date().getFullYear()} Tutumsec. Todos los derechos
+                reservados.
               </p>
             </footer>
           </main>

@@ -29,14 +29,14 @@ const BenefitsSection = () => {
         </div>*/}
 
         {/* Tres columnas lado a lado en desktop */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 items-stretch mx-6">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-3 items-stretch mx-6">
           {steps.map((step, idx) => (
             <div
               key={idx}
               className={`bg-gradient-to-r ${step.gradient} rounded-2xl text-white relative group shadow-lg p-8 flex`}
             >
               {/* Columna izquierda: número grande */}
-              <div className="text-5xl font-extrabold leading-none mr-2 opacity-90 w-20 shrink-0 flex items-center justify-center">
+              <div className="text-5xl font-bold leading-none opacity-90 w-20 shrink-0 flex items-center justify-center">
                 {step.number}
               </div>
 
@@ -46,7 +46,7 @@ const BenefitsSection = () => {
               </div>
 
               {/* Flecha estética como en el ejemplo */}
-              <div className="ml-4 self-start text-white/70">
+              <div className="ml-2 self-start text-white/70">
                 <svg
                   className="w-6 h-6"
                   viewBox="0 0 24 24"

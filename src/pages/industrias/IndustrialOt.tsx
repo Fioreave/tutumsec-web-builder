@@ -38,12 +38,12 @@ const IndustrialOt = () => {
               />*/}
 
           <div className="mx-20 max-w-4xl text-left relative">
-            <h1 className="text-3xl lg:text-3xl font-medium text-white mb-2 leading-tight animate-slide-up pb-2">
-              Ciberseguridad industrial (OT/IoT): <br /> producción sin paradas
+            <h1 className="text-4xl lg:text-5xl font-medium text-white mb-2 leading-tight animate-slide-up pb-2">
+              Ciberseguridad industrial: <br /> producción sin paradas
             </h1>
-            <h2 className="text-lg lg:text-lg text-white mb-6 leading-tight animate-slide-up pb-2">
-              Aplicamos IEC 62443 con enfoque práctico: <br />
-              priorizamos seguridad de personas y continuidad de planta.
+            <h2 className="text-2xl lg:text-2xl text-white mb-6 leading-tight animate-slide-up pb-2">
+              Aplicamos IEC 62443 con enfoque práctico: priorizamos <br />
+              seguridad de personas y continuidad de planta.
             </h2>
             <div
               className="flex flex-col sm:flex-row gap-4 justify-center items-center opacity-0 animate-fade-in"

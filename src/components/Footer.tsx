@@ -30,7 +30,7 @@ const Footer = () => {
   return (
     <footer className="bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white">
       {/* Main Footer Content */}
-      <div className="max-w-7xl mx-auto px-2 py-16">
+      <div className="max-w-7xl mx-auto px-2 py-10">
         <div className="grid lg:grid-cols-5 gap-6 mb-12">
           {/* Brand Section */}
           <div className="lg:col-span-2">
@@ -54,6 +54,17 @@ const Footer = () => {
               <div className="flex items-center text-gray-300 transition-all duration-300 hover:text-blue-400 hover:translate-x-1">
                 <MapPin className="w-4 h-4 mr-3 text-blue-400" />
                 <span className="text-sm">Barcelona - Girona - Andorra</span>
+              </div>
+              <div className="pt-6">
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="TutumSec en LinkedIn (se abre en una pestaña nueva)"
+                href="https://www.linkedin.com/company/tutumsec/posts/?feedView=all"
+                className="w-10 h-10 bg-gradient-to-r from-blue-400 to-blue-500 rounded-full flex items-center justify-center hover:from-blue-500 hover:to-blue-600 transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-110"
+              >
+                <Linkedin className="w-5 h-5 text-white" />
+              </a>
               </div>
             </div>
           </div>
@@ -131,8 +142,17 @@ const Footer = () => {
             </ul>
           </div>
         </div>
+        
       </div>
-
+      {/*<div className="align-right items-right gap-8 mb-">
+            <div className="transition-all duration-300 hover:scale-5">
+              <img
+                src="/uploads/certifications/iso27001.svg"
+                alt="ISO 27001 Certificado"
+                className="h-12 px-2 py-2 w-auto opacity-60 hover:opacity-80 transition-opacity duration-300"
+              />
+            </div>
+          </div>/*}
       {/* Newsletter Section 
       <div className="bg-gradient-to-r from-slate-800 to-slate-700 border-t border-slate-700">
         <div className="max-w-7xl mx-auto px-6 py-12">
@@ -167,6 +187,9 @@ const Footer = () => {
       {/* Bottom Section */}
       <div className="bg-slate-900 border-t border-slate-700">
         <div className="max-w-7xl mx-auto px-6 py-8">
+          {/* Certification Logos */}
+          
+
           {/* Certifications */}
           <div className="flex flex-wrap justify-center gap-6 mb-8">
             {certifications.map((cert, index) => (
@@ -204,15 +227,37 @@ const Footer = () => {
             </div>
 
             <div className="flex space-x-4">
-              <a
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="TutumSec en LinkedIn (se abre en una pestaña nueva)"
-                href="https://www.linkedin.com/company/tutumsec/posts/?feedView=all"
-                className="w-10 h-10 bg-gradient-to-r from-blue-500 to-blue-600 rounded-full flex items-center justify-center hover:from-blue-600 hover:to-blue-700 transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-110"
-              >
-                <Linkedin className="w-5 h-5 text-white" />
-              </a>
+              <div className="flex items-center gap-4">
+                <div className="transition-all duration-300 hover:scale-105">
+                  <img
+                    src="/uploads/certifications/iso27001.svg"
+                    alt="ISO 27001 Certificado"
+                    className="h-12 px-2 py-2 w-auto opacity-60 hover:opacity-80 transition-opacity duration-300"
+                  />
+                </div>
+                <div className="transition-all duration-300 hover:scale-105">
+                  <img
+                    src="/uploads/certifications/incibe.svg"
+                    alt="INCIBE Certificado"
+                    className="h-12 px-2 py-2 w-auto opacity-60 hover:opacity-80 transition-opacity duration-300"
+                  />
+                </div>
+                <div className="transition-all duration-300 hover:scale-105">
+                  <img
+                    src="/uploads/certifications/ASCICAT.svg"
+                    alt="ASCICAT Certificado"
+                    className="h-12 px-2 py-2 w-auto opacity-60 hover:opacity-80 transition-opacity duration-300"
+                  />
+                </div>
+                <div className="transition-all duration-300 hover:scale-105">
+                  <img
+                    src="/uploads/certifications/agenciacat.svg"
+                    alt="Agencia Catalana Certificado"
+                    className="h-12 px-2 py-2 w-auto opacity-60 hover:opacity-80 transition-opacity duration-300"
+                  />
+                </div>
+              </div>
+
               {/*
               <a
                 href="#"

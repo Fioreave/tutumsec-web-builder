@@ -24,12 +24,33 @@ export const ContactForm: React.FC<ContactFormProps> = ({ onSuccess }) => {
     setIsSubmitting(true);
 
     try {
-      // Simulate form submission
-      await new Promise(resolve => setTimeout(resolve, 1000));
+      const response = await fetch('https://api.tutumsec.io/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          first_name: formData.name,
+          last_name: '',
+          email: formData.email,
+          company: formData.company,
+          message: formData.message,
+          privacy: true,
+        }),
+      });
+
+      const result = await response.json().catch(() => ({}));
+      
+      if (!response.ok || !result?.ok) {
+        const errorMessage = result?.errors
+          ? Object.values(result.errors).join(' · ')
+          : result?.error || 'No se pudo enviar el formulario.';
+        throw new Error(errorMessage);
+      }
       
       // Trigger PDF download
       const link = document.createElement('a');
-      link.href = '/checklist-nis2.pdf'; // This would be the actual PDF file
+      link.href = '/checklist-nis2.pdf';
       link.download = 'checklist-nis2.pdf';
       document.body.appendChild(link);
       link.click();
@@ -42,10 +63,10 @@ export const ContactForm: React.FC<ContactFormProps> = ({ onSuccess }) => {
 
       onSuccess?.();
       setFormData({ name: '', email: '', company: '', message: '' });
-    } catch (error) {
+    } catch (error: any) {
       toast({
         title: "Error",
-        description: "Ha ocurrido un error. Por favor, inténtalo de nuevo.",
+        description: error?.message || "Ha ocurrido un error. Por favor, inténtalo de nuevo.",
         variant: "destructive",
       });
     } finally {

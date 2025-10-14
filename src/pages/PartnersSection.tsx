@@ -2,7 +2,7 @@ import React from "react";
 
 const PartnersSection: React.FC = () => {
   const logos = [
-    { src: "/uploads/partners/paloalto.png", alt: "Paloalto" },
+    { src: "/uploads/partners/paloalto.svg", alt: "Paloalto" },
     { src: "/uploads/partners/blackmdr.svg", alt: "Blackmdr" },
     { src: "/uploads/partners/Office.svg", alt: "Office365" },
     { src: "/uploads/partners/bitdefender.svg", alt: "Bitdefender" },

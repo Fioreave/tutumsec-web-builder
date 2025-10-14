@@ -16,7 +16,7 @@ const NewCTASection = () => {
                 text-[clamp(28px,4.2vw,56px)] leading-[1.05]
               "
             >
-              {t("ctaTitle")}
+              Protege tu empresa HOY
             </h2>
 
             <p
@@ -25,7 +25,7 @@ const NewCTASection = () => {
                 text-[clamp(16px,2.1vw,22px)] leading-relaxed py-6
               "
             >
-              {t("ctaSubtitle")}
+              Descubre los quick-wins que puedes implantar este mes.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-left mb-4">

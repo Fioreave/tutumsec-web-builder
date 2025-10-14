@@ -69,7 +69,7 @@ const DOT_CLASSES =
 
 export default function TestimonialsSection({
   slides = DEFAULT_SLIDES,
-  intervalMs = 5000, // 5s
+  intervalMs = 3000, // 5s
 }: {
   slides?: Array<{
     image: string;

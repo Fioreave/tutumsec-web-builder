@@ -122,19 +122,29 @@ const Historia = () => {
 
       <Navbar />
       <main className="min-h-screen ">
-        <section className="relative flex items-center min-h-screen p-20 px-6 bg-gray-100 relative overflow-hidden bg-[url('/uploads/background/bg-security.png')] bg-cover w-full bg-center">
-          <div className="justify-center container text-left">
-            <div>
-              <h1 className="animate-slide-up text-7xl mb-6 font-bold text-white mx-auto bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">
-                Historia de Tutumsec
-              </h1>
-              <p className="mt-2 animate-slide-up max-w-3xl text-white text-medium text-2xl m-2">
-                TutumSec nace como spin-off premium de BDR Group, con un
-                objetivo sencillo: Transformar casi tres décadas de trabajo en
-                TIC y software en servicios de ciberseguridad especializados que
-                se entienden a la primera y aportan resultados.{" "}
-              </p>
-            </div>
+        <section className="relative min-h-[500px] mx-36 overflow-hidden px-6 flex items-center">
+          <div
+            className="absolute inset-0 -z-10 bg-cover bg-center bg-no-repeat"
+            style={{
+              backgroundImage: "url('/uploads/background/background2.png')",
+            }}
+          />
+          <div className="absolute inset-0 bg-black/50 -z-10" />
+
+          <div className="mx-20 max-w-4xl text-left relative">
+            <h1 className="animate-slide-up text-6xl mb-6 font-bold text-white mx-auto bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">
+              Historia de Tutumsec
+            </h1>
+            <h2 className="mt-2 animate-slide-up max-w-3xl text-white text-medium text-xl m-2">
+              TutumSec nace como spin-off premium de BDR Group, con un objetivo
+              sencillo: Transformar casi tres décadas de trabajo en TIC y
+              software en servicios de ciberseguridad especializados que se
+              entienden a la primera y aportan resultados.
+            </h2>
+            <div
+              className="flex flex-col sm:flex-row gap-4 justify-center items-center opacity-0 animate-fade-in"
+              style={{ animationDelay: "0.9s", animationFillMode: "forwards" }}
+            ></div>
           </div>
         </section>
 

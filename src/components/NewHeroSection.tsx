@@ -59,11 +59,11 @@ const NewHeroSection = () => {
       />*/}
 
       <div className="max-w-5xl mx-auto text-center relative">
-        <h1 className="text-4xl lg:text-6xl font-bold text-white mb-8 leading-tight animate-slide-up pb-2">
+        <h1 className=" md:text-6xl text-3xl font-bold text-white mb-8 leading-tight animate-slide-up pb-2">
           Convierte la ciberseguridad <br />
           en tu mejor ventaja competitiva
         </h1>
-        <h2 className="text-lg lg:text-xl font-medium text-white mb-8 leading-tight animate-slide-up pb-2">
+        <h2 className="text-lg lg:text-xl font-medium text-white mb-8 leading-tight animate-slide-up pb-2 hidden sm:block">
           Usamos las mejores estrategias de ciberseguridad para hacer crecer tu
           negocio y evitar incidentes críticos: consultoría que impulsa
           resultados, diseño y ejecución 360º para bajar incidentes críticos y

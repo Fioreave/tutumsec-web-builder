@@ -95,7 +95,7 @@ const RoleItinerariesCarousel = () => {
           <h2 className="text-5xl font-bold text-gray-900">
             El contenido adecuado para cada persona
           </h2>
-          <p className="mt-4 text-xl text-gray-600 max-w-2xl">
+          <p className="mt-4 text-xl text-gray-600 max-w-3xl">
             Cada rol recibe mensajes, entrenamientos y entregables adaptados a
             su día a día.
           </p>

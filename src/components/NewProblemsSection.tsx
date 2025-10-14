@@ -29,10 +29,15 @@ const NewProblemsSection = () => {
   return (
     <section className="py-20 px-6 bg-tutumsec-gray-50">
       <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6 animate-slide-up leading-relaxed">
-            4 grandes errores
+        <div className="px-4 pt-10 pb-6">
+          <h2 className="text-3xl md:text-4xl mx-6 font-semibold text-[#0b1f36] tracking-tight ">
+            Evita futuros problemas de cibersegudidad{" "}
           </h2>
+          <p className="mt-3 max-w-4xl mx-6 text-lg text-[#0b1f36] pt-2 pb-6">
+            Hoy, sin estrategia integral de ciberseguridad; mañana euros
+            perdidos, reputación dañada, paradas operativas y crecimiento
+            bloqueado. Los parches no bastan.
+          </p>
         </div>
 
         <div className="grid md:grid-cols-2 gap-8">

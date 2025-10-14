@@ -19,21 +19,56 @@ import {
 } from "lucide-react";
 import { useTranslation } from "@/hooks/old.useTranslation";
 import { Link } from "react-router-dom";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
+import PartnersSection from "../PartnersSection";
+
+const faqs = [
+  {
+    question: "¿Qué es exactamente un vCISO?",
+    answer:
+      "Es un CISO externo que aporta liderazgo estratégico en seguridad sin el coste de un directivo en plantilla.",
+  },
+  {
+    question: "¿Cuánto dura la auditoria inicial?",
+    answer:
+      "Entre 10 y 15 días hábiles, según número de activos y documentación disponible.",
+  },
+  {
+    question: "¿Qué pasa si ya tenemos un responsable IT?",
+    answer:
+      "Colaboramos como extensión estratégica: el equipo IT mantiene sistemas, nosotros dirigimos la seguridad y el cumplimiento.",
+  },
+  {
+    question: "¿Necesito un CISO si ya tengo proveedor IT? ",
+    answer:
+      "El proveedor IT mantiene infraestructuras; un CISO asegura gobernanza, cumplimiento e integración de la seguridad en el negocio.",
+  },
+  {
+    question: "¿Podemos integrar nuestras herramientas actuales?",
+    answer:
+      "Sí. Nos conectamos a tu SIEM, M365, Azure, AWS o ERP sin migraciones dolorosas.",
+  },
+];
 
 const ciso = [
   {
     number: "1",
-    description: "Cumplimiento NIS2 / ISO 27001 en menos de 90 días.",
+    description: "Logra el cumplimiento NIS2 e ISO 27001 en menos de 90 día.",
     gradient: "from-blue-500 to-blue-950",
   },
   {
     number: "2",
-    description: "Reducción del 30 % de incidentes críticos en 6 meses",
+    description: "Reduce un 30% los incidentes críticos en 6 meses",
     gradient: "from-blue-950 to-blue-800",
   },
   {
     number: "3",
-    description: "Cuadros de mando ejecutivo en tiempo real",
+    description: "Decide en tiempo real con cuadros de mando ejecutivos",
     gradient: "from-blue-900 to-black",
   },
 ];
@@ -91,29 +126,30 @@ const ConsultoriaCiso = () => {
       title: "Visión de negocio",
       benefit:
         "Traducimos ciber-riesgo a impacto financiero para priorizar inversiones.",
+      href: "/es/servicios/transformacion-digital-estrategica",
     },
     {
       title: "Cumplimiento normativo sin fricciones",
       benefit:
         "Metodología Compliance 360 ° para NIS 2, ISO 27001, ENS y RGPD.",
-      icon: Shield,
+      href: "/es/servicios/transformacion-digital-estrategica",
     },
     {
       title: "Respuesta 24/7",
       benefit:
         "Integración directa con nuestro SOC: detección y contención en < 15 min.",
-      icon: CheckCircle,
+      href: "/es/servicios/transformacion-digital-estrategica",
     },
     {
       title: "Coste optimizado",
       benefit:
         "Modelo as-a-Service: sin cargas sociales ni largos procesos de contratación.",
-      icon: Eye,
+      href: "/es/servicios/transformacion-digital-estrategica",
     },
     {
       title: "Escalabilidad flexible",
       benefit: "Añade módulos MDR, formación o Red Team a medida que creces.",
-      icon: GraduationCap,
+      href: "/es/servicios/transformacion-digital-estrategica",
     },
   ];
 
@@ -470,7 +506,71 @@ const ConsultoriaCiso = () => {
             </div>
           </section>*/}
 
-          {/* CTA Final */}
+          <section className="py-20 px-6 bg-gray-100 relative overflow-hidden bg-[url('/uploads/background.png')] bg-cover bg-center">
+            <div className="max-w-4xl mx-auto">
+              <div className="text-center mb-16">
+                <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6 animate-slide-up leading-relaxed">
+                  Preguntas frecuentes
+                </h2>
+              </div>
+
+              <Accordion type="single" collapsible className="space-y-4">
+                {faqs.map((faq, index) => (
+                  <AccordionItem
+                    key={index}
+                    value={`item-${index}`}
+                    className="bg-gray-200/80 rounded-2xl border border-gray-300 px-6 hover:shadow-md transition-shadow duration-300"
+                  >
+                    <AccordionTrigger className="text-left font-semibold text-gray-800 hover:text-primary py-6">
+                      {faq.question}
+                    </AccordionTrigger>
+                    <AccordionContent className="text-gray-600 leading-relaxed pb-6">
+                      {faq.answer}
+                    </AccordionContent>
+                  </AccordionItem>
+                ))}
+              </Accordion>
+
+              {/* Schema.org structured data for FAQ */}
+              <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{
+                  __html: JSON.stringify({
+                    "@context": "https://schema.org",
+                    "@type": "FAQPage",
+                    mainEntity: faqs.map((faq) => ({
+                      "@type": "Question",
+                      name: faq.question,
+                      acceptedAnswer: {
+                        "@type": "Answer",
+                        text: faq.answer,
+                      },
+                    })),
+                  }),
+                }}
+              />
+            </div>
+
+            <div className="w-full pt-20 text-center max-w-6xl mt-10 mx-auto relative">
+              <h2 className="text-4xl font-bold mb-10 px-20 ">
+                ¿Listo para impulsar tu ciberseguridad?
+              </h2>
+              <Link
+                to="https://calendly.com/ayub-tutumsec/30min"
+                className="px-6 py-2 rounded-full text-lg text-white font-medium transition-transform whitespace-nowrap hover:scale-[1.03] shadow-[0_8px_30px_rgba(59,130,246,0.35)]"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                  background:
+                    "linear-gradient(180deg, #60a5fa 0%, #3b82f6 100%)", // blue-400 -> blue-500
+                }}
+              >
+                Reserva tu sesión estratégica gratuita →
+              </Link>
+            </div>
+          </section>
+
+          {/* CTA Final 
           <section className="min-h-[38vh] justify-center py-12 pt-20 pb-20 bg-gradient-to-r from-black via-blue-900 to-blue-800 text-white">
             <div className="w-full text-center max-w-6xl mt-10 mx-auto relative">
               <h2 className="text-4xl font-bold mb-10 px-20 ">
@@ -489,9 +589,10 @@ const ConsultoriaCiso = () => {
                 Reserva tu sesión estratégica gratuita →
               </Link>
             </div>
-          </section>
+          </section>*/}
         </div>
       </main>
+      <PartnersSection />
       <Footer />
     </>
   );

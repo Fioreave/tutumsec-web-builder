@@ -17,6 +17,7 @@ import {
   Settings,
 } from "lucide-react";
 import { Link } from "react-router-dom";
+import PartnersSection from "../PartnersSection";
 
 /* === DATA (sin tocar tu contenido) === */
 const faqs = [
@@ -178,7 +179,7 @@ const TransformacionDigital = () => {
               </h1>
               <h2 className="text-xl lg:text-2xl text-white/80 mb-8">
                 Convertimos la transformación digital estratégica en resultados
-                medibles: +22 % de eficiencia y 0 sorpresas en ciberseguridad.
+                medibles
               </h2>
 
               <div className="grid md:grid-cols-3 gap-6 mb-8">
@@ -231,42 +232,24 @@ const TransformacionDigital = () => {
               </div>
             </div>
           </section>
-          {/* === BLOQUE 4 · PROCESO (idéntico patrón visual al de la home) === */}
-          <section className="py-20 px-6 bg-tutumsec-gray-50">
-            <div className="max-w-6xl mx-auto">
-              <div className="text-center mb-16">
-                <h2 className="text-4xl lg:text-4xl font-bold text-blue-500 mb-6">
-                  Nuestra Metodología
+
+          {/* BLOQUE 2 · PAIN → VISIÓN */}
+          <section className=" py-20 px-6 bg-gray-500/5 text-blue">
+            <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
+              <div className="transform transition-all duration-700 hover:translate-x-2">
+                <h2 className="text-3xl lg:text-3xl mb-2 font-bold transition-colors duration-500 hover:text-primary-light leading-relaxed">
+                  De procesos manuales y silos de datos a una empresa ágil y
+                  segura
                 </h2>
               </div>
-
-              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                {steps.map((step, index) => {
-                  const IconComponent = step.icon;
-                  return (
-                    <div
-                      key={index}
-                      className="bg-white p-8 rounded-2xl border border-gray-200 group hover:shadow-lg transition-all duration-500 hover:-translate-y-2 animate-fade-in relative"
-                      style={{
-                        animationDelay: `${index * 0.15}s`,
-                        animationFillMode: "forwards",
-                        opacity: 0,
-                      }}
-                    >
-                      <div className="text-center">
-                        <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-primary/20 transition-colors duration-300 relative">
-                          <IconComponent className="w-8 h-8 text-primary items-center" />
-                        </div>
-                        <h3 className="text-lg font-semibold text-gray-800 mb-3 transition-colors duration-300 group-hover:text-primary leading-tight">
-                          {step.title}
-                        </h3>
-                        <p className="text-gray-600 text-sm leading-relaxed transition-colors duration-300 group-hover:text-gray-700">
-                          {step.description}
-                        </p>
-                      </div>
-                    </div>
-                  );
-                })}
+              <div className="border-l-4 border-blue-400 text-sm pl-6 prose prose-lg max-w-none text-left">
+                <p>
+                  El 67 % de las PYMEs españolas todavía opera con sistemas
+                  fragmentados, lo que eleva sus costes un 30 % y multiplica el
+                  riesgo de sanciones NIS2. Con TutumSec obtienes consultoría
+                  estratégica en transformación digital Barcelona – Girona
+                  -Andorra que alinea tecnología, personas y ciberseguridad.
+                </p>
               </div>
             </div>
           </section>
@@ -356,49 +339,30 @@ const TransformacionDigital = () => {
             </div>
           </section>*/}
 
-          {/* BLOQUE 2 · PAIN → VISIÓN */}
-          <section className=" py-20 px-6 bg-gray-500/5 text-blue">
-            <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
-              <div className="transform transition-all duration-700 hover:translate-x-2">
-                <h2 className="text-3xl lg:text-4xl mb-2 font-bold transition-colors duration-500 hover:text-primary-light leading-relaxed">
-                  De procesos manuales y silos de datos a una empresa ágil y
-                  segura
-                </h2>
-              </div>
-              <div className="border-l-4 border-blue-400 text-sm pl-6 prose prose-lg max-w-none text-left">
-                <p>
-                  El 67 % de las PYMEs españolas todavía opera con sistemas
-                  fragmentados, lo que eleva sus costes un 30 % y multiplica el
-                  riesgo de sanciones NIS2. Con TutumSec obtienes consultoría
-                  estratégica en transformación digital Barcelona – Girona
-                  -Andorra que alinea tecnología, personas y ciberseguridad.
-                </p>
-              </div>
-            </div>
-          </section>
           {/* === BLOQUE 6 · DIFERENCIAL === */}
           <section className="py-12 bg-gray-500/5 pt-20 pb-20">
             <div className="max-w-4xl mx-auto">
-              <h2 className="text-3xl font-bold text-center mb-8">
-                Personalización y cercanía: nuestra ventaja competitiva
+              <h2 className="text-3xl font-bold text-center mb-20">
+                Personalización y cercanía:
               </h2>
               <div className="grid md:grid-cols-3 gap-6">
                 <div className="text-center">
                   <Users className="w-12 h-12 text-primary mx-auto mb-4" />
                   <h3 className="text-lg font-semibold mb-2">
-                    Consultores senior in-house
+                    Consultores <br />
+                    senior in-house
                   </h3>
                   <p className="text-muted-foreground text-sm">
-                    (no subcontratamos análisis crítico).
+                    (No subcontratamos análisis crítico).
                   </p>
                 </div>
                 <div className="text-center">
                   <Shield className="w-12 h-12 text-primary mx-auto mb-4" />
                   <h3 className="text-lg font-semibold mb-2">
-                    Acompañamiento humano
+                    Acompañamiento <br /> humano
                   </h3>
                   <p className="text-muted-foreground text-sm">
-                    un único interlocutor que habla tu idioma.
+                    Un único interlocutor que habla tu idioma.
                   </p>
                 </div>
                 <div className="text-center">
@@ -407,10 +371,49 @@ const TransformacionDigital = () => {
                     Integración nativa con ciberseguridad
                   </h3>
                   <p className="text-muted-foreground text-sm">
-                    ninguna otra consultora local combina vCISO, SOC/MDR y
-                    roadmap digital.
+                    Combina vCISO, SOC/MDR y roadmap digital.
                   </p>
                 </div>
+              </div>
+            </div>
+          </section>
+
+          {/* === BLOQUE 4 · PROCESO (idéntico patrón visual al de la home) === */}
+          <section className="py-20 px-6 bg-tutumsec-gray-50">
+            <div className="max-w-6xl mx-auto">
+              <div className="text-center mb-16">
+                <h2 className="text-4xl lg:text-4xl font-bold text-blue-500 mb-6">
+                  Nuestra Metodología
+                </h2>
+              </div>
+
+              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                {steps.map((step, index) => {
+                  const IconComponent = step.icon;
+                  return (
+                    <div
+                      key={index}
+                      className="bg-white p-8 rounded-2xl border border-gray-200 group hover:shadow-lg transition-all duration-500 hover:-translate-y-2 animate-fade-in relative"
+                      style={{
+                        animationDelay: `${index * 0.15}s`,
+                        animationFillMode: "forwards",
+                        opacity: 0,
+                      }}
+                    >
+                      <div className="text-center">
+                        <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-primary/20 transition-colors duration-300 relative">
+                          <IconComponent className="w-8 h-8 text-primary items-center" />
+                        </div>
+                        <h3 className="text-lg font-semibold text-gray-800 mb-3 transition-colors duration-300 group-hover:text-primary leading-tight">
+                          {step.title}
+                        </h3>
+                        <p className="text-gray-600 text-sm leading-relaxed transition-colors duration-300 group-hover:text-gray-700">
+                          {step.description}
+                        </p>
+                      </div>
+                    </div>
+                  );
+                })}
               </div>
             </div>
           </section>
@@ -535,6 +538,7 @@ const TransformacionDigital = () => {
           {/* mismo patrón que NewCTASection. :contentReference[oaicite:11]{index=11} */}
         </div>
       </main>
+      <PartnersSection />
       <Footer />
     </>
   );

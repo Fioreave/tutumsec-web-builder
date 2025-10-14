@@ -9,6 +9,7 @@ import {
   CardHeader,
   CardTitle,
   CardDescription,
+  CardFooter,
 } from "@/components/ui/card";
 import {
   Accordion,
@@ -19,12 +20,6 @@ import {
 import { Badge } from "@/components/ui/badge";
 import {
   CheckCircle,
-  Users,
-  Monitor,
-  Factory,
-  Wrench,
-  Smartphone,
-  Compass,
   AlertTriangle,
   Shield,
   Clock,
@@ -34,9 +29,11 @@ import {
   ShieldCheck,
   Bug,
   AlarmClock,
+  ArrowRight,
 } from "lucide-react";
 import RoleItinerariesCarousel from "./RoleItinerariesGrid";
 import { Link } from "react-router-dom";
+import PartnersSection from "../PartnersSection";
 
 const FormacionConcienciacion = () => {
   const breadcrumbItems = [
@@ -52,7 +49,7 @@ const FormacionConcienciacion = () => {
   ];
 
   const quickWins = [
-    "Plan a medida por roles (Dirección, Managers, Oficina, OT/Planta, IT/Helpdesk, Comercial)",
+    "Plan a medida por roles (Dirección, Oficina, OT/Planta, IT/Helpdesk, Comercial)",
     "Campañas de phishing trimestrales o semestrales con métricas claras",
     "Informes de formación listos para auditorías (NIS2/ISO/ENS)",
   ];
@@ -159,25 +156,25 @@ const FormacionConcienciacion = () => {
     {
       title: "Consultoría CISO (vCISO)",
       description: "Gobierno, KPIs y cultura",
-      path: "/es/servicios/consultoria-ciso",
+      href: "/es/servicios/consultoria-ciso",
       icon: LineChart,
     },
     {
       title: "Auditoría & Compliance NIS2",
       description: "Gap-Analysis + plan de adecuación",
-      path: "/es/servicios/auditoria-compliance-nis2",
+      href: "/es/servicios/auditoria-compliance-nis2",
       icon: ShieldCheck,
     },
     {
       title: "Auditoría técnica & Pentesting",
       description: "Validación ofensiva",
-      path: "/es/servicios/auditoria-compliance-nis2",
+      href: "/es/servicios/auditoria-compliance-nis2",
       icon: Bug,
     },
     {
       title: "SOC / MDR 24×7",
       description: "Vigilancia y respuesta gestionada",
-      path: "/es/servicios/respuesta-incidente",
+      href: "/es/productos/deteccion-24x7",
       icon: AlarmClock,
     },
   ];
@@ -217,63 +214,84 @@ const FormacionConcienciacion = () => {
               className="pointer-events-none select-none absolute left-0 -top-12 w-[1200px] max-w-none opacity-60 mix-blend-screen z-20"
             />
             {/* contenido */}
-            <div className="relative z-30 px-6 py-12 md:py-16 text-center mt-20">
-              <h1 className="container max-w-6xl text-4xl md:text-5xl font-bold text-white mb-4 mt-20 pt-20">
-                Formación y concienciación <br />
-                en ciberseguridad que cambian hábitos
-              </h1>
-              <h2 className="container max-w-5xl text-xl md:text-2xl text-white/80 mb-8">
-                De los clics por costumbre a una cultura de seguridad real:
-                microlearning mensual, phishing simulado y talleres por rol con
-                reportes para auditorías.
-              </h2>
+            <div>
+              <div className="relative z-30 px-6 pt-12 md:pt-16 text-center mt-20">
+                <h1 className="container max-w-6xl text-4xl md:text-5xl font-bold text-white mb-4 mt-20 pt-20">
+                  Formación y concienciación <br />
+                  en ciberseguridad que cambian hábitos
+                </h1>
+                <h2 className="container max-w-5xl text-xl md:text-2xl text-white/80 mb-8">
+                  De los clics por costumbre a una cultura de seguridad real
+                </h2>
 
-              <div className="flex flex-wrap justify-center gap-2 mb-8">
-                {badges.map((badge, i) => (
-                  <Badge
-                    key={i}
-                    variant="outline"
-                    className="text-sm bg-white/10 border-white/20 text-white"
+                <div className="flex flex-wrap justify-center gap-2 mb-8">
+                  {badges.map((badge, i) => (
+                    <Badge
+                      key={i}
+                      variant="outline"
+                      className="text-sm bg-white/10 border-white/20 text-white"
+                    >
+                      {badge}
+                    </Badge>
+                  ))}
+                </div>
+
+                <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                  <Link
+                    to="https://calendly.com/ayub-tutumsec/30min"
+                    className="px-6 py-2 rounded-full text-lg text-white font-medium transition-transform whitespace-nowrap hover:scale-[1.03] shadow-[0_8px_30px_rgba(59,130,246,0.35)]"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{
+                      background:
+                        "linear-gradient(180deg, #60a5fa 0%, #3b82f6 100%)", // blue-400 -> blue-500
+                    }}
                   >
-                    {badge}
-                  </Badge>
-                ))}
+                    {" "}
+                    Reserva diagnóstico gratuito 15'
+                  </Link>
+                  <Button
+                    variant="outline"
+                    size="lg"
+                    className="text-lg rounded-full px-8 bg-white/10 text-white border-white/20 hover:bg-white/20"
+                  >
+                    Descarga el Kit Anti-Phishing
+                  </Button>
+                </div>
               </div>
 
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Link
-                  to="https://calendly.com/ayub-tutumsec/30min"
-                  className="px-6 py-2 rounded-full text-lg text-white font-medium transition-transform whitespace-nowrap hover:scale-[1.03] shadow-[0_8px_30px_rgba(59,130,246,0.35)]"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  style={{
-                    background:
-                      "linear-gradient(180deg, #60a5fa 0%, #3b82f6 100%)", // blue-400 -> blue-500
-                  }}
-                >
-                  {" "}
-                  Reserva diagnóstico gratuito 15'
-                </Link>
-                <Button
-                  variant="outline"
-                  size="lg"
-                  className="text-lg rounded-full px-8 bg-white/10 text-white border-white/20 hover:bg-white/20"
-                >
-                  Descarga el Kit Anti-Phishing
-                </Button>
+              <div className="absolute bottom-8 left-0 w-full">
+                <div className="grid lg:grid-cols-3 gap-12 px-6 py-6 items-center text-left space-y-2">
+                  {quickWins.map((win, i) => (
+                    <li key={i} className="flex items-start text-white">
+                      <CheckCircle className="w-5 h-5 text-blue-300 mr-2 mt-0.5 flex-shrink-0" />
+                      <span>{win}</span>
+                    </li>
+                  ))}
+                </div>
               </div>
             </div>
           </section>
 
-          <section className="bg-gray-500/5 pb-6 pt-12">
-            <div className="mb-8 max-w-7xl mx-auto ">
-              <div className="grid lg:grid-cols-3 gap-12 items-center text-left space-y-2">
-                {quickWins.map((win, i) => (
-                  <li key={i} className="flex items-start text-dark/90">
-                    <CheckCircle className="w-5 h-5 text-blue-300 mr-2 mt-0.5 flex-shrink-0" />
-                    <span>{win}</span>
-                  </li>
-                ))}
+          <section className="bg-white pb-6 pt-12"></section>
+
+          {/* ====== BLOQUE PROBLEMA ====== */}
+          <section className=" py-2 px-6 text-blue">
+            <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
+              <div className="transform transition-all duration-700 hover:translate-x-2">
+                <h2 className="text-3xl lg:text-4xl mb-2 font-bold transition-colors duration-500 hover:text-primary-light leading-relaxed">
+                  El factor humano sigue siendo el eslabón más débil
+                </h2>
+              </div>
+              <div className="border-l-4 border-blue-400 text-sm pl-6 prose prose-lg max-w-none text-left">
+                <p>
+                  La mayoría de incidentes empiezan con un clic impulsivo o una
+                  mala práctica: contraseñas reutilizadas, adjuntos abiertos sin
+                  validar, uso de USB en planta, sesiones sin bloqueo… En PYMEs
+                  y organizaciones reguladas, esto se traduce en riesgos
+                  operativos y sanciones potenciales. Sin una formación continua
+                  y por rol, el cambio de hábitos no sucede.
+                </p>
               </div>
             </div>
           </section>
@@ -281,7 +299,7 @@ const FormacionConcienciacion = () => {
           {/* ====== SOLUCIÓN (cards limpias como home) ====== */}
           <section className="container py-12">
             <div className="text-center mb-16">
-              <h2 className="text-4xl lg:text-5xl mt-20 font-bold text-gray-900 mb-6 animate-slide-up leading-relaxed">
+              <h2 className="text-4xl lg:text-4xl mt-20 font-bold text-gray-900 mb-6 animate-slide-up leading-relaxed">
                 Un programa continuo, práctico y medible{" "}
               </h2>
             </div>
@@ -322,44 +340,21 @@ const FormacionConcienciacion = () => {
               </p>
             </div>
           </section>
-          {/* ====== BLOQUE PROBLEMA ====== */}
-          <section className=" py-20 px-6 text-blue">
-            <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
-              <div className="transform transition-all duration-700 hover:translate-x-2">
-                <h2 className="text-3xl lg:text-4xl mb-2 font-bold transition-colors duration-500 hover:text-primary-light leading-relaxed">
-                  El factor humano sigue siendo el eslabón más débil
-                </h2>
-              </div>
-              <div className="border-l-4 border-blue-400 text-sm pl-6 prose prose-lg max-w-none text-left">
-                <p>
-                  La mayoría de incidentes empiezan con un clic impulsivo o una
-                  mala práctica: contraseñas reutilizadas, adjuntos abiertos sin
-                  validar, uso de USB en planta, sesiones sin bloqueo… En PYMEs
-                  y organizaciones reguladas, esto se traduce en riesgos
-                  operativos y sanciones potenciales. Sin una formación continua
-                  y por rol, el cambio de hábitos no sucede.
-                </p>
-              </div>
-            </div>
-          </section>
 
-          {/* ====== METODOLOGÍA (estilo “Resultados”) ====== */}
+          {/* ====== METODOLOGÍA (estilo “Resultados”) 
           <section className="py-20">
             <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-10 items-start">
-              {/* Columna izquierda: título + subtítulo opcional */}
               <div className="px-2">
                 <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-8">
                   De la intención al hábito:
                   <br className="hidden md:block" /> método TutumSec
                 </h2>
                 <p className="mt-6 text-lg text-muted-foreground italic">
-                  {/* Puedes quitar esta línea si no quieres subtítulo */}
                   “Pasos claros, responsables claros y métricas sencillas por
                   rol.”
                 </p>
               </div>
 
-              {/* Columna derecha: tarjetas gradiente como en tu “Resultados” */}
               <div className="space-y-6">
                 {methodologySteps.map((raw, i) => {
                   // Partimos solo para formatear visualmente (NO tocamos el texto)
@@ -382,14 +377,12 @@ const FormacionConcienciacion = () => {
                       className={`relative w-full rounded-2xl p-6 md:p-8 text-white bg-gradient-to-r ${g} shadow-lg`}
                     >
                       <div className="flex items-start gap-6">
-                        {/* Número grande a la izquierda */}
                         <div className="shrink-0">
                           <div className="text-5xl md:text-6xl font-extrabold leading-none opacity-90">
                             {i + 1}
                           </div>
                         </div>
 
-                        {/* Texto a la derecha */}
                         <div className="flex-1">
                           <div className="text-lg md:text-xl font-semibold">
                             {title}
@@ -402,7 +395,7 @@ const FormacionConcienciacion = () => {
                           )}
                         </div>
 
-                        {/* Flecha decorativa (como en Resultados) */}
+                        {/* Flecha decorativa (como en Resultados) 
                         <ArrowUpRight className="w-6 h-6 opacity-70 mt-1" />
                       </div>
                     </div>
@@ -410,7 +403,7 @@ const FormacionConcienciacion = () => {
                 })}
               </div>
             </div>
-          </section>
+          </section>*/}
 
           <RoleItinerariesCarousel />
 
@@ -557,63 +550,59 @@ const FormacionConcienciacion = () => {
               </h2>
 
               <div className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                {crossSellServices.map((s, i) => (
-                  <Card
-                    key={i}
-                    className="h-full rounded-2xl border border-slate-200 bg-white shadow-sm hover:shadow-md transition-shadow cursor-pointer"
-                  >
-                    <CardHeader className="items-center text-center">
-                      {/* Icono opcional: si s.icon existe lo pintamos dentro del círculo */}
-                      <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-blue-50">
-                        {s.icon ? (
-                          <s.icon className="h-7 w-7 text-blue-600" />
-                        ) : (
-                          <svg
-                            className="h-7 w-7 text-blue-600"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="currentColor"
-                            strokeWidth="2"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                          >
-                            <circle cx="11" cy="11" r="8" />
-                            <path d="m21 21-4.3-4.3" />
-                          </svg>
-                        )}
-                      </div>
+                {crossSellServices.map((s, i) => {
+                  const Icon = s.icon;
+                  const url = s.href ?? "#";
+                  return (
+                    <Card
+                      key={i}
+                      className="h-full rounded-2xl border border-slate-200 bg-white shadow-sm hover:shadow-md transition-shadow flex flex-col"
+                    >
+                      <CardHeader className="items-center text-center">
+                        {/* Icono */}
+                        <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-blue-50">
+                          {Icon ? (
+                            <Icon className="h-7 w-7 text-blue-600" />
+                          ) : (
+                            <svg
+                              className="h-7 w-7 text-blue-600"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              stroke="currentColor"
+                              strokeWidth="2"
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                            >
+                              <circle cx="11" cy="11" r="8" />
+                              <path d="m21 21-4.3-4.3" />
+                            </svg>
+                          )}
+                        </div>
 
-                      <CardTitle className="text-xl font-semibold text-slate-900">
-                        {s.title}
-                      </CardTitle>
-                      <CardDescription className="mt-3 text-slate-600 leading-relaxed">
-                        {s.description}
-                      </CardDescription>
-                    </CardHeader>
-                  </Card>
-                ))}
-              </div>
+                        <CardTitle className="text-xl font-semibold text-slate-900">
+                          {s.title}
+                        </CardTitle>
+                        <CardDescription className="mt-3 text-slate-600 leading-relaxed">
+                          {s.description}
+                        </CardDescription>
+                      </CardHeader>
 
-              <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
-                <Link
-                  to="https://calendly.com/ayub-tutumsec/30min"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="px-6 py-2 rounded-full text-lg text-white font-medium transition-transform whitespace-nowrap hover:scale-[1.03] shadow-[0_8px_30px_rgba(59,130,246,0.35)]"
-                  style={{
-                    background:
-                      "linear-gradient(180deg, #60a5fa 0%, #3b82f6 100%)", // blue-400 -> blue-500
-                  }}
-                >
-                  Reserva tu consultoría gratuita →
-                </Link>
-                <Button
-                  className="rounded-full px-6"
-                  variant="outline"
-                  size="lg"
-                >
-                  Solicitar presupuesto
-                </Button>
+                      <CardFooter className="mt-auto px-6 pb-6">
+                        <Button
+                          asChild
+                          variant="secondary"
+                          className="w-full group"
+                          aria-label={`Saber más sobre ${s.title}`}
+                        >
+                          <Link to={url}>
+                            Saber más
+                            <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-0.5" />
+                          </Link>
+                        </Button>
+                      </CardFooter>
+                    </Card>
+                  );
+                })}
               </div>
             </div>
           </section>
@@ -653,9 +642,18 @@ const FormacionConcienciacion = () => {
                     ¿Empezamos con un piloto de 90 días?
                   </h2>
                   <div className="flex flex-col sm:flex-row gap-4 justify-center mb-4">
-                    <Button className="rounded-full" size="lg">
-                      Reserva diagnóstico gratuito 15'
-                    </Button>
+                    <Link
+                      to="https://calendly.com/ayub-tutumsec/30min"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="px-6 py-2 rounded-full text-lg text-white font-medium transition-transform whitespace-nowrap hover:scale-[1.03] shadow-[0_8px_30px_rgba(59,130,246,0.35)]"
+                      style={{
+                        background:
+                          "linear-gradient(180deg, #60a5fa 0%, #3b82f6 100%)", // blue-400 -> blue-500
+                      }}
+                    >
+                      Reserva tu diagnóstico gratuito →
+                    </Link>
                     <Button
                       variant="outline"
                       size="lg"
@@ -674,6 +672,7 @@ const FormacionConcienciacion = () => {
               </div>
             </div>
           </section>
+          <PartnersSection />
         </div>
       </main>
       <Footer />

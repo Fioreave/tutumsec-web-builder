@@ -174,18 +174,38 @@ const NewResultsSection: React.FC = () => {
             {results.map((r, i) => (
               <div
                 key={i}
-                className={`bg-gradient-to-r ${r.gradient} p-8 rounded-2xl text-white relative group`}
+                className={`bg-gradient-to-r ${r.gradient} p-6 sm:p-7 lg:p-8 rounded-2xl text-white relative group`}
               >
-                <div className="flex items-start gap-6">
-                  <div className="text-6xl font-bold opacity-80 min-w-[5ch]">
-                    <CountUp end={r.end} prefix={r.prefix} suffix={r.suffix} />
+                {/* grid compacta: número | texto | icono */}
+                <div className="grid grid-cols-[auto,1fr,auto] items-start gap-6 sm:gap-4 md:gap-5">
+                  {/* Número: sin min-width, sin forzar ancho, más compacto */}
+                  <div className="shrink-0 whitespace-nowrap">
+                    <span className="block text-5xl sm:text-6xl font-bold opacity-90 leading-none tracking-tight">
+                      <CountUp
+                        end={r.end}
+                        prefix={r.prefix}
+                        suffix={r.suffix}
+                      />
+                    </span>
                   </div>
+
+                  {/* Texto: márgenes y leading ajustados */}
                   <div className="flex-1">
-                    <p className="text-lg leading-relaxed">{r.title}</p>
-                    <p className="text-lG text-gray-200">{r.subtitle}</p>
+                    <p className="text-base sm:text-lg leading-snug sm:leading-relaxed">
+                      {r.title}
+                    </p>
+                    <p className="text-sm sm:text-base text-gray-200 mt-1">
+                      {r.subtitle}
+                    </p>
                   </div>
-                  <div className="text-white opacity-60">
-                    <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none">
+
+                  {/* Icono: tamaño un pelín menor en móvil */}
+                  <div className="text-white/70">
+                    <svg
+                      className="w-6 h-6 sm:w-7 sm:h-7"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                    >
                       <path
                         d="M7 17L17 7M17 7H7M17 7V17"
                         stroke="currentColor"

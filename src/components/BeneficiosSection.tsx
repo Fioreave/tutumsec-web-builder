@@ -3,7 +3,7 @@ import React from "react";
 const steps = [
   {
     number: "1",
-    description: "Logra el cumplimiento NIS2 e ISO 27001 en menos de 90 día",
+    description: "Logra el cumplimiento NIS2 e ISO 27001 en menos de 90 días",
     gradient: "from-blue-500 to-blue-950",
   },
   {

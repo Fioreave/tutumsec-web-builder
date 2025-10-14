@@ -4,7 +4,14 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import {
   Accordion,
   AccordionContent,
@@ -22,8 +29,41 @@ import {
   Search,
   TrendingUp,
   ArrowUpRight,
+  Bug,
+  AlarmClock,
+  ShieldCheck,
+  LineChart,
+  ArrowRight,
 } from "lucide-react";
 import { Link } from "react-router-dom";
+import PartnersSection from "../PartnersSection";
+
+const crossSellServices = [
+  {
+    title: "Consultoría CISO (vCISO)",
+    description: "Gobierno, KPIs y cultura",
+    href: "/es/servicios/consultoria-ciso",
+    icon: LineChart,
+  },
+  {
+    title: "Auditoría & Compliance NIS2",
+    description: "Gap-Analysis + plan de adecuación",
+    href: "/es/servicios/auditoria-compliance-nis2",
+    icon: ShieldCheck,
+  },
+  {
+    title: "Auditoría técnica & Pentesting",
+    description: "Validación ofensiva",
+    href: "/es/servicios/auditoria-compliance-nis2",
+    icon: Bug,
+  },
+  {
+    title: "SOC / MDR 24×7",
+    description: "Vigilancia y respuesta gestionada",
+    href: "/es/productos/deteccion-24x7",
+    icon: AlarmClock,
+  },
+];
 
 const faqs = [
   {
@@ -204,10 +244,10 @@ const OficinaSeguridad = () => {
 
             {/* contenido centrado */}
             <div
-              className="relative z-30 w-full grid place-items-center text-center px-6"
+              className="w-full grid place-items-center text-center px-6"
               style={{ minHeight: "calc(100vh - 96px)" }} // ajusta 96px al alto real de tu navbar si es fija
             >
-              <div>
+              <div className="relative z-30  ">
                 <h1 className="mx-auto max-w-6xl text-4xl md:text-5xl font-bold text-white mb-4">
                   Oficina de Seguridad de la
                   <br /> Información (OSI) para cumplir NIS2
@@ -240,24 +280,22 @@ const OficinaSeguridad = () => {
                   </Button>
                 </div>
               </div>
-            </div>
-          </section>
-          {/* quickwins */}
-          <section className="bg-gray-500/5 pb-6 pt-12">
-            <div className="mb-8 max-w-7xl mx-auto ">
-              <div className="grid lg:grid-cols-3 gap-12 items-center text-left space-y-2">
-                {quickWins.map((win, i) => (
-                  <li key={i} className="flex items-start text-dark/90">
-                    <CheckCircle className="w-5 h-5 text-blue-300 mr-2 mt-0.5 flex-shrink-0" />
-                    <span>{win}</span>
-                  </li>
-                ))}
+
+              <div className="absolute bottom-8 left-0 w-full">
+                <div className="grid lg:grid-cols-3 gap-12 px-6 py-6 items-center text-left space-y-2">
+                  {quickWins.map((win, i) => (
+                    <li key={i} className="flex items-start text-white">
+                      <CheckCircle className="w-5 h-5 text-blue-300 mr-2 mt-0.5 flex-shrink-0" />
+                      <span>{win}</span>
+                    </li>
+                  ))}
+                </div>
               </div>
             </div>
           </section>
 
           {/* BLOQUE 3 · QUÉ ES UNA OSI */}
-          <section className="py-12">
+          <section className="py-20">
             <div className="max-w-6xl mx-auto">
               <h2 className="text-3xl font-bold text-center mb-12">
                 La OSI que alinea seguridad con negocio
@@ -421,7 +459,7 @@ const OficinaSeguridad = () => {
               {/* Columna izquierda: título + subtítulo opcional */}
               <div className="px-2">
                 <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-8">
-                  Por qué nos eligen
+                  ¿Por qué nos eligen?
                 </h2>
               </div>
 
@@ -509,53 +547,66 @@ const OficinaSeguridad = () => {
           </section>*/}
 
           {/* BLOQUE 10 · Enlaces internos */}
-          <section className="py-20 px-6 bg-gradient-to-br from-gray-900 via-blue-900 to-black text-white">
-            <div className="max-w-6xl mx-auto">
-              <div className="grid lg:grid-cols-2 md:grid-cols-2 gap-12 items-start">
-                <div className="transform transition-all duration-700 hover:translate-x-2">
-                  <h2 className="text-3xl lg:text-4xl font-bold mb-8 transition-colors duration-500 hover:text-primary-light leading-relaxed">
-                    <span className="relative group p-2">
-                      Servicios
-                      <svg
-                        className="absolute -bottom-1 left-0 w-full h-3 transition-all duration-500 group-hover:scale-105"
-                        viewBox="0 0 300 12"
-                        fill="none"
-                      >
-                        <path
-                          d="M5 8 Q150 3 295 8"
-                          stroke="hsl(var(--primary))"
-                          strokeWidth="3"
-                          fill="none"
-                        />
-                      </svg>
-                    </span>
-                  </h2>
-                </div>
+          <section className="py-20 bg-slate-50">
+            <div className="max-w-6xl mx-auto px-6">
+              <h2 className="text-4xl text-center font-bold text-blue-600">
+                Servicios{" "}
+              </h2>
 
-                <div className="space-y-8">
-                  <div className="overflow-x-auto">
-                    <table className="w-full">
-                      <thead></thead>
-                      <tbody>
-                        <div className="space-y-8">
-                          {servicios.map((servicios, index) => (
-                            <div
-                              key={index}
-                              className="border-l-4 border-blue-400 pl-6"
+              <div className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                {crossSellServices.map((s, i) => {
+                  const Icon = s.icon;
+                  const url = s.href ?? "#";
+                  return (
+                    <Card
+                      key={i}
+                      className="h-full rounded-2xl border border-slate-200 bg-white shadow-sm hover:shadow-md transition-shadow flex flex-col"
+                    >
+                      <CardHeader className="items-center text-center">
+                        {/* Icono */}
+                        <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-blue-50">
+                          {Icon ? (
+                            <Icon className="h-7 w-7 text-blue-600" />
+                          ) : (
+                            <svg
+                              className="h-7 w-7 text-blue-600"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              stroke="currentColor"
+                              strokeWidth="2"
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
                             >
-                              <h3 className="text-xl font-semibold mb-2 text-blue-300">
-                                {servicios.title}
-                              </h3>
-                              <p className="text-gray-200 leading-relaxed">
-                                {servicios.description}
-                              </p>
-                            </div>
-                          ))}
+                              <circle cx="11" cy="11" r="8" />
+                              <path d="m21 21-4.3-4.3" />
+                            </svg>
+                          )}
                         </div>
-                      </tbody>
-                    </table>
-                  </div>
-                </div>
+
+                        <CardTitle className="text-xl font-semibold text-slate-900">
+                          {s.title}
+                        </CardTitle>
+                        <CardDescription className="mt-3 text-slate-600 leading-relaxed">
+                          {s.description}
+                        </CardDescription>
+                      </CardHeader>
+
+                      <CardFooter className="mt-auto px-6 pb-6">
+                        <Button
+                          asChild
+                          variant="secondary"
+                          className="w-full group"
+                          aria-label={`Saber más sobre ${s.title}`}
+                        >
+                          <Link to={url}>
+                            Saber más
+                            <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-0.5" />
+                          </Link>
+                        </Button>
+                      </CardFooter>
+                    </Card>
+                  );
+                })}
               </div>
             </div>
           </section>
@@ -630,6 +681,7 @@ const OficinaSeguridad = () => {
           </section>
         </div>
       </main>
+      <PartnersSection />
       <Footer />
     </>
   );

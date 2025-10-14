@@ -2,7 +2,6 @@ import React from "react";
 
 const PartnersSection: React.FC = () => {
   const logos = [
-    //{ src: "/uploads/fortinet.png", alt: "Cliente 1" },
     { src: "/uploads/partners/paloalto.png", alt: "Paloalto" },
     { src: "/uploads/partners/blackmdr.svg", alt: "Blackmdr" },
     { src: "/uploads/partners/Office.svg", alt: "Office365" },
@@ -16,48 +15,64 @@ const PartnersSection: React.FC = () => {
     { src: "/uploads/partners/proxmox.svg", alt: "Proxmox" },
   ];
 
+  // Duplicamos para el efecto marquee infinito
   const strip = [...logos, ...logos];
 
-  const trackStyle: React.CSSProperties = {
-    animationName: "partners-marquee",
-    animationDuration: "30s", // más chico = más rápido (ej: "20s")
-    animationTimingFunction: "linear",
-    animationIterationCount: "infinite",
-    willChange: "transform",
-  };
   return (
-    <section className="relative w-full overflow-hidden py-10 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 ">
-      {/* Fades laterales (opcional) 
-      <div className="pointer-events-none absolute left-0 top-0 h-full w-20 bg-gradient-to-r from-white to-transparent" />
-      <div className="pointer-events-none absolute right-0 top-0 h-full w-20 bg-gradient-to-l from-white to-transparent" />
-*/}
+    <section className="relative w-full overflow-hidden py-10 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
       <div className="relative">
-        <ul className="flex items-center" style={trackStyle}>
+        <ul
+          className="partners-track flex items-center will-change-transform"
+          // velocidad por defecto si el CSS no carga
+          style={{ animationDuration: "30s" }}
+        >
           {strip.map((logo, i) => (
-            <li key={i} className="shrink-0 mr-16">
+            <li
+              key={i}
+              // Espaciado responsive (menos en móvil/tablet)
+              className="shrink-0 mr-8 sm:mr-10 md:mr-12 lg:mr-16"
+            >
               <img
                 src={logo.src}
                 alt={logo.alt}
-                className="block opacity-80 hover:opacity-100 transition-opacity"
-                style={{ height: 40, width: "auto" }} // ajusta altura si quieres
                 loading="lazy"
+                // Altura responsive: móvil más pequeño, tablet mediano, desktop mayor
+                className="block h-6 sm:h-7 md:h-8 lg:h-10 xl:h-12 w-auto opacity-80 hover:opacity-100 transition-opacity"
               />
             </li>
           ))}
         </ul>
       </div>
 
-      {/* CSS de animación */}
+      {/* CSS de animación y ajustes responsive extra */}
       <style>{`
-        /* Asegura que el UL mida por contenido para el scroll infinito */
-        section > div > ul { width: 24; 
-        align: center;}
+        /* Hace que el UL mida por su contenido para un scroll continuo sin saltos */
+        .partners-track {
+          width: max-content;
+          animation-name: partners-marquee;
+          animation-timing-function: linear;
+          animation-iteration-count: infinite;
+        }
+
+        /* Ajuste fino de la velocidad por tamaño de pantalla:
+           - En móvil/tablet acelera un poco para que no se sienta pesado */
+        @media (max-width: 1024px) {
+          .partners-track { animation-duration: 26s; }
+        }
+        @media (max-width: 768px) {
+          .partners-track { animation-duration: 24s; }
+        }
+        @media (max-width: 480px) {
+          .partners-track { animation-duration: 22s; }
+        }
+
         @keyframes partners-marquee {
           from { transform: translateX(0); }
           to   { transform: translateX(-50%); }
         }
+
         @media (prefers-reduced-motion: reduce) {
-          section > div > ul { animation: none !important; }
+          .partners-track { animation: none !important; }
         }
       `}</style>
     </section>

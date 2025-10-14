@@ -51,6 +51,7 @@ import CookieBanner from "./pages/CookieBanner";
 import ScrollToTop from "./ScrollToTop";
 import AvisoLegal from "./components/AvisoLegal";
 import PrivacyPolicy from "./components/PrivacyPolicy";
+import Pymes from "./pages/industrias/pymes";
 
 const queryClient = new QueryClient();
 
@@ -135,13 +136,14 @@ const App = () => (
             element={<IndustrialOt />}
           />
           <Route
-            path="/es/industrias/tecnologia/"
+            path="/es/industrias/tecnologia-saas/"
             element={<TecnologiaSaas />}
           />
           <Route
             path="/es/industrias/sector-publico/"
             element={<SectorPublico />}
           />
+          <Route path="/es/industrias/pymes/" element={<Pymes />} />
 
           {/* Recursos */}
           <Route path="/es/recursos/" element={<Recursos />} />

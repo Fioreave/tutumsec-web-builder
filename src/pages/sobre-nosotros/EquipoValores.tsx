@@ -4,26 +4,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import SEOMetaTags from "@/components/SEOMetaTags";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import {
-  Book,
-  BookHeadphones,
-  Building,
-  CheckCircle,
-  Clock,
-  Cloud,
-  Cog,
-  Globe,
-  Headphones,
-  MapPin,
-  Monitor,
-  Phone,
-  Search,
-  SearchIcon,
-  Shield,
-  Star,
-  TrendingUp,
-  Users,
-} from "lucide-react";
+import { CheckCircle } from "lucide-react";
 import ServicesSection from "@/components/ServicesSection";
 
 const risks = [
@@ -150,18 +131,28 @@ const EquipoValores = () => {
 
       <Navbar />
       <main className="min-h-screen ">
-        <section className="relative flex items-center min-h-screen p-20 px-6 bg-gray-100 relative overflow-hidden bg-[url('/uploads/background/bg-security.png')] bg-cover w-full bg-center">
-          <div className="justify-center container text-left">
-            <div>
-              <h1 className="animate-slide-up text-7xl mb-6 font-bold text-white mx-auto bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">
-                ¿Quiénes somos?{" "}
-              </h1>
-              <p className="mt-2 animate-slide-up max-w-3xl text-white text-medium text-2xl m-2">
-                Personas cercanas y expertas que hablan claro, actúan rápido y
-                acompañan de verdad. Nuestro objetivo: que la ciberseguridad se
-                entienda en minutos y se note en semanas.
-              </p>
-            </div>
+        <section className="relative min-h-[500px] mx-36 overflow-hidden px-6 flex items-center">
+          <div
+            className="absolute inset-0 -z-10 bg-cover bg-center bg-no-repeat"
+            style={{
+              backgroundImage: "url('/uploads/background/background2.png')",
+            }}
+          />
+          <div className="absolute inset-0 bg-black/50 -z-10" />
+
+          <div className="mx-20 max-w-4xl text-left relative">
+            <h1 className="animate-slide-up text-6xl mb-6 font-bold text-white mx-auto bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">
+              ¿Quiénes somos?{" "}
+            </h1>
+            <h2 className="mt-2 animate-slide-up max-w-3xl text-white text-medium text-xl m-2">
+              Personas cercanas y expertas que hablan claro, actúan rápido y
+              acompañan de verdad. Nuestro objetivo: que la ciberseguridad se
+              entienda en minutos y se note en semanas.
+            </h2>
+            <div
+              className="flex flex-col sm:flex-row gap-4 justify-center items-center opacity-0 animate-fade-in"
+              style={{ animationDelay: "0.9s", animationFillMode: "forwards" }}
+            ></div>
           </div>
         </section>
 
@@ -312,13 +303,13 @@ const EquipoValores = () => {
         <section className="bg-muted/50 pt-20  pb-20">
           <div className="pb-6 flex justify-center content-center container max-w-6xl grid md:grid-cols-6">
             <div className="col-span-2 mr-20">
-              <h2 className="text-3xl font-bold text-primary mb-2">
+              <h2 className="text-4xl font-bold text-primary mb-2">
                 Nuestros valores{" "}
               </h2>
             </div>
 
             <div className="ml-24 col-span-4">
-              <div className="space-y-6">
+              <div className="space-y-6 pt-6">
                 {caract2.map((item, index) => (
                   <div key={index} className="flex items-start">
                     <CheckCircle className="w-6 h-6 text-primary mr-3 mt-1 flex-shrink-0" />
@@ -332,7 +323,7 @@ const EquipoValores = () => {
 
         <div className="bg-muted/50 text-center py-12 pb-20">
           <h2 className="text-4xl font-bold bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">
-            Seguridad clara, sin rodeos y con resultados que se ven.
+            "Seguridad clara, sin rodeos y con resultados que se ven."
           </h2>
         </div>
       </main>

@@ -30,15 +30,10 @@ const NewProcessSection = () => {
     <section className="py-20 px-6 bg-tutumsec-gray-50">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-6xl lg:text-4xl font-bold text-blue-500 mb-6">
-            Nuestra Metodología
+          <h2 className="text-4xl lg:text-4xl font-bold text-blue-500 mb-6">
+            Una metodología clara;
           </h2>
-          {/*<p className="text-xl text-gray-600 mb-4">
-            4 pasos PDCA + Zero Trust
-          </p>
-          <p className="text-lg text-gray-500">
-            Basado en marcos CIS, ISO 27001, NIST i ENS
-          </p>*/}
+          <p className="text-xl"> Ejecutiva y orientada a resultados.</p>{" "}
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">

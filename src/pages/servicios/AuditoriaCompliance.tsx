@@ -23,6 +23,40 @@ import { useTranslation } from "@/hooks/old.useTranslation";
 import { Link } from "react-router-dom";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import PartnersSection from "../PartnersSection";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
+
+const faqs = [
+  {
+    question: "¿Qué cubre exactamente la auditoría NIS 2?",
+    answer:
+      "Infraestructura (redes, servidores, OT), procesos, políticas y gobierno. Incluye pentesting y gap-analysis normativo completo. ",
+  },
+  {
+    question: "¿Cuánto dura el diagnóstico inicial?",
+    answer:
+      "Entre 10 y 15 días hábiles, según el número de activos y la documentación disponible.",
+  },
+  {
+    question: "¿Necesito auditoría si ya tengo proveedor IT?",
+    answer:
+      "Tu MSP mantiene la infraestructura; nosotros garantizamos gobierno, cumplimiento y visibilidad ejecutiva. Ambos servicios se complementan.",
+  },
+  {
+    question: "¿La Directiva NIS2 me afecta realmente? ",
+    answer:
+      "Sí, si operas infraestructuras críticas, servicios esenciales o dependes de la cadena de suministro de sectores regulados. ",
+  },
+  {
+    question: "¿Necesito otra herramienta de seguridad para aprobar NIS2? ",
+    answer:
+      "No siempre. Primero analizamos lo que ya tienes; luego proponemos sólo lo imprescindible. ",
+  },
+];
 
 const ciso = [
   {
@@ -288,59 +322,10 @@ const AuditoriaCompliance = () => {
             </div>
           </section>
 
-          {/* BLOQUE 4 · PROCESO EN 4 PASOS */}
-          <section className="py-20 px-6 bg-tutumsec-gray-50">
-            <div className="max-w-6xl mx-auto">
-              <div className="text-center mb-16">
-                <h2 className="text-4xl lg:text-4xl font-bold text-blue-500 mb-6">
-                  Nuestra Metodología
-                </h2>
-                {/*<p className="text-xl text-gray-600 mb-4">
-            4 pasos PDCA + Zero Trust
-          </p>
-          <p className="text-lg text-gray-500">
-            Basado en marcos CIS, ISO 27001, NIST i ENS
-          </p>*/}
-              </div>
-
-              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                {steps.map((step, index) => {
-                  const IconComponent = step.icon;
-                  return (
-                    <div
-                      key={index}
-                      className="bg-white p-8 rounded-2xl border border-gray-200 group hover:shadow-lg transition-all duration-500 hover:-translate-y-2 animate-fade-in relative"
-                      style={{
-                        animationDelay: `${index * 0.15}s`,
-                        animationFillMode: "forwards",
-                        opacity: 0,
-                      }}
-                    >
-                      <div className="text-center">
-                        <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-primary/20 transition-colors duration-300 relative">
-                          <IconComponent className="w-8 h-8 text-primary items-center" />
-                          {/*<span className="absolute -top-2 -right-2 w-8 h-8 text-white rounded-full flex items-center justify-center text-sm font-bold">
-                      {step.number}
-                    </span>*/}
-                        </div>
-                        <h3 className="text-lg font-semibold text-gray-800 mb-3 transition-colors duration-300 group-hover:text-primary leading-tight">
-                          {step.title}
-                        </h3>
-                        <p className="text-gray-600 text-sm leading-relaxed transition-colors duration-300 group-hover:text-gray-700">
-                          {step.description}
-                        </p>
-                      </div>
-                    </div>
-                  );
-                })}
-              </div>
-            </div>
-          </section>
-
           {/* BLOQUE 3 · BENEFICIOS CLAVE */}
           <section className="py-12">
             <div className="max-w-6xl mx-auto">
-              <h2 className="text-4xl font-bold text-center mb-12">
+              <h2 className="text-4xl pt-20 font-bold text-center mb-12">
                 ¿Por qué somos diferentes?
               </h2>
 
@@ -349,7 +334,7 @@ const AuditoriaCompliance = () => {
                   <CardContent className="p-6">
                     <Search className="w-12 h-12 text-primary mb-4" />
                     <h3 className="text-xl font-semibold mb-3">
-                      Pentesting ofensivo 360°
+                      Pentesting ofensivo
                     </h3>
                     <p className="text-muted-foreground">
                       Simulamos ataques multi-vector para cloud, M365, VPN,
@@ -397,6 +382,52 @@ const AuditoriaCompliance = () => {
                     </p>
                   </CardContent>
                 </UICard>
+              </div>
+            </div>
+          </section>
+
+          {/* BLOQUE 4 · PROCESO EN 4 PASOS */}
+          <section className="py-20 px-6 bg-tutumsec-gray-50">
+            <div className="max-w-6xl mx-auto">
+              <div className="text-center mb-16">
+                <h2 className="text-4xl lg:text-4xl font-bold text-blue-500 mb-6">
+                  Una metodología clara,{" "}
+                </h2>
+                <p className="text-xl text-gray-600 mb-4">
+                  ejecutiva y orientada a resultados{" "}
+                </p>
+              </div>
+
+              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                {steps.map((step, index) => {
+                  const IconComponent = step.icon;
+                  return (
+                    <div
+                      key={index}
+                      className="bg-white p-8 rounded-2xl border border-gray-200 group hover:shadow-lg transition-all duration-500 hover:-translate-y-2 animate-fade-in relative"
+                      style={{
+                        animationDelay: `${index * 0.15}s`,
+                        animationFillMode: "forwards",
+                        opacity: 0,
+                      }}
+                    >
+                      <div className="text-center">
+                        <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-primary/20 transition-colors duration-300 relative">
+                          <IconComponent className="w-8 h-8 text-primary items-center" />
+                          {/*<span className="absolute -top-2 -right-2 w-8 h-8 text-white rounded-full flex items-center justify-center text-sm font-bold">
+                      {step.number}
+                    </span>*/}
+                        </div>
+                        <h3 className="text-lg font-semibold text-gray-800 mb-3 transition-colors duration-300 group-hover:text-primary leading-tight">
+                          {step.title}
+                        </h3>
+                        <p className="text-gray-600 text-sm leading-relaxed transition-colors duration-300 group-hover:text-gray-700">
+                          {step.description}
+                        </p>
+                      </div>
+                    </div>
+                  );
+                })}
               </div>
             </div>
           </section>
@@ -452,16 +483,13 @@ const AuditoriaCompliance = () => {
               </div>
               <div className="border-l-4 border-blue-400 text-sm pl-6 prose prose-lg max-w-none text-left">
                 <p>
-                  El 43 % de los ciberataques que registra ENISA impacta en
-                  PYMEs y solo un 14 % tiene un plan de respuesta. A muchas
-                  empresas les sobran herramientas sueltas y les faltan: Una
-                  auditoría ofensiva que revele qué puertas están realmente
-                  abiertas. Un plan de compliance que traduzca normas en
-                  acciones concretas. Con TutumSec conviertes la auditoría en un
-                  activo estratégico: identificamos brechas reales –desde
-                  firewalls hasta políticas internas–, alineamos tus controles
-                  con NIS 2 e ISO 27001 y situamos la seguridad al nivel de
-                  negocio. lo tienes todo en un único servicio: Audit-to-Comply.
+                  Olvida las herramientas sueltas: hace falta una auditoría
+                  ofensiva que descubra por dónde pueden entrar y un plan de
+                  cumplimiento que convierta NIS2 e ISO 27001 en acciones
+                  concretas. Con Audit-to-Comply de TutumSec detectamos brechas
+                  reales (de firewalls a políticas), priorizamos riesgos y
+                  alineamos tus controles con negocio para que pases de
+                  “cumplir” a estar protegido de verdad.
                 </p>
               </div>
             </div>
@@ -511,24 +539,67 @@ const AuditoriaCompliance = () => {
             </div>
           </section>*/}
 
-          {/* CTA Final */}
-          <section className="py-12 pt-20 pb-20 bg-tutumsec-gray-50">
-            <div className="w-full text-center max-w-4xl mx-auto relative">
+          <section className="py-20 px-6 bg-gray-100 relative overflow-hidden bg-[url('/uploads/background.png')] bg-cover bg-center">
+            <div className="max-w-4xl mx-auto">
+              <div className="text-center mb-16">
+                <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6 animate-slide-up leading-relaxed">
+                  Preguntas frecuentes
+                </h2>
+              </div>
+
+              <Accordion type="single" collapsible className="space-y-4">
+                {faqs.map((faq, index) => (
+                  <AccordionItem
+                    key={index}
+                    value={`item-${index}`}
+                    className="bg-gray-200/80 rounded-2xl border border-gray-300 px-6 hover:shadow-md transition-shadow duration-300"
+                  >
+                    <AccordionTrigger className="text-left font-semibold text-gray-800 hover:text-primary py-6">
+                      {faq.question}
+                    </AccordionTrigger>
+                    <AccordionContent className="text-gray-600 leading-relaxed pb-6">
+                      {faq.answer}
+                    </AccordionContent>
+                  </AccordionItem>
+                ))}
+              </Accordion>
+
+              {/* Schema.org structured data for FAQ */}
+              <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{
+                  __html: JSON.stringify({
+                    "@context": "https://schema.org",
+                    "@type": "FAQPage",
+                    mainEntity: faqs.map((faq) => ({
+                      "@type": "Question",
+                      name: faq.question,
+                      acceptedAnswer: {
+                        "@type": "Answer",
+                        text: faq.answer,
+                      },
+                    })),
+                  }),
+                }}
+              />
+            </div>
+
+            <div className="w-full pt-20 text-center max-w-6xl mt-10 mx-auto relative">
               <h2 className="text-4xl font-bold mb-10 px-20 ">
                 ¿Quieres alinear tu seguridad con NIS 2 antes de la fecha
-                límite?
+                límite?{" "}
               </h2>
               <Link
                 to="https://calendly.com/ayub-tutumsec/30min"
+                className="px-6 py-2 rounded-full text-lg text-white font-medium transition-transform whitespace-nowrap hover:scale-[1.03] shadow-[0_8px_30px_rgba(59,130,246,0.35)]"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-6 py-2 rounded-full text-lg text-white font-medium transition-transform whitespace-nowrap hover:scale-[1.03] shadow-[0_8px_30px_rgba(59,130,246,0.35)]"
                 style={{
                   background:
                     "linear-gradient(180deg, #60a5fa 0%, #3b82f6 100%)", // blue-400 -> blue-500
                 }}
               >
-                Reserva tu diagnóstico gratuito →
+                Reserva tu sesión estratégica gratuita →
               </Link>
             </div>
           </section>

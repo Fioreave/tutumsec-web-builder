@@ -61,6 +61,7 @@ const Navbar = () => {
     { title: "Industrial OT", path: "/es/industrias/industrial-ot" },
     { title: "Tecnología SaaS", path: "/es/industrias/tecnologia-saas" },
     { title: "Sector Público", path: "/es/industrias/sector-publico" },
+    { title: "Pymes", path: "/es/industrias/pymes" },
   ];
 
   const recursosItems = [{ title: "Blog", path: "/es/blog" }];
@@ -89,6 +90,7 @@ const Navbar = () => {
             <div className="flex items-baseline space-x-4 whitespace-nowrap">
               <NavbarDropdown title="Servicios" items={serviciosItems} />
               <NavbarDropdown title="Productos" items={productosItems} />
+              <NavbarDropdown title="Industrias" items={industriasItems} />
               <NavbarDropdown title="Recursos" items={recursosItems} />
               <NavbarDropdown
                 title="Sobre Nosotros"
@@ -178,6 +180,32 @@ const Navbar = () => {
               </button>
               {expandedSections.productos &&
                 productosItems.map((item, index) => (
+                  <Link
+                    key={index}
+                    to={item.path}
+                    className="text-gray-600 hover:text-blue-600 block px-6 py-2 text-sm transition-colors"
+                    onClick={toggleMenu}
+                  >
+                    {item.title}
+                  </Link>
+                ))}
+            </div>
+
+            {/* Industrias */}
+            <div className="space-y-1">
+              <button
+                onClick={() => toggleSection("industrias")}
+                className="w-full flex items-center justify-between text-gray-700 font-semibold px-3 py-2 text-base hover:text-blue-600 transition-colors"
+              >
+                Industrias
+                {expandedSections.industrias ? (
+                  <ChevronDown className="h-4 w-4" />
+                ) : (
+                  <ChevronRight className="h-4 w-4" />
+                )}
+              </button>
+              {expandedSections.industrias &&
+                industriasItems.map((item, index) => (
                   <Link
                     key={index}
                     to={item.path}

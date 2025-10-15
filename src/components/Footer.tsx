@@ -56,15 +56,15 @@ const Footer = () => {
                 <span className="text-sm">Barcelona - Girona - Andorra</span>
               </div>
               <div className="pt-6">
-              <a
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="TutumSec en LinkedIn (se abre en una pestaña nueva)"
-                href="https://www.linkedin.com/company/tutumsec/posts/?feedView=all"
-                className="w-10 h-10 bg-gradient-to-r from-blue-400 to-blue-500 rounded-full flex items-center justify-center hover:from-blue-500 hover:to-blue-600 transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-110"
-              >
-                <Linkedin className="w-5 h-5 text-white" />
-              </a>
+                <a
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="TutumSec en LinkedIn (se abre en una pestaña nueva)"
+                  href="https://www.linkedin.com/company/tutumsec/posts/?feedView=all"
+                  className="w-10 h-10 bg-gradient-to-r from-blue-400 to-blue-500 rounded-full flex items-center justify-center hover:from-blue-500 hover:to-blue-600 transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-110"
+                >
+                  <Linkedin className="w-5 h-5 text-white" />
+                </a>
               </div>
             </div>
           </div>
@@ -142,7 +142,6 @@ const Footer = () => {
             </ul>
           </div>
         </div>
-        
       </div>
       {/*<div className="align-right items-right gap-8 mb-">
             <div className="transition-all duration-300 hover:scale-5">
@@ -188,7 +187,6 @@ const Footer = () => {
       <div className="bg-slate-900 border-t border-slate-700">
         <div className="max-w-7xl mx-auto px-6 py-8">
           {/* Certification Logos */}
-          
 
           {/* Certifications */}
           <div className="flex flex-wrap justify-center gap-6 mb-8">
@@ -212,6 +210,7 @@ const Footer = () => {
             <div className="text-sm text-gray-400 mb-4 md:mb-0">
               © 2025 TutumSec. Todos los derechos reservados. |
               <a
+                target="_blank"
                 href="/privacy-policy"
                 className="hover:text-blue-400 transition-colors duration-300 ml-1"
               >
@@ -219,6 +218,7 @@ const Footer = () => {
               </a>{" "}
               |
               <a
+                target="_blank"
                 href="/aviso-legal"
                 className="hover:text-blue-400 transition-colors duration-300 ml-1"
               >

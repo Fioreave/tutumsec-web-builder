@@ -3,11 +3,9 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
-import Blog from "./pages/Blog";
-import BlogPost from "./pages/BlogPost";
 import WordPressBlog from "./pages/WordPressBlog";
 import Contacto from "./pages/Contacto";
 import ReservaConsultoria from "./pages/ReservaConsultoria";
@@ -51,7 +49,7 @@ import CookieBanner from "./pages/CookieBanner";
 import ScrollToTop from "./ScrollToTop";
 import AvisoLegal from "./components/AvisoLegal";
 import PrivacyPolicy from "./components/PrivacyPolicy";
-import Pymes from "./pages/industrias/pymes";
+import Pymes from "./pages/industrias/Pymes";
 
 const queryClient = new QueryClient();
 
@@ -67,9 +65,7 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/es/" element={<Index />} />
-          <Route path="/blog" element={<WordPressBlog />} />
-          <Route path="/blog/:slug" element={<BlogPost />} />
-          <Route path="/es/blog" element={<WordPressBlog />} />
+          <Route path="/blog" element={<Navigate to="/blog" replace />} />
 
           <Route path="/aviso-legal" element={<AvisoLegal />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />

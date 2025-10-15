@@ -199,13 +199,17 @@ export default function CookiePreferences() {
   const Banner = useMemo(
     () =>
       showBanner ? (
-        <div className="fixed inset-x-0 bottom-0 z-[2147483647]">
+        <div className="fixed mx-6 my-2 inset-x-0 bottom-0 z-[2147483647]">
           <div className="mx-auto p-4 rounded-xl bg-slate-900/95 text-white shadow-lg">
             <p className="text-sm sm:text-base">
               Usamos cookies para finalidades técnicas, analíticas y de
               publicidad. Puedes aceptarlas todas, rechazarlas o ajustar tus
               preferencias. Más info en nuestra{" "}
-              <a href="/politica-de-cookies" className="underline">
+              <a
+                target="_blank"
+                href="/politica-de-cookies"
+                className="underline"
+              >
                 Política de cookies
               </a>
               .

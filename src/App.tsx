@@ -50,6 +50,7 @@ import ScrollToTop from "./ScrollToTop";
 import AvisoLegal from "./components/AvisoLegal";
 import PrivacyPolicy from "./components/PrivacyPolicy";
 import Pymes from "./pages/industrias/Pymes";
+import PoliticaCookies from "./components/PoliticaCookies";
 
 const queryClient = new QueryClient();
 
@@ -69,6 +70,7 @@ const App = () => (
 
           <Route path="/aviso-legal" element={<AvisoLegal />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="/politica-de-cookies" element={<PoliticaCookies />} />
 
           {/* Páginas principales */}
           <Route path="/es/contacto/" element={<Contacto />} />

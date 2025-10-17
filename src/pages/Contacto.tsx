@@ -25,8 +25,8 @@ declare global {
   }
 }
 
-const API_URL = "https://api.tutumsec.io/contact";
-const RECAPTCHA_SITE_KEY = "6LfTSNIrAAAAACUlwWFW7FR2V2XpodcvXgpZznmz";
+const API_URL = `${import.meta.env.VITE_API_URL}/api/contact`;
+const RECAPTCHA_SITE_KEY = import.meta.env.VITE_RECAPTCHA_SITE_KEY as string;
 const POLICY_URL = "/politica-de-privacidad";
 
 /** Sedes */
@@ -70,15 +70,13 @@ const Contacto: React.FC = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [sentOk, setSentOk] = useState(false);
   const [errorMsg, setErrorMsg] = useState<string | null>(null);
-  {
-    /*
-  // Cargar script reCAPTCHA v3
+
+  // Cargar script reCAPTCHA v3 una vez
   useEffect(() => {
     if (!RECAPTCHA_SITE_KEY) return;
-    const id = "recaptcha-v3";
-    if (document.getElementById(id)) return;
+    if (document.getElementById("recaptcha-v3")) return;
     const s = document.createElement("script");
-    s.id = id;
+    s.id = "recaptcha-v3";
     s.async = true;
     s.src = `https://www.google.com/recaptcha/api.js?render=${RECAPTCHA_SITE_KEY}`;
     document.head.appendChild(s);
@@ -86,20 +84,23 @@ const Contacto: React.FC = () => {
 
   const getRecaptchaToken = (): Promise<string> =>
     new Promise((resolve, reject) => {
-      if (!RECAPTCHA_SITE_KEY || !window.grecaptcha)
+      if (!RECAPTCHA_SITE_KEY)
         return reject(new Error("Captcha no disponible"));
-      window.grecaptcha.ready(async () => {
-        try {
-          const t = await window.grecaptcha!.execute(RECAPTCHA_SITE_KEY, {
-            action: "contact",
-          });
-          resolve(t);
-        } catch (err) {
-          reject(err);
-        }
-      });
-    });*/
-  }
+      const run = () =>
+        window
+          .grecaptcha!.execute(RECAPTCHA_SITE_KEY, { action: "contact" })
+          .then(resolve)
+          .catch(reject);
+      if (window.grecaptcha) window.grecaptcha.ready(run);
+      else
+        setTimeout(
+          () =>
+            window.grecaptcha
+              ? window.grecaptcha.ready(run)
+              : reject(new Error("Captcha no cargó")),
+          800
+        );
+    });
 
   const downloadPdf = (path: string, name: string) => {
     const link = document.createElement("a");
@@ -130,27 +131,37 @@ const Contacto: React.FC = () => {
 
     setIsSubmitting(true);
     try {
-      //const token = await getRecaptchaToken();
+      const recaptcha_token = await getRecaptchaToken();
+
+      const controller = new AbortController();
+      const t = setTimeout(() => controller.abort(), 15000); // 15s timeout
 
       const res = await fetch(API_URL, {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
         body: JSON.stringify({
           first_name: firstName,
           last_name: lastName,
           email,
           company,
           message,
-          privacy: true,
-          //recaptcha_token: token,
+          recaptcha_token,
         }),
+        signal: controller.signal,
       });
+      clearTimeout(t);
 
       const json = await res.json().catch(() => ({}));
-      if (!res.ok || !json?.ok) {
-        const msg = json?.errors
-          ? Object.values(json.errors).join(" · ")
-          : json?.error || "No se pudo enviar el formulario.";
+
+      if (!res.ok) {
+        const msg =
+          (json?.errors && Object.values(json.errors).join(" · ")) ||
+          json?.message ||
+          json?.error ||
+          "No se pudo enviar el formulario.";
         throw new Error(msg);
       }
 
@@ -158,7 +169,12 @@ const Contacto: React.FC = () => {
       resetForm();
       downloadPdf("/checklist-nis2.pdf", "checklist-nis2.pdf");
     } catch (err: any) {
-      setErrorMsg(err?.message || "Ha ocurrido un error. Inténtalo de nuevo.");
+      if (err?.name === "AbortError")
+        setErrorMsg("Tiempo de espera agotado. Inténtalo de nuevo.");
+      else
+        setErrorMsg(
+          err?.message || "Ha ocurrido un error. Inténtalo de nuevo."
+        );
     } finally {
       setIsSubmitting(false);
     }

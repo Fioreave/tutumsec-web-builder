@@ -24,7 +24,7 @@ const Salud = () => {
           <div
             className="absolute inset-0 -z-10 bg-cover bg-center bg-no-repeat"
             style={{
-              backgroundImage: "url('/uploads/background/background6.png')",
+              backgroundImage: "url('/uploads/background/background6.svg')",
             }}
           />
           {/*style={{

@@ -24,7 +24,7 @@ const Finanzas = () => {
           <div
             className="absolute inset-0 -z-10 bg-cover bg-center bg-no-repeat"
             style={{
-              backgroundImage: "url('/uploads/background/background6.png')",
+              backgroundImage: "url('/uploads/background/background6.svg')",
             }}
           />
           {/*style={{
@@ -68,9 +68,9 @@ const Finanzas = () => {
               <div className="relative">
                 <div>
                   <img
-                    src="/uploads/imgs/ciberseguridad.png" // ← cambia la ruta
+                    src="/uploads/imgs/ciberseguridad.svg" // ← cambia la ruta
                     alt="Riesgos cloud y cadena de suministro"
-                    className="h-full w-full object-cover"
+                    className="h-[500px] w-[500px] object-cover"
                   />
                 </div>
               </div>

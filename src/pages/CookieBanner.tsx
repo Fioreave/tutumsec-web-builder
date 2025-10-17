@@ -204,7 +204,7 @@ export default function CookiePreferences() {
             <p className="text-sm sm:text-base">
               Usamos cookies para finalidades técnicas, analíticas y de
               publicidad. Puedes aceptarlas todas, rechazarlas o ajustar tus
-              preferencias. Más info en nuestra{" "}
+              preferencias. Más info en nuestra
               <a
                 target="_blank"
                 href="/politica-de-cookies"

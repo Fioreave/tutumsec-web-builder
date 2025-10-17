@@ -20,7 +20,7 @@ const IndustrialOt = () => {
           <div
             className="absolute inset-0 -z-10 bg-cover bg-center bg-no-repeat"
             style={{
-              backgroundImage: "url('/uploads/background/background2.png')",
+              backgroundImage: "url('/uploads/background/background2.svg')",
             }}
           />
           <div className="absolute inset-0 bg-black/50 -z-10" />
@@ -47,9 +47,9 @@ const IndustrialOt = () => {
               <div className="relative">
                 <div>
                   <img
-                    src="/uploads/imgs/ciberseguridad.png" // ← cambia la ruta
+                    src="/uploads/imgs/ciberseguridad.svg"
                     alt="Riesgos cloud y cadena de suministro"
-                    className="h-full w-full object-cover"
+                    className="h-[500px] w-[500px] object-cover"
                   />
                 </div>
               </div>

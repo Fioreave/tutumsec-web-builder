@@ -26,7 +26,7 @@ declare global {
 }
 
 const API_URL = "https://api.tutumsec.io/contact";
-//const RECAPTCHA_SITE_KEY = "6LfTSNIrAAAAACUlwWFW7FR2V2XpodcvXgpZznmz";
+const RECAPTCHA_SITE_KEY = "6LfTSNIrAAAAACUlwWFW7FR2V2XpodcvXgpZznmz";
 const POLICY_URL = "/politica-de-privacidad";
 
 /** Sedes */

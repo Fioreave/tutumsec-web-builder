@@ -1,0 +1,57 @@
+{
+  "seo.title": "NIS2 Audit & Compliance for companies | TutumSec",
+  "seo.description": "NIS2 gap analysis + technical audit and remediation plan. Evidence for audits and supply chain requirements.",
+
+  "schema.name": "NIS2 Audit & Compliance",
+  "schema.description": "Deep pentesting + NIS2 gap analysis: the fastest, safest path to full compliance.",
+
+  "hero.title": "Technical Audit & NIS2 Compliance",
+  "hero.subtitle": "Deep pentesting + NIS2 gap analysis: the fastest and safest path to full compliance.",
+  "hero.cta": "Book your free consultation →",
+  "hero.secondaryCta": "Download the “15 Essential NIS2 Controls” Checklist",
+
+  "why.heading": "Why choose us?",
+  "why.cards.0.title": "Offensive pentesting",
+  "why.cards.0.desc": "We simulate multi-vector attacks across Cloud, M365, VPN, OT/ICS and Wi-Fi to find weaknesses before attackers do.",
+  "why.cards.1.title": "NIS2 & ISO 27001 Gap Analysis",
+  "why.cards.1.desc": "We map controls, policies and evidence; we highlight priorities and quick wins.",
+  "why.cards.2.title": "Predictable, scalable cost",
+  "why.cards.2.desc": "Modular subscription: pay only for the assets and services you truly need.",
+  "why.cards.3.title": "Ongoing validation & follow-up",
+  "why.cards.3.desc": "Quarterly re-tests, maturity KPIs and support during external audits.",
+
+  "process.heading": "A clear methodology,",
+  "process.subheading": "executive and results-driven",
+  "process.steps.0.title": "Initial diagnosis",
+  "process.steps.0.desc": "Technical audit, pentesting and NIS2/ISO gap analysis.",
+  "process.steps.1.title": "Strategic roadmap",
+  "process.steps.1.desc": "12–36 month plan with priorities and ROI.",
+  "process.steps.2.title": "Implementation & governance",
+  "process.steps.2.desc": "Tailored policies, processes and tools.",
+  "process.steps.3.title": "Continuous follow-up",
+  "process.steps.3.desc": "Roll-out, KPIs and quarterly review with your vCISO.",
+
+  "how.heading": "How we do it",
+  "highlights.0": "Advanced pentesting with executive report ≤ 15 days",
+  "highlights.1": "Frictionless NIS2 / ISO 27001 compliance",
+  "highlights.2": "−30% critical vulnerabilities in 6 months",
+  "highlights.3": "Real-time risk dashboard for your executive committee",
+
+  "pain.heading1": "Technical audit or compliance?",
+  "pain.heading2": "You need both — fast",
+  "pain.body": "Forget standalone tools: you need offensive auditing to find entry points and a compliance plan that turns NIS2 and ISO 27001 into concrete actions. With TutumSec’s Audit-to-Comply we uncover real gaps (from firewalls to policies), prioritise risk and align controls with business so you move from merely “compliant” to truly protected.",
+
+  "faq.heading": "Frequently asked questions",
+  "faq.q1": "What exactly does a NIS2 audit cover?",
+  "faq.a1": "Infrastructure (networks, servers, OT), processes, policies and governance. Includes pentesting and a complete regulatory gap analysis.",
+  "faq.q2": "How long does the initial assessment take?",
+  "faq.a2": "Between 10 and 15 business days, depending on assets and available documentation.",
+  "faq.q3": "Do I need an audit if I already have an IT provider?",
+  "faq.a3": "Your MSP maintains infrastructure; we ensure governance, compliance and executive visibility. Both services are complementary.",
+  "faq.q4": "Does the NIS2 Directive really apply to me?",
+  "faq.a4": "Yes if you operate critical infrastructure, essential services or take part in regulated supply chains.",
+  "faq.q5": "Do I need another security tool to pass NIS2?",
+  "faq.a5": "Not always. We first assess what you already have and only propose what’s essential.",
+
+  "ctaFinal.title": "Do you want to align your security with NIS2 before the deadline?"
+}

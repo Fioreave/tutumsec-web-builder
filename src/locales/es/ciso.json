@@ -1,0 +1,51 @@
+{
+  "hero.title": "Consultoría CISO estratégica que impulsa tu ciberseguridad",
+  "hero.subtitle": "Convertimos el riesgo en ventaja competitiva con un servicio vCISO que reduce la exposición y garantiza el cumplimiento para PYMEs con alta exigencia digital en Barcelona, Girona, Andorra y el resto de España.",
+  "hero.cta": "Reserva tu consultoría gratuita →",
+
+  "benefits.step1": "Logra el cumplimiento NIS2 e ISO 27001 en menos de 90 días",
+  "benefits.step2": "Reduce un 30 % los incidentes críticos en 6 meses",
+  "benefits.step3": "Decide en tiempo real con cuadros de mando ejecutivos",
+
+  "benefits.heading": "Haz crecer tu negocio",
+  "benefits.card1.title": "Visión de negocio",
+  "benefits.card1.desc": "Traducimos ciber-riesgo a impacto financiero para priorizar inversiones.",
+  "benefits.card2.title": "Cumplimiento sin fricciones",
+  "benefits.card2.desc": "Compliance 360° para NIS2, ISO 27001, ENS y RGPD.",
+  "benefits.card3.title": "Respuesta 24/7",
+  "benefits.card3.desc": "Integración con nuestro SOC: detección y contención en < 15 min.",
+  "benefits.card4.title": "Coste optimizado",
+  "benefits.card4.desc": "Modelo as-a-Service: sin cargas sociales ni procesos de selección largos.",
+  "benefits.card5.title": "Escalabilidad flexible",
+  "benefits.card5.desc": "Añade MDR, formación o Red Team a medida que creces.",
+
+  "problems.heading": "Da un paso adelante",
+  "problems.lead": "Cada día se detectan más de 1.200 incidentes contra empresas españolas (INCIBE). La mayoría de PYMEs reacciona después del ataque. Con TutumSec te adelantas: evaluamos, priorizamos y ejecutamos una estrategia alineada al negocio.",
+
+  "process.heading": "Nuestra metodología",
+  "process.subheading": "Ejecutiva y orientada a resultados.",
+  "process.step1.title": "Diagnóstico inicial",
+  "process.step1.desc": "Auditoría técnica, pentesting y análisis de brechas NIS2/ISO.",
+  "process.step2.title": "Roadmap estratégico",
+  "process.step2.desc": "Plan de 12–36 meses con prioridades y ROI.",
+  "process.step3.title": "Implantación y gobernanza",
+  "process.step3.desc": "Políticas, procesos y herramientas personalizadas.",
+  "process.step4.title": "Seguimiento continuo",
+  "process.step4.desc": "Despliegue, KPIs y revisión trimestral con tu vCISO.",
+
+  "cta.title": "Protege tu empresa HOY",
+  "cta.subtitle": "Descubre los quick-wins para este mes.",
+  "cta.footnote": "* Primera consulta de 30 min gratuita.",
+
+  "faq.heading": "Preguntas frecuentes",
+  "faq.q1": "¿TutumSec cubre toda España?",
+  "faq.a1": "Sí. Operamos desde Barcelona, Girona y Andorra y damos cobertura nacional.",
+  "faq.q2": "¿Cuánto dura una auditoría completa?",
+  "faq.a2": "Entre 2 y 4 semanas según el alcance.",
+  "faq.q3": "¿Puedo contratar un único servicio (p. ej., auditoría)?",
+  "faq.a3": "Sí. Servicios modulares y escalables: pagas solo lo que necesitas.",
+  "faq.q4": "¿Debo cambiar mi infraestructura?",
+  "faq.a4": "No siempre; priorizamos quick-wins y aprovechamos tus inversiones actuales.",
+  "faq.q5": "¿Cómo cumplo NIS2 antes del plazo?",
+  "faq.a5": "Con la hoja de ruta TutumSec Compliance 360."
+}

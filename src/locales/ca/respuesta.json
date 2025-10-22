@@ -1,0 +1,58 @@
+{
+  "seo.title": "Resposta a incidents de ciberseguretat | TutumSec",
+  "seo.description": "Acció ràpida i clara per contenir, recuperar i aprendre de l’incident. Canal directe, coordinació executiva i suport legal. Barcelona, Girona, Catalunya i Andorra.",
+
+  "hero.title.line1": "Resposta a incidents, sense soroll",
+  "hero.title.line2": "i amb mètode",
+  "hero.subtitle": "Canal directe, contenció ràpida i acompanyament fins al tancament",
+  "hero.ctaHelp.label": "Necessito ajuda ara",
+  "hero.ctaHelp.href": "/ca/contacte",
+  "hero.ctaTalk.label": "Parlar amb un expert",
+  "hero.ctaTalk.href": "/ca/contacte",
+  "hero.note": "Detecció 24x7 via SOC/MDR; la resta de serveis es gestionen amb prioritat alta en horari laboral.",
+
+  "pain.title": "Quan passa alguna cosa, calen decisions, no alarmes",
+  "pain.text": "Obrim un canal de comunicació immediat, avaluem l’abast real i prioritzem accions per contenir ràpid, recuperar amb criteri i documentar l’essencial. Sense argot innecessari: què passa, què fem i per què.",
+
+  "steps.title": "Què farem per tu",
+  "steps.0.title": "Primeres hores",
+  "steps.0.desc": "Canal directe amb analistes sènior (telèfon i missatgeria segura).\nContenció inicial i visibilitat ràpida sobre equips i comptes afectats.\nRecomanació d’activar un EDR compatible (p. ex., Microsoft Defender, Bitdefender, Sophos) per accelerar la investigació.",
+  "steps.1.title": "Primer dia",
+  "steps.1.desc": "Aïllament on calgui i restauració segura quan sigui possible.\nCoordinació amb el teu equip (TI/direcció) i—si ho demanes—acompanyament executiu tipus vCISO.",
+  "steps.2.title": "Dies següents",
+  "steps.2.desc": "Anàlisi tècnica i cronologia de l’incident (forense segons definició/priorització del cas).\nRecomanacions prioritzades pel risc i suport en avisos regulatoris si s’escau.",
+
+  "cta.proposal.label": "Sol·licitar proposta personalitzada",
+  "cta.proposal.href": "/contacte",
+
+  "cogestion.title": "Cogestió real i govern actiu",
+  "cogestion.0": "Canal directe i regles clares des de l’inici.",
+  "cogestion.1": "Decisions cofirmades amb tu (res de «caixa negra»).",
+  "cogestion.2": "Assessoria legal coordinada per a la custòdia de proves i notificacions quan calgui.",
+  "cogestion.3": "Tancament amb lliçons apreses i full de ruta de millora.",
+  "cogestion.4": "Informe tècnic amb evidències.",
+  "cogestion.5": "Reunió de tancament i pla de millora alineat amb el negoci.",
+
+  "where.title": "On intervenim?",
+  "where.text": "Barcelona, Girona, resta de Catalunya i Andorra. Suport remot a nivell estatal.",
+
+  "deliverables.title.line1": "Lliurables pensats",
+  "deliverables.title.line2": "per a direcció i TI",
+  "deliverables.0": "Resum executiu en 1 pàgina: impacte, decisions, pròximes passes.",
+  "deliverables.1": "Informe tècnic amb evidències.",
+  "deliverables.2": "Reunió de tancament i pla de millora alineat amb el negoci.",
+
+  "faq.title": "Preguntes freqüents",
+  "faq.0.q": "Treballeu casos de ransomware?",
+  "faq.0.a": "Sí, amb una posició clara: no negociem amb atacants. Prioritzem contenció i recuperació i guiem la notificació a les autoritats competents quan calgui. Tot coordinat amb el teu equip i l’assessoria legal.",
+  "faq.1.q": "Oferiu servei de forense digital (DFIR)?",
+  "faq.1.a": "Sí. Equip forense extern especialitzat (amb pressupost i abast definits) per a recollida de proves amb cadena de custòdia, anàlisi tècnica i documentació vàlida per a auditories o procediments legals.",
+  "faq.2.q": "Com s’inicia un cas urgent?",
+  "faq.2.a": "Molt simple: obrim un canal directe (telèfon i missatgeria segura), confirmem abast i prioritats i comencem a contenir. T’indiquem els següents passos i la documentació mínima necessària.",
+  "faq.3.q": "Doneu suport a la comunicació i notificacions regulatòries?",
+  "faq.3.a": "Sí. Acompanyem en la preparació d’avisos a autoritats (p. ex., NIS2/APD) i comunicacions internes/externes, coordinats amb assessoria legal i, si cal, amb el teu equip de comunicació.",
+  "faq.4.q": "Podeu treballar amb la meva ciberassegurança?",
+  "faq.4.a": "Sí. Coordinen requeriments (contactes, informes, evidències) per agilitzar autoritzacions i evitar friccions durant la gestió de l’incident.",
+
+  "cta.title": "Aturem les amenaces abans que aturin el teu negoci"
+}

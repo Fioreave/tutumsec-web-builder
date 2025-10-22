@@ -1,0 +1,51 @@
+{
+  "hero.title": "Consultoria CISO estratègica que impulsa la teva ciberseguretat",
+  "hero.subtitle": "Convertim el risc en avantatge competitiu amb un servei vCISO que redueix l’exposició i garanteix el compliment per a PIMES amb alta exigència digital a Barcelona, Girona, Andorra i arreu d’Espanya.",
+  "hero.cta": "Reserva la teva consultoria gratuïta →",
+
+  "benefits.step1": "Aconsegueix el compliment NIS2 i ISO 27001 en menys de 90 dies",
+  "benefits.step2": "Redueix un 30 % els incidents crítics en 6 mesos",
+  "benefits.step3": "Decideix en temps real amb quadres de comandament executius",
+
+  "benefits.heading": "Fes créixer el teu negoci",
+  "benefits.card1.title": "Visió de negoci",
+  "benefits.card1.desc": "Traduïm el ciber-risc a impacte financer per prioritzar inversions.",
+  "benefits.card2.title": "Compliment sense friccions",
+  "benefits.card2.desc": "Compliance 360° per a NIS2, ISO 27001, ENS i RGPD.",
+  "benefits.card3.title": "Resposta 24/7",
+  "benefits.card3.desc": "Integració amb el nostre SOC: detecció i contenció en < 15 min.",
+  "benefits.card4.title": "Cost optimitzat",
+  "benefits.card4.desc": "Model as-a-Service: sense càrregues salarials ni processos d’alta llargs.",
+  "benefits.card5.title": "Escalabilitat flexible",
+  "benefits.card5.desc": "Afegeix mòduls MDR, formació o Red Team a mesura que creixes.",
+
+  "problems.heading": "Fes un pas endavant",
+  "problems.lead": "Cada dia es detecten més de 1.200 incidents contra empreses espanyoles (INCIBE). La majoria de PIMES reaccionen després de l’atac. Amb TutumSec t’avances: avaluem, prioritzem i executem una estratègia alineada amb el negoci.",
+
+  "process.heading": "La nostra metodologia",
+  "process.subheading": "Executiva i orientada a resultats.",
+  "process.step1.title": "Diagnosi inicial",
+  "process.step1.desc": "Auditoria tècnica, pentesting i anàlisi de bretxes NIS2/ISO.",
+  "process.step2.title": "Full de ruta estratègic",
+  "process.step2.desc": "Pla de 12–36 mesos amb prioritats i ROI.",
+  "process.step3.title": "Implantació i governança",
+  "process.step3.desc": "Polítiques, processos i eines personalitzades.",
+  "process.step4.title": "Seguiment continu",
+  "process.step4.desc": "Desplegament, KPIs i revisió trimestral amb el teu vCISO.",
+
+  "cta.title": "Protegeix la teva empresa AVUI",
+  "cta.subtitle": "Descobreix els quick-wins per a aquest mes.",
+  "cta.footnote": "* Primera consulta de 30 min gratuïta.",
+
+  "faq.heading": "Preguntes freqüents",
+  "faq.q1": "TutumSec cobreix tot l’Estat?",
+  "faq.a1": "Sí. Operem des de Barcelona, Girona i Andorra amb cobertura estatal.",
+  "faq.q2": "Quant dura una auditoria completa?",
+  "faq.a2": "De 2 a 4 setmanes segons l’abast.",
+  "faq.q3": "Puc contractar només un servei (p. ex., auditoria)?",
+  "faq.a3": "Sí. Serveis modulars i escalables: pagues només el que necessites.",
+  "faq.q4": "He de canviar la meva infraestructura?",
+  "faq.a4": "No sempre; prioritzem quick-wins i aprofitem les inversions actuals.",
+  "faq.q5": "Com puc complir NIS2 abans del termini?",
+  "faq.a5": "Amb el full de ruta TutumSec Compliance 360."
+}

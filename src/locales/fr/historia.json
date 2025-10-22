@@ -1,0 +1,58 @@
+{
+  "seo.title": "Histoire de TutumSec | De l’expérience à la clarté",
+  "seo.description": "TutumSec est né comme spin-off premium du groupe BDR. Nous transformons près de trois décennies d’expérience en une sécurité claire et utile : vCISO, audits, conformité, pentests, SOC 24/7 et formation, avec un accompagnement de proximité.",
+  "seo.canonical": "https://tutumsec.io/fr/a-propos/histoire/",
+
+  "hero.title": "Histoire de TutumSec",
+  "hero.subtitle": "TutumSec naît en tant que spin-off premium de BDR Group, avec un objectif simple : transformer près de trois décennies dans l’IT et le logiciel en services de cybersécurité spécialisés, compréhensibles d’emblée et orientés résultats.",
+
+  "inherit.title": "Ce que nous avons hérité",
+  "inherit.steps.0": "Expérience et savoir-faire accumulés.",
+  "inherit.steps.1": "Infrastructures et processus éprouvés.",
+  "inherit.steps.2": "Équipe senior de référence quand nécessaire.",
+
+  "brandValue.title": "Notre apport en tant que marque",
+  "brandValue.items.0": "Approche premium, claire et orientée business.",
+  "brandValue.items.1": "Équipe spécialisée en sécurité.",
+  "brandValue.items.2": "Proximité et accompagnement : responsables dédiés.",
+  "brandValue.items.3": "Résultats mesurables et livrables simples pour la direction.",
+
+  "today.title": "Aujourd’hui",
+  "today.subtitle": "Nous poursuivons notre croissance avec des entreprises qui valorisent la clarté, la proximité et des résultats mesurables. Notre histoire continue dans chaque projet qui protège mieux l’activité sans la freiner.",
+
+  "services.title": "Nos services",
+  "services.items.0.label": "vCISO / Direction de la sécurité.",
+  "services.items.0.href": "/fr/services/consultance-ciso",
+  "services.items.1.label": "Audit & Conformité",
+  "services.items.1.href": "/fr/services/audit-conformite-nis2",
+  "services.items.2.label": "Pentest & Évaluation technique.",
+  "services.items.2.href": "/fr/services/pentest",
+  "services.items.3.label": "Transformation digitale stratégique.",
+  "services.items.3.href": "/fr/services/transformation-digitale-strategique",
+  "services.items.4.label": "Bureau de sécurité / OSI.",
+  "services.items.4.href": "/fr/services/bureau-securite-information-nis2",
+  "services.items.5.label": "MDR / SOC 24/7.",
+  "services.items.5.href": "/fr/produits/detection-24x7",
+  "services.items.6.label": "Formation & Sensibilisation.",
+  "services.items.6.href": "/fr/services/formation-sensibilisation",
+
+  "locations.title": "Nos sites",
+  "locations.mapTitlePrefix": "Carte",
+  "locations.items.0.name": "Andorre",
+  "locations.items.0.address1": "Passeig de l'Arnaldaeta de Caboet, 11, 2n 2a",
+  "locations.items.0.address2": "AD700 Escaldes Engordany",
+  "locations.items.0.phone": "+376 862 762",
+  "locations.items.0.mapSrc": "https://www.google.com/maps?q=Passeig%20de%20l'Arnaldaeta%20de%20Caboet%2011%20Escaldes%20Engordany&output=embed",
+  "locations.items.1.name": "Barcelone",
+  "locations.items.1.address1": "Carrer de l'Aprestadora, 12, entlo 1",
+  "locations.items.1.address2": "08902 L'Hospitalet de Llobregat — Barcelone",
+  "locations.items.1.phone": "+34 93 296 48 02",
+  "locations.items.1.mapSrc": "https://www.google.com/maps?q=Carrer%20de%20l'Aprestadora%2012%20L'Hospitalet%20de%20Llobregat&output=embed",
+  "locations.items.2.name": "Gérone",
+  "locations.items.2.address1": "Carrer Pic de Peguera, 11",
+  "locations.items.2.address2": "17003 — Gérone",
+  "locations.items.2.phone": "+34 972 462 999",
+  "locations.items.2.mapSrc": "https://www.google.com/maps?q=Carrer%20Pic%20de%20Peguera%2011%20Girona&output=embed",
+
+  "closing.title": "Une sécurité claire, sans détours et aux résultats mesurables."
+}

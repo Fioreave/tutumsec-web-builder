@@ -1,0 +1,41 @@
+{
+  "hero.title": "Ciberseguridad para salud: pacientes y sistemas siempre disponibles",
+  "hero.subtitle": "Ransomware y filtraciones son la norma; nuestra respuesta: prevención clara y recuperación ensayada",
+
+  "challenge.imgAlt": "Riesgos cloud y cadena de suministro",
+  "challenge.badge": "El reto actual",
+  "challenge.heading": "El sector salud encabeza incidentes significativos en la UE;",
+  "challenge.text": "Ransomware (≈45%) y brechas de datos (≈28%).",
+  "challenge.cta.label": "Conoce cómo lo abordamos",
+  "challenge.cta.href": "#solucion",
+
+  "solution.title": "Nuestra solución",
+  "solution.cards.0.t": "vCISO sanitario",
+  "solution.cards.0.d": "gobierno, riesgos y privacidad.",
+  "solution.cards.0.href": "/descubrimiento-ot",
+  "solution.cards.1.t": "Hardening y segmentación",
+  "solution.cards.1.d": "(IT/OT clínica).",
+  "solution.cards.1.href": "/zonas-y-conductos",
+  "solution.cards.2.t": "Copias + Pruebas",
+  "solution.cards.2.d": "Copias inmutables + pruebas mensuales.",
+  "solution.cards.2.href": "/deteccion-ot",
+  "solution.cards.3.t": "MDR 24×7",
+  "solution.cards.3.d": "Con reglas clínicas y triage por criticidad.",
+  "solution.cards.3.href": "/drp-industrial",
+  "solution.cards.4.t": "Plan de recuperación",
+  "solution.cards.4.d": "por servicios: EMR, laboratorio, imagen, etc.",
+  "solution.cards.4.href": "/gobierno-iec-62443",
+
+  "benefits.title": "Beneficios Inmediatos",
+  "benefits.items.0": "Menos paradas, más disponibilidad de servicios.",
+  "benefits.items.1": "Menos impacto en datos sensibles.",
+  "benefits.items.2": "Evidencias para auditoría y dirección.",
+
+  "cta.banner.title": "¿Quieres asesoramiento personalizado?",
+  "cta.banner.primary.label": "Reserva consultoría gratuita (15’)",
+  "cta.banner.primary.href": "https://calendly.com/ayub-tutumsec/30min",
+  "cta.banner.secondary.label": "Solicita revisión de tus copias.",
+  "cta.banner.secondary.href": "https://calendly.com/ayub-tutumsec/30min",
+
+  "common.explore": "Explorar"
+}

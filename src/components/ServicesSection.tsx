@@ -1,54 +1,49 @@
 import React from "react";
 import { Users, Shield, CheckCircle, Eye, GraduationCap } from "lucide-react";
+import { useTranslations } from "@/i18n/useTranslations";
 
-// Servicios en mosaico (2 filas: 1+2 y 3 iguales) con fondo de imagen
-// Usa <ServicesSection /> y ajusta las rutas del array `images` si es necesario.
 const ServicesSection = () => {
+  const { t } = useTranslations(["home"]);
+
   const services = [
     {
-      title: "vCISO (CISO as a Service)",
-      benefit:
-        "Gobernanza estratégica, cuadros de mando, control presupuestario y decisiones basadas en datos.",
+      title: t("services.card1.title"),
+      benefit: t("services.card1.benefit"),
       icon: Shield,
       href: "/es/servicios/consultoria-ciso",
     },
     {
-      title:
-        "Consultoría estratégica en Ciberseguridad y transformación digital",
-      benefit: "Diagnóstico integral + roadmap con quick-wins.",
+      title: t("services.card2.title"),
+      benefit: t("services.card2.benefit"),
       icon: Users,
       href: "/es/servicios/transformacion-digital-estrategica",
     },
     {
-      title: "Auditoría Técnica + Compliance (NIS2, ENS, ISO 27001)",
-      benefit:
-        "Evaluamos tu estado real y definimos un plan de mejora. Evita sanciones y fortalece tu reputación. Pentesting para la visibilidad real de riesgos IT-OT.",
+      title: t("services.card3.title"),
+      benefit: t("services.card3.benefit"),
       icon: CheckCircle,
       href: "/es/servicios/auditoria-compliance-nis2",
     },
     {
-      title: "SOC / MDR 24×7",
-      benefit:
-        "Detección y respuesta en tiempo real con SLA ≤ 15 minutos. Cobertura total sin ampliar plantilla.",
+      title: t("services.card4.title"),
+      benefit: t("services.card4.benefit"),
       icon: Eye,
       href: "/es/servicios/formacion-concienciacion",
     },
     {
-      title: "Oficina Técnica",
-      benefit: "Oficina de Seguridad de la Información (OSI) para cumplir NIS2",
+      title: t("services.card5.title"),
+      benefit: t("services.card5.benefit"),
       icon: GraduationCap,
       href: "/es/servicios/oficina-seguridad-informacion-nis2",
     },
   ];
 
-  // Imágenes de fondo; se ciclan si hay más cards que imágenes
   const images = [
     "/uploads/dispersion-05.jpg",
     "/uploads/dispersion-04.jpg",
     "/uploads/dispersion-06.jpg",
     "/uploads/dispersion-07.jpg",
   ];
-
   const getImage = (i: number) => images[i % images.length];
 
   const Card = ({ item, idx, className = "" }) => {
@@ -57,7 +52,7 @@ const ServicesSection = () => {
         <a
           href={item.href}
           className={`relative rounded-2xl overflow-hidden shadow-lg group min-h-[220px] block focus:outline-none focus-visible:ring-2 focus-visible:ring-white/80 ${className}`}
-          aria-label={`Ir a ${item.title}`}
+          aria-label={`${t("services.goto")} ${item.title}`}
         >
           {children}
         </a>
@@ -71,15 +66,11 @@ const ServicesSection = () => {
 
     return (
       <Wrapper>
-        {/* Fondo con imagen */}
         <div
           className="absolute inset-0 bg-center bg-cover"
           style={{ backgroundImage: `url(${getImage(idx)})` }}
         />
-        {/* Overlay para contraste */}
         <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-black/40 group-hover:from-black/80 transition-colors" />
-
-        {/* Contenido */}
         <div className="relative p-8 text-white flex items-start gap-5 h-full">
           <div className="flex-1">
             <h4 className="text-xl font-semibold leading-relaxed mb-2">
@@ -113,17 +104,13 @@ const ServicesSection = () => {
       <div className="max-w-6xl mx-auto">
         <div className="text-left mb-10">
           <h3 className="text-4xl lg:text-5xl font-bold text-gray-900 leading-relaxed">
-            Nuestros Servicios{" "}
+            {t("services.heading")}
           </h3>
         </div>
-
-        {/* FILA 1: 2 columnas asimétricas (1 col y 2 cols) */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6 items-stretch">
           <Card item={services[0]} idx={0} className="md:col-span-1" />
           <Card item={services[1]} idx={1} className="md:col-span-2" />
         </div>
-
-        {/* FILA 2: 3 columnas iguales */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-stretch">
           <Card item={services[2]} idx={2} />
           <Card item={services[3]} idx={3} />

@@ -1,0 +1,43 @@
+{
+  "hero.title": "Ciberseguridad industrial: producción sin paradas",
+  "hero.subtitle": "Aplicamos IEC 62443 con enfoque práctico: priorizamos seguridad de personas y continuidad de planta.",
+  "hero.bgAlt": "Fondo abstracto industrial",
+
+  "challenge.imgAlt": "Riesgos cloud y cadena de suministro",
+  "challenge.badge": "El reto actual",
+  "challenge.heading": "Configuración cloud, cadena de suministro, APIs y datos multi-tenant",
+  "challenge.text": "Vectores que frenan ventas y compliance si no se gobiernan. (Síntesis basada en ENISA TL 2024).",
+  "challenge.cta.label": "Conoce cómo lo abordamos",
+  "challenge.cta.href": "#solucion",
+
+  "solution.title": "Nuestra solución",
+  "solution.subtitle": "Enfoque integral para reducir riesgo OT y mantener la producción.",
+  "solution.cards.0.t": "Descubrimiento e inventario OT",
+  "solution.cards.0.d": "Identificación automática de activos y redes industriales.",
+  "solution.cards.0.href": "/descubrimiento-ot",
+  "solution.cards.1.t": "Zonas y conductos",
+  "solution.cards.1.d": "Endurecimiento y parches en paradas planificadas.",
+  "solution.cards.1.href": "/zonas-y-conductos",
+  "solution.cards.2.t": "Detección en red industrial",
+  "solution.cards.2.d": "Casos MITRE ATT&CK for ICS para supervisión avanzada.",
+  "solution.cards.2.href": "/deteccion-ot",
+  "solution.cards.3.t": "DRP y restauración",
+  "solution.cards.3.d": "Pruebas de recuperación guiadas por seguridad/producción.",
+  "solution.cards.3.href": "/drp-industrial",
+  "solution.cards.4.t": "Gobierno IEC 62443",
+  "solution.cards.4.d": "Programa de gobierno y formación a operaciones.",
+  "solution.cards.4.href": "/gobierno-iec-62443",
+
+  "benefits.title": "Beneficios inmediatos",
+  "benefits.items.0": "Menos superficie de ataque en planta.",
+  "benefits.items.1": "Respuesta más rápida ante anomalías.",
+  "benefits.items.2": "Paradas minimizadas y recuperación priorizada.",
+
+  "cta.banner.title": "¿Quieres asesoramiento personalizado?",
+  "cta.banner.primary.label": "Reserva consultoría gratuita (15’)",
+  "cta.banner.primary.href": "https://calendly.com/ayub-tutumsec/30min",
+  "cta.banner.secondary.label": "Solicita evaluación OT (30’)",
+  "cta.banner.secondary.href": "https://calendly.com/ayub-tutumsec/30min",
+
+  "common.explore": "Explorar"
+}

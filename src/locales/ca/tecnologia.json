@@ -1,0 +1,45 @@
+{
+  "seo.title": "Ciberseguretat per a SaaS | TutumSec",
+  "seo.description": "Confiança dels clients i velocitat d’entrega. Roadmap ISO 27001/SOC 2, hardening cloud, seguretat de producte i continuïtat.",
+  "seo.canonical": "https://tutumsec.com/ca/sectors/tecnologia-saas",
+
+  "hero.title": "Ciberseguretat per a SaaS: confiança de clients i velocitat d’entrega",
+  "hero.subtitle": "Menys incidents i menys fricció comercial: controls que habiliten vendes i redueixen riscos en multi-tenant i CI/CD.",
+
+  "challenge.badge": "El repte actual",
+  "challenge.heading": "Configuració cloud, cadena de subministrament, APIs i dades multi-tenant:",
+  "challenge.text": "Vectors que frenen les vendes i el compliment si no es governen. (Síntesi basada en ENISA TL 2024).",
+  "challenge.imgAlt": "Riscos de seguretat en entorns cloud i cadenes de subministrament",
+  "challenge.cta.label": "Descobreix com ho abordem",
+  "challenge.cta.href": "#solucion",
+
+  "solution.title": "La nostra solució",
+  "solution.cards.0.t": "vCISO / roadmap ISO 27001",
+  "solution.cards.0.d": "I (si s’escau) SOC 2 per a mercats internacionals.",
+  "solution.cards.0.href": "/descubrimiento-ot",
+  "solution.cards.1.t": "Arquitectura i hardening cloud",
+  "solution.cards.1.d": "(identitats, xarxes, xifrat).",
+  "solution.cards.1.href": "/zonas-y-conductos",
+  "solution.cards.2.t": "Seguretat de producte",
+  "solution.cards.2.d": "SDLC, SAST/DAST, pentest web/mòbil/APIs.",
+  "solution.cards.2.href": "/deteccion-ot",
+  "solution.cards.3.t": "MDR cloud",
+  "solution.cards.3.d": "Amb casos d’ús d’identitat i anomalies.",
+  "solution.cards.3.href": "/drp-industrial",
+  "solution.cards.4.t": "Plans de continuïtat",
+  "solution.cards.4.d": "I proves de restauració al cloud.",
+  "solution.cards.4.href": "/gobierno-iec-62443",
+
+  "benefits.title": "Beneficis immediats",
+  "benefits.items.0": "Accelera les vendes responent qüestionaris de seguretat.",
+  "benefits.items.1": "Redueix bretxes en pipelines i desplegaments.",
+  "benefits.items.2": "Evidències per a auditories i clients.",
+
+  "cta.banner.title": "Vols assessorament personalitzat?",
+  "cta.banner.primary.label": "Reserva consultoria gratuïta (15’)",
+  "cta.banner.primary.href": "https://calendly.com/ayub-tutumsec/30min",
+  "cta.banner.secondary.label": "Sol·licita avaluació ISO 27001",
+  "cta.banner.secondary.href": "https://calendly.com/ayub-tutumsec/30min",
+
+  "common.explore": "Explorar"
+}

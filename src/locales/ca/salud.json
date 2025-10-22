@@ -1,0 +1,41 @@
+{
+  "hero.title": "Ciberseguretat per a salut: pacients i sistemes sempre disponibles",
+  "hero.subtitle": "El ransomware i les bretxes de dades són la norma; la nostra resposta: prevenció clara i recuperació assajada",
+
+  "challenge.imgAlt": "Riscos cloud i cadena de subministrament",
+  "challenge.badge": "El repte actual",
+  "challenge.heading": "El sector salut encapçala incidents significatius a la UE;",
+  "challenge.text": "Ransomware (≈45%) i bretxes de dades (≈28%).",
+  "challenge.cta.label": "Descobreix com ho abordem",
+  "challenge.cta.href": "#solucion",
+
+  "solution.title": "La nostra solució",
+  "solution.cards.0.t": "vCISO sanitari",
+  "solution.cards.0.d": "govern, riscos i privacitat.",
+  "solution.cards.0.href": "/descubrimiento-ot",
+  "solution.cards.1.t": "Enduriment i segmentació",
+  "solution.cards.1.d": "(IT/OT clínica).",
+  "solution.cards.1.href": "/zonas-y-conductos",
+  "solution.cards.2.t": "Còpies + proves",
+  "solution.cards.2.d": "Còpies immutables + proves mensuals.",
+  "solution.cards.2.href": "/deteccion-ot",
+  "solution.cards.3.t": "MDR 24×7",
+  "solution.cards.3.d": "Amb regles clíniques i triatge per criticitat.",
+  "solution.cards.3.href": "/drp-industrial",
+  "solution.cards.4.t": "Pla de recuperació",
+  "solution.cards.4.d": "per serveis: HCE, laboratori, imatge, etc.",
+  "solution.cards.4.href": "/gobierno-iec-62443",
+
+  "benefits.title": "Beneficis immediats",
+  "benefits.items.0": "Menys aturades, més disponibilitat de serveis.",
+  "benefits.items.1": "Menys impacte en dades sensibles.",
+  "benefits.items.2": "Evidències per a auditoria i direcció.",
+
+  "cta.banner.title": "Vols assessorament personalitzat?",
+  "cta.banner.primary.label": "Reserva consultoria gratuïta (15’)",
+  "cta.banner.primary.href": "https://calendly.com/ayub-tutumsec/30min",
+  "cta.banner.secondary.label": "Sol·licita revisió de les teves còpies.",
+  "cta.banner.secondary.href": "https://calendly.com/ayub-tutumsec/30min",
+
+  "common.explore": "Explorar"
+}

@@ -1,0 +1,58 @@
+{
+  "seo.title": "Història de TutumSec | De l’experiència a la claredat",
+  "seo.description": "TutumSec neix com a spin-off premium de BDR Group. Convertim gairebé tres dècades d’experiència en seguretat clara i útil: vCISO, auditories, compliance, pentesting, SOC 24/7 i formació, amb tracte proper.",
+  "seo.canonical": "https://tutumsec.io/ca/sobre-nosaltres/historia/",
+
+  "hero.title": "Història de TutumSec",
+  "hero.subtitle": "TutumSec neix com a spin-off premium de BDR Group amb un objectiu senzill: transformar gairebé tres dècades de treball en TIC i programari en serveis especialitzats de ciberseguretat que s’entenen a la primera i aporten resultats.",
+
+  "inherit.title": "Allò que heretem",
+  "inherit.steps.0": "Experiència i know-how acumulat.",
+  "inherit.steps.1": "Infraestructura i processos contrastats.",
+  "inherit.steps.2": "Equip sènior de referència quan cal.",
+
+  "brandValue.title": "El que aportem com a marca pròpia",
+  "brandValue.items.0": "Enfoc premium i clar, orientat al negoci.",
+  "brandValue.items.1": "Equip especialitzat en seguretat.",
+  "brandValue.items.2": "Proximitat i acompanyament: responsables assignats.",
+  "brandValue.items.3": "Resultats mesurables i lliurables senzills per a direcció.",
+
+  "today.title": "Avui",
+  "today.subtitle": "Continuem creixent amb empreses que valoren la claredat, la proximitat i els resultats mesurables. La nostra història segueix en cada projecte que ajuda un negoci a estar millor protegit sense frenar l’activitat.",
+
+  "services.title": "Els nostres serveis",
+  "services.items.0.label": "vCISO / Direcció de seguretat.",
+  "services.items.0.href": "/serveis/consultoria-ciso",
+  "services.items.1.label": "Auditoria & Compliance",
+  "services.items.1.href": "/serveis/auditoria-compliance-nis2",
+  "services.items.2.label": "Pentesting & Avaluació tècnica.",
+  "services.items.2.href": "/serveis/pentesting",
+  "services.items.3.label": "Transformació digital estratègica.",
+  "services.items.3.href": "/serveis/transformacio-digital-estrategica",
+  "services.items.4.label": "Oficina Tècnica / OSI.",
+  "services.items.4.href": "/serveis/oficina-seguretat-informacio-nis2",
+  "services.items.5.label": "MDR / SOC 24/7.",
+  "services.items.5.href": "/productes/deteccio-24x7",
+  "services.items.6.label": "Formació & Sensibilització.",
+  "services.items.6.href": "/serveis/formacio-sensibilitzacio",
+
+  "locations.title": "Les nostres seus",
+  "locations.mapTitlePrefix": "Mapa",
+  "locations.items.0.name": "Andorra",
+  "locations.items.0.address1": "Passeig de l'Arnaldaeta de Caboet, 11, 2n 2a",
+  "locations.items.0.address2": "AD700 Escaldes Engordany",
+  "locations.items.0.phone": "+376 862 762",
+  "locations.items.0.mapSrc": "https://www.google.com/maps?q=Passeig%20de%20l'Arnaldaeta%20de%20Caboet%2011%20Escaldes%20Engordany&output=embed",
+  "locations.items.1.name": "Barcelona",
+  "locations.items.1.address1": "Carrer de l'Aprestadora, 12, entl. 1",
+  "locations.items.1.address2": "08902 L'Hospitalet de Llobregat — Barcelona",
+  "locations.items.1.phone": "+34 93 296 48 02",
+  "locations.items.1.mapSrc": "https://www.google.com/maps?q=Carrer%20de%20l'Aprestadora%2012%20L'Hospitalet%20de%20Llobregat&output=embed",
+  "locations.items.2.name": "Girona",
+  "locations.items.2.address1": "Carrer Pic de Peguera, 11",
+  "locations.items.2.address2": "17003 — Girona",
+  "locations.items.2.phone": "+34 972 462 999",
+  "locations.items.2.mapSrc": "https://www.google.com/maps?q=Carrer%20Pic%20de%20Peguera%2011%20Girona&output=embed",
+
+  "closing.title": "Seguretat clara, sense rodejos i amb resultats mesurables."
+}

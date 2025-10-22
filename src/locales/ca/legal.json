@@ -1,0 +1,86 @@
+{
+  "header.title": "TERMES I PRIVACITAT",
+  "header.sub": "I Avís Legal · II Política de Privacitat · III Política de Galetes",
+
+  "toc.title": "Índex",
+  "toc.aviso": "I. Avís Legal",
+  "toc.usuario": "Usuari",
+  "toc.links": "Informació sobre vincles “links”",
+  "toc.modificaciones": "Modificacions del portal",
+  "toc.exencion": "Exempció de responsabilitat",
+  "toc.propiedad": "Propietat intel·lectual",
+  "toc.privacidad": "II. Política de Privacitat",
+  "toc.cookies": "III. Política de Galetes",
+
+  "actions.print": "Imprimir / Desar com a PDF",
+
+  "aviso.title": "I. Avís Legal",
+  "aviso.p1": "La informació següent recull la normativa sobre el tractament de dades personals i la protecció de la intimitat en el sector de les comunicacions electròniques, que es posa en el seu coneixement:",
+  "aviso.p2": "<strong>BDR Informàtica i Comunicacions S.L.U &amp; BDR INFORMATICA Y COMUNICACIONES, SL</strong> [d’ara endavant <strong>BDR</strong>], gestora i responsable del funcionament dels continguts del present portal web, amb domicili a: c/ Baixada del Molí, 20 1-1 – AD500 ANDORRA LA VELLA (ANDORRA), NRT L-707599-R, amb el Registre de Comerç número 920400X &amp; Passeig Zona Franca 169-171, 8è 1a 08038 Barcelona (Espanya) amb el Registre de Comerç número B61678207. Contacte: a l’adreça esmentada o al correu electrònic <a href=\"mailto:hola@tutumsec.io\">hola@tutumsec.io</a>.",
+  "aviso.p3": "El contingut del portal web <a href=\"https://www.tutumsec.io\" target=\"_blank\" rel=\"noreferrer\">www.tutumsec.io</a> constitueix un sistema d’informació sobre els diversos serveis de consultoria que ofereix, amb la finalitat de mantenir contacte amb vostè i enviar-li informació més detallada, segons el que preveu aquest avís legal i la resta de textos legals del present lloc web.",
+
+  "usuario.title": "USUARI",
+  "usuario.p1": "L’ús del present lloc web i els seus continguts li atribueix la condició d’Usuari i implica que ha llegit i accepta, sense cap reserva, totes les disposicions incloses en aquest Avís Legal, en la versió publicada per Tutumsec que estigui vigent en cada moment.",
+  "usuario.p2": "Tutumsec es reserva el dret de modificar, afegir o eliminar parts del present Avís Legal, en qualsevol moment i sense notificació prèvia. Es recomana, per tant, llegir atentament aquest Avís Legal cada vegada que utilitzi la web.",
+
+  "links.title": "INFORMACIÓ SOBRE ELS VINCLES “LINKS”",
+  "links.p1": "Tutumsec no és responsable de les webs de tercers a les quals es pugui accedir mitjançant vincles (“links”), ni de cap altre contingut posat a disposició per tercers. Qualsevol ús d’un vincle o accés a una web no pròpia es considera fet sota el seu propi risc. Tutumsec no garanteix la informació obtinguda a través d’un vincle extern, ni es fa responsable de cap perjudici derivat del seu ús.",
+
+  "modificaciones.title": "MODIFICACIONS DEL PORTAL WEB",
+  "modificaciones.p1": "La informació i els serveis continguts al portal web poden contenir errors tipogràfics. Tutumsec pot introduir millores i/o canvis en qualsevol moment.",
+
+  "exencion.title": "EXEMPCIÓ DE RESPONSABILITAT PER ERRORS TÈCNICS O DE CONTINGUT",
+  "exencion.p1": "Tutumsec declina tota responsabilitat en cas d’interrupcions o mal funcionament dels serveis o continguts oferts a Internet, sigui quina sigui la causa. Tampoc serà responsable de caigudes de xarxa, talls elèctrics o altres incidències que puguin causar pèrdues comercials.",
+  "exencion.p2": "Tutumsec no garanteix que els serveis o continguts siguin ininterromputs o lliures d’errors. No obstant això, realitza els seus millors esforços per evitar qualsevol incidència. Es recomana contrastar la informació amb altres fonts.",
+
+  "propiedad.title": "POLÍTICA DE PROPIETAT INTEL·LECTUAL I INDUSTRIAL",
+  "propiedad.p1": "El codi font, els dissenys gràfics, imatges, textos i altres continguts de <a href=\"https://www.tutumsec.io\" rel=\"noreferrer\">www.tutumsec.io</a> estan protegits per la legislació andorrana. No es permet la reproducció total o parcial ni la seva difusió sense autorització escrita.",
+  "propiedad.p2": "L’usuari només pot utilitzar el material del lloc web per a ús personal i privat, quedant prohibit qualsevol ús comercial.",
+  "propiedad.p3": "Sense autorització expressa de Tutumsec, no està permès l’enllaç a pàgines finals ni qualsevol altra manipulació similar.",
+  "propiedad.p4": "Tutumsec vetllarà pel compliment d’aquestes estipulacions i exercirà les accions legals corresponents en cas d’infracció.",
+  "propiedad.p5": "Per a incidències o reclamacions sobre drets de propietat intel·lectual, escrigui a <a href=\"mailto:hola@tutumsec.io\">hola@tutumsec.io</a>.",
+  "propiedad.p6": "Els signes distintius i marques de Tutumsec estan protegits per drets de propietat industrial.",
+
+  "privacidad.title": "II. POLÍTICA DE PRIVACITAT",
+  "privacidad.p1": "L’accés o ús de la pàgina web no implica recollida de dades personals per part de Tutumsec, llevat que s’indiqui el contrari.",
+  "privacidad.p2": "Les dades personals recollides a través dels formularis seran utilitzades per gestionar la relació establerta amb l’usuari i millorar els serveis contractats.",
+  "privacidad.p3": "D’acord amb la normativa andorrana i europea, s’informa que les dades facilitades s’incorporaran a un fitxer propietat de BDR per a la seva gestió.",
+  "privacidad.p4": "Tutumsec ha adoptat mesures tècniques i organitzatives per garantir la seguretat de les dades i evitar-ne l’accés no autoritzat.",
+  "privacidad.p5": "Les dades poden utilitzar-se per a comunicacions professionals relacionades amb serveis de l’empresa. Pot oposar-s’hi en qualsevol moment escrivint a <a href=\"mailto:hola@tutumsec.io\">hola@tutumsec.io</a>.",
+  "privacidad.p6": "Pot exercir els seus drets d’accés, rectificació, cancel·lació, oposició, portabilitat o limitació contactant amb <a href=\"mailto:hola@tutumsec.io\">hola@tutumsec.io</a>.",
+  "privacidad.p7": "Aquests drets són personals i només poden ser exercits pel titular o el seu representant acreditat.",
+  "privacidad.p8": "Tutumsec respondrà a la seva sol·licitud en un termini màxim d’un mes.",
+  "privacidad.p9": "En cas positiu, se li facilitarà la informació sol·licitada en un màxim de 10 dies.",
+  "privacidad.p10": "Les sol·licituds de rectificació o cancel·lació es resoldran en un màxim de 10 dies des de la seva recepció.",
+
+  "otros.title": "Altres encarregats del tractament",
+  "otros.p1": "Si tercers accedeixen a dades, s’establirà un contracte segons l’article 28 del RGPDUE per garantir-ne la confidencialitat.",
+
+  "cambio.title": "Canvi de normativa",
+  "cambio.p1": "Tutumsec es reserva el dret de modificar aquesta política per adaptar-la a canvis legislatius o jurisprudencials. Les modificacions es comunicaran a través del web.",
+
+  "dudas.p1": "Per a qualsevol dubte o consulta, escrigui a <a href=\"mailto:hola@tutumsec.io\">hola@tutumsec.io</a>.",
+
+  "cookiesSec.title": "III. Política de galetes",
+  "cookiesSec.intro": "S’utilitzen per les raons següents:",
+  "cookiesSec.li1": "Garantir el correcte funcionament de les pàgines.",
+  "cookiesSec.li2": "Desar preferències com idioma o mida del text.",
+  "cookiesSec.li3": "Conèixer l’experiència de navegació de l’usuari.",
+  "cookiesSec.li4": "Recollir informació estadística anònima.",
+  "cookiesSec.li5": "Optimitzar la navegació i millorar l’experiència d’usuari.",
+
+  "cookiesSec.typologyTitle": "Tipologia, finalitat i funcionament",
+  "cookiesSec.t1": "<strong>Tècniques:</strong> Necessàries per al funcionament correcte del lloc.",
+  "cookiesSec.t2": "<strong>De rendiment:</strong> Milloren la navegació i el rendiment.",
+  "cookiesSec.t3": "<strong>De publicitat:</strong> Recullen informació sobre anuncis.",
+  "cookiesSec.t4": "<strong>De geolocalització:</strong> Ofereixen continguts segons la ubicació.",
+  "cookiesSec.usedTitle": "Galetes utilitzades",
+  "cookiesSec.usedIntro": "Les galetes es classifiquen segons tres nivells d’intrusivitat:",
+  "cookiesSec.level1": "<strong>Nivell 1:</strong> Necessàries per al servei sol·licitat.",
+  "cookiesSec.level2": "<strong>Nivell 2:</strong> De rendiment anònimes per al manteniment de continguts.",
+  "cookiesSec.level3": "<strong>Nivell 3:</strong> De tercers per seguiment o publicitat.",
+  "cookiesSec.noPersonal": "Tutumsec no utilitza galetes per identificar persones físiques.",
+  "cookiesSec.contactCta": "Contacte: hola@tutumsec.io",
+
+  "footer.rights": "© {{year}} Tutumsec. Tots els drets reservats."
+}

@@ -1,0 +1,43 @@
+{
+  "hero.title": "Ciberseguretat industrial: producció sense aturades",
+  "hero.subtitle": "Apliquem IEC 62443 amb un enfocament pràctic: prioritzem la seguretat de les persones i la continuïtat de planta.",
+  "hero.bgAlt": "Fons abstracte industrial",
+
+  "challenge.imgAlt": "Riscos cloud i cadena de subministrament",
+  "challenge.badge": "El repte actual",
+  "challenge.heading": "Configuració cloud, cadena de subministrament, API i dades multi-tenant",
+  "challenge.text": "Vectors que frenen vendes i compliment si no es governen. (Síntesi basada en ENISA TL 2024).",
+  "challenge.cta.label": "Descobreix com ho abordem",
+  "challenge.cta.href": "#solucion",
+
+  "solution.title": "La nostra solució",
+  "solution.subtitle": "Enfocament integral per reduir el risc OT i mantenir la producció.",
+  "solution.cards.0.t": "Descobriment i inventari OT",
+  "solution.cards.0.d": "Identificació automàtica d’actius i xarxes industrials.",
+  "solution.cards.0.href": "/descubrimiento-ot",
+  "solution.cards.1.t": "Zones i conductes",
+  "solution.cards.1.d": "Enduriment i pegats en aturades planificades.",
+  "solution.cards.1.href": "/zonas-y-conductos",
+  "solution.cards.2.t": "Detecció a la xarxa industrial",
+  "solution.cards.2.d": "Casos MITRE ATT&CK for ICS per a supervisió avançada.",
+  "solution.cards.2.href": "/deteccion-ot",
+  "solution.cards.3.t": "DRP i restauració",
+  "solution.cards.3.d": "Proves de recuperació guiades per seguretat/producció.",
+  "solution.cards.3.href": "/drp-industrial",
+  "solution.cards.4.t": "Govern IEC 62443",
+  "solution.cards.4.d": "Programa de govern i formació a operacions.",
+  "solution.cards.4.href": "/gobierno-iec-62443",
+
+  "benefits.title": "Beneficis immediats",
+  "benefits.items.0": "Menys superfície d’atac a planta.",
+  "benefits.items.1": "Resposta més ràpida davant d’anomalies.",
+  "benefits.items.2": "Aturades minimitzades i recuperació prioritzada.",
+
+  "cta.banner.title": "Vols assessorament personalitzat?",
+  "cta.banner.primary.label": "Reserva consultoria gratuïta (15’)",
+  "cta.banner.primary.href": "https://calendly.com/ayub-tutumsec/30min",
+  "cta.banner.secondary.label": "Sol·licita avaluació OT (30’)",
+  "cta.banner.secondary.href": "https://calendly.com/ayub-tutumsec/30min",
+
+  "common.explore": "Explorar"
+}

@@ -1,21 +1,19 @@
 import React from "react";
 import { Helmet } from "react-helmet-async";
 import Navbar from "../components/Navbar";
-import NewHeroSection from "../components/NewHeroSection";
-import NewProblemsSection from "../components/NewProblemsSection";
-import NewRisksSection from "../components/NewRisksSection";
+import HeroSection from "../components/HeroSection";
+import ProblemsSection from "../components/ProblemsSection";
+import RisksSection from "../components/RisksSection";
 import ServicesSection from "../components/ServicesSection";
-import NewResultsSection from "../components/NewResultsSection";
-import NewProcessSection from "../components/NewProcessSection";
-//import NewSuccessStoriesSection from "../components/NewSuccessStoriesSection";
-import NewFAQSection from "../components/NewFAQSection";
-import NewCTASection from "../components/NewCTASection";
+import ProcessSection from "../components/ProcessSection";
+import FAQSection from "../components/FAQSection";
+import CTASection from "../components/CTASection";
 import Footer from "../components/Footer";
-//import TestimonialsSection from "@/components/TestimonialsSection";
 import BenefitsSection from "@/components/BeneficiosSection";
 import SuccessStoriesSection from "@/components/SuccessStoriesSection";
 import PartnersSection from "./PartnersSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
+import ResultsSection from "../components/ResultsSection";
 
 const Index = () => {
   return (
@@ -39,16 +37,16 @@ const Index = () => {
 
       <Navbar />
       <main className="pt-16">
-        <NewHeroSection />
+        <HeroSection />
         <BenefitsSection />
-        <NewProblemsSection />
-        <NewRisksSection />
-        <NewResultsSection />
+        <ProblemsSection />
+        <RisksSection />
+        <ResultsSection />
         <ServicesSection />
-        <NewProcessSection />
+        <ProcessSection />
         <TestimonialsSection />
-        <NewCTASection />
-        <NewFAQSection />
+        <CTASection />
+        <FAQSection />
         <PartnersSection />
       </main>
       <Footer />

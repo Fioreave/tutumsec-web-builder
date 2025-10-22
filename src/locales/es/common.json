@@ -1,0 +1,78 @@
+{
+  "lang.es": "Español",
+  "lang.ca": "Catalán",
+  "lang.en": "Inglés",
+  "lang.fr": "Francés",
+  "nav.logoAlt": "TutumSec Logo",
+  "nav.menu.services": "Servicios",
+  "nav.menu.products": "Productos",
+  "nav.menu.industries": "Industrias",
+  "nav.menu.resources": "Recursos",
+  "nav.menu.about": "Sobre Nosotros",
+  "nav.menu.contact": "Contacto",
+  "nav.cta": "Auditoría Gratuita",
+  "nav.aria.open": "Abrir menú",
+  "nav.aria.close": "Cerrar menú",
+
+  "nav.services.consultoriaCiso": "Consultoría CISO",
+  "nav.services.auditoriaNis2": "Auditoría & Compliance NIS2",
+  "nav.services.transformacionDigital": "Transformación Digital Estratégica",
+  "nav.services.formacion": "Formación y Concienciación",
+  "nav.services.oficinaSeguridad": "Oficina Seguridad Información",
+
+  "nav.products.detect24x7": "Detección 24x7",
+  "nav.products.prevencion": "Prevención",
+  "nav.products.respuestaMenos15": "Respuesta <15'",
+  "nav.products.recuperacion": "Recuperación",
+
+  "nav.industries.finanzas": "Finanzas",
+  "nav.industries.salud": "Salud",
+  "nav.industries.industrialOt": "Industrial OT",
+  "nav.industries.saas": "Tecnología SaaS",
+  "nav.industries.public": "Sector Público",
+  "nav.industries.smb": "Pymes",
+
+  "nav.resources.blog": "Blog",
+
+  "nav.about.history": "Historia",
+  "nav.about.teamValues": "Equipo y Valores",
+  "footer.logoAlt": "Logo de TutumSec",
+  "footer.brandCopy": "La seguridad digital es nuestro hilo conductor. Expertos en ciberseguridad y cumplimiento normativo para empresas que exigen más.",
+  "footer.email": "hola@tutumsec.io",
+  "footer.location": "Barcelona - Girona - Andorra",
+  "footer.linkedinAria": "TutumSec en LinkedIn (se abre en una pestaña nueva)",
+
+  "footer.col.services": "Servicios",
+  "footer.col.products": "Productos",
+  "footer.col.company": "Empresa",
+
+  "footer.links.consultoriaCiso": "Consultoría CISO",
+  "footer.links.auditoriaNis2": "Auditoría & Compliance NIS2",
+  "footer.links.transformacionDigital": "Transformación Digital Estratégica",
+  "footer.links.formacion": "Formación y Concienciación",
+  "footer.links.oficinaSeguridad": "Oficina Seguridad Información",
+
+  "footer.links.deteccion": "Detección 24x7",
+  "footer.links.prevencion": "Prevención",
+  "footer.links.respuesta": "Respuesta <15'",
+  "footer.links.recuperacion": "Recuperación",
+
+  "footer.links.historia": "Historia",
+  "footer.links.equipoValores": "Equipo y Valores",
+  "footer.links.blog": "Blog",
+  "footer.links.contacto": "Contacto",
+
+  "footer.certs.iso27001": "ISO 27001 Certificado",
+  "footer.certs.rgpd": "Cumplimiento RGPD",
+  "footer.certs.soc2": "SOC 2 Tipo II",
+  "footer.certs.cissp": "Equipo Certificado CISSP",
+
+  "footer.rights": "Todos los derechos reservados.",
+  "footer.privacy": "Política de Privacidad",
+  "footer.legal": "Aviso Legal",
+
+  "footer.isoAlt": "ISO 27001 Certificado",
+  "footer.incibeAlt": "INCIBE",
+  "footer.ascicatAlt": "ASCICAT",
+  "footer.agenciacatAlt": "Agència de Ciberseguretat de Catalunya"
+}

@@ -1,0 +1,48 @@
+{
+  "seo.title": "Équipe & valeurs | TutumSec",
+  "seo.description": "Des personnes proches, expertes et claires. Découvrez l’équipe pluridisciplinaire de TutumSec, notre mission, vision et valeurs, et notre manière de transformer la sécurité en résultats mesurables.",
+  "seo.canonical": "https://tutumsec.io/fr/a-propos/equipe-valeurs/",
+
+  "hero.title": "Qui sommes-nous ?",
+  "hero.subtitle": "Des experts accessibles qui parlent clairement, agissent vite et vous accompagnent vraiment. Objectif : comprendre la cybersécurité en minutes et la ressentir en quelques semaines.",
+
+  "team.title": "Notre équipe",
+  "team.experienceNote": "Plus de 10 ans en moyenne, expérience multi-secteurs.",
+  "team.steps.0": "Direction et coordination (vCISO / Bureau de sécurité).",
+  "team.steps.1": "Audit & conformité (NIS2, ISO 27001, ENS, RGPD).",
+  "team.steps.2": "Pentest & évaluation technique.",
+  "team.steps.3": "Opérations managées 24/7 (détection & réponse).",
+  "team.steps.4": "Formation & sensibilisation pour tout le personnel.",
+
+  "workflow.title": "Notre façon de travailler",
+  "workflow.items.0.title": "Diagnostic clair",
+  "workflow.items.0.desc": "Nous évaluons l’exposition et les priorités sans jargon.",
+  "workflow.items.1.title": "Plan actionnable (4–6 semaines)",
+  "workflow.items.1.desc": "Peu de tâches, des responsables et des dates. L’impact d’abord.",
+  "workflow.items.2.title": "Mise en œuvre guidée",
+  "workflow.items.2.desc": "Nous améliorons l’existant et n’ajoutons que l’essentiel.",
+  "workflow.items.3.title": "Formation courte & habitudes",
+  "workflow.items.3.desc": "Messages courts, simulations simples et rappels.",
+  "workflow.items.4.title": "Éléments de preuve pour la direction",
+  "workflow.items.4.desc": "Rapports clairs avec avancement, risques et prochaines étapes.",
+  "workflow.items.5.title": "Revue périodique",
+  "workflow.items.5.desc": "Mensuelle ou trimestrielle pour maintenir et améliorer sans friction.",
+  "workflow.items.6.title": "Proximité & réactivité",
+  "workflow.items.6.desc": "Un responsable dédié qui résout et coordonne.",
+
+  "purpose.title": "Raison d’être",
+  "purpose.subtitle": "Faire que la sécurité serve le business : moins d’arrêts, moins de risques et des décisions claires pour la direction.",
+  "purpose.blocks.0.title": "Mission",
+  "purpose.blocks.0.desc": "Aider les organisations à prévenir et à se rétablir avec des plans simples, des priorités fondées sur l’impact et des preuves compréhensibles par tous.",
+  "purpose.blocks.1.title": "Vision",
+  "purpose.blocks.1.desc": "Être la référence de proximité pour les entreprises cherchant une sécurité claire, mesurable et humaine — sans bureaucratie ni jargon.",
+
+  "values.title": "Nos valeurs",
+  "values.items.0": "Clarté : nous expliquons options et risques en langage simple et laissons les prochaines étapes par écrit.",
+  "values.items.1": "Proximité : un responsable dédié qui connaît votre contexte et répond vite.",
+  "values.items.2": "Excellence utile : livrables courts et actionnables ; nous mettons en œuvre ce que nous proposons.",
+  "values.items.3": "Responsabilité : nous ne payons pas de rançons. Priorité à la reprise, la traçabilité et la communication honnête.",
+  "values.items.4": "Amélioration continue : revues périodiques avec métriques et courte liste d’améliorations.",
+
+  "closing.title": "« Une sécurité claire, sans détour, avec des résultats visibles. »"
+}

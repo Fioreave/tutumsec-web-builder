@@ -1,218 +1,123 @@
 import React from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import Breadcrumbs from "@/components/Breadcrumbs";
 import SEOMetaTags from "@/components/SEOMetaTags";
 import { Button } from "@/components/ui/button";
 import {
   ArrowUpRight,
   CheckCircle,
-  Users,
   Settings,
   BarChart3,
-  Zap,
-  RotateCcw,
-  Monitor,
-  Shield,
-  Globe,
-  Cloud,
-  Cog,
-  Network,
-  Eye,
-  Target,
-  FileText,
-  AlertTriangle,
-  Database,
-  Search,
-  ChevronRight,
-  FileCheck,
   Clock,
 } from "lucide-react";
 import PartnersSection from "../PartnersSection";
 import { Link } from "react-router-dom";
+import { useTranslations } from "@/i18n/useTranslations";
 
-const PrevencionBackup = () => {
-  const breadcrumbItems = [
-    { label: "Productos", href: "/es/productos" },
-    { label: "Prevención Backup" },
+const RespuestaIncidentes: React.FC = () => {
+  const { t } = useTranslations(["respuesta"]);
+
+  const deliverables = [
+    t("deliverables.0"),
+    t("deliverables.1"),
+    t("deliverables.2"),
   ];
 
-  const caract1 = [
-    "Resumen ejecutivo en 1 página (impacto, decisiones, próximos pasos).",
-    "Informe técnico con evidencias.",
-    "Reunión de cierre y plan de mejora alineado a negocio.",
+  const cogestion = [
+    t("cogestion.0"),
+    t("cogestion.1"),
+    t("cogestion.2"),
+    t("cogestion.3"),
+    t("cogestion.4"),
+    t("cogestion.5"),
   ];
 
-  const caract2 = [
-    "Canal directo y reglas claras desde el inicio.",
-    "Decisiones co-firmadas contigo (nada de “caja negra”).",
-    "Asesoría legal coordinada para custodia de evidencias y notificaciones cuando aplique.",
-    "Cierre con lecciones aprendidas y hoja de ruta de mejoras. ",
-    "Informe técnico con evidencias.",
-    "Reunión de cierre y plan de mejora alineado a negocio.",
+  const steps = [
+    { title: t("steps.0.title"), desc: t("steps.0.desc"), icon: Clock },
+    { title: t("steps.1.title"), desc: t("steps.1.desc"), icon: Settings },
+    { title: t("steps.2.title"), desc: t("steps.2.desc"), icon: BarChart3 },
   ];
 
-  const diferencias = [
-    {
-      title: "Hablamos claro y entregamos un plan corto y accionable.",
-    },
-    {
-      title: "Foco en negocio: priorizamos lo que evita paradas y sanciones.",
-    },
-    {
-      title: "Acompañamiento cercano: responsable asignado y revisión mensual.",
-    },
-    {
-      title: "Sin dependencia de marcas: trabajamos con tu tecnología actual.",
-    },
-    {
-      title: "Avances medibles: evidencias y resultados para comité directivo.",
-    },
-  ];
   const faqs = [
-    {
-      question: "¿Trabajáis casos de ransomware?",
-      answer:
-        "Sí, pero con una postura clara: no negociamos con atacantes. Priorizamos contención y recuperación y orientamos la notificación a las autoridades competentes cuando corresponda. Coordinamos todo con tu equipo y con asesoría legal.",
-    },
-    {
-      question: "¿Ofrecéis servicio de forense digital?",
-      answer:
-        "Sí. Contamos con equipo forense externo especializado (bajo presupuesto y alcance definidos) para recogida de evidencias con cadena de custodia, análisis técnico y documentación válida para auditorías o procedimientos legales.",
-    },
-    {
-      question: "¿Cómo se inicia un caso urgente?",
-      answer:
-        "Muy simple: abrimos un canal directo (teléfono y mensajería segura), confirmamos alcance y prioridades y empezamos a contener. Te indicamos los siguientes pasos y la documentación mínima que necesitamos.",
-    },
-    {
-      question: "¿Apoyáis la comunicación y las notificaciones regulatorias?",
-      answer:
-        "Sí. Acompañamos en la preparación de avisos a autoridades (p. ej., NIS2/AEPD) y comunicaciones internas/externas, coordinados con asesoría legal y, si procede, con tu equipo de comunicación.",
-    },
-    {
-      question: "¿Podéis trabajar con mi ciberseguro?",
-      answer:
-        "Sí. Coordinamos requisitos del seguro (contactos, reporting, evidencias) para agilizar autorizaciones y evitar fricciones durante la gestión del incidente.",
-    },
-  ];
-
-  const beneficios = [
-    "Reducción del tiempo de detección de amenazas",
-    "Minimización del impacto de incidentes",
-    "Cumplimiento normativo continuo",
-    "Visibilidad completa de la infraestructura",
-    "Respuesta proactiva ante amenazas",
-    "Tranquilidad operacional",
+    { q: t("faq.0.q"), a: t("faq.0.a") },
+    { q: t("faq.1.q"), a: t("faq.1.a") },
+    { q: t("faq.2.q"), a: t("faq.2.a") },
+    { q: t("faq.3.q"), a: t("faq.3.a") },
+    { q: t("faq.4.q"), a: t("faq.4.a") },
   ];
 
   return (
     <>
-      <SEOMetaTags
-        title="Respuesta a Incidentes de Ciberseguridad | TutumSec"
-        description="Actuamos con rapidez y claridad para contener, recuperar y aprender del incidente. Canal directo, coordinación ejecutiva y soporte legal. Barcelona, Girona, Catalunya y Andorra."
-      />
+      <SEOMetaTags title={t("seo.title")} description={t("seo.description")} />
 
       <Navbar />
       <main className="min-h-screen bg-background">
         <div className="mx-auto">
-          {/* === HERO (full-bleed dentro del container) === */}
+          {/* HERO */}
           <section className="relative isolate overflow-hidden mt-4">
-            {/* Hilo */}
             <img
               src="/uploads/hilo.png"
               alt=""
               aria-hidden
-              className="pointer-events-none select-none absolute left-80 top-12 w-[1200px] w-full opacity-60 mix-blend-screen z-20"
+              className="pointer-events-none select-none absolute left-80 top-12 w-full opacity-60 mix-blend-screen z-20"
             />
 
-            {/* Contenido hero (centrado) */}
-            <div className="relative min-h-[50vh] z-30 px-6 left- py-16 md:py-20 mt-20 mb-20 text-center">
+            <div className="relative min-h-[50vh] z-30 px-6 py-16 md:py-20 mt-20 mb-20 text-center">
               <div className="max-w-5xl mx-auto">
                 <h1 className="text-primary leading-tight mt-12 font-bold mb-4 text-[clamp(32px,5vw,46px)] leading-[1.05]">
-                  Respuesta a incidentes, sin ruido <br /> y con método
+                  {t("hero.title.line1")} <br /> {t("hero.title.line2")}
                 </h1>
-                <h2 className="text-blue/85 mb-6 text-[clamp(18px,2.1vw,20px)] leading-relaxed mb-2">
-                  Canal directo, contención rápida y acompañamiento hasta el
-                  cierre
+                <h2 className="text-blue/85 mb-6 text-[clamp(18px,2.1vw,20px)] leading-relaxed">
+                  {t("hero.subtitle")}
                 </h2>
               </div>
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link
-                  to={"/es/contacto"}
+                  to={t("hero.ctaHelp.href")}
                   className="bg-primary rounded-full text-white text-medium content-center text-center justify-center px-8"
                 >
-                  Necesito ayuda ahora{" "}
+                  {t("hero.ctaHelp.label")}
                 </Link>
                 <Link
-                  to={"/es/contacto"}
+                  to={t("hero.ctaTalk.href")}
                   className="bg-white border py-2 border-primary rounded-full text-primary text-medium content-center text-center justify-center px-8"
                 >
-                  Hablar con un experto{" "}
+                  {t("hero.ctaTalk.label")}
                 </Link>
               </div>
 
               <div className="mt-12 text-center">
-                <p className="text-sm text-gray-500 italic">
-                  Detección 24x7 vía SOC/MDR; el resto de servicios se atienden
-                  con prioridad alta en horario laboral.
-                </p>
+                <p className="text-sm text-gray-500 italic">{t("hero.note")}</p>
               </div>
             </div>
           </section>
 
           {/* PAIN → VISIÓN */}
-          <section className=" py-20 px-6 bg-gray-500/5 text-blue ">
+          <section className="py-20 px-6 bg-gray-500/5 text-blue">
             <div className="max-w-7xl mx-auto grid lg:grid-cols-3 gap-12 items-center">
               <div className="transform transition-all duration-700 hover:translate-x-2">
                 <h2 className="text-3xl lg:text-3xl mb-2 font-bold transition-colors duration-500 hover:text-primary-light leading-relaxed">
-                  Cuando pasa algo, necesitas decisiones, no alarmas{" "}
+                  {t("pain.title")}
                 </h2>
               </div>
               <div className="border-l-4 border-blue-400 col-span-2 text-md pl-6 prose prose-lg max-w-none text-left">
-                <p>
-                  Activamos un canal de comunicación inmediato, evaluamos el
-                  alcance real y priorizamos acciones para contener rápido,
-                  recuperar con criterio y documentar lo importante. Sin
-                  tecnicismos innecesarios: te explicamos qué ocurre, qué
-                  hacemos y por qué.
-                </p>
+                <p>{t("pain.text")}</p>
               </div>
             </div>
           </section>
 
-          {/* === Qué haremos por ti (paso a paso)  === */}
+          {/* QUÉ HAREMOS POR TI */}
           <section className="py-20 px-6 bg-tutumsec-gray-50">
             <div className="max-w-6xl mx-auto">
               <div className="text-center mb-16">
                 <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6 animate-slide-up leading-relaxed">
-                  ¿Qué haremos por ti?
+                  {t("steps.title")}
                 </h2>
               </div>
 
               <div className="grid grid-cols-3">
-                {[
-                  {
-                    title: "Primeras horas",
-                    description: `Canal directo con analistas senior (teléfono y mensajería segura).
-Contención inicial y visibilidad rápida sobre equipos y cuentas afectadas.
-Recomendación de activar EDR compatible (p. ej., Microsoft Defender, Bitdefender, Sophos, etc) para acelerar la investigación.`,
-                    icon: Clock,
-                  },
-                  {
-                    title: "Primer día",
-                    description: `Aislamiento donde haga falta y restauración segura cuando sea posible. 
-Coordinación con tu equipo (IT/dirección) y—si lo solicitas—acompañamiento ejecutivo tipo vCISO.`,
-                    icon: Settings,
-                  },
-                  {
-                    title: "Siguientes días",
-                    description: `Análisis técnico y cronología del incidente (forense bajo estudio/priorización del caso). 
-Recomendaciones priorizadas por riesgo y soporte en avisos regulatorios si correspondiera.`,
-                    icon: BarChart3,
-                  },
-                ].map((item, index) => (
+                {steps.map((item, index) => (
                   <div
                     key={index}
                     className="m-2 bg-white p-8 rounded-2xl border border-gray-200 group hover:shadow-lg transition-all duration-500 hover:-translate-y-1 animate-fade-in"
@@ -230,9 +135,9 @@ Recomendaciones priorizadas por riesgo y soporte en avisos regulatorios si corre
                         <h3 className="pt-2 text-xl font-semibold text-gray-800 mb-3 transition-colors duration-300 group-hover:text-primary leading-relaxed">
                           {item.title}
                         </h3>
-                        {item.description ? (
+                        {item.desc ? (
                           <ul className="list-disc pl-5 space-y-2">
-                            {item.description.split("\n").map((p, i) => (
+                            {item.desc.split("\n").map((p, i) => (
                               <li
                                 key={i}
                                 className="text-gray-600 leading-relaxed transition-colors duration-300 group-hover:text-gray-700"
@@ -248,28 +153,29 @@ Recomendaciones priorizadas por riesgo y soporte en avisos regulatorios si corre
                 ))}
               </div>
             </div>
-            <div className="mt-10  flex justify-center items-center">
+
+            <div className="mt-10 flex justify-center items-center">
               <Link
-                to="/contacto"
-                className="flex items-center-!important justify-center px-8 py-4 bg-primary text-white rounded-full"
+                to={t("cta.proposal.href")}
+                className="flex items-center justify-center px-8 py-4 bg-primary text-white rounded-full"
               >
-                Solicitar propuesta personalizada
+                {t("cta.proposal.label")}
               </Link>
             </div>
           </section>
 
-          {/* === BLOQUE: Vigilancia Continua ===*/}
-          <section className="bg-muted/50 pt-20  pb-20">
+          {/* CO-GESTIÓN */}
+          <section className="bg-muted/50 pt-20 pb-20">
             <div className="pb-6 flex justify-center content-center container max-w-6xl grid md:grid-cols-6">
               <div className="col-span-2 mr-20">
                 <h2 className="text-3xl font-bold text-foreground mb-2">
-                  Co-gestión real y gobierno activo{" "}
+                  {t("cogestion.title")}
                 </h2>
               </div>
 
               <div className="ml-24 col-span-4">
                 <div className="space-y-6">
-                  {caract2.map((item, index) => (
+                  {cogestion.map((item, index) => (
                     <div key={index} className="flex items-start">
                       <CheckCircle className="w-6 h-6 text-primary mr-3 mt-1 flex-shrink-0" />
                       <p className="text-foreground">{item}</p>
@@ -280,10 +186,9 @@ Recomendaciones priorizadas por riesgo y soporte en avisos regulatorios si corre
             </div>
           </section>
 
+          {/* ¿DÓNDE INTERVENIMOS? */}
           <section className="relative isolate overflow-hidden px-6 flex items-center pt-20 pb-20">
-            {/* Capa base */}
             <div className="absolute inset-0 z-0 bg-[#0a0f1c]" />
-            {/* Gradiente lineal */}
             <div
               className="absolute inset-0 z-10"
               style={{
@@ -291,48 +196,39 @@ Recomendaciones priorizadas por riesgo y soporte en avisos regulatorios si corre
                   "linear-gradient(120deg, rgba(14,24,46,0) 0%, rgba(89,116,189,0.35) 45%, rgba(182,185,193,0) 100%)",
               }}
             />
-            {/* Glows */}
             <div className="pointer-events-none absolute -top-24 -left-24 w-[60vw] h-[60vw] bg-blue-600/20 rounded-full blur-3xl z-10" />
             <div className="pointer-events-none absolute -right-40 top-10 w-[50vw] h-[50vw] bg-blue-400/20 rounded-full blur-3xl z-10" />
             <div className="pointer-events-none absolute bottom-[-20%] left-[20%] w-[45vw] h-[45vw] bg-indigo-500/20 rounded-full blur-3xl z-10" />
-            {/* Hilo decorativo */}
             <img
               src="/uploads/hilo.png"
               alt=""
               aria-hidden
               className="pointer-events-none select-none absolute left-0 -top-20 w-[1200px] max-w-none opacity-60 mix-blend-screen z-20"
             />
-
-            {/* Contenido (solo texto original) */}
             <div className="max-w-5xl mx-auto text-center relative z-30">
               <h1 className="text-4xl lg:text-5xl font-bold text-white mb-6">
-                ¿Dónde intervenimos?{" "}
+                {t("where.title")}
               </h1>
               <h2 className="text-xl max-w-4xl lg:text-xl text-white/80 mb-8">
-                Barcelona, Girona, resto de Catalunya y Andorra. Soporte remoto
-                a nivel nacional.
+                {t("where.text")}
               </h2>
             </div>
           </section>
 
-          {/* === Lo que recibes  === */}
-
+          {/* ENTREGABLES */}
           <section className="mt-20 py-20">
             <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-10 items-start">
-              {/* Columna izquierda: título + subtítulo opcional */}
               <div className="px-2">
                 <h2 className="leading-tight text-3xl lg:text-4xl font-bold text-gray-900 mb-8">
-                  Entregables pensados <br />
-                  para dirección y TI{" "}
+                  {t("deliverables.title.line1")} <br />{" "}
+                  {t("deliverables.title.line2")}
                 </h2>
               </div>
               <div className="space-y-6">
-                {caract1.map((raw, i) => {
-                  // Partimos solo para formatear visualmente (NO tocamos el texto)
+                {deliverables.map((raw, i) => {
                   const [titlePart, ...rest] = raw.split(":");
                   const title = titlePart.trim();
-                  const desc = rest.join(":").trim(); // puede quedar vacío si no hay ":" (2º paso)
-                  // Paletas en azul (como tu screenshot)
+                  const desc = rest.join(":").trim();
                   const gradients = [
                     "from-[#2563eb] via-[#1e3a8a] to-[#0b1220]",
                     "from-[#1f3b8a] via-[#1d3fa7] to-[#1b2b59]",
@@ -348,14 +244,11 @@ Recomendaciones priorizadas por riesgo y soporte en avisos regulatorios si corre
                       className={`relative w-full rounded-2xl p-6 md:p-8 text-white bg-gradient-to-r ${g} shadow-lg`}
                     >
                       <div className="flex items-start gap-6">
-                        {/* Número grande a la izquierda */}
                         <div className="shrink-0">
                           <div className="text-5xl md:text-6xl font-extrabold leading-none opacity-90">
                             {i + 1}
                           </div>
                         </div>
-
-                        {/* Texto a la derecha */}
                         <div className="flex-1">
                           <div className="text-lg md:text-xl font-semibold">
                             {title}
@@ -367,8 +260,6 @@ Recomendaciones priorizadas por riesgo y soporte en avisos regulatorios si corre
                             </p>
                           )}
                         </div>
-
-                        {/* Flecha decorativa (como en Resultados) */}
                         <ArrowUpRight className="w-6 h-6 opacity-70 mt-1" />
                       </div>
                     </div>
@@ -378,12 +269,12 @@ Recomendaciones priorizadas por riesgo y soporte en avisos regulatorios si corre
             </div>
           </section>
 
-          {/* === BLOQUE 9 · FAQ (mismo patrón visual que la home) === */}
+          {/* FAQ + CTA */}
           <section className="py-20 px-6 bg-gray-100 relative overflow-hidden bg-[url('/uploads/background.png')] bg-cover bg-center">
             <div className="max-w-4xl mx-auto">
               <div className="text-center mb-16">
                 <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6 animate-slide-up leading-relaxed">
-                  Preguntas frecuentes
+                  {t("faq.title")}
                 </h2>
               </div>
 
@@ -395,10 +286,10 @@ Recomendaciones priorizadas por riesgo y soporte en avisos regulatorios si corre
                   >
                     <details>
                       <summary className="cursor-pointer py-6 font-semibold text-gray-800 hover:text-primary">
-                        {faq.question}
+                        {faq.q}
                       </summary>
-                      <div className="cursor-pointer py-6 font-semibold text-gray-800 hover:text-primary">
-                        {faq.answer}
+                      <div className="cursor-pointer py-6 font-semibold text-gray-800">
+                        {faq.a}
                       </div>
                     </details>
                   </div>
@@ -410,18 +301,18 @@ Recomendaciones priorizadas por riesgo y soporte en avisos regulatorios si corre
               <div className="bg-gradient-to-r from-black via-blue-900 to-blue-800 rounded-[2rem] p-12 relative overflow-hidden mx-auto max-w-5xl">
                 <div className="relative z-10 max-w-3xl text-center mx-auto">
                   <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6">
-                    Paremos las amenazas antes <br /> de que paren tu negocio{" "}
+                    {t("cta.title")}
                   </h2>
                   <div className="flex flex-col sm:flex-row gap-4 justify-center mb-4">
                     <Button className="rounded-full" size="lg">
-                      Necesito ayuda ahora{" "}
+                      {t("hero.ctaHelp.label")}
                     </Button>
                     <Button
                       variant="outline"
                       size="lg"
                       className="bg-white/10 text-white rounded-full border-white/20 hover:bg-white/20"
                     >
-                      Hablar con un experto{" "}
+                      {t("hero.ctaTalk.label")}
                     </Button>
                   </div>
                 </div>
@@ -436,11 +327,11 @@ Recomendaciones priorizadas por riesgo y soporte en avisos regulatorios si corre
           </section>
         </div>
       </main>
-      <PartnersSection />
 
+      <PartnersSection />
       <Footer />
     </>
   );
 };
 
-export default PrevencionBackup;
+export default RespuestaIncidentes;

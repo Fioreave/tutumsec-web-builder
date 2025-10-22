@@ -1,0 +1,57 @@
+{
+  "seo.title": "Ciberseguretat per a PIMES | TutumSec",
+  "seo.description": "Ordre, prioritats clares i evidències per a direcció: menys incidents i temps reals de recuperació.",
+  "seo.canonical": "https://tutumsec.com/ca/sectors/pimes",
+
+  "hero.title": "Ciberseguretat per a PIMES: ordre, control i resultats",
+  "hero.subtitle": "Ordre, prioritats clares i evidències per a direcció: menys incidents i temps reals de recuperació.",
+
+  "challenge.badge": "El repte actual",
+  "challenge.imgAlt": "Ciberseguretat per a PIMES",
+  "challenge.items.0": "<span class='font-medium text-slate-900'>Equips reduïts</span>, massa eines disperses.",
+  "challenge.items.1": "<span class='font-medium text-slate-900'>Dependència</span> d’una persona o proveïdor per a “tot”.",
+  "challenge.items.2": "<span class='font-medium text-slate-900'>Còpies no provades</span> i dubtes sobre com recuperar a temps.",
+  "challenge.items.3": "<span class='font-medium text-slate-900'>Compliment difús</span> (NIS2/ISO 27001) i poc focus en evidències.",
+  "challenge.items.4": "<span class='font-medium text-slate-900'>Exposició creixent</span> per correu, núvol i accessos remots.",
+  "challenge.cta.label": "Descobreix com ho abordem",
+  "challenge.cta.href": "#solucion",
+
+  "solution.title": "La nostra solució",
+  "solution.cards.0.t": "vCISO",
+  "solution.cards.0.d": "Govern i pla per impacte (4–6 setmanes).",
+  "solution.cards.0.href": "/descubrimiento-ot",
+  "solution.cards.1.t": "Audit-to-Comply",
+  "solution.cards.1.d": "Auditoria ofensiva + accions per a NIS2/ISO 27001.",
+  "solution.cards.1.href": "/zonas-y-conductos",
+  "solution.cards.2.t": "MDR 24/7",
+  "solution.cards.2.d": "Detecció i resposta sense argot, amb informes clars.",
+  "solution.cards.2.href": "/deteccion-ot",
+  "solution.cards.3.t": "Recuperació",
+  "solution.cards.3.d": "Còpies immutables, una còpia aïllada i proves mensuals.",
+  "solution.cards.3.href": "/drp-industrial",
+  "solution.cards.4.t": "Persones",
+  "solution.cards.4.d": "Formació breu i recordatoris per crear hàbits.",
+  "solution.cards.4.href": "/gobierno-iec-62443",
+
+  "benefits.title": "Beneficis immediats",
+  "benefits.items.0": "Menys incidents i menys aturades.",
+  "benefits.items.1": "Compleixes NIS2/ISO 27001 amb passos clars i evidències.",
+  "benefits.items.2": "Tot documentat: menys dependència de “herois”.",
+  "benefits.items.3": "Més confiança de clients, auditors i asseguradores.",
+
+  "faq.title": "Preguntes freqüents",
+  "faq.0.q": "He de canviar tota la meva tecnologia?",
+  "faq.0.a": "No. Comencem amb el que ja utilitzes i només afegim l’imprescindible.",
+  "faq.1.q": "Quan veuré resultats?",
+  "faq.1.a": "Al primer bloc de 4–6 setmanes: controls bàsics ben posats i llista de millores.",
+  "faq.2.q": "Formeu l’equip?",
+  "faq.2.a": "Sí. Sessions breus, recordatoris i proves senzilles per crear hàbits.",
+
+  "cta.banner.title": "Vols assessorament personalitzat?",
+  "cta.banner.primary.label": "Reserva consultoria gratuïta (15’)",
+  "cta.banner.primary.href": "https://calendly.com/ayub-tutumsec/30min",
+  "cta.banner.secondary.label": "Demana avaluació DORA/NIS2",
+  "cta.banner.secondary.href": "https://calendly.com/ayub-tutumsec/30min",
+
+  "common.explore": "Explorar"
+}

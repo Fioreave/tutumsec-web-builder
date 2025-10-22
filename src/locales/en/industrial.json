@@ -1,0 +1,43 @@
+{
+  "hero.title": "Industrial cybersecurity: uninterrupted production",
+  "hero.subtitle": "We apply IEC 62443 with a practical approach: people safety and plant continuity first.",
+  "hero.bgAlt": "Abstract industrial background",
+
+  "challenge.imgAlt": "Cloud risks and supply chain",
+  "challenge.badge": "The current challenge",
+  "challenge.heading": "Cloud configuration, supply chain, APIs and multi-tenant data",
+  "challenge.text": "Vectors that slow sales and compliance if not governed. (Summary based on ENISA TL 2024).",
+  "challenge.cta.label": "See how we tackle it",
+  "challenge.cta.href": "#solucion",
+
+  "solution.title": "Our solution",
+  "solution.subtitle": "An end-to-end approach to reduce OT risk and keep production running.",
+  "solution.cards.0.t": "OT discovery & inventory",
+  "solution.cards.0.d": "Automatic identification of industrial assets and networks.",
+  "solution.cards.0.href": "/descubrimiento-ot",
+  "solution.cards.1.t": "Zones & conduits",
+  "solution.cards.1.d": "Hardening and patching during planned stops.",
+  "solution.cards.1.href": "/zonas-y-conductos",
+  "solution.cards.2.t": "Industrial network detection",
+  "solution.cards.2.d": "MITRE ATT&CK for ICS use cases for advanced monitoring.",
+  "solution.cards.2.href": "/deteccion-ot",
+  "solution.cards.3.t": "DRP & restore",
+  "solution.cards.3.d": "Recovery tests driven by safety/production.",
+  "solution.cards.3.href": "/drp-industrial",
+  "solution.cards.4.t": "IEC 62443 governance",
+  "solution.cards.4.d": "Governance program and training for operations.",
+  "solution.cards.4.href": "/gobierno-iec-62443",
+
+  "benefits.title": "Immediate benefits",
+  "benefits.items.0": "Smaller attack surface on the shop floor.",
+  "benefits.items.1": "Faster response to anomalies.",
+  "benefits.items.2": "Minimised downtime and prioritised recovery.",
+
+  "cta.banner.title": "Want personalised guidance?",
+  "cta.banner.primary.label": "Book a free consultation (15’)",
+  "cta.banner.primary.href": "https://calendly.com/ayub-tutumsec/30min",
+  "cta.banner.secondary.label": "Request an OT assessment (30’)",
+  "cta.banner.secondary.href": "https://calendly.com/ayub-tutumsec/30min",
+
+  "common.explore": "Explore"
+}

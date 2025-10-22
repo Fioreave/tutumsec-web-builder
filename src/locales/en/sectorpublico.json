@@ -1,0 +1,45 @@
+{
+  "seo.title": "Public sector cybersecurity | TutumSec",
+  "seo.description": "ENS as a baseline, NIS2 on the horizon and incident pressure: we make it easy to comply, operate and prove.",
+  "seo.canonical": "https://tutumsec.com/en/sectors/public-sector",
+
+  "hero.title": "Cybersecurity for the public sector: uninterrupted service",
+  "hero.subtitle": "ENS as a baseline, NIS2 on the horizon and incident pressure: we make it easy to comply, operate and demonstrate.",
+
+  "challenge.badge": "The current challenge",
+  "challenge.heading": "ENS (RD 311/2022) and ongoing NIS2 transposition, with significant penalties in the public debate;",
+  "challenge.text": "Vendors are already showing ENS conformity.",
+  "challenge.imgAlt": "Cybersecurity illustration for public administrations",
+  "challenge.cta.label": "See how we tackle it",
+  "challenge.cta.href": "#solucion",
+
+  "solution.title": "Our solution",
+  "solution.cards.0.t": "ENS alignment",
+  "solution.cards.0.d": "(measures, policies and evidence).",
+  "solution.cards.0.href": "/descubrimiento-ot",
+  "solution.cards.1.t": "Public vCISO",
+  "solution.cards.1.d": "Governance, risk, continuity and training.",
+  "solution.cards.1.href": "/zonas-y-conductos",
+  "solution.cards.2.t": "MDR 24×7",
+  "solution.cards.2.d": "Integrated with CSIRT/CCN.",
+  "solution.cards.2.href": "/deteccion-ot",
+  "solution.cards.3.t": "Recovery",
+  "solution.cards.3.d": "Immutable backups and periodic drills.",
+  "solution.cards.3.href": "/drp-industrial",
+  "solution.cards.4.t": "Supplier management",
+  "solution.cards.4.d": "And security requirements.",
+  "solution.cards.4.href": "/drp-industrial",
+
+  "benefits.title": "Immediate benefits",
+  "benefits.items.0": "Evidence ready for audits and RFPs.",
+  "benefits.items.1": "Fewer outages and better citizen service.",
+  "benefits.items.2": "Stronger control over third parties and contracts.",
+
+  "cta.banner.title": "Want tailored guidance?",
+  "cta.banner.primary.label": "Book a free consult (15’)",
+  "cta.banner.primary.href": "https://calendly.com/ayub-tutumsec/30min",
+  "cta.banner.secondary.label": "Request an ENS review",
+  "cta.banner.secondary.href": "https://calendly.com/ayub-tutumsec/30min",
+
+  "common.explore": "Explore"
+}

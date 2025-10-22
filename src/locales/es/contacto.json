@@ -1,0 +1,36 @@
+{
+  "hero.title": "Contacto",
+  "hero.subtitle": "Ponte en contacto con nosotros para discutir tus necesidades de ciberseguridad",
+  "form.title": "Envíanos un mensaje",
+  "form.firstName.label": "Nombre",
+  "form.firstName.placeholder": "Tu nombre",
+  "form.lastName.label": "Apellidos",
+  "form.lastName.placeholder": "Tus apellidos",
+  "form.email.label": "Email",
+  "form.email.placeholder": "tu@email.com",
+  "form.company.label": "Empresa",
+  "form.company.placeholder": "Tu empresa",
+  "form.message.label": "Mensaje",
+  "form.message.placeholder": "Cuéntanos sobre tu proyecto...",
+  "form.privacy.prefix": "Acepto la",
+  "form.privacy.link": "política de privacidad",
+  "form.privacy.suffix": ".",
+  "form.submit": "Enviar mensaje",
+  "form.submitting": "Enviando…",
+
+  "success.title": "¡Mensaje enviado!",
+  "success.subtitle": "Gracias por escribirnos. Un consultor se pondrá en contacto contigo a la brevedad.",
+  "success.sendAnother": "Enviar otro mensaje",
+
+  "errors.privacyRequired": "Debes aceptar la política de privacidad.",
+  "errors.captchaUnavailable": "Captcha no disponible",
+  "errors.captchaNotLoaded": "Captcha no cargó",
+  "errors.timeout": "Tiempo de espera agotado. Inténtalo de nuevo.",
+  "errors.submitFailed": "No se pudo enviar el formulario.",
+  "errors.generic": "Ha ocurrido un error. Inténtalo de nuevo.",
+
+  "locations.title": "Nuestras sedes",
+  "locations.mapTitle": "Mapa {{city}}",
+
+  "policy.url": "/politica-de-privacidad"
+}

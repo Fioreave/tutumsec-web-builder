@@ -1,12 +1,21 @@
-import { lazy } from "react";
+import React from "react";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+  Navigate,
+  Outlet,
+  useNavigate,
+  useParams,
+} from "react-router-dom";
+import ExternalRedirect from "./components/ExternalRedirect";
+
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
-import WordPressBlog from "./pages/WordPressBlog";
 import Contacto from "./pages/Contacto";
 import ReservaConsultoria from "./pages/ReservaConsultoria";
 
@@ -14,7 +23,6 @@ import ReservaConsultoria from "./pages/ReservaConsultoria";
 import Servicios from "./pages/servicios/Servicios";
 import ConsultoriaCiso from "./pages/servicios/ConsultoriaCiso";
 import AuditoriaCompliance from "./pages/servicios/AuditoriaCompliance";
-//import Deteccion24x7Service from "./pages/servicios/Deteccion24x7";
 import RespuestaIncidentes from "./pages/servicios/RespuestaIncidentes";
 import FormacionConcienciacion from "./pages/servicios/FormacionConcienciacion";
 import TransformacionDigital from "./pages/servicios/TransformacionDigital";
@@ -34,25 +42,67 @@ import Salud from "./pages/industrias/Salud";
 import IndustrialOt from "./pages/industrias/IndustrialOt";
 import TecnologiaSaas from "./pages/industrias/TecnologiaSaas";
 import SectorPublico from "./pages/industrias/SectorPublico";
+import Pymes from "./pages/industrias/Pymes";
 
 // Recursos
 import Recursos from "./pages/recursos/Recursos";
-import Whitepapers from "./pages/recursos/Whitepapers";
 import CasosExito from "./pages/recursos/CasosExito";
 
-// Sobre Nosotros
-import SobreNosotros from "./pages/sobre-nosotros/SobreNosotros";
-import Historia from "./pages/sobre-nosotros/Historia";
-import EquipoValores from "./pages/sobre-nosotros/EquipoValores";
-import CertificacionesPartners from "./pages/sobre-nosotros/CertificacionesPartners";
+// Legal & layout
 import CookieBanner from "./pages/CookieBanner";
 import ScrollToTop from "./ScrollToTop";
 import AvisoLegal from "./components/AvisoLegal";
 import PrivacyPolicy from "./components/PrivacyPolicy";
-import Pymes from "./pages/industrias/Pymes";
 import PoliticaCookies from "./components/PoliticaCookies";
 
+import {
+  LanguageProvider,
+  useLanguage,
+  Language,
+} from "./i18n/LanguageContext";
+
 const queryClient = new QueryClient();
+const SUPPORTED_LANGS = ["es", "ca", "fr", "en"] as const;
+type Supported = (typeof SUPPORTED_LANGS)[number];
+const DEFAULT_LANG: Supported = "es";
+
+// Detecta idioma del navegador (dos letras) y lo normaliza a Supported
+function detectDefaultLang(): Supported {
+  const raw =
+    typeof navigator !== "undefined" && navigator.language
+      ? navigator.language.toLowerCase()
+      : DEFAULT_LANG;
+  const two = raw.slice(0, 2) as Supported;
+  return SUPPORTED_LANGS.includes(two) ? two : DEFAULT_LANG;
+}
+
+// Redirige "/" -> "/:lang/"
+function RootRedirect() {
+  const navigate = useNavigate();
+  React.useEffect(() => {
+    navigate(`/${detectDefaultLang()}/`, { replace: true });
+  }, [navigate]);
+  return null;
+}
+
+// Valida :lang, sincroniza LanguageContext y <html lang>
+function LangGuard() {
+  const params = useParams();
+  const urlLang = (params.lang || "") as Supported;
+  const { language, changeLanguage } = useLanguage();
+
+  // Si el lang de la URL no es válido, normaliza a default
+  if (!SUPPORTED_LANGS.includes(urlLang)) {
+    return <Navigate to={`/${DEFAULT_LANG}/`} replace />;
+  }
+
+  React.useEffect(() => {
+    document.documentElement.lang = urlLang;
+    if (language !== urlLang) changeLanguage(urlLang as Language);
+  }, [urlLang, language, changeLanguage]);
+
+  return <Outlet />;
+}
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
@@ -60,113 +110,111 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
-        <ScrollToTop />
+        <LanguageProvider>
+          <ScrollToTop />
+          <CookieBanner />
 
-        <CookieBanner />
-        <Routes>
-          <Route path="/" element={<Index />} />
-          <Route path="/es/" element={<Index />} />
-          <Route path="/blog" element={<Navigate to="/blog" replace />} />
+          <Routes>
+            {/* Raíz -> idioma detectado */}
+            <Route path="/" element={<RootRedirect />} />
 
-          <Route path="/aviso-legal" element={<AvisoLegal />} />
-          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-          <Route path="/politica-de-cookies" element={<PoliticaCookies />} />
+            <Route
+              path="/blog/*"
+              element={
+                <ExternalRedirect to={`${window.location.origin}/blog`} />
+              }
+            />
 
-          {/* Páginas principales */}
-          <Route path="/es/contacto/" element={<Contacto />} />
-          <Route
-            path="/es/reserva-consultoria/"
-            element={<ReservaConsultoria />}
-          />
+            {/* Segmento de idioma */}
+            <Route path="/:lang" element={<LangGuard />}>
+              {/* Home */}
+              <Route index element={<Index />} />
 
-          {/* Servicios */}
-          <Route path="/es/servicios/" element={<Servicios />} />
-          <Route
-            path="/es/servicios/consultoria-ciso/"
-            element={<ConsultoriaCiso />}
-          />
-          <Route
-            path="/es/servicios/auditoria-compliance-nis2/"
-            element={<AuditoriaCompliance />}
-          />
-          <Route
-            path="/es/servicios/respuesta-incidentes/"
-            element={<RespuestaIncidentes />}
-          />
-          <Route
-            path="/es/servicios/formacion-concienciacion/"
-            element={<FormacionConcienciacion />}
-          />
-          <Route
-            path="/es/servicios/transformacion-digital-estrategica/"
-            element={<TransformacionDigital />}
-          />
-          <Route
-            path="/es/servicios/oficina-seguridad-informacion-nis2/"
-            element={<OficinaSeguridad />}
-          />
+              {/* Legal */}
+              <Route path="aviso-legal" element={<AvisoLegal />} />
+              <Route path="privacy-policy" element={<PrivacyPolicy />} />
+              <Route path="politica-de-cookies" element={<PoliticaCookies />} />
 
-          {/* Productos */}
-          <Route path="/es/productos/" element={<Productos />} />
-          <Route
-            path="/es/productos/deteccion-24x7/"
-            element={<Deteccion24x7Product />}
-          />
-          <Route
-            path="/es/productos/prevencion/"
-            element={<PrevencionBackup />}
-          />
-          <Route
-            path="/es/productos/incidente-respuesta-retainer/"
-            element={<IncidenteRespuestaRetainer />}
-          />
-          <Route
-            path="/es/productos/recuperacion-backup/"
-            element={<RecuperacionBackup />}
-          />
+              {/* Páginas principales */}
+              <Route path="contacto/" element={<Contacto />} />
+              <Route
+                path="reserva-consultoria/"
+                element={<ReservaConsultoria />}
+              />
 
-          {/* Industrias */}
-          <Route path="/es/industrias/" element={<Industrias />} />
-          <Route path="/es/industrias/finanzas/" element={<Finanzas />} />
-          <Route path="/es/industrias/salud/" element={<Salud />} />
-          <Route
-            path="/es/industrias/industrial-ot/"
-            element={<IndustrialOt />}
-          />
-          <Route
-            path="/es/industrias/tecnologia-saas/"
-            element={<TecnologiaSaas />}
-          />
-          <Route
-            path="/es/industrias/sector-publico/"
-            element={<SectorPublico />}
-          />
-          <Route path="/es/industrias/pymes/" element={<Pymes />} />
+              {/* Servicios */}
+              <Route path="servicios/" element={<Servicios />} />
+              <Route
+                path="servicios/consultoria-ciso/"
+                element={<ConsultoriaCiso />}
+              />
+              <Route
+                path="servicios/auditoria-compliance-nis2/"
+                element={<AuditoriaCompliance />}
+              />
+              <Route
+                path="servicios/respuesta-incidentes/"
+                element={<RespuestaIncidentes />}
+              />
+              <Route
+                path="servicios/formacion-concienciacion/"
+                element={<FormacionConcienciacion />}
+              />
+              <Route
+                path="servicios/transformacion-digital-estrategica/"
+                element={<TransformacionDigital />}
+              />
+              <Route
+                path="servicios/oficina-seguridad-informacion-nis2/"
+                element={<OficinaSeguridad />}
+              />
 
-          {/* Recursos */}
-          <Route path="/es/recursos/" element={<Recursos />} />
-          <Route path="/es/recursos/blog/" element={<WordPressBlog />} />
-          <Route
-            path="/es/recursos/whitepapers-checklists/"
-            element={<Whitepapers />}
-          />
-          <Route path="/es/recursos/casos-exito/" element={<CasosExito />} />
+              {/* Productos */}
+              <Route path="productos/" element={<Productos />} />
+              <Route
+                path="productos/deteccion-24x7/"
+                element={<Deteccion24x7Product />}
+              />
+              <Route
+                path="productos/prevencion/"
+                element={<PrevencionBackup />}
+              />
+              <Route
+                path="productos/incidente-respuesta-retainer/"
+                element={<IncidenteRespuestaRetainer />}
+              />
+              <Route
+                path="productos/recuperacion-backup/"
+                element={<RecuperacionBackup />}
+              />
 
-          {/* Sobre Nosotros */}
-          <Route path="/es/sobre-nosotros/" element={<SobreNosotros />} />
-          <Route path="/es/sobre-nosotros/historia/" element={<Historia />} />
-          <Route
-            path="/es/sobre-nosotros/equipo-valores/"
-            element={<EquipoValores />}
-          />
-          <Route
-            path="/es/sobre-nosotros/certificaciones-partners/"
-            element={<CertificacionesPartners />}
-          />
+              {/* Industrias */}
+              <Route path="industrias/" element={<Industrias />} />
+              <Route path="industrias/finanzas/" element={<Finanzas />} />
+              <Route path="industrias/salud/" element={<Salud />} />
+              <Route
+                path="industrias/industrial-ot/"
+                element={<IndustrialOt />}
+              />
+              <Route
+                path="industrias/tecnologia-saas/"
+                element={<TecnologiaSaas />}
+              />
+              <Route
+                path="industrias/sector-publico/"
+                element={<SectorPublico />}
+              />
+              <Route path="industrias/pymes/" element={<Pymes />} />
 
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-          <Route path="*" element={<NotFound />} />
-        </Routes>
+              {/* Recursos */}
+              <Route path="recursos/" element={<Recursos />} />
+              <Route path="recursos/casos-exito/" element={<CasosExito />} />
+            </Route>
+
+            {/* 404 */}
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </LanguageProvider>
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>

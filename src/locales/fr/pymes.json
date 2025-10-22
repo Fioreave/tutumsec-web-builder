@@ -1,0 +1,57 @@
+{
+  "seo.title": "Cybersécurité pour PME | TutumSec",
+  "seo.description": "Structure, priorités claires et preuves pour la direction : moins d’incidents et des délais de reprise réalistes.",
+  "seo.canonical": "https://tutumsec.com/fr/secteurs/pme",
+
+  "hero.title": "Cybersécurité pour PME : ordre, contrôle et résultats",
+  "hero.subtitle": "Structure, priorités claires et preuves pour la direction : moins d’incidents et des délais de reprise réalistes.",
+
+  "challenge.badge": "Le défi actuel",
+  "challenge.imgAlt": "Cybersécurité pour PME",
+  "challenge.items.0": "<span class='font-medium text-slate-900'>Équipes réduites</span> et trop d’outils dispersés.",
+  "challenge.items.1": "<span class='font-medium text-slate-900'>Dépendance excessive</span> à une personne ou à un seul prestataire pour « tout ».",
+  "challenge.items.2": "<span class='font-medium text-slate-900'>Sauvegardes non testées</span> et incertitude sur la reprise à temps.",
+  "challenge.items.3": "<span class='font-medium text-slate-900'>Conformité floue</span> (NIS2/ISO 27001) et peu axée sur les preuves.",
+  "challenge.items.4": "<span class='font-medium text-slate-900'>Exposition croissante</span> via l’email, le cloud et les accès distants.",
+  "challenge.cta.label": "Découvrez notre approche",
+  "challenge.cta.href": "#solucion",
+
+  "solution.title": "Notre solution",
+  "solution.cards.0.t": "vCISO",
+  "solution.cards.0.d": "Gouvernance et plan basé sur l’impact (4–6 semaines).",
+  "solution.cards.0.href": "/descubrimiento-ot",
+  "solution.cards.1.t": "Audit-to-Comply",
+  "solution.cards.1.d": "Audit offensif + actions pour NIS2/ISO 27001.",
+  "solution.cards.1.href": "/zonas-y-conductos",
+  "solution.cards.2.t": "MDR 24/7",
+  "solution.cards.2.d": "Détection et réponse avec rapports clairs et sans jargon.",
+  "solution.cards.2.href": "/deteccion-ot",
+  "solution.cards.3.t": "Récupération",
+  "solution.cards.3.d": "Sauvegardes immuables, copie isolée et tests mensuels.",
+  "solution.cards.3.href": "/drp-industrial",
+  "solution.cards.4.t": "Humain",
+  "solution.cards.4.d": "Formations courtes et rappels pour ancrer les habitudes.",
+  "solution.cards.4.href": "/gobierno-iec-62443",
+
+  "benefits.title": "Bénéfices immédiats",
+  "benefits.items.0": "Moins d’incidents et moins d’arrêts.",
+  "benefits.items.1": "Conformité NIS2/ISO 27001 avec étapes claires et preuves.",
+  "benefits.items.2": "Tout est documenté : moins de dépendance à des « héros ».",
+  "benefits.items.3": "Davantage de confiance des clients, auditeurs et assureurs.",
+
+  "faq.title": "Foire aux questions",
+  "faq.0.q": "Dois-je changer toutes mes technologies ?",
+  "faq.0.a": "Non. Nous partons de l’existant et n’ajoutons que l’essentiel.",
+  "faq.1.q": "Quand verrai-je des résultats ?",
+  "faq.1.a": "Dès le premier cycle de 4–6 semaines : bases solides et liste d’améliorations.",
+  "faq.2.q": "Formez-vous l’équipe ?",
+  "faq.2.a": "Oui. Sessions courtes, rappels et exercices simples pour instaurer des habitudes.",
+
+  "cta.banner.title": "Besoin d’un accompagnement sur mesure ?",
+  "cta.banner.primary.label": "Réserver un entretien gratuit (15’)",
+  "cta.banner.primary.href": "https://calendly.com/ayub-tutumsec/30min",
+  "cta.banner.secondary.label": "Demander une évaluation DORA/NIS2",
+  "cta.banner.secondary.href": "https://calendly.com/ayub-tutumsec/30min",
+
+  "common.explore": "Explorer"
+}

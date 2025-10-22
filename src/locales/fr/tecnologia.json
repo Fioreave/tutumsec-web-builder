@@ -1,0 +1,45 @@
+{
+  "seo.title": "Cybersécurité pour le SaaS | TutumSec",
+  "seo.description": "Confiance client et vélocité de livraison. Roadmap ISO 27001/SOC 2, durcissement cloud, sécurité produit et continuité.",
+  "seo.canonical": "https://tutumsec.com/fr/secteurs/technologie-saas",
+
+  "hero.title": "Cybersécurité pour le SaaS : confiance client et vitesse de livraison",
+  "hero.subtitle": "Moins d’incidents et moins de friction commerciale : des contrôles qui facilitent les ventes et réduisent les risques en multi-tenant et CI/CD.",
+
+  "challenge.badge": "Le défi actuel",
+  "challenge.heading": "Configuration cloud, chaîne d’approvisionnement, APIs et données multi-tenant :",
+  "challenge.text": "Des vecteurs qui freinent ventes et conformité s’ils ne sont pas gouvernés. (Synthèse basée sur ENISA TL 2024).",
+  "challenge.imgAlt": "Risques de sécurité dans le cloud et les chaînes d’approvisionnement",
+  "challenge.cta.label": "Découvrez notre approche",
+  "challenge.cta.href": "#solucion",
+
+  "solution.title": "Notre solution",
+  "solution.cards.0.t": "vCISO / roadmap ISO 27001",
+  "solution.cards.0.d": "Et (si applicable) SOC 2 pour les marchés internationaux.",
+  "solution.cards.0.href": "/descubrimiento-ot",
+  "solution.cards.1.t": "Architecture & durcissement cloud",
+  "solution.cards.1.d": "(identités, réseaux, chiffrement).",
+  "solution.cards.1.href": "/zonas-y-conductos",
+  "solution.cards.2.t": "Sécurité produit",
+  "solution.cards.2.d": "SDLC, SAST/DAST, pentest web/mobile/APIs.",
+  "solution.cards.2.href": "/deteccion-ot",
+  "solution.cards.3.t": "MDR cloud",
+  "solution.cards.3.d": "Avec cas d’usage d’identité et d’anomalies.",
+  "solution.cards.3.href": "/drp-industrial",
+  "solution.cards.4.t": "Plans de continuité",
+  "solution.cards.4.d": "Et exercices de restauration dans le cloud.",
+  "solution.cards.4.href": "/gobierno-iec-62443",
+
+  "benefits.title": "Bénéfices immédiats",
+  "benefits.items.0": "Accélérez les ventes en répondant aux questionnaires de sécurité.",
+  "benefits.items.1": "Réduisez les failles dans les pipelines et déploiements.",
+  "benefits.items.2": "Preuves pour audits et clients.",
+
+  "cta.banner.title": "Besoin d’un accompagnement sur mesure ?",
+  "cta.banner.primary.label": "Réserver un entretien gratuit (15’)",
+  "cta.banner.primary.href": "https://calendly.com/ayub-tutumsec/30min",
+  "cta.banner.secondary.label": "Demander une évaluation ISO 27001",
+  "cta.banner.secondary.href": "https://calendly.com/ayub-tutumsec/30min",
+
+  "common.explore": "Explorer"
+}

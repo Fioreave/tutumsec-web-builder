@@ -1,0 +1,51 @@
+{
+  "hero.title": "Faites de la cybersécurité\nvotre meilleur avantage compétitif",
+  "hero.subtitle": "Nous appliquons des stratégies de cybersécurité de premier plan pour développer votre activité et éviter les incidents critiques : conseil orienté résultats, conception et exécution 360º pour vous concentrer sur l’essentiel.",
+  "hero.cta": "Réservez votre consultation gratuite →",
+
+  "benefits.step1": "Atteignez la conformité NIS2 et ISO 27001 en moins de 90 jours",
+  "benefits.step2": "Réduisez de 30 % les incidents critiques en 6 mois",
+  "benefits.step3": "Décidez en temps réel avec des tableaux de bord exécutifs",
+
+  "benefits.heading": "Faites croître votre entreprise",
+  "benefits.card1.title": "Vision business",
+  "benefits.card1.desc": "Nous traduisons le cyber-risque en impact financier pour prioriser les investissements.",
+  "benefits.card2.title": "Conformité sans frictions",
+  "benefits.card2.desc": "Compliance 360° pour NIS2, ISO 27001, ENS et RGPD.",
+  "benefits.card3.title": "Réponse 24/7",
+  "benefits.card3.desc": "Intégration directe avec notre SOC : détection et confinement en < 15 min.",
+  "benefits.card4.title": "Coût optimisé",
+  "benefits.card4.desc": "Modèle as-a-Service : pas de charges salariales ni de recrutements longs.",
+  "benefits.card5.title": "Scalabilité flexible",
+  "benefits.card5.desc": "Ajoutez des modules MDR, formation ou Red Team selon votre croissance.",
+
+  "problems.heading": "Évitez de futurs problèmes de cybersécurité",
+  "problems.lead": "Aujourd’hui sans stratégie globale ; demain, pertes financières, réputation endommagée, arrêts d’activité et croissance bloquée. Les rustines ne suffisent pas.",
+
+  "process.heading": "Une méthodologie claire",
+  "process.subheading": "Exécutive et orientée résultats.",
+  "process.step1.title": "Diagnostic initial",
+  "process.step1.desc": "Audit technique, pentesting et analyse d’écarts NIS2/ISO.",
+  "process.step2.title": "Feuille de route stratégique",
+  "process.step2.desc": "Plan sur 12–36 mois avec priorités et ROI.",
+  "process.step3.title": "Mise en œuvre et gouvernance",
+  "process.step3.desc": "Politiques, processus et outils personnalisés.",
+  "process.step4.title": "Suivi continu",
+  "process.step4.desc": "Déploiement, KPIs et revue trimestrielle avec votre vCISO.",
+
+  "cta.title": "Protégez votre entreprise DÈS AUJOURD’HUI",
+  "cta.subtitle": "Découvrez les quick-wins à mettre en place ce mois-ci.",
+  "cta.footnote": "* Première consultation de 30 min offerte.",
+
+  "faq.heading": "Questions fréquentes",
+  "faq.q1": "TutumSec couvre-t-il toute l’Espagne ?",
+  "faq.a1": "Oui. Nous opérons depuis Barcelone, Gérone et Andorre et couvrons tout le territoire.",
+  "faq.q2": "Combien de temps dure un audit complet ?",
+  "faq.a2": "De 2 à 4 semaines selon le périmètre.",
+  "faq.q3": "Puis-je n’engager qu’un seul service (ex. audit) ?",
+  "faq.a3": "Oui. Services modulaires et évolutifs : vous ne payez que ce dont vous avez besoin.",
+  "faq.q4": "Dois-je changer mon infrastructure ?",
+  "faq.a4": "Pas toujours ; nous privilégions les quick-wins et capitalisons sur l’existant.",
+  "faq.q5": "Comment respecter NIS2 avant l’échéance ?",
+  "faq.a5": "Avec la feuille de route TutumSec Compliance 360."
+}

@@ -1,0 +1,41 @@
+{
+  "hero.title": "Cybersécurité pour la santé : patients et systèmes toujours disponibles",
+  "hero.subtitle": "Ransomware et fuites de données sont la norme ; notre réponse : prévention claire et reprise éprouvée",
+
+  "challenge.imgAlt": "Risques cloud et chaîne d’approvisionnement",
+  "challenge.badge": "Le défi actuel",
+  "challenge.heading": "Le secteur de la santé arrive en tête des incidents majeurs dans l’UE ;",
+  "challenge.text": "Ransomware (≈45 %) et violations de données (≈28 %).",
+  "challenge.cta.label": "Découvrez notre approche",
+  "challenge.cta.href": "#solucion",
+
+  "solution.title": "Notre solution",
+  "solution.cards.0.t": "vCISO santé",
+  "solution.cards.0.d": "gouvernance, risques et confidentialité.",
+  "solution.cards.0.href": "/descubrimiento-ot",
+  "solution.cards.1.t": "Durcissement et segmentation",
+  "solution.cards.1.d": "(IT/OT clinique).",
+  "solution.cards.1.href": "/zonas-y-conductos",
+  "solution.cards.2.t": "Sauvegardes + Tests",
+  "solution.cards.2.d": "Sauvegardes immuables + tests mensuels.",
+  "solution.cards.2.href": "/deteccion-ot",
+  "solution.cards.3.t": "MDR 24×7",
+  "solution.cards.3.d": "Avec règles cliniques et triage par criticité.",
+  "solution.cards.3.href": "/drp-industrial",
+  "solution.cards.4.t": "Plan de reprise",
+  "solution.cards.4.d": "par service : EMR/DMP, laboratoire, imagerie, etc.",
+  "solution.cards.4.href": "/gobierno-iec-62443",
+
+  "benefits.title": "Bénéfices immédiats",
+  "benefits.items.0": "Moins d’arrêts, plus de disponibilité des services.",
+  "benefits.items.1": "Moins d’impact sur les données sensibles.",
+  "benefits.items.2": "Preuves pour audit et direction.",
+
+  "cta.banner.title": "Besoin d’un accompagnement personnalisé ?",
+  "cta.banner.primary.label": "Réservez une consultation gratuite (15’)",
+  "cta.banner.primary.href": "https://calendly.com/ayub-tutumsec/30min",
+  "cta.banner.secondary.label": "Demandez une revue de vos sauvegardes.",
+  "cta.banner.secondary.href": "https://calendly.com/ayub-tutumsec/30min",
+
+  "common.explore": "Explorer"
+}

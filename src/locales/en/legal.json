@@ -1,0 +1,86 @@
+{
+  "header.title": "TERMS AND PRIVACY",
+  "header.sub": "I Legal Notice · II Privacy Policy · III Cookie Policy",
+
+  "toc.title": "Index",
+  "toc.aviso": "I. Legal Notice",
+  "toc.usuario": "User",
+  "toc.links": "Information about links",
+  "toc.modificaciones": "Site Modifications",
+  "toc.exencion": "Disclaimer",
+  "toc.propiedad": "Intellectual Property",
+  "toc.privacidad": "II. Privacy Policy",
+  "toc.cookies": "III. Cookie Policy",
+
+  "actions.print": "Print / Save as PDF",
+
+  "aviso.title": "I. Legal Notice",
+  "aviso.p1": "The following information outlines the regulations on the processing of personal data and privacy protection in the field of electronic communications:",
+  "aviso.p2": "<strong>BDR Informática y Comunicaciones S.L.U &amp; BDR INFORMATICA Y COMUNICACIONES, SL</strong> [hereinafter <strong>BDR</strong>] manages and operates the content of this website. Registered offices: c/ Baixada del Molí, 20 1-1 – AD500 ANDORRA LA VELLA (ANDORRA), NRT L-707599-R, Trade Reg. No. 920400X &amp; Passeig Zona Franca 169-171, 8º 1ª 08038 Barcelona (Spain), Reg. No. B61678207. Contact: <a href=\"mailto:hola@tutumsec.io\">hola@tutumsec.io</a>.",
+  "aviso.p3": "The website <a href=\"https://www.tutumsec.io\" target=\"_blank\">www.tutumsec.io</a> provides information on consulting services, maintaining contact with users and sending detailed information as described in this notice.",
+
+  "usuario.title": "USER",
+  "usuario.p1": "Using this website grants you the status of User and implies that you have read and accepted all the conditions of this Legal Notice.",
+  "usuario.p2": "Tutumsec reserves the right to modify or update this Legal Notice at any time without prior notice.",
+
+  "links.title": "LINKS INFORMATION",
+  "links.p1": "Tutumsec is not responsible for external websites accessed through links, nor for any external content provided by third parties. Accessing such links is at the user's own risk.",
+
+  "modificaciones.title": "MODIFICATIONS",
+  "modificaciones.p1": "Tutumsec may introduce improvements or changes to its content at any time.",
+
+  "exencion.title": "DISCLAIMER",
+  "exencion.p1": "Tutumsec declines all responsibility for interruptions or failures caused by network or power outages, or other technical incidents.",
+  "exencion.p2": "While Tutumsec strives to ensure reliability, it does not guarantee uninterrupted service or absence of errors.",
+
+  "propiedad.title": "INTELLECTUAL AND INDUSTRIAL PROPERTY",
+  "propiedad.p1": "All content on <a href=\"https://www.tutumsec.io\">www.tutumsec.io</a> is protected under Andorran intellectual property law. Reproduction or distribution without authorization is prohibited.",
+  "propiedad.p2": "Use is limited to personal purposes only; commercial use is forbidden.",
+  "propiedad.p3": "Links or framing require prior authorization.",
+  "propiedad.p4": "Tutumsec reserves all rights and will pursue violations.",
+  "propiedad.p5": "Contact: <a href=\"mailto:hola@tutumsec.io\">hola@tutumsec.io</a>.",
+  "propiedad.p6": "Tutumsec trademarks are also protected by industrial property law.",
+
+  "privacidad.title": "II. PRIVACY POLICY",
+  "privacidad.p1": "Access to this site does not imply personal data collection unless otherwise stated.",
+  "privacidad.p2": "Collected data will be used to manage user relationships and improve contracted services.",
+  "privacidad.p3": "Data is stored under BDR ownership in compliance with Andorran and EU data protection laws.",
+  "privacidad.p4": "Tutumsec has implemented technical and organizational measures to secure data.",
+  "privacidad.p5": "Data may be used for professional communications. You may opt out at any time: <a href=\"mailto:hola@tutumsec.io\">hola@tutumsec.io</a>.",
+  "privacidad.p6": "Users may exercise their rights by contacting <a href=\"mailto:hola@tutumsec.io\">hola@tutumsec.io</a>.",
+  "privacidad.p7": "These rights are personal and may only be exercised by the data subject or their legal representative.",
+  "privacidad.p8": "Requests will be answered within one month.",
+  "privacidad.p9": "Approved access requests will be fulfilled within 10 days.",
+  "privacidad.p10": "Requests for rectification or deletion will be processed within 10 days.",
+
+  "otros.title": "Third-party processors",
+  "otros.p1": "When third parties access data, a contract will ensure confidentiality and compliance with GDPR Article 28.",
+
+  "cambio.title": "Policy updates",
+  "cambio.p1": "Tutumsec may modify this policy to adapt it to legal or regulatory changes.",
+
+  "dudas.p1": "For any questions, contact <a href=\"mailto:hola@tutumsec.io\">hola@tutumsec.io</a>.",
+
+  "cookiesSec.title": "III. Cookie Policy",
+  "cookiesSec.intro": "Cookies are used for the following purposes:",
+  "cookiesSec.li1": "Ensure correct website operation.",
+  "cookiesSec.li2": "Store user preferences such as language or font size.",
+  "cookiesSec.li3": "Understand user navigation experience.",
+  "cookiesSec.li4": "Collect anonymous statistical data.",
+  "cookiesSec.li5": "Improve browsing and user experience.",
+
+  "cookiesSec.typologyTitle": "Types and purposes",
+  "cookiesSec.t1": "<strong>Technical:</strong> Essential for website functionality.",
+  "cookiesSec.t2": "<strong>Performance:</strong> Improve speed and efficiency.",
+  "cookiesSec.t3": "<strong>Advertising:</strong> Store ad-related data.",
+  "cookiesSec.t4": "<strong>Geolocation:</strong> Adapt content to location.",
+  "cookiesSec.usedTitle": "Cookies used",
+  "cookiesSec.usedIntro": "Cookies are categorized by intrusiveness levels:",
+  "cookiesSec.level1": "<strong>Level 1:</strong> Strictly necessary cookies.",
+  "cookiesSec.level2": "<strong>Level 2:</strong> Anonymous performance cookies.",
+  "cookiesSec.level3": "<strong>Level 3:</strong> Third-party tracking cookies.",
+  "cookiesSec.noPersonal": "Tutumsec does not use cookies to identify individuals.",
+  "cookiesSec.contactCta": "Contact: hola@tutumsec.io",
+
+  "footer.rights": "© {{year}} Tutumsec. All rights reserved."
+}

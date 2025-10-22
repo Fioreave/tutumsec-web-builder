@@ -1,0 +1,58 @@
+{
+  "seo.title": "Réponse aux incidents de cybersécurité | TutumSec",
+  "seo.description": "Agir vite et clairement pour contenir, récupérer et tirer les leçons de l’incident. Canal direct, coordination exécutive et appui juridique. Barcelone, Gérone, Catalogne et Andorre.",
+
+  "hero.title.line1": "Réponse aux incidents, sans bruit",
+  "hero.title.line2": "et avec méthode",
+  "hero.subtitle": "Canal direct, confinement rapide et accompagnement jusqu’à la clôture",
+  "hero.ctaHelp.label": "J’ai besoin d’aide maintenant",
+  "hero.ctaHelp.href": "/fr/contact",
+  "hero.ctaTalk.label": "Parler à un expert",
+  "hero.ctaTalk.href": "/fr/contact",
+  "hero.note": "Détection 24h/24 via SOC/MDR ; les autres services sont traités en priorité pendant les heures ouvrées.",
+
+  "pain.title": "Quand ça arrive, il faut des décisions, pas des alertes",
+  "pain.text": "Nous ouvrons un canal de communication immédiat, évaluons l’ampleur réelle et priorisons les actions pour contenir vite, récupérer avec discernement et documenter l’essentiel. Sans jargon inutile : ce qui se passe, ce que nous faisons et pourquoi.",
+
+  "steps.title": "Ce que nous ferons pour vous",
+  "steps.0.title": "Premières heures",
+  "steps.0.desc": "Canal direct avec des analystes seniors (téléphone et messagerie sécurisée).\nConfinement initial et visibilité rapide des équipements et comptes affectés.\nRecommandation d’activer un EDR compatible (p. ex., Microsoft Defender, Bitdefender, Sophos) pour accélérer l’enquête.",
+  "steps.1.title": "Premier jour",
+  "steps.1.desc": "Isolement où nécessaire et restauration sûre dès que possible.\nCoordination avec vos équipes (IT/direction) et—si vous le souhaitez—accompagnement exécutif type vCISO.",
+  "steps.2.title": "Jours suivants",
+  "steps.2.desc": "Analyse technique et chronologie de l’incident (forensique selon cadrage/priorités du cas).\nRecommandations priorisées par le risque et appui aux notifications réglementaires si besoin.",
+
+  "cta.proposal.label": "Demander une proposition sur mesure",
+  "cta.proposal.href": "/contact",
+
+  "cogestion.title": "Cogestion réelle et gouvernance active",
+  "cogestion.0": "Canal direct et règles claires dès le départ.",
+  "cogestion.1": "Décisions co-signées avec vous (pas de « boîte noire »).",
+  "cogestion.2": "Conseil juridique coordonné pour la conservation des preuves et les notifications si nécessaire.",
+  "cogestion.3": "Clôture avec leçons apprises et feuille de route d’amélioration.",
+  "cogestion.4": "Rapport technique avec preuves.",
+  "cogestion.5": "Réunion de clôture et plan d’amélioration aligné au business.",
+
+  "where.title": "Où intervenons-nous ?",
+  "where.text": "Barcelone, Gérone, reste de la Catalogne et Andorre. Support à distance sur tout le territoire.",
+
+  "deliverables.title.line1": "Livrables pensés",
+  "deliverables.title.line2": "pour la direction et l’IT",
+  "deliverables.0": "Résumé exécutif en 1 page : impact, décisions, prochaines étapes.",
+  "deliverables.1": "Rapport technique avec preuves.",
+  "deliverables.2": "Réunion de clôture et plan d’amélioration aligné au business.",
+
+  "faq.title": "Foire aux questions",
+  "faq.0.q": "Traitez-vous les cas de ransomware ?",
+  "faq.0.a": "Oui, avec une position claire : nous ne négocions pas avec les attaquants. Nous priorisons le confinement et la récupération et guidons les notifications aux autorités compétentes, en coordination avec vos équipes et le juridique.",
+  "faq.1.q": "Proposez-vous du forensique/DFIR ?",
+  "faq.1.a": "Oui. Équipe forensique externe spécialisée (budget et périmètre définis) pour collecte de preuves avec chaîne de conservation, analyse technique et documentation valable pour audits ou procédures.",
+  "faq.2.q": "Comment démarrez-vous un cas urgent ?",
+  "faq.2.a": "Très simple : canal direct (téléphone et messagerie sécurisée), cadrage rapide et priorités, puis confinement. Nous indiquons les prochaines étapes et la documentation minimale requise.",
+  "faq.3.q": "Aidez-vous aux notifications réglementaires et à la communication ?",
+  "faq.3.a": "Oui. Préparation des avis aux autorités (ex. NIS2/APD) et des communications internes/externes, en coordination avec le juridique et, si nécessaire, votre équipe communication.",
+  "faq.4.q": "Pouvez-vous travailler avec mon cyber-assurance ?",
+  "faq.4.a": "Oui. Coordination des exigences (contacts, reporting, preuves) afin d’accélérer les autorisations et réduire les frictions pendant la gestion de l’incident.",
+
+  "cta.title": "Arrêtons les menaces avant qu’elles n’arrêtent votre activité"
+}

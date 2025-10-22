@@ -1,0 +1,57 @@
+{
+  "seo.title": "Audit & Conformité NIS2 pour entreprises | TutumSec",
+  "seo.description": "Gap-analysis NIS2 + audit technique et plan de mise en conformité. Évidences pour audits et chaîne d’approvisionnement.",
+
+  "schema.name": "Audit & Conformité NIS2",
+  "schema.description": "Pentesting approfondi + analyse d’écarts NIS2 : la voie la plus rapide et la plus sûre vers la conformité totale.",
+
+  "hero.title": "Audit technique & Conformité NIS2",
+  "hero.subtitle": "Pentesting approfondi + Gap-Analysis NIS2 : le chemin rapide et sûr vers la conformité totale.",
+  "hero.cta": "Réservez votre consultation gratuite →",
+  "hero.secondaryCta": "Télécharger la Checklist « 15 contrôles NIS2 essentiels »",
+
+  "why.heading": "Pourquoi nous choisir ?",
+  "why.cards.0.title": "Pentesting offensif",
+  "why.cards.0.desc": "Nous simulons des attaques multi-vecteurs sur le Cloud, M365, VPN, OT/ICS et Wi-Fi pour détecter les failles avant les attaquants.",
+  "why.cards.1.title": "Gap-Analysis NIS2 & ISO 27001",
+  "why.cards.1.desc": "Cartographie des contrôles, politiques et preuves ; priorisation et quick-wins.",
+  "why.cards.2.title": "Coût prévisible et évolutif",
+  "why.cards.2.desc": "Abonnement modulaire : vous ne payez que pour les actifs et services nécessaires.",
+  "why.cards.3.title": "Validation & suivi continu",
+  "why.cards.3.desc": "Re-tests trimestriels, KPIs de maturité et accompagnement lors des audits externes.",
+
+  "process.heading": "Une méthodologie claire,",
+  "process.subheading": "exécutive et orientée résultats",
+  "process.steps.0.title": "Diagnostic initial",
+  "process.steps.0.desc": "Audit technique, pentesting et analyse d’écarts NIS2/ISO.",
+  "process.steps.1.title": "Feuille de route stratégique",
+  "process.steps.1.desc": "Plan sur 12–36 mois avec priorités et ROI.",
+  "process.steps.2.title": "Mise en œuvre & gouvernance",
+  "process.steps.2.desc": "Politiques, processus et outils personnalisés.",
+  "process.steps.3.title": "Suivi continu",
+  "process.steps.3.desc": "Déploiement, KPIs et revue trimestrielle avec votre vCISO.",
+
+  "how.heading": "Comment procédons-nous",
+  "highlights.0": "Pentesting avancé avec rapport exécutif ≤ 15 jours",
+  "highlights.1": "Conformité NIS2 / ISO 27001 sans frictions",
+  "highlights.2": "−30 % de vulnérabilités critiques en 6 mois",
+  "highlights.3": "Tableau de bord des risques en temps réel pour votre comité de direction",
+
+  "pain.heading1": "Audit technique ou conformité ?",
+  "pain.heading2": "Vous avez besoin des deux… rapidement",
+  "pain.body": "Oubliez les outils isolés : il faut un audit offensif pour détecter les points d’entrée et un plan de conformité qui transforme NIS2 et l’ISO 27001 en actions concrètes. Avec Audit-to-Comply de TutumSec, nous identifions les écarts réels (des firewalls aux politiques), priorisons les risques et alignons les contrôles sur le business pour passer du simple « conforme » à réellement protégé.",
+
+  "faq.heading": "Questions fréquentes",
+  "faq.q1": "Que couvre exactement l’audit NIS2 ?",
+  "faq.a1": "Infrastructure (réseaux, serveurs, OT), processus, politiques et gouvernance. Inclut du pentesting et une analyse d’écarts complète.",
+  "faq.q2": "Combien de temps dure le diagnostic initial ?",
+  "faq.a2": "Entre 10 et 15 jours ouvrables selon le nombre d’actifs et la documentation disponible.",
+  "faq.q3": "Ai-je besoin d’un audit si j’ai déjà un prestataire IT ?",
+  "faq.a3": "Votre MSP maintient l’infrastructure ; nous assurons la gouvernance, la conformité et la visibilité exécutive. Les deux services sont complémentaires.",
+  "faq.q4": "La directive NIS2 me concerne-t-elle vraiment ?",
+  "faq.a4": "Oui, si vous opérez des infrastructures critiques, des services essentiels ou si vous faites partie de chaînes d’approvisionnement réglementées.",
+  "faq.q5": "Faut-il un outil de sécurité supplémentaire pour être conforme NIS2 ?",
+  "faq.a5": "Pas toujours. Nous analysons d’abord l’existant et ne proposons que l’essentiel.",
+
+  "ctaFinal.title": "Souhaitez-vous aligner votre sécurité sur NIS2 avant l’échéance ?"
+}

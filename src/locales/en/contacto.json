@@ -1,0 +1,36 @@
+{
+  "hero.title": "Contact",
+  "hero.subtitle": "Get in touch to discuss your cybersecurity needs",
+  "form.title": "Send us a message",
+  "form.firstName.label": "First name",
+  "form.firstName.placeholder": "Your first name",
+  "form.lastName.label": "Last name",
+  "form.lastName.placeholder": "Your last name",
+  "form.email.label": "Email",
+  "form.email.placeholder": "you@email.com",
+  "form.company.label": "Company",
+  "form.company.placeholder": "Your company",
+  "form.message.label": "Message",
+  "form.message.placeholder": "Tell us about your project...",
+  "form.privacy.prefix": "I accept the",
+  "form.privacy.link": "privacy policy",
+  "form.privacy.suffix": ".",
+  "form.submit": "Send message",
+  "form.submitting": "Sending…",
+
+  "success.title": "Message sent!",
+  "success.subtitle": "Thanks for reaching out. A consultant will contact you shortly.",
+  "success.sendAnother": "Send another message",
+
+  "errors.privacyRequired": "You must accept the privacy policy.",
+  "errors.captchaUnavailable": "Captcha unavailable",
+  "errors.captchaNotLoaded": "Captcha did not load",
+  "errors.timeout": "Request timed out. Please try again.",
+  "errors.submitFailed": "Could not submit the form.",
+  "errors.generic": "An error occurred. Please try again.",
+
+  "locations.title": "Our offices",
+  "locations.mapTitle": "Map of {{city}}",
+
+  "policy.url": "/en/privacy-policy"
+}

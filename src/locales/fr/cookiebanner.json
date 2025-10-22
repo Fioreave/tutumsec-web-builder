@@ -1,0 +1,23 @@
+{
+  "banner.copy.before": "Nous utilisons des cookies à des fins techniques, d’analyse et de publicité. Vous pouvez tout accepter, refuser ou ajuster vos préférences. Plus d’infos dans notre ",
+  "banner.linkLabel": "Politique de cookies",
+  "banner.copy.after": ".",
+  "buttons.preferences": "Préférences",
+  "buttons.reject": "Refuser",
+  "buttons.acceptAll": "Tout accepter",
+  "buttons.rejectAll": "Tout refuser",
+  "buttons.save": "Enregistrer la sélection",
+  "modal.title": "Préférences des cookies",
+  "modal.subtitle": "Choisissez les catégories autorisées. Vous pouvez modifier ces choix à tout moment.",
+  "categories.necessary.title": "Nécessaires",
+  "categories.necessary.desc": "Indispensables au fonctionnement du site (sécurité, session, répartition de charge).",
+  "categories.analytics.title": "Analytics",
+  "categories.analytics.desc": "Nous aide à mesurer l’utilisation du site (p. ex., Google Analytics 4).",
+  "categories.advertising.title": "Publicité",
+  "categories.advertising.desc": "Autorise la personnalisation des annonces et la mesure des campagnes (Google Ads, remarketing).",
+  "categories.functional.title": "Fonctionnels",
+  "categories.functional.desc": "Améliorent l’expérience (p. ex., mémoriser les préférences).",
+  "floating.manage.label": "Gérer les cookies",
+  "floating.manage.aria": "Gérer les cookies",
+  "policy.url": "/fr/politique-de-cookies"
+}

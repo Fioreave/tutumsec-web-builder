@@ -1,0 +1,86 @@
+{
+  "header.title": "CONDITIONS ET CONFIDENTIALITÉ",
+  "header.sub": "I Mentions légales · II Politique de confidentialité · III Politique de cookies",
+
+  "toc.title": "Sommaire",
+  "toc.aviso": "I. Mentions légales",
+  "toc.usuario": "Utilisateur",
+  "toc.links": "Informations sur les liens",
+  "toc.modificaciones": "Modifications du site",
+  "toc.exencion": "Clause de non-responsabilité",
+  "toc.propiedad": "Propriété intellectuelle",
+  "toc.privacidad": "II. Politique de confidentialité",
+  "toc.cookies": "III. Politique de cookies",
+
+  "actions.print": "Imprimer / Enregistrer en PDF",
+
+  "aviso.title": "I. Mentions légales",
+  "aviso.p1": "Les informations suivantes exposent la réglementation relative au traitement des données personnelles et à la protection de la vie privée dans le domaine des communications électroniques :",
+  "aviso.p2": "<strong>BDR Informática y Comunicaciones S.L.U &amp; BDR INFORMATICA Y COMUNICACIONES, SL</strong> [ci-après <strong>BDR</strong>] gère et exploite le contenu du présent site web. Siège social : c/ Baixada del Molí, 20 1-1 – AD500 ANDORRA LA VELLA (ANDORRE), NRT L-707599-R, Registre du commerce n° 920400X &amp; Passeig Zona Franca 169-171, 8º 1ª 08038 Barcelone (Espagne), Registre n° B61678207. Contact : <a href=\"mailto:hola@tutumsec.io\">hola@tutumsec.io</a>.",
+  "aviso.p3": "Le site web <a href=\"https://www.tutumsec.io\" target=\"_blank\">www.tutumsec.io</a> fournit des informations sur les services de conseil proposés, afin de maintenir le contact avec les utilisateurs et de leur envoyer des informations détaillées conformément au présent avis.",
+
+  "usuario.title": "UTILISATEUR",
+  "usuario.p1": "L’utilisation de ce site web confère la qualité d’utilisateur et implique l’acceptation pleine et entière de toutes les dispositions du présent avis légal.",
+  "usuario.p2": "Tutumsec se réserve le droit de modifier ou de mettre à jour cet avis légal à tout moment sans préavis.",
+
+  "links.title": "INFORMATIONS SUR LES LIENS",
+  "links.p1": "Tutumsec n’est pas responsable des sites web externes accessibles via des liens, ni des contenus fournis par des tiers. L’accès à ces liens se fait sous la seule responsabilité de l’utilisateur.",
+
+  "modificaciones.title": "MODIFICATIONS DU SITE",
+  "modificaciones.p1": "Tutumsec peut apporter à tout moment des améliorations ou des modifications à son contenu.",
+
+  "exencion.title": "CLAUSE DE NON-RESPONSABILITÉ",
+  "exencion.p1": "Tutumsec décline toute responsabilité pour les interruptions ou dysfonctionnements causés par des pannes de réseau, des coupures d’électricité ou d’autres incidents techniques.",
+  "exencion.p2": "Bien que Tutumsec s’efforce d’assurer la fiabilité du service, elle ne garantit pas son fonctionnement ininterrompu ni l’absence d’erreurs.",
+
+  "propiedad.title": "PROPRIÉTÉ INTELLECTUELLE ET INDUSTRIELLE",
+  "propiedad.p1": "L’ensemble du contenu du site <a href=\"https://www.tutumsec.io\">www.tutumsec.io</a> est protégé par la législation andorrane sur la propriété intellectuelle. Toute reproduction ou distribution sans autorisation est interdite.",
+  "propiedad.p2": "L’utilisation est strictement limitée à des fins personnelles ; toute utilisation commerciale est interdite.",
+  "propiedad.p3": "Les liens ou encadrements nécessitent une autorisation préalable.",
+  "propiedad.p4": "Tutumsec se réserve tous les droits et poursuivra toute violation.",
+  "propiedad.p5": "Contact : <a href=\"mailto:hola@tutumsec.io\">hola@tutumsec.io</a>.",
+  "propiedad.p6": "Les marques et signes distinctifs de Tutumsec sont également protégés par les droits de propriété industrielle.",
+
+  "privacidad.title": "II. POLITIQUE DE CONFIDENTIALITÉ",
+  "privacidad.p1": "L’accès à ce site n’implique pas la collecte de données personnelles, sauf indication contraire.",
+  "privacidad.p2": "Les données collectées sont utilisées pour gérer la relation avec les utilisateurs et améliorer les services fournis.",
+  "privacidad.p3": "Les données sont conservées par BDR conformément aux lois andorranes et européennes sur la protection des données.",
+  "privacidad.p4": "Tutumsec a mis en œuvre des mesures techniques et organisationnelles pour garantir la sécurité des données.",
+  "privacidad.p5": "Les données peuvent être utilisées pour des communications professionnelles. Vous pouvez vous y opposer à tout moment : <a href=\"mailto:hola@tutumsec.io\">hola@tutumsec.io</a>.",
+  "privacidad.p6": "Les utilisateurs peuvent exercer leurs droits en contactant <a href=\"mailto:hola@tutumsec.io\">hola@tutumsec.io</a>.",
+  "privacidad.p7": "Ces droits sont personnels et ne peuvent être exercés que par la personne concernée ou son représentant légal.",
+  "privacidad.p8": "Les demandes seront traitées dans un délai d’un mois.",
+  "privacidad.p9": "En cas d’acceptation, l’accès sera accordé dans les 10 jours suivant la notification.",
+  "privacidad.p10": "Les demandes de rectification ou de suppression seront traitées dans les 10 jours suivant leur réception.",
+
+  "otros.title": "Sous-traitants",
+  "otros.p1": "Lorsqu’un tiers accède à des données, un contrat est établi pour garantir la confidentialité et la conformité à l’article 28 du RGPD.",
+
+  "cambio.title": "Mise à jour de la politique",
+  "cambio.p1": "Tutumsec peut modifier la présente politique afin de l’adapter aux changements législatifs ou réglementaires.",
+
+  "dudas.p1": "Pour toute question, contactez <a href=\"mailto:hola@tutumsec.io\">hola@tutumsec.io</a>.",
+
+  "cookiesSec.title": "III. Politique de cookies",
+  "cookiesSec.intro": "Les cookies sont utilisés pour les raisons suivantes :",
+  "cookiesSec.li1": "Assurer le bon fonctionnement du site web.",
+  "cookiesSec.li2": "Enregistrer les préférences de l’utilisateur (langue, taille du texte, etc.).",
+  "cookiesSec.li3": "Analyser l’expérience de navigation des utilisateurs.",
+  "cookiesSec.li4": "Collecter des données statistiques anonymes.",
+  "cookiesSec.li5": "Optimiser la navigation et améliorer l’expérience utilisateur.",
+
+  "cookiesSec.typologyTitle": "Types et finalités",
+  "cookiesSec.t1": "<strong>Techniques :</strong> Essentielles au bon fonctionnement du site.",
+  "cookiesSec.t2": "<strong>De performance :</strong> Améliorent la rapidité et l’efficacité.",
+  "cookiesSec.t3": "<strong>Publicitaires :</strong> Enregistrent des données liées aux annonces.",
+  "cookiesSec.t4": "<strong>De géolocalisation :</strong> Adaptent le contenu selon la position géographique.",
+  "cookiesSec.usedTitle": "Cookies utilisés",
+  "cookiesSec.usedIntro": "Les cookies sont classés selon leur niveau d’intrusion :",
+  "cookiesSec.level1": "<strong>Niveau 1 :</strong> Cookies strictement nécessaires.",
+  "cookiesSec.level2": "<strong>Niveau 2 :</strong> Cookies anonymes de performance.",
+  "cookiesSec.level3": "<strong>Niveau 3 :</strong> Cookies de suivi tiers (publicité, analytique).",
+  "cookiesSec.noPersonal": "Tutumsec n’utilise pas de cookies pour identifier des personnes physiques.",
+  "cookiesSec.contactCta": "Contact : hola@tutumsec.io",
+
+  "footer.rights": "© {{year}} Tutumsec. Tous droits réservés."
+}

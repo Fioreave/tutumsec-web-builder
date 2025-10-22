@@ -1,0 +1,43 @@
+{
+  "hero.title": "Cybersécurité industrielle : production sans interruption",
+  "hero.subtitle": "Nous appliquons l’IEC 62443 avec une approche pratique : sécurité des personnes et continuité d’usine d’abord.",
+  "hero.bgAlt": "Arrière-plan industriel abstrait",
+
+  "challenge.imgAlt": "Risques cloud et chaîne d’approvisionnement",
+  "challenge.badge": "Le défi actuel",
+  "challenge.heading": "Configuration cloud, chaîne d’approvisionnement, API et données multi-tenant",
+  "challenge.text": "Vecteurs qui freinent ventes et conformité s’ils ne sont pas gouvernés. (Synthèse basée sur ENISA TL 2024).",
+  "challenge.cta.label": "Découvrez notre approche",
+  "challenge.cta.href": "#solucion",
+
+  "solution.title": "Notre solution",
+  "solution.subtitle": "Approche de bout en bout pour réduire le risque OT et maintenir la production.",
+  "solution.cards.0.t": "Découverte & inventaire OT",
+  "solution.cards.0.d": "Identification automatique des actifs et réseaux industriels.",
+  "solution.cards.0.href": "/descubrimiento-ot",
+  "solution.cards.1.t": "Zones et conduits",
+  "solution.cards.1.d": "Durcissement et patchs lors des arrêts planifiés.",
+  "solution.cards.1.href": "/zonas-y-conductos",
+  "solution.cards.2.t": "Détection réseau industriel",
+  "solution.cards.2.d": "Cas MITRE ATT&CK for ICS pour une supervision avancée.",
+  "solution.cards.2.href": "/deteccion-ot",
+  "solution.cards.3.t": "PRA/DRP & restauration",
+  "solution.cards.3.d": "Tests de reprise guidés par la sécurité/la production.",
+  "solution.cards.3.href": "/drp-industrial",
+  "solution.cards.4.t": "Gouvernance IEC 62443",
+  "solution.cards.4.d": "Programme de gouvernance et formation des opérations.",
+  "solution.cards.4.href": "/gobierno-iec-62443",
+
+  "benefits.title": "Bénéfices immédiats",
+  "benefits.items.0": "Moins de surface d’attaque en usine.",
+  "benefits.items.1": "Réponse plus rapide aux anomalies.",
+  "benefits.items.2": "Arrêts minimisés et reprise priorisée.",
+
+  "cta.banner.title": "Besoin d’un accompagnement personnalisé ?",
+  "cta.banner.primary.label": "Réservez une consultation gratuite (15’)",
+  "cta.banner.primary.href": "https://calendly.com/ayub-tutumsec/30min",
+  "cta.banner.secondary.label": "Demandez une évaluation OT (30’)",
+  "cta.banner.secondary.href": "https://calendly.com/ayub-tutumsec/30min",
+
+  "common.explore": "Explorer"
+}

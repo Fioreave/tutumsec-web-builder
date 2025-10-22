@@ -1,0 +1,79 @@
+{
+  "lang.es": "Spanish",
+  "lang.ca": "Catalan",
+  "lang.en": "English",
+  "lang.fr": "French",
+  "nav.logoAlt": "TutumSec Logo",
+  "nav.menu.services": "Services",
+  "nav.menu.products": "Products",
+  "nav.menu.industries": "Industries",
+  "nav.menu.resources": "Resources",
+  "nav.menu.about": "About Us",
+  "nav.menu.contact": "Contact",
+  "nav.cta": "Free Audit",
+  "nav.aria.open": "Open menu",
+  "nav.aria.close": "Close menu",
+
+  "nav.services.consultoriaCiso": "CISO Consulting",
+  "nav.services.auditoriaNis2": "Audit & NIS2 Compliance",
+  "nav.services.transformacionDigital": "Strategic Digital Transformation",
+  "nav.services.formacion": "Training & Awareness",
+  "nav.services.oficinaSeguridad": "Information Security Office",
+
+  "nav.products.detect24x7": "24x7 Detection",
+  "nav.products.prevencion": "Prevention",
+  "nav.products.respuestaMenos15": "Response <15'",
+  "nav.products.recuperacion": "Recovery",
+
+  "nav.industries.finanzas": "Finance",
+  "nav.industries.salud": "Healthcare",
+  "nav.industries.industrialOt": "Industrial OT",
+  "nav.industries.saas": "SaaS Technology",
+  "nav.industries.public": "Public Sector",
+  "nav.industries.smb": "SMBs",
+
+  "nav.resources.blog": "Blog",
+
+  "nav.about.history": "History",
+  "nav.about.teamValues": "Team & Values",
+
+  "footer.logoAlt": "TutumSec Logo",
+  "footer.brandCopy": "Digital security is our guiding thread. Experts in cybersecurity and regulatory compliance for companies that demand more.",
+  "footer.email": "hola@tutumsec.io",
+  "footer.location": "Barcelona - Girona - Andorra",
+  "footer.linkedinAria": "TutumSec on LinkedIn (opens in a new tab)",
+
+  "footer.col.services": "Services",
+  "footer.col.products": "Products",
+  "footer.col.company": "Company",
+
+  "footer.links.consultoriaCiso": "CISO Consulting",
+  "footer.links.auditoriaNis2": "NIS2 Audit & Compliance",
+  "footer.links.transformacionDigital": "Strategic Digital Transformation",
+  "footer.links.formacion": "Training & Awareness",
+  "footer.links.oficinaSeguridad": "Information Security Office",
+
+  "footer.links.deteccion": "24x7 Detection",
+  "footer.links.prevencion": "Prevention",
+  "footer.links.respuesta": "Response <15'",
+  "footer.links.recuperacion": "Recovery",
+
+  "footer.links.historia": "History",
+  "footer.links.equipoValores": "Team & Values",
+  "footer.links.blog": "Blog",
+  "footer.links.contacto": "Contact",
+
+  "footer.certs.iso27001": "ISO 27001 Certified",
+  "footer.certs.rgpd": "GDPR Compliance",
+  "footer.certs.soc2": "SOC 2 Type II",
+  "footer.certs.cissp": "CISSP-Certified Team",
+
+  "footer.rights": "All rights reserved.",
+  "footer.privacy": "Privacy Policy",
+  "footer.legal": "Legal Notice",
+
+  "footer.isoAlt": "ISO 27001 Certified",
+  "footer.incibeAlt": "INCIBE",
+  "footer.ascicatAlt": "ASCICAT",
+  "footer.agenciacatAlt": "Cybersecurity Agency of Catalonia"
+}

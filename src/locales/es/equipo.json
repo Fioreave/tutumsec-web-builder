@@ -1,0 +1,48 @@
+{
+  "seo.title": "Equipo y valores | TutumSec",
+  "seo.description": "Personas cercanas, expertas y claras. Conoce al equipo multidisciplinar de TutumSec, nuestra misión, visión y valores, y cómo trabajamos para convertir la seguridad en resultados medibles.",
+  "seo.canonical": "https://tutumsec.io/sobre-nosotros/equipo-valores/",
+
+  "hero.title": "¿Quiénes somos?",
+  "hero.subtitle": "Personas cercanas y expertas que hablan claro, actúan rápido y acompañan de verdad. Nuestro objetivo: que la ciberseguridad se entienda en minutos y se note en semanas.",
+
+  "team.title": "Nuestro equipo",
+  "team.experienceNote": "+10 años de media, experiencia multisectorial.",
+  "team.steps.0": "Dirección y coordinación (vCISO / OSI).",
+  "team.steps.1": "Auditoría y cumplimiento (NIS2, ISO 27001, ENS, RGPD).",
+  "team.steps.2": "Pentesting y evaluación técnica.",
+  "team.steps.3": "Operación gestionada 24/7 (detección y respuesta).",
+  "team.steps.4": "Formación y concienciación para toda la plantilla.",
+
+  "workflow.title": "¿Cómo trabajamos?",
+  "workflow.items.0.title": "Diagnóstico claro",
+  "workflow.items.0.desc": "Evaluamos exposición y prioridades sin llenar de siglas.",
+  "workflow.items.1.title": "Plan accionable (4–6 semanas)",
+  "workflow.items.1.desc": "Pocas tareas, responsables y fechas. Impacto primero.",
+  "workflow.items.2.title": "Implantación guiada",
+  "workflow.items.2.desc": "Mejoramos con lo que ya tienes y añadimos solo lo imprescindible.",
+  "workflow.items.3.title": "Formación breve y hábitos",
+  "workflow.items.3.desc": "Mensajes cortos, simulaciones sencillas y recordatorios.",
+  "workflow.items.4.title": "Evidencias para dirección",
+  "workflow.items.4.desc": "Informes claros con avances, riesgos y próximos pasos.",
+  "workflow.items.5.title": "Revisión periódica",
+  "workflow.items.5.desc": "Mensual o trimestral, para mantener y mejorar sin fricción.",
+  "workflow.items.6.title": "Cercanía y respuesta ágil",
+  "workflow.items.6.desc": "Un responsable asignado que resuelve y coordina.",
+
+  "purpose.title": "Propósito",
+  "purpose.subtitle": "Hacer que la seguridad sume al negocio: menos paradas, menos riesgos y decisiones claras para dirección.",
+  "purpose.blocks.0.title": "Misión",
+  "purpose.blocks.0.desc": "Ayudar a las organizaciones a prevenir y recuperar con planes sencillos, prioridades por impacto y evidencias que cualquiera pueda entender.",
+  "purpose.blocks.1.title": "Visión",
+  "purpose.blocks.1.desc": "Ser el referente cercano para empresas que buscan seguridad clara, medible y humana, sin burocracia ni jerga.",
+
+  "values.title": "Nuestros valores",
+  "values.items.0": "Claridad: explicamos opciones y riesgos en lenguaje simple y dejamos próximos pasos por escrito.",
+  "values.items.1": "Cercanía: asignamos un responsable que conoce tu contexto y responde rápido.",
+  "values.items.2": "Excelencia útil: entregables cortos y accionables; lo que proponemos, lo implantamos.",
+  "values.items.3": "Responsabilidad: no pagamos rescates. Priorizamos recuperación, trazabilidad y comunicación honesta.",
+  "values.items.4": "Mejora continua: revisiones periódicas con métricas y una lista breve de mejoras.",
+
+  "closing.title": "“Seguridad clara, sin rodeos y con resultados que se ven.”"
+}

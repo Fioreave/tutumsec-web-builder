@@ -1,0 +1,41 @@
+{
+  "hero.title": "Cybersecurity for healthcare: patients and systems always available",
+  "hero.subtitle": "Ransomware and data leaks are the norm; our response: clear prevention and rehearsed recovery",
+
+  "challenge.imgAlt": "Cloud risks and supply chain",
+  "challenge.badge": "The current challenge",
+  "challenge.heading": "Healthcare leads major incidents in the EU;",
+  "challenge.text": "Ransomware (≈45%) and data breaches (≈28%).",
+  "challenge.cta.label": "See how we tackle it",
+  "challenge.cta.href": "#solucion",
+
+  "solution.title": "Our solution",
+  "solution.cards.0.t": "Healthcare vCISO",
+  "solution.cards.0.d": "governance, risk, and privacy.",
+  "solution.cards.0.href": "/descubrimiento-ot",
+  "solution.cards.1.t": "Hardening & segmentation",
+  "solution.cards.1.d": "(clinical IT/OT).",
+  "solution.cards.1.href": "/zonas-y-conductos",
+  "solution.cards.2.t": "Backups + Testing",
+  "solution.cards.2.d": "Immutable backups + monthly tests.",
+  "solution.cards.2.href": "/deteccion-ot",
+  "solution.cards.3.t": "MDR 24×7",
+  "solution.cards.3.d": "With clinical rules and triage by criticality.",
+  "solution.cards.3.href": "/drp-industrial",
+  "solution.cards.4.t": "Recovery plan",
+  "solution.cards.4.d": "by service: EMR, lab, imaging, etc.",
+  "solution.cards.4.href": "/gobierno-iec-62443",
+
+  "benefits.title": "Immediate benefits",
+  "benefits.items.0": "Fewer outages, higher service availability.",
+  "benefits.items.1": "Less impact on sensitive data.",
+  "benefits.items.2": "Evidence for audit and leadership.",
+
+  "cta.banner.title": "Want personalized guidance?",
+  "cta.banner.primary.label": "Book a free consultation (15’)",
+  "cta.banner.primary.href": "https://calendly.com/ayub-tutumsec/30min",
+  "cta.banner.secondary.label": "Request a review of your backups.",
+  "cta.banner.secondary.href": "https://calendly.com/ayub-tutumsec/30min",
+
+  "common.explore": "Explore"
+}

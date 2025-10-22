@@ -1,0 +1,58 @@
+{
+  "seo.title": "Cybersecurity Incident Response | TutumSec",
+  "seo.description": "Fast, clear action to contain, recover and learn from the incident. Direct channel, executive coordination and legal support. Barcelona, Girona, Catalonia and Andorra.",
+
+  "hero.title.line1": "Incident response, no noise",
+  "hero.title.line2": "and with method",
+  "hero.subtitle": "Direct channel, rapid containment and support through closure",
+  "hero.ctaHelp.label": "I need help now",
+  "hero.ctaHelp.href": "/en/contact",
+  "hero.ctaTalk.label": "Talk to an expert",
+  "hero.ctaTalk.href": "/en/contact",
+  "hero.note": "24×7 detection via SOC/MDR; other services handled with high priority during business hours.",
+
+  "pain.title": "When something happens, you need decisions—not alerts",
+  "pain.text": "We open an immediate communications channel, assess real scope and prioritize actions to contain quickly, recover sensibly and document what matters. No unnecessary jargon: we explain what’s happening, what we’re doing and why.",
+
+  "steps.title": "What we’ll do for you",
+  "steps.0.title": "First hours",
+  "steps.0.desc": "Direct channel with senior analysts (phone and secure messaging).\nInitial containment and rapid visibility into affected devices and accounts.\nRecommendation to activate a compatible EDR (e.g., Microsoft Defender, Bitdefender, Sophos) to speed investigation.",
+  "steps.1.title": "Day one",
+  "steps.1.desc": "Isolation where needed and safe restoration when possible.\nCoordination with your team (IT/leadership) and—on request—executive vCISO-style guidance.",
+  "steps.2.title": "Following days",
+  "steps.2.desc": "Technical analysis and incident timeline (forensics pending case scoping/priorities).\nRisk-prioritized recommendations and support with regulatory notices when applicable.",
+
+  "cta.proposal.label": "Request a tailored proposal",
+  "cta.proposal.href": "/contact",
+
+  "cogestion.title": "Real co-management and active governance",
+  "cogestion.0": "Direct channel and clear rules from the start.",
+  "cogestion.1": "Co-signed decisions with you (no black box).",
+  "cogestion.2": "Coordinated legal counsel for evidence custody and notifications when required.",
+  "cogestion.3": "Closure with lessons learned and improvement roadmap.",
+  "cogestion.4": "Technical report with evidence.",
+  "cogestion.5": "Closing meeting and business-aligned improvement plan.",
+
+  "where.title": "Where do we operate?",
+  "where.text": "Barcelona, Girona, the rest of Catalonia and Andorra. Remote support nationwide.",
+
+  "deliverables.title.line1": "Deliverables designed",
+  "deliverables.title.line2": "for leadership and IT",
+  "deliverables.0": "One-page executive summary: impact, decisions, next steps.",
+  "deliverables.1": "Technical report with evidence.",
+  "deliverables.2": "Closing meeting and business-aligned improvement plan.",
+
+  "faq.title": "Frequently asked questions",
+  "faq.0.q": "Do you handle ransomware cases?",
+  "faq.0.a": "Yes, with a clear stance: we do not negotiate with attackers. We prioritize containment and recovery and guide notifications to the competent authorities when appropriate, coordinating with your team and legal counsel.",
+  "faq.1.q": "Do you offer digital forensics (DFIR)?",
+  "faq.1.a": "Yes. We work with a specialized external forensics team (with defined scope and budget) for evidence collection with chain of custody, technical analysis and documentation suitable for audits or legal proceedings.",
+  "faq.2.q": "How do you start an urgent case?",
+  "faq.2.a": "Easy: we open a direct channel (phone and secure messaging), confirm scope and priorities and start containment. We tell you the next steps and the minimum documentation we need.",
+  "faq.3.q": "Do you support regulatory notifications and communications?",
+  "faq.3.a": "Yes. We assist with notices to authorities (e.g., NIS2/DPA) and internal/external communications, coordinated with legal counsel and, if needed, your comms team.",
+  "faq.4.q": "Can you work with my cyber insurance?",
+  "faq.4.a": "Yes. We coordinate insurer requirements (contacts, reporting, evidence) to speed approvals and avoid friction during incident handling.",
+
+  "cta.title": "Let’s stop threats before they stop your business"
+}

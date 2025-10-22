@@ -1,0 +1,56 @@
+{
+  "seo.title": "Transformation Numérique Stratégique pour PME à Barcelone, Gérone, Catalogne et Andorre",
+  "seo.description": "Conseil stratégique en transformation numérique et cybersécurité pour accroître la productivité et la compétitivité. Diagnostic gratuit, feuille de route 360° et accompagnement humain.",
+  "schema.name": "Transformation Numérique Stratégique",
+  "schema.description": "Conseil stratégique en transformation numérique et cybersécurité qui accélère la productivité et la compétitivité des PME.",
+
+  "hero.title": "Votre entreprise est-elle prête pour la prochaine vague numérique ?",
+  "hero.subtitle": "Nous transformons la stratégie digitale en résultats mesurables",
+  "hero.bullets.0": "Diagnostic complet en 10 jours",
+  "hero.bullets.1": "Feuille de route 12–36 mois avec ROI < 9 mois",
+  "hero.bullets.2": "Économie moyenne de 22 % des coûts IT/OT",
+  "hero.cta1": "Réserver un diagnostic gratuit 30′",
+  "hero.cta2": "Télécharger la Checklist de Digitalisation 2025",
+
+  "pain.heading": "Des processus manuels et silos de données vers une entreprise agile et sécurisée",
+  "pain.body": "67 % des PME espagnoles fonctionnent encore avec des systèmes fragmentés, +30 % de coûts et risque NIS2 accru. TutumSec aligne technologie, personnes et cybersécurité avec une approche stratégique.",
+
+  "benefits.heading": "Ce que vous gagnez avec notre transformation",
+  "benefits.cards.0.title": "Productivité & automatisation IA/RPA",
+  "benefits.cards.0.desc": "KPIs opérationnels en temps réel et workflows sans papier.",
+  "benefits.cards.1.title": "Sécurité intégrée by design",
+  "benefits.cards.1.desc": "Zero Trust, chiffrement et supervision MDR 24×7.",
+  "benefits.cards.2.title": "Conformité garantie",
+  "benefits.cards.2.desc": "Méthode Compliance 360° (NIS2, RGPD, ISO 27001, ENS).",
+  "benefits.cards.3.title": "Scalabilité sans chocs de CAPEX",
+  "benefits.cards.3.desc": "Modèle par abonnement et partenaires locaux pour un support immédiat.",
+
+  "edge.heading": "Personnalisation et proximité :",
+  "edge.items.0.title": "Consultants seniors internes",
+  "edge.items.0.desc": "Nous n’externalisons pas l’analyse critique.",
+  "edge.items.1.title": "Accompagnement humain",
+  "edge.items.1.desc": "Un interlocuteur unique qui parle votre langage.",
+  "edge.items.2.title": "Intégration native avec la cybersécurité",
+  "edge.items.2.desc": "Combinez vCISO, SOC/MDR et feuille de route digitale.",
+
+  "process.heading": "Notre méthodologie",
+  "process.steps.0.title": "Diagnostic initial",
+  "process.steps.0.desc": "Audit technique, pentest et gap analysis NIS2/ISO.",
+  "process.steps.1.title": "Feuille de route stratégique",
+  "process.steps.1.desc": "Plan 12–36 mois avec priorités et ROI.",
+  "process.steps.2.title": "Mise en œuvre & gouvernance",
+  "process.steps.2.desc": "Politiques, processus et outils sur mesure.",
+  "process.steps.3.title": "Suivi continu",
+  "process.steps.3.desc": "Déploiement, KPIs et revues trimestrielles avec votre vCISO.",
+
+  "faq.heading": "Questions fréquentes",
+  "faq.q1": "Combien de temps dure un projet de transformation numérique stratégique ?",
+  "faq.a1": "3 à 6 mois selon le périmètre.",
+  "faq.q2": "Dois-je changer toute mon infrastructure ?",
+  "faq.a2": "Seulement ce qui n’apporte pas de valeur ; nous priorisons les quick wins.",
+  "faq.q3": "Puis-je commencer par un pilote à faible coût ?",
+  "faq.a3": "Oui, module Fast-Track avec budget fixé.",
+
+  "cta.title": "Lancez votre transformation numérique dès aujourd’hui — avec garanties",
+  "cta.button": "Réserver votre session gratuite"
+}

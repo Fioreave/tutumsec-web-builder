@@ -1,0 +1,45 @@
+{
+  "seo.title": "Ciberseguridad para sector público | TutumSec",
+  "seo.description": "ENS como base, NIS2 en el horizonte y presión de incidentes: hacemos fácil cumplir, operar y demostrar.",
+  "seo.canonical": "https://tutumsec.com/es/sectores/sector-publico",
+
+  "hero.title": "Ciberseguridad para sector público: servicio sin interrupciones",
+  "hero.subtitle": "ENS como base, NIS2 en el horizonte y presión de incidentes: hacemos fácil cumplir, operar y demostrar.",
+
+  "challenge.badge": "El reto actual",
+  "challenge.heading": "ENS (RD 311/2022) y la transposición NIS2 en curso, con sanciones relevantes en el debate público;",
+  "challenge.text": "Los proveedores ya muestran conformidad ENS.",
+  "challenge.imgAlt": "Ilustración de ciberseguridad para administraciones públicas",
+  "challenge.cta.label": "Conoce cómo lo abordamos",
+  "challenge.cta.href": "#solucion",
+
+  "solution.title": "Nuestra solución",
+  "solution.cards.0.t": "Adecuación ENS",
+  "solution.cards.0.d": "(medidas, políticas y evidencias).",
+  "solution.cards.0.href": "/descubrimiento-ot",
+  "solution.cards.1.t": "vCISO público",
+  "solution.cards.1.d": "Gobierno, riesgos, continuidad y formación.",
+  "solution.cards.1.href": "/zonas-y-conductos",
+  "solution.cards.2.t": "MDR 24×7",
+  "solution.cards.2.d": "Integrado con CSIRT/CCN.",
+  "solution.cards.2.href": "/deteccion-ot",
+  "solution.cards.3.t": "Recuperación",
+  "solution.cards.3.d": "Copias inmutables y simulacros periódicos.",
+  "solution.cards.3.href": "/drp-industrial",
+  "solution.cards.4.t": "Gestión de proveedores",
+  "solution.cards.4.d": "Y requisitos de seguridad.",
+  "solution.cards.4.href": "/drp-industrial",
+
+  "benefits.title": "Beneficios Inmediatos",
+  "benefits.items.0": "Evidencias listas para auditorías y pliegos.",
+  "benefits.items.1": "Menos paradas y mejor servicio al ciudadano.",
+  "benefits.items.2": "Mayor control de terceros y contratos.",
+
+  "cta.banner.title": "¿Quieres asesoramiento personalizado?",
+  "cta.banner.primary.label": "Reserva consultoría gratuita (15’)",
+  "cta.banner.primary.href": "https://calendly.com/ayub-tutumsec/30min",
+  "cta.banner.secondary.label": "Solicita revisión ENS",
+  "cta.banner.secondary.href": "https://calendly.com/ayub-tutumsec/30min",
+
+  "common.explore": "Explorar"
+}

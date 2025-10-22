@@ -1,0 +1,48 @@
+{
+  "seo.title": "Team & values | TutumSec",
+  "seo.description": "Approachable, expert, and clear. Meet TutumSec’s multidisciplinary team—our mission, vision and values—and how we turn security into measurable outcomes.",
+  "seo.canonical": "https://tutumsec.io/en/about/team-values/",
+
+  "hero.title": "Who are we?",
+  "hero.subtitle": "Approachable experts who speak clearly, act fast, and truly stay with you. Our goal: make cybersecurity understood in minutes and felt in weeks.",
+
+  "team.title": "Our team",
+  "team.experienceNote": "10+ years on average, multi-industry experience.",
+  "team.steps.0": "Leadership & coordination (vCISO / Security Office).",
+  "team.steps.1": "Audit & compliance (NIS2, ISO 27001, ENS, GDPR).",
+  "team.steps.2": "Pentesting & technical assessment.",
+  "team.steps.3": "Managed 24/7 operations (detection & response).",
+  "team.steps.4": "Training & awareness for the whole staff.",
+
+  "workflow.title": "How we work",
+  "workflow.items.0.title": "Clear diagnosis",
+  "workflow.items.0.desc": "We assess exposure and priorities without a soup of acronyms.",
+  "workflow.items.1.title": "Actionable plan (4–6 weeks)",
+  "workflow.items.1.desc": "Few tasks, named owners and dates. Impact first.",
+  "workflow.items.2.title": "Guided implementation",
+  "workflow.items.2.desc": "We improve what you already have and add only what’s essential.",
+  "workflow.items.3.title": "Short training & habits",
+  "workflow.items.3.desc": "Short messages, simple simulations and reminders.",
+  "workflow.items.4.title": "Executive evidence",
+  "workflow.items.4.desc": "Clear reports with progress, risks and next steps.",
+  "workflow.items.5.title": "Regular review",
+  "workflow.items.5.desc": "Monthly or quarterly to sustain and improve without friction.",
+  "workflow.items.6.title": "Closeness & fast response",
+  "workflow.items.6.desc": "A named owner who solves and coordinates.",
+
+  "purpose.title": "Purpose",
+  "purpose.subtitle": "Make security add to the business: fewer outages, lower risk, and clear decisions for leadership.",
+  "purpose.blocks.0.title": "Mission",
+  "purpose.blocks.0.desc": "Help organizations prevent and recover with simple plans, impact-based priorities, and evidence anyone can understand.",
+  "purpose.blocks.1.title": "Vision",
+  "purpose.blocks.1.desc": "Be the close, trusted reference for companies seeking clear, measurable and human security—without bureaucracy or jargon.",
+
+  "values.title": "Our values",
+  "values.items.0": "Clarity: we explain options and risks in plain language and leave next steps in writing.",
+  "values.items.1": "Closeness: a named owner who knows your context and replies fast.",
+  "values.items.2": "Practical excellence: short, actionable deliverables; we implement what we propose.",
+  "values.items.3": "Responsibility: we don’t pay ransoms. We prioritise recovery, traceability and honest communication.",
+  "values.items.4": "Continuous improvement: periodic reviews with metrics and a short improvements list.",
+
+  "closing.title": "“Clear security, no fluff, with results you can see.”"
+}

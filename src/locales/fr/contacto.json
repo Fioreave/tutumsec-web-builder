@@ -1,0 +1,36 @@
+{
+  "hero.title": "Contact",
+  "hero.subtitle": "Contactez-nous pour discuter de vos besoins en cybersécurité",
+  "form.title": "Envoyez-nous un message",
+  "form.firstName.label": "Prénom",
+  "form.firstName.placeholder": "Votre prénom",
+  "form.lastName.label": "Nom",
+  "form.lastName.placeholder": "Votre nom",
+  "form.email.label": "E-mail",
+  "form.email.placeholder": "vous@email.com",
+  "form.company.label": "Entreprise",
+  "form.company.placeholder": "Votre entreprise",
+  "form.message.label": "Message",
+  "form.message.placeholder": "Parlez-nous de votre projet…",
+  "form.privacy.prefix": "J’accepte la",
+  "form.privacy.link": "politique de confidentialité",
+  "form.privacy.suffix": ".",
+  "form.submit": "Envoyer le message",
+  "form.submitting": "Envoi…",
+
+  "success.title": "Message envoyé !",
+  "success.subtitle": "Merci pour votre message. Un consultant vous recontactera rapidement.",
+  "success.sendAnother": "Envoyer un autre message",
+
+  "errors.privacyRequired": "Vous devez accepter la politique de confidentialité.",
+  "errors.captchaUnavailable": "Captcha indisponible",
+  "errors.captchaNotLoaded": "Le captcha ne s’est pas chargé",
+  "errors.timeout": "Délai dépassé. Veuillez réessayer.",
+  "errors.submitFailed": "Impossible d’envoyer le formulaire.",
+  "errors.generic": "Une erreur est survenue. Veuillez réessayer.",
+
+  "locations.title": "Nos bureaux",
+  "locations.mapTitle": "Carte — {{city}}",
+
+  "policy.url": "/fr/politique-de-confidentialite"
+}

@@ -1,0 +1,23 @@
+{
+  "banner.copy.before": "Fem servir cookies amb finalitats tècniques, analítiques i publicitàries. Pots acceptar-les totes, rebutjar-les o ajustar les teves preferències. Més info a la nostra ",
+  "banner.linkLabel": "Política de cookies",
+  "banner.copy.after": ".",
+  "buttons.preferences": "Preferències",
+  "buttons.reject": "Rebutjar",
+  "buttons.acceptAll": "Acceptar totes",
+  "buttons.rejectAll": "Rebutjar totes",
+  "buttons.save": "Desar selecció",
+  "modal.title": "Preferències de cookies",
+  "modal.subtitle": "Controla quines categories permets. Les pots canviar en qualsevol moment.",
+  "categories.necessary.title": "Necessàries",
+  "categories.necessary.desc": "Imprescindibles perquè el lloc funcioni (seguretat, sessió, balanceig).",
+  "categories.analytics.title": "Analítica",
+  "categories.analytics.desc": "Ens ajuda a mesurar l’ús del lloc (p. ex., Google Analytics 4).",
+  "categories.advertising.title": "Publicitat",
+  "categories.advertising.desc": "Permet personalitzar anuncis i mesurar campanyes (Google Ads, remarketing).",
+  "categories.functional.title": "Funcionals",
+  "categories.functional.desc": "Milloren l’experiència (p. ex., recordar preferències).",
+  "floating.manage.label": "Gestionar cookies",
+  "floating.manage.aria": "Gestionar cookies",
+  "policy.url": "/ca/politica-de-cookies"
+}

@@ -1,0 +1,45 @@
+{
+  "seo.title": "Cybersecurity for SaaS | TutumSec",
+  "seo.description": "Customer trust and delivery speed. ISO 27001/SOC 2 roadmap, cloud hardening, product security and continuity.",
+  "seo.canonical": "https://tutumsec.com/en/sectors/technology-saas",
+
+  "hero.title": "Cybersecurity for SaaS: customer trust and delivery velocity",
+  "hero.subtitle": "Fewer incidents and less sales friction: controls that enable deals and reduce risks in multi-tenant and CI/CD.",
+
+  "challenge.badge": "The current challenge",
+  "challenge.heading": "Cloud configuration, supply chain, APIs and multi-tenant data:",
+  "challenge.text": "Vectors that slow sales and compliance if not governed. (Synthesis based on ENISA TL 2024).",
+  "challenge.imgAlt": "Security risks in cloud environments and supply chains",
+  "challenge.cta.label": "See how we tackle it",
+  "challenge.cta.href": "#solucion",
+
+  "solution.title": "Our solution",
+  "solution.cards.0.t": "vCISO / ISO 27001 roadmap",
+  "solution.cards.0.d": "And (if applicable) SOC 2 for international markets.",
+  "solution.cards.0.href": "/descubrimiento-ot",
+  "solution.cards.1.t": "Cloud architecture & hardening",
+  "solution.cards.1.d": "(identities, networking, encryption).",
+  "solution.cards.1.href": "/zonas-y-conductos",
+  "solution.cards.2.t": "Product security",
+  "solution.cards.2.d": "SDLC, SAST/DAST, web/mobile/API pentesting.",
+  "solution.cards.2.href": "/deteccion-ot",
+  "solution.cards.3.t": "Cloud MDR",
+  "solution.cards.3.d": "With identity and anomaly use cases.",
+  "solution.cards.3.href": "/drp-industrial",
+  "solution.cards.4.t": "Continuity plans",
+  "solution.cards.4.d": "And cloud restoration exercises.",
+  "solution.cards.4.href": "/gobierno-iec-62443",
+
+  "benefits.title": "Immediate benefits",
+  "benefits.items.0": "Speed up sales by answering security questionnaires.",
+  "benefits.items.1": "Reduce gaps across pipelines and deployments.",
+  "benefits.items.2": "Evidence for audits and customers.",
+
+  "cta.banner.title": "Want tailored guidance?",
+  "cta.banner.primary.label": "Book a free consult (15’)",
+  "cta.banner.primary.href": "https://calendly.com/ayub-tutumsec/30min",
+  "cta.banner.secondary.label": "Request an ISO 27001 assessment",
+  "cta.banner.secondary.href": "https://calendly.com/ayub-tutumsec/30min",
+
+  "common.explore": "Explore"
+}

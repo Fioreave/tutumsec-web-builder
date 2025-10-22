@@ -1,0 +1,48 @@
+{
+  "seo.title": "Equip i valors | TutumSec",
+  "seo.description": "Persones properes, expertes i clares. Descobreix l’equip multidisciplinari de TutumSec, la nostra missió, visió i valors, i com treballem per convertir la seguretat en resultats mesurables.",
+  "seo.canonical": "https://tutumsec.io/ca/sobre-nosaltres/equip-valors/",
+
+  "hero.title": "Qui som?",
+  "hero.subtitle": "Persones properes i expertes que parlen clar, actuen ràpid i acompanyen de veritat. Objectiu: que la ciberseguretat s’entengui en minuts i es noti en setmanes.",
+
+  "team.title": "El nostre equip",
+  "team.experienceNote": "+10 anys de mitjana, experiència multisectorial.",
+  "team.steps.0": "Direcció i coordinació (vCISO / OSI).",
+  "team.steps.1": "Auditoria i compliment (NIS2, ISO 27001, ENS, RGPD).",
+  "team.steps.2": "Pentesting i avaluació tècnica.",
+  "team.steps.3": "Operació gestionada 24/7 (detecció i resposta).",
+  "team.steps.4": "Formació i sensibilització per a tota la plantilla.",
+
+  "workflow.title": "Com treballem?",
+  "workflow.items.0.title": "Diagnòstic clar",
+  "workflow.items.0.desc": "Avaluem exposició i prioritats sense omplir d’acrònims.",
+  "workflow.items.1.title": "Pla accionable (4–6 setmanes)",
+  "workflow.items.1.desc": "Poques tasques, responsables i dates. Impacte primer.",
+  "workflow.items.2.title": "Implantació guiada",
+  "workflow.items.2.desc": "Millorem amb el que ja tens i afegim només l’imprescindible.",
+  "workflow.items.3.title": "Formació breu i hàbits",
+  "workflow.items.3.desc": "Missatges curts, simulacions senzilles i recordatoris.",
+  "workflow.items.4.title": "Evidències per a direcció",
+  "workflow.items.4.desc": "Informes clars amb avenços, riscos i pròximes passes.",
+  "workflow.items.5.title": "Revisió periòdica",
+  "workflow.items.5.desc": "Mensual o trimestral, per mantenir i millorar sense fricció.",
+  "workflow.items.6.title": "Proximitat i resposta àgil",
+  "workflow.items.6.desc": "Un responsable assignat que resol i coordina.",
+
+  "purpose.title": "Propòsit",
+  "purpose.subtitle": "Fer que la seguretat sumi al negoci: menys aturades, menys riscos i decisions clares per a direcció.",
+  "purpose.blocks.0.title": "Missió",
+  "purpose.blocks.0.desc": "Ajudar les organitzacions a prevenir i recuperar amb plans senzills, prioritats per impacte i evidències que tothom pugui entendre.",
+  "purpose.blocks.1.title": "Visió",
+  "purpose.blocks.1.desc": "Ser el referent proper per a empreses que busquen seguretat clara, mesurable i humana, sense burocràcia ni argot.",
+
+  "values.title": "Els nostres valors",
+  "values.items.0": "Claredat: expliquem opcions i riscos amb llenguatge simple i deixem properes passes per escrit.",
+  "values.items.1": "Proximitat: assignem un responsable que coneix el teu context i respon ràpid.",
+  "values.items.2": "Excel·lència útil: lliurables curts i accionables; el que proposem, ho implantem.",
+  "values.items.3": "Responsabilitat: no paguem rescats. Prioritzem recuperació, traçabilitat i comunicació honesta.",
+  "values.items.4": "Millora contínua: revisions periòdiques amb mètriques i una llista breu de millores.",
+
+  "closing.title": "“Seguretat clara, sense embuts i amb resultats que es veuen.”"
+}

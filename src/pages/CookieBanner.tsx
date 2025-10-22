@@ -1,17 +1,16 @@
-// CookiePreferences.tsx
 import React, { useEffect, useMemo, useState } from "react";
+import { useTranslations } from "@/i18n/useTranslations";
 
-/* ==================== Config ==================== */
 const GA_MEASUREMENT_ID = "G-NXH71RK7F4";
 const CONSENT_COOKIE = "cookie_prefs_v2";
 const CONSENT_META_COOKIE = CONSENT_COOKIE + "_meta";
 const COOKIE_EXPIRES_DAYS = 180; // ~6 meses
 
 type ConsentState = {
-  necessary: true; // literal true (no editable)
-  analytics: boolean; // analytics_storage
-  advertising: boolean; // ad_storage, ad_user_data, ad_personalization
-  functional: boolean; // functionality_storage
+  necessary: true;
+  analytics: boolean;
+  advertising: boolean;
+  functional: boolean;
 };
 
 // default conservando los literales
@@ -19,7 +18,7 @@ const DEFAULT_CONSENT = {
   necessary: true,
   analytics: false,
   advertising: false,
-  functional: true, // si no usas cookies funcionales, ponlo en false
+  functional: true,
 } as const satisfies ConsentState;
 
 /* ==================== Utils ==================== */
@@ -30,19 +29,16 @@ function setCookie(name: string, value: string, days: number) {
     value
   )}; expires=${d.toUTCString()}; path=/; SameSite=Lax`;
 }
-
 function getCookie(name: string) {
   return document.cookie
     .split("; ")
     .find((row) => row.startsWith(name + "="))
     ?.split("=")[1];
 }
-
 function delCookie(name: string) {
   document.cookie = `${name}=; Max-Age=0; path=/; SameSite=Lax`;
   document.cookie = `${name}=; Max-Age=0; path=/; domain=.${location.hostname}; SameSite=Lax`;
 }
-
 function ensureConsentStub() {
   (window as any).dataLayer = (window as any).dataLayer || [];
   (window as any).gtag = function () {
@@ -58,7 +54,6 @@ function ensureConsentStub() {
     wait_for_update: 500,
   });
 }
-
 function applyConsentToGtag(state: ConsentState) {
   (window as any).gtag?.("consent", "update", {
     analytics_storage: state.analytics ? "granted" : "denied",
@@ -68,7 +63,6 @@ function applyConsentToGtag(state: ConsentState) {
     functionality_storage: state.functional ? "granted" : "denied",
   });
 }
-
 function loadGA() {
   if (document.getElementById("ga4-src")) return;
   const s = document.createElement("script");
@@ -81,7 +75,6 @@ function loadGA() {
     send_page_view: false,
   });
 }
-
 function sendInitialPageView() {
   (window as any).gtag?.("event", "page_view", {
     page_location: window.location.href,
@@ -89,8 +82,6 @@ function sendInitialPageView() {
     page_title: document.title,
   });
 }
-
-/* Borrar cookies GA si el usuario retira consentimiento */
 function wipeGA() {
   ["_ga", "_gid", "_gat"].forEach(delCookie);
   // Añade aquí otros terceros si los usas (Meta, Hotjar, etc.)
@@ -98,6 +89,8 @@ function wipeGA() {
 
 /* ==================== Componente ==================== */
 export default function CookiePreferences() {
+  const { t } = useTranslations(["cookiebanner"]);
+
   const [openPrefs, setOpenPrefs] = useState(false);
   const [showBanner, setShowBanner] = useState(false);
   const [consent, setConsent] = useState<ConsentState>(DEFAULT_CONSENT);
@@ -112,7 +105,6 @@ export default function CookiePreferences() {
       return;
     }
     try {
-      // Parsea y reconstruye asegurando el literal 'necessary: true'
       const saved = JSON.parse(
         decodeURIComponent(raw)
       ) as Partial<ConsentState>;
@@ -180,10 +172,7 @@ export default function CookiePreferences() {
   };
 
   const saveSelection = () => {
-    const nextState: ConsentState = {
-      ...consent,
-      necessary: true, // reafirma el literal
-    };
+    const nextState: ConsentState = { ...consent, necessary: true };
     applyConsentToGtag(nextState);
     saveConsentCookie(nextState);
     if (nextState.analytics) {
@@ -202,42 +191,36 @@ export default function CookiePreferences() {
         <div className="fixed mx-6 my-2 inset-x-0 bottom-0 z-[2147483647]">
           <div className="mx-auto p-4 rounded-xl bg-slate-900/95 text-white shadow-lg">
             <p className="text-sm sm:text-base">
-              Usamos cookies para finalidades técnicas, analíticas y de
-              publicidad. Puedes aceptarlas todas, rechazarlas o ajustar tus
-              preferencias. Más info en nuestra
-              <a
-                target="_blank"
-                href="/politica-de-cookies"
-                className="underline"
-              >
-                Política de cookies
+              {t("banner.copy.before")}{" "}
+              <a target="_blank" href={t("policy.url")} className="underline">
+                {t("banner.linkLabel")}
               </a>
-              .
+              {t("banner.copy.after")}
             </p>
             <div className="mt-4 flex flex-col sm:flex-row gap-2 justify-end">
               <button
                 onClick={() => setOpenPrefs(true)}
                 className="px-4 py-2 rounded-lg bg-transparent ring-1 ring-white/30"
               >
-                Preferencias
+                {t("buttons.preferences")}
               </button>
               <button
                 onClick={rejectAll}
                 className="px-4 py-2 rounded-lg bg-slate-800"
               >
-                Rechazar
+                {t("buttons.reject")}
               </button>
               <button
                 onClick={acceptAll}
                 className="px-4 py-2 rounded-lg bg-white text-slate-900 font-semibold"
               >
-                Aceptar todas
+                {t("buttons.acceptAll")}
               </button>
             </div>
           </div>
         </div>
       ) : null,
-    [showBanner]
+    [showBanner, t]
   );
 
   const Modal = useMemo(
@@ -251,10 +234,9 @@ export default function CookiePreferences() {
           />
           <div className="relative mx-4 w-full max-w-2xl rounded-2xl bg-white text-slate-900 shadow-2xl">
             <div className="p-6 border-b">
-              <h3 className="text-xl font-semibold">Preferencias de cookies</h3>
+              <h3 className="text-xl font-semibold">{t("modal.title")}</h3>
               <p className="text-sm text-slate-600 mt-1">
-                Controla qué categorías permites. Puedes cambiarlas en cualquier
-                momento.
+                {t("modal.subtitle")}
               </p>
             </div>
 
@@ -268,10 +250,11 @@ export default function CookiePreferences() {
                   className="mt-1 cursor-not-allowed"
                 />
                 <div>
-                  <div className="font-medium">Necesarias</div>
+                  <div className="font-medium">
+                    {t("categories.necessary.title")}
+                  </div>
                   <div className="text-sm text-slate-600">
-                    Imprescindibles para que el sitio funcione (seguridad,
-                    sesión, balanceo).
+                    {t("categories.necessary.desc")}
                   </div>
                 </div>
               </div>
@@ -288,10 +271,11 @@ export default function CookiePreferences() {
                   className="mt-1"
                 />
                 <label htmlFor="chk-analytics" className="cursor-pointer">
-                  <div className="font-medium">Analítica</div>
+                  <div className="font-medium">
+                    {t("categories.analytics.title")}
+                  </div>
                   <div className="text-sm text-slate-600">
-                    Nos ayuda a medir el uso del sitio (p. ej., Google Analytics
-                    4).
+                    {t("categories.analytics.desc")}
                   </div>
                 </label>
               </div>
@@ -308,10 +292,11 @@ export default function CookiePreferences() {
                   className="mt-1"
                 />
                 <label htmlFor="chk-ads" className="cursor-pointer">
-                  <div className="font-medium">Publicidad</div>
+                  <div className="font-medium">
+                    {t("categories.advertising.title")}
+                  </div>
                   <div className="text-sm text-slate-600">
-                    Permite personalizar anuncios y medir campañas (Google Ads,
-                    remarketing).
+                    {t("categories.advertising.desc")}
                   </div>
                 </label>
               </div>
@@ -328,9 +313,11 @@ export default function CookiePreferences() {
                   className="mt-1"
                 />
                 <label htmlFor="chk-func" className="cursor-pointer">
-                  <div className="font-medium">Funcionales</div>
+                  <div className="font-medium">
+                    {t("categories.functional.title")}
+                  </div>
                   <div className="text-sm text-slate-600">
-                    Mejoran la experiencia (p. ej., recordar preferencias).
+                    {t("categories.functional.desc")}
                   </div>
                 </label>
               </div>
@@ -341,25 +328,25 @@ export default function CookiePreferences() {
                 onClick={rejectAll}
                 className="px-4 py-2 rounded-lg bg-slate-100"
               >
-                Rechazar todas
+                {t("buttons.rejectAll")}
               </button>
               <button
                 onClick={acceptAll}
                 className="px-4 py-2 rounded-lg bg-slate-900 text-white"
               >
-                Aceptar todas
+                {t("buttons.acceptAll")}
               </button>
               <button
                 onClick={saveSelection}
                 className="px-4 py-2 rounded-lg bg-blue-600 text-white"
               >
-                Guardar selección
+                {t("buttons.save")}
               </button>
             </div>
           </div>
         </div>
       ) : null,
-    [openPrefs, consent]
+    [openPrefs, consent, t]
   );
 
   return (
@@ -369,9 +356,9 @@ export default function CookiePreferences() {
         type="button"
         onClick={() => setOpenPrefs(true)}
         className="fixed bottom-6 right-6 z-[2147483647] px-3 py-2 rounded bg-white/90 text-sm text-slate-900 shadow"
-        aria-label="Gestionar cookies"
+        aria-label={t("floating.manage.aria")}
       >
-        Gestionar cookies
+        {t("floating.manage.label")}
       </button>
 
       {Banner}

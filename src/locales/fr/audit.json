@@ -1,0 +1,55 @@
+{
+  "meta.title": "Audit & Conformité NIS2 pour entreprises | TutumSec",
+  "meta.description": "Analyse d’écarts NIS2 + audit technique et plan de mise en conformité. Preuves pour audits et chaîne d’approvisionnement.",
+
+  "hero.title": "Audit technique & Conformité NIS2",
+  "hero.subtitle": "Pentesting en profondeur + analyse d’écarts NIS2 : la voie rapide et sûre vers une conformité totale.",
+  "hero.cta": "Réservez votre consultation gratuite →",
+  "hero.secondaryCta": "Télécharger la Checklist « 15 contrôles essentiels NIS2 »",
+
+  "diff.heading": "Pourquoi nous sommes différents",
+  "diff.card1.title": "Pentesting offensif",
+  "diff.card1.desc": "Nous simulons des attaques multi-vecteurs (cloud, M365, VPN, OT/ICS, Wi-Fi) pour trouver les faiblesses avant les attaquants.",
+  "diff.card2.title": "Gap-Analysis NIS2 & ISO 27001",
+  "diff.card2.desc": "Cartographie des contrôles, politiques et preuves ; priorités et quick-wins.",
+  "diff.card3.title": "Coût prévisible et scalable",
+  "diff.card3.desc": "Abonnement modulaire : payez uniquement pour les actifs et services nécessaires.",
+  "diff.card4.title": "Validation & suivi continu",
+  "diff.card4.desc": "Re-tests trimestriels, KPIs de maturité et assistance lors des audits externes.",
+
+  "process.heading": "Une méthodologie claire,",
+  "process.subheading": "exécutive et orientée résultats",
+  "process.step1.title": "Diagnostic initial",
+  "process.step1.desc": "Audit technique, pentesting et analyse d’écarts NIS2/ISO.",
+  "process.step2.title": "Feuille de route stratégique",
+  "process.step2.desc": "Plan 12–36 mois avec priorités et ROI.",
+  "process.step3.title": "Mise en œuvre & gouvernance",
+  "process.step3.desc": "Politiques, processus et outils personnalisés.",
+  "process.step4.title": "Suivi continu",
+  "process.step4.desc": "Déploiement, KPIs et revues trimestrielles avec votre vCISO.",
+
+  "how.heading": "Comment procédons-nous ?",
+  "how.item1": "Pentesting avancé avec rapport exécutif ≤ 15 jours",
+  "how.item2": "Conformité NIS2 / ISO 27001 sans frictions",
+  "how.item3": "Réduction de –30 % des vulnérabilités critiques en 6 mois",
+  "how.item4": "Tableau de bord des risques en temps réel pour votre comité de direction",
+
+  "lead.title": "Audit technique ou conformité ?",
+  "lead.subtitle": "Vous avez besoin des deux… vite",
+  "lead.body": "Oubliez les outils isolés : il faut un audit offensif pour détecter les points d’entrée et un plan de conformité transformant NIS2 et ISO 27001 en actions concrètes. Avec Audit-to-Comply de TutumSec, nous révélons les vraies lacunes (des firewalls aux politiques), priorisons les risques et alignons les contrôles sur le business pour passer de « conforme » à réellement protégé.",
+
+  "faq.heading": "Questions fréquentes",
+  "faq.q1": "Que couvre exactement un audit NIS2 ?",
+  "faq.a1": "Infrastructure (réseaux, serveurs, OT), processus, politiques et gouvernance. Inclut pentesting et analyse complète des écarts réglementaires.",
+  "faq.q2": "Combien de temps dure le diagnostic initial ?",
+  "faq.a2": "Entre 10 et 15 jours ouvrables selon le nombre d’actifs et la documentation disponible.",
+  "faq.q3": "Ai-je besoin d’un audit si j’ai déjà un prestataire IT ?",
+  "faq.a3": "Votre MSP maintient l’infrastructure ; nous assurons la gouvernance, la conformité et la visibilité exécutive. Les deux services se complètent.",
+  "faq.q4": "La directive NIS2 me concerne-t-elle vraiment ?",
+  "faq.a4": "Oui, si vous opérez des infrastructures critiques, des services essentiels ou dépendez de chaînes d’approvisionnement de secteurs régulés.",
+  "faq.q5": "Faut-il un outil de sécurité supplémentaire pour réussir NIS2 ?",
+  "faq.a5": "Pas toujours. Nous analysons d’abord l’existant ; ensuite nous ne proposons que l’indispensable.",
+
+  "cta.title": "Souhaitez-vous aligner votre sécurité sur NIS2 avant l’échéance ?",
+  "cta.cta": "Réservez votre session stratégique →"
+}

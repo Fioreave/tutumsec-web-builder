@@ -1,0 +1,56 @@
+{
+  "seo.title": "Strategic Digital Transformation for SMEs in Barcelona, Girona, Catalonia & Andorra",
+  "seo.description": "Strategic consulting in digital transformation and cybersecurity to boost productivity and competitiveness. Free assessment, 360° roadmap and hands-on guidance.",
+  "schema.name": "Strategic Digital Transformation",
+  "schema.description": "Strategic consulting in digital transformation and cybersecurity that accelerates SME productivity and competitiveness.",
+
+  "hero.title": "Is your company ready for the next digital wave?",
+  "hero.subtitle": "We turn strategic digital transformation into measurable results",
+  "hero.bullets.0": "Full assessment in 10 days",
+  "hero.bullets.1": "12–36 month roadmap with ROI < 9 months",
+  "hero.bullets.2": "Average 22% savings in IT/OT costs",
+  "hero.cta1": "Book a free 30' assessment",
+  "hero.cta2": "Download the 2025 Digitalization Checklist",
+
+  "pain.heading": "From manual processes and data silos to an agile, secure company",
+  "pain.body": "67% of Spanish SMEs still run fragmented systems, raising costs by 30% and increasing NIS2 risk. TutumSec aligns technology, people and cybersecurity with a strategic approach.",
+
+  "benefits.heading": "What do you get from our transformation?",
+  "benefits.cards.0.title": "Productivity & IA/RPA automation",
+  "benefits.cards.0.desc": "Real-time operational KPIs and paperless workflows.",
+  "benefits.cards.1.title": "Security by design",
+  "benefits.cards.1.desc": "Zero Trust, encryption and 24×7 MDR monitoring.",
+  "benefits.cards.2.title": "Guaranteed compliance",
+  "benefits.cards.2.desc": "Compliance 360° (NIS2, GDPR, ISO 27001, ENS).",
+  "benefits.cards.3.title": "Scalability without CAPEX shocks",
+  "benefits.cards.3.desc": "Subscription model and local partners for immediate support.",
+
+  "edge.heading": "Personalisation & proximity:",
+  "edge.items.0.title": "Senior in-house consultants",
+  "edge.items.0.desc": "We don’t outsource critical analysis.",
+  "edge.items.1.title": "Human guidance",
+  "edge.items.1.desc": "A single point of contact who speaks your language.",
+  "edge.items.2.title": "Native cybersecurity integration",
+  "edge.items.2.desc": "Combine vCISO, SOC/MDR and the digital roadmap.",
+
+  "process.heading": "Our methodology",
+  "process.steps.0.title": "Initial diagnosis",
+  "process.steps.0.desc": "Technical audit, pentesting and NIS2/ISO gap analysis.",
+  "process.steps.1.title": "Strategic roadmap",
+  "process.steps.1.desc": "12–36 month plan with priorities and ROI.",
+  "process.steps.2.title": "Implementation & governance",
+  "process.steps.2.desc": "Policies, processes and tailored tools.",
+  "process.steps.3.title": "Continuous follow-up",
+  "process.steps.3.desc": "Execution, KPIs and quarterly vCISO reviews.",
+
+  "faq.heading": "Frequently asked questions",
+  "faq.q1": "How long does a strategic digital transformation project take?",
+  "faq.a1": "Around 3–6 months depending on scope.",
+  "faq.q2": "Do I need to replace all my infrastructure?",
+  "faq.a2": "Only what doesn’t add value; we prioritise quick wins and reuse.",
+  "faq.q3": "Can I start with a low-cost pilot?",
+  "faq.a3": "Yes, Fast-Track module with fixed budget.",
+
+  "cta.title": "Start your digital transformation today—with guarantees",
+  "cta.button": "Book your free session"
+}

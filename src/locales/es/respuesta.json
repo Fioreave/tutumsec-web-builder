@@ -1,0 +1,58 @@
+{
+  "seo.title": "Respuesta a Incidentes de Ciberseguridad | TutumSec",
+  "seo.description": "Actuamos con rapidez y claridad para contener, recuperar y aprender del incidente. Canal directo, coordinación ejecutiva y soporte legal. Barcelona, Girona, Catalunya y Andorra.",
+
+  "hero.title.line1": "Respuesta a incidentes, sin ruido",
+  "hero.title.line2": "y con método",
+  "hero.subtitle": "Canal directo, contención rápida y acompañamiento hasta el cierre",
+  "hero.ctaHelp.label": "Necesito ayuda ahora",
+  "hero.ctaHelp.href": "/es/contacto",
+  "hero.ctaTalk.label": "Hablar con un experto",
+  "hero.ctaTalk.href": "/es/contacto",
+  "hero.note": "Detección 24x7 vía SOC/MDR; el resto de servicios se atienden con prioridad alta en horario laboral.",
+
+  "pain.title": "Cuando pasa algo, necesitas decisiones, no alarmas",
+  "pain.text": "Activamos un canal de comunicación inmediato, evaluamos el alcance real y priorizamos acciones para contener rápido, recuperar con criterio y documentar lo importante. Sin tecnicismos innecesarios: te explicamos qué ocurre, qué hacemos y por qué.",
+
+  "steps.title": "¿Qué haremos por ti?",
+  "steps.0.title": "Primeras horas",
+  "steps.0.desc": "Canal directo con analistas senior (teléfono y mensajería segura).\nContención inicial y visibilidad rápida sobre equipos y cuentas afectadas.\nRecomendación de activar EDR compatible (p. ej., Microsoft Defender, Bitdefender, Sophos, etc) para acelerar la investigación.",
+  "steps.1.title": "Primer día",
+  "steps.1.desc": "Aislamiento donde haga falta y restauración segura cuando sea posible.\nCoordinación con tu equipo (IT/dirección) y—si lo solicitas—acompañamiento ejecutivo tipo vCISO.",
+  "steps.2.title": "Siguientes días",
+  "steps.2.desc": "Análisis técnico y cronología del incidente (forense bajo estudio/priorización del caso).\nRecomendaciones priorizadas por riesgo y soporte en avisos regulatorios si correspondiera.",
+
+  "cta.proposal.label": "Solicitar propuesta personalizada",
+  "cta.proposal.href": "/contacto",
+
+  "cogestion.title": "Co-gestión real y gobierno activo",
+  "cogestion.0": "Canal directo y reglas claras desde el inicio.",
+  "cogestion.1": "Decisiones co-firmadas contigo (nada de “caja negra”).",
+  "cogestion.2": "Asesoría legal coordinada para custodia de evidencias y notificaciones cuando aplique.",
+  "cogestion.3": "Cierre con lecciones aprendidas y hoja de ruta de mejoras.",
+  "cogestion.4": "Informe técnico con evidencias.",
+  "cogestion.5": "Reunión de cierre y plan de mejora alineado a negocio.",
+
+  "where.title": "¿Dónde intervenimos?",
+  "where.text": "Barcelona, Girona, resto de Catalunya y Andorra. Soporte remoto a nivel nacional.",
+
+  "deliverables.title.line1": "Entregables pensados",
+  "deliverables.title.line2": "para dirección y TI",
+  "deliverables.0": "Resumen ejecutivo en 1 página: impacto, decisiones, próximos pasos.",
+  "deliverables.1": "Informe técnico con evidencias.",
+  "deliverables.2": "Reunión de cierre y plan de mejora alineado a negocio.",
+
+  "faq.title": "Preguntas frecuentes",
+  "faq.0.q": "¿Trabajáis casos de ransomware?",
+  "faq.0.a": "Sí, pero con una postura clara: no negociamos con atacantes. Priorizamos contención y recuperación y orientamos la notificación a las autoridades competentes cuando corresponda. Coordinamos todo con tu equipo y con asesoría legal.",
+  "faq.1.q": "¿Ofrecéis servicio de forense digital?",
+  "faq.1.a": "Sí. Contamos con equipo forense externo especializado (bajo presupuesto y alcance definidos) para recogida de evidencias con cadena de custodia, análisis técnico y documentación válida para auditorías o procedimientos legales.",
+  "faq.2.q": "¿Cómo se inicia un caso urgente?",
+  "faq.2.a": "Muy simple: abrimos un canal directo (teléfono y mensajería segura), confirmamos alcance y prioridades y empezamos a contener. Te indicamos los siguientes pasos y la documentación mínima que necesitamos.",
+  "faq.3.q": "¿Apoyáis la comunicación y las notificaciones regulatorias?",
+  "faq.3.a": "Sí. Acompañamos en la preparación de avisos a autoridades (p. ej., NIS2/AEPD) y comunicaciones internas/externas, coordinados con asesoría legal y, si procede, con tu equipo de comunicación.",
+  "faq.4.q": "¿Podéis trabajar con mi ciberseguro?",
+  "faq.4.a": "Sí. Coordinamos requisitos del seguro (contactos, reporting, evidencias) para agilizar autorizaciones y evitar fricciones durante la gestión del incidente.",
+
+  "cta.title": "Paremos las amenazas antes de que paren tu negocio"
+}

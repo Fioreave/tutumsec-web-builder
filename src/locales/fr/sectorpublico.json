@@ -1,0 +1,45 @@
+{
+  "seo.title": "Cybersécurité pour le secteur public | TutumSec",
+  "seo.description": "ENS comme socle, NIS2 à l’horizon et pression des incidents : nous simplifions la conformité, l’exploitation et la preuve.",
+  "seo.canonical": "https://tutumsec.com/fr/secteurs/secteur-public",
+
+  "hero.title": "Cybersécurité pour le secteur public : service sans interruption",
+  "hero.subtitle": "ENS comme base, NIS2 à l’horizon et pression des incidents : nous facilitons la conformité, l’exploitation et la démonstration.",
+
+  "challenge.badge": "Le défi actuel",
+  "challenge.heading": "ENS (RD 311/2022) et transposition en cours de NIS2, avec des sanctions significatives au cœur du débat public ;",
+  "challenge.text": "Les fournisseurs affichent déjà leur conformité ENS.",
+  "challenge.imgAlt": "Illustration cybersécurité pour les administrations publiques",
+  "challenge.cta.label": "Découvrez notre approche",
+  "challenge.cta.href": "#solucion",
+
+  "solution.title": "Notre solution",
+  "solution.cards.0.t": "Mise en conformité ENS",
+  "solution.cards.0.d": "(mesures, politiques et preuves).",
+  "solution.cards.0.href": "/descubrimiento-ot",
+  "solution.cards.1.t": "vCISO public",
+  "solution.cards.1.d": "Gouvernance, risques, continuité et formation.",
+  "solution.cards.1.href": "/zonas-y-conductos",
+  "solution.cards.2.t": "MDR 24×7",
+  "solution.cards.2.d": "Intégré au CSIRT/CCN.",
+  "solution.cards.2.href": "/deteccion-ot",
+  "solution.cards.3.t": "Restauration",
+  "solution.cards.3.d": "Sauvegardes immuables et exercices réguliers.",
+  "solution.cards.3.href": "/drp-industrial",
+  "solution.cards.4.t": "Gestion des fournisseurs",
+  "solution.cards.4.d": "Et exigences de sécurité.",
+  "solution.cards.4.href": "/drp-industrial",
+
+  "benefits.title": "Bénéfices immédiats",
+  "benefits.items.0": "Preuves prêtes pour audits et marchés publics.",
+  "benefits.items.1": "Moins d’interruptions et meilleur service au citoyen.",
+  "benefits.items.2": "Meilleur contrôle des tiers et des contrats.",
+
+  "cta.banner.title": "Besoin d’un accompagnement sur mesure ?",
+  "cta.banner.primary.label": "Réserver un entretien gratuit (15’)",
+  "cta.banner.primary.href": "https://calendly.com/ayub-tutumsec/30min",
+  "cta.banner.secondary.label": "Demander une revue ENS",
+  "cta.banner.secondary.href": "https://calendly.com/ayub-tutumsec/30min",
+
+  "common.explore": "Explorer"
+}

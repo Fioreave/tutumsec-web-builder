@@ -1,0 +1,36 @@
+{
+  "hero.title": "Contacte",
+  "hero.subtitle": "Posa’t en contacte amb nosaltres per parlar de les teves necessitats de ciberseguretat",
+  "form.title": "Envia’ns un missatge",
+  "form.firstName.label": "Nom",
+  "form.firstName.placeholder": "El teu nom",
+  "form.lastName.label": "Cognoms",
+  "form.lastName.placeholder": "Els teus cognoms",
+  "form.email.label": "Email",
+  "form.email.placeholder": "elteu@email.com",
+  "form.company.label": "Empresa",
+  "form.company.placeholder": "La teva empresa",
+  "form.message.label": "Missatge",
+  "form.message.placeholder": "Explica’ns el teu projecte...",
+  "form.privacy.prefix": "Accepto la",
+  "form.privacy.link": "política de privacitat",
+  "form.privacy.suffix": ".",
+  "form.submit": "Enviar missatge",
+  "form.submitting": "Enviant…",
+
+  "success.title": "Missatge enviat!",
+  "success.subtitle": "Gràcies per escriure’ns. Un consultor es posarà en contacte amb tu ben aviat.",
+  "success.sendAnother": "Enviar un altre missatge",
+
+  "errors.privacyRequired": "Has d’acceptar la política de privacitat.",
+  "errors.captchaUnavailable": "Captcha no disponible",
+  "errors.captchaNotLoaded": "El captcha no s’ha carregat",
+  "errors.timeout": "Temps d’espera esgotat. Torna-ho a provar.",
+  "errors.submitFailed": "No s’ha pogut enviar el formulari.",
+  "errors.generic": "Hi ha hagut un error. Torna-ho a provar.",
+
+  "locations.title": "Les nostres seus",
+  "locations.mapTitle": "Mapa de {{city}}",
+
+  "policy.url": "/ca/politica-de-privacitat"
+}

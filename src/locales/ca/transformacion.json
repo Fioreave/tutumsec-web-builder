@@ -1,0 +1,56 @@
+{
+  "seo.title": "Transformació Digital Estratègica per a PIMES a Barcelona, Girona, Catalunya i Andorra",
+  "seo.description": "Consultoria estratègica en transformació digital i ciberseguretat per impulsar la productivitat i la competitivitat. Diagnòstic gratuït, full de ruta 360° i acompanyament humà.",
+  "schema.name": "Transformació Digital Estratègica",
+  "schema.description": "Consultoria estratègica en transformació digital i ciberseguretat que accelera la productivitat i la competitivitat de la teva PIME.",
+
+  "hero.title": "La teva empresa està preparada per a la pròxima onada digital?",
+  "hero.subtitle": "Convertim la transformació digital estratègica en resultats mesurables",
+  "hero.bullets.0": "Diagnòstic complet en 10 dies",
+  "hero.bullets.1": "Full de ruta 12–36 mesos amb ROI < 9 mesos",
+  "hero.bullets.2": "Estalvi mitjà del 22% en costos IT/OT",
+  "hero.cta1": "Reserva diagnòstic gratuït 30'",
+  "hero.cta2": "Descarrega la Checklist de Digitalització 2025",
+
+  "pain.heading": "De processos manuals i silos de dades a una empresa àgil i segura",
+  "pain.body": "El 67% de les PIMES espanyoles encara operen amb sistemes fragmentats, fet que augmenta els costos un 30% i el risc NIS2. TutumSec alinea tecnologia, persones i ciberseguretat amb visió estratègica.",
+
+  "benefits.heading": "Què guanyes amb la nostra transformació digital?",
+  "benefits.cards.0.title": "Productivitat i automatització IA/RPA",
+  "benefits.cards.0.desc": "KPIs operatius en temps real i fluxos sense paper.",
+  "benefits.cards.1.title": "Seguretat integrada by design",
+  "benefits.cards.1.desc": "Zero Trust, xifrat i monitoratge MDR 24×7.",
+  "benefits.cards.2.title": "Compliment normatiu garantit",
+  "benefits.cards.2.desc": "Mètode Compliance 360° (NIS2, RGPD, ISO 27001, ENS).",
+  "benefits.cards.3.title": "Escalabilitat sense ensurts de CAPEX",
+  "benefits.cards.3.desc": "Model de subscripció i partners locals per a suport immediat.",
+
+  "edge.heading": "Personalització i proximitat:",
+  "edge.items.0.title": "Consultors sènior in-house",
+  "edge.items.0.desc": "No subcontractem l’anàlisi crítica.",
+  "edge.items.1.title": "Acompanyament humà",
+  "edge.items.1.desc": "Un únic interlocutor que parla el teu idioma.",
+  "edge.items.2.title": "Integració nativa amb ciberseguretat",
+  "edge.items.2.desc": "Combina vCISO, SOC/MDR i full de ruta digital.",
+
+  "process.heading": "La nostra metodologia",
+  "process.steps.0.title": "Diagnòstic inicial",
+  "process.steps.0.desc": "Auditoria tècnica, pentesting i gap analysis NIS2/ISO.",
+  "process.steps.1.title": "Full de ruta estratègic",
+  "process.steps.1.desc": "Pla de 12–36 mesos amb prioritats i retorn.",
+  "process.steps.2.title": "Implementació i governança",
+  "process.steps.2.desc": "Polítiques, processos i eines a mida.",
+  "process.steps.3.title": "Seguiment continu",
+  "process.steps.3.desc": "Desplegament, KPIs i revisions trimestrals amb el vCISO.",
+
+  "faq.heading": "Preguntes freqüents",
+  "faq.q1": "Quant dura un projecte de transformació digital estratègica?",
+  "faq.a1": "3–6 mesos segons l’abast.",
+  "faq.q2": "He de canviar tota la meva infraestructura?",
+  "faq.a2": "Només el que no aporta valor; prioritzem quick-wins i reutilitzem.",
+  "faq.q3": "Puc començar amb un pilot low-cost?",
+  "faq.a3": "Sí, mòdul Fast-Track amb pressupost tancat.",
+
+  "cta.title": "Comença avui la teva transformació digital amb garanties",
+  "cta.button": "Reserva la teva sessió gratuïta"
+}

@@ -1,133 +1,141 @@
+// TecnologiaSaas.tsx (con i18n `t`)
 import React from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useTranslations } from "@/i18n/useTranslations";
 
-const beneficios = [
-  "Acelera ventas al responder cuestionarios de seguridad.",
-  "Reduce brechas en pipelines y despliegues.",
-  "Evidencias para auditorías y clientes.",
-];
+const TecnologiaSaas: React.FC = () => {
+  const { t } = useTranslations(["tecnologia", "common"]);
 
-const TecnologiaSaas = () => {
+  const beneficios = [
+    t("benefits.items.0"),
+    t("benefits.items.1"),
+    t("benefits.items.2"),
+  ];
+
+  const solutionCards = [
+    {
+      t: t("solution.cards.0.t"),
+      d: t("solution.cards.0.d"),
+      href: t("solution.cards.0.href"),
+      pos: "left-2",
+    },
+    {
+      t: t("solution.cards.1.t"),
+      d: t("solution.cards.1.d"),
+      href: t("solution.cards.1.href"),
+      pos: "left-1",
+    },
+    {
+      t: t("solution.cards.2.t"),
+      d: t("solution.cards.2.d"),
+      href: t("solution.cards.2.href"),
+      pos: "center",
+    },
+    {
+      t: t("solution.cards.3.t"),
+      d: t("solution.cards.3.d"),
+      href: t("solution.cards.3.href"),
+      pos: "right-1",
+    },
+    {
+      t: t("solution.cards.4.t"),
+      d: t("solution.cards.4.d"),
+      href: t("solution.cards.4.href"),
+      pos: "right-2",
+    },
+  ] as const;
+
   return (
     <>
       <Navbar />
       <main className="min-h-screen ">
+        {/* HERO */}
         <section className="relative min-h-[500px] mx-35 md:mx-20 overflow-hidden px-6 flex items-center">
-          {/* CAPA BASE: azul muy oscuro 
-              <div className="absolute inset-0 -z-20 bg-[#0a0f1c]" />*/}
-
-          {/* CAPA LINEAL SUAVE (de arriba izq a abajo der) */}
           <div
             className="absolute inset-0 -z-10 bg-cover bg-center bg-no-repeat"
             style={{
               backgroundImage: "url('/uploads/background/background6.svg')",
             }}
+            aria-hidden
           />
-          {/*style={{
-                  background:
-                    "linear-gradient(120deg, rgba(14, 24, 46, 0.0) 0%, rgba(89, 116, 189, 0.35) 45%, rgba(182, 185, 193, 0) 100%)",
-                }}*/}
-          {/* GLOW RADIALES (manchas de luz) 
-              <div className="pointer-events-none absolute -top-24 -left-24 w-[60vw] h-[60vw] bg-blue-600/20 rounded-full blur-3xl -z-10" />
-              <div className="pointer-events-none absolute -right-40 top-10 w-[50vw] h-[50vw] bg-blue-400/20 rounded-full blur-3xl -z-10" />
-              <div className="pointer-events-none absolute bottom-[-20%] left-[20%] w-[45vw] h-[45vw] bg-indigo-500/20 rounded-full blur-3xl -z-10" />
-        */}
-          <div className="absolute inset-0 bg-black/50 -z-10" />
-
-          {/* HILO DECORATIVO 
-              <img
-                src="/uploads/hilo.png"
-                alt=""
-                aria-hidden
-                className="pointer-events-none select-none absolute left-0 top-[-80px] w-[1200px] max-w-none opacity-60 mix-blend-screen -z-0"
-              />*/}
-
+          <div className="absolute inset-0 bg-black/50 -z-10" aria-hidden />
           <div className="mx-20 max-w-4xl text-left relative">
             <h1 className="text-4xl lg:text-5xl font-medium text-white mb-2 leading-tight animate-slide-up pb-2">
-              Ciberseguridad para SaaS: confianza de clientes y velocidad de
-              entrega{" "}
+              {t("hero.title")}
             </h1>
-            <h2 className="text-2xl lg:text-2xl text-white mb-6 leading-tight  animate-slide-up pb-2">
-              Menos incidentes y menos fricción comercial: controles que
-              habilitan ventas y reducen riesgos en multi-tenant y CI/CD.
+            <h2 className="text-2xl lg:text-2xl text-white mb-6 leading-tight animate-slide-up pb-2">
+              {t("hero.subtitle")}
             </h2>
             <div
               className="flex flex-col sm:flex-row gap-4 justify-center items-center opacity-0 animate-fade-in"
               style={{ animationDelay: "0.9s", animationFillMode: "forwards" }}
-            ></div>
+            />
           </div>
         </section>
-        {/* === El reto actual – bloque imagen + texto === */}
+
+        {/* RETO ACTUAL */}
         <section className="relative py-10 lg:py-20">
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
             <div className="grid items-center gap-10 md:grid-cols-2">
-              {/* Imagen */}
               <div className="relative">
                 <div>
                   <img
                     src="/uploads/imgs/ciberseguridad.svg"
-                    alt=""
+                    alt={t("challenge.imgAlt")}
                     className="h-[500px] w-[500px] object-cover"
                   />
                 </div>
               </div>
 
-              {/* Texto */}
               <div>
                 <p className="text-md font-semibold tracking-wide text-primary">
-                  El reto actual
+                  {t("challenge.badge")}
                 </p>
-
                 <h2 className="mt-3 text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
-                  Configuración cloud, cadena de suministro, APIs y datos
-                  multi-tenant:{" "}
+                  {t("challenge.heading")}
                 </h2>
                 <p className="mt-6 text-lg leading-8 text-slate-700">
-                  Vectores que frenan ventas y compliance si no se gobiernan.
-                  (Síntesis basada en ENISA TL 2024).
+                  {t("challenge.text")}
                 </p>
 
                 <div className="mt-8">
                   <a
-                    href="#solucion" // ← cambia el destino
+                    href={t("challenge.cta.href")}
                     className="inline-flex items-center gap-2 rounded-full bg-primary px-5 py-3 text-sm font-medium text-white shadow-sm transition hover:brightness-110 active:brightness-95"
                   >
-                    Conoce cómo lo abordamos
+                    {t("challenge.cta.label")}
                   </a>
                 </div>
               </div>
             </div>
           </div>
         </section>
-        {/* === Nuestra solución – layout 5 columnas con depth === */}
+
+        {/* NUESTRA SOLUCIÓN */}
         <section
           id="solucion"
           className=" my-20 relative w-full py-16 sm:py-20"
         >
-          {/* Puntitos centrados y desvanecidos */}
           <div
             className="absolute inset-0 -z-10 opacity-80"
             style={{
-              // patrón de puntos
               background:
                 "radial-gradient(currentColor 1px, transparent 1px) 0 0 / 12px 12px",
               color: "rgb(var(--color-primary-400, 129 140 248))",
-              // máscara: fuerte en centro, se desvanece a bordes
               maskImage:
                 "radial-gradient(circle at 50% 50%, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.8) 10%, rgba(0,0,0,0.5) 19%, rgba(0,0,0,0.05) 25%, transparent 22%)",
               WebkitMaskImage:
                 "radial-gradient(circle at 50% 50%, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.8) 10%, rgba(0,0,0,0.5) 19%, rgba(0,0,0,0.05) 25%, transparent 22%)",
             }}
+            aria-hidden
           />
-          {/* glow vertical suave en primary */}
-          <div className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-[420px] " />
+          <div className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-[420px]" />
 
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
-            {/* Heading */}
             <motion.div
               initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -136,47 +144,15 @@ const TecnologiaSaas = () => {
               className="mx-auto max-w-3xl text-center"
             >
               <h2 className="text-4xl font-bold tracking-tight sm:text-5xl text-slate-900">
-                Nuestra solución
+                {t("solution.title")}
               </h2>
             </motion.div>
 
-            {/* GRID 5 columnas con perspectiva */}
             <div
               className="mt-12 grid gap-4 sm:gap-6 grid-cols-1 md:grid-cols-5 auto-rows-fr"
               style={{ perspective: "1100px" }}
             >
-              {[
-                {
-                  t: "vCISO / roadmap ISO 27001",
-                  d: "Y (si aplica) SOC 2 para mercados internacionales.",
-                  href: "/descubrimiento-ot",
-                  pos: "left-2",
-                },
-                {
-                  t: "Arquitectura y hardening cloud",
-                  d: "(identidades, redes, cifrado).",
-                  href: "/zonas-y-conductos",
-                  pos: "left-1",
-                },
-                {
-                  t: "Seguridad de producto",
-                  d: "SDLC, SAST/DAST, pentest web/mobile/APIs.",
-                  href: "/deteccion-ot",
-                  pos: "center",
-                },
-                {
-                  t: "MDR cloud",
-                  d: "Con casos de uso de identidad y anomalías.",
-                  href: "/drp-industrial",
-                  pos: "right-1",
-                },
-                {
-                  t: "Planes de continuidad",
-                  d: "Y pruebas de restauración en cloud.",
-                  href: "/gobierno-iec-62443",
-                  pos: "right-2",
-                },
-              ].map((card, idx) => {
+              {solutionCards.map((card, idx) => {
                 const depth =
                   card.pos === "center"
                     ? {
@@ -235,7 +211,6 @@ const TecnologiaSaas = () => {
                       scale: depth.scale,
                     }}
                     className={[
-                      // ⬇️ flex column + h-full para pegar el botón abajo
                       "relative flex h-full flex-col rounded-xl border border-slate-200/70 bg-white/90 p-6",
                       "backdrop-blur-sm transition-transform duration-300",
                       depth.shadow,
@@ -253,18 +228,15 @@ const TecnologiaSaas = () => {
                       </p>
                     </div>
 
-                    {/* Botón pegado al borde inferior */}
                     <div className="mt-auto pt-5">
                       <a
                         href={card.href}
-                        className="inline-flex w-full items-center justify-center rounded-full px-4 py-2 text-sm font-medium shadow-sm transition-all
-                           bg-primary text-white hover:brightness-110 active:brightness-95"
+                        className="inline-flex w-full items-center justify-center rounded-full px-4 py-2 text-sm font-medium shadow-sm transition-all bg-primary text-white hover:brightness-110 active:brightness-95"
                       >
-                        Explorar <span className="ml-2">→</span>
+                        {t("common.explore")} <span className="ml-2">→</span>
                       </a>
                     </div>
 
-                    {/* glow inferior */}
                     <div className="pointer-events-none absolute -bottom-4 left-6 right-6 h-8 rounded-full bg-primary/25 blur-xl" />
                   </motion.article>
                 );
@@ -272,26 +244,22 @@ const TecnologiaSaas = () => {
             </div>
           </div>
         </section>
+
+        {/* BENEFICIOS */}
         <section className="py-20 relative -z-10 bg-gradient-to-t from-primary/20 via-primary/10 to-transparent">
           <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-10 items-start">
-            {/* Columna izquierda: título + subtítulo opcional */}
             <div className="px-2">
               <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-8">
-                Beneficios Inmediatos
+                {t("benefits.title")}
               </h2>
-              <p className="mt-6 text-lg text-muted-foreground italic">
-                {/* Puedes quitar esta línea si no quieres subtítulo */}
-              </p>
+              <p className="mt-6 text-lg text-muted-foreground italic" />
             </div>
 
-            {/* Columna derecha: tarjetas gradiente como en tu “Resultados” */}
             <div className="space-y-6">
               {beneficios.map((raw, i) => {
-                // Partimos solo para formatear visualmente (NO tocamos el texto)
                 const [titlePart, ...rest] = raw.split(":");
                 const title = titlePart.trim();
-                const desc = rest.join(":").trim(); // puede quedar vacío si no hay ":" (2º paso)
-                // Paletas en azul (como tu screenshot)
+                const desc = rest.join(":").trim();
                 const gradients = [
                   "from-[#2563eb] via-[#1e3a8a] to-[#0b1220]",
                   "from-[#1f3b8a] via-[#1d3fa7] to-[#1b2b59]",
@@ -305,14 +273,11 @@ const TecnologiaSaas = () => {
                     className={`relative w-full rounded-2xl p-6 md:p-8 text-white bg-gradient-to-r ${g} shadow-lg`}
                   >
                     <div className="flex items-start gap-6">
-                      {/* Número grande a la izquierda */}
                       <div className="shrink-0">
                         <div className="text-5xl md:text-6xl font-extrabold leading-none opacity-90">
                           {i + 1}
                         </div>
                       </div>
-
-                      {/* Texto a la derecha */}
                       <div className="flex-1">
                         <div className="text-lg md:text-xl font-semibold">
                           {title}
@@ -324,8 +289,6 @@ const TecnologiaSaas = () => {
                           </p>
                         )}
                       </div>
-
-                      {/* Flecha decorativa (como en Resultados) */}
                       <ArrowUpRight className="w-6 h-6 opacity-70 mt-1" />
                     </div>
                   </div>
@@ -334,57 +297,40 @@ const TecnologiaSaas = () => {
             </div>
           </div>
         </section>
+
+        {/* CTA FINAL */}
         <section className="pb-20 sm:px-6 pt-20 bg-gradient-to-b from-primary/20 via-primary/10 to-transparent">
           <div className="max-w-screen-xl  mx-auto relative">
             <div className="bg-gradient-to-r from-black via-blue-900 to-blue-800 rounded-[2rem] p-12 relative overflow-hidden mx-auto max-w-5xl">
               <div className="max-w-5xl">
-                <h2
-                  className="
-                font-bold text-white mb-10
-                text-[clamp(28px,4.2vw,45px)] leading-[1.05]
-              "
-                >
-                  ¿Quieres asesoramiento personalizado?{" "}
+                <h2 className="font-bold text-white mb-10 text-[clamp(28px,4.2vw,45px)] leading-[1.05]">
+                  {t("cta.banner.title")}
                 </h2>
 
                 <div className="flex flex-col sm:flex-row gap-4 justify-left mb-4">
                   <Link
-                    to="https://calendly.com/ayub-tutumsec/30min"
-                    aria-label="asd"
+                    to={t("cta.banner.primary.href")}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="
-                  w-full sm:w-auto
-                  rounded-full px-7 sm:px-8 py-4 text-base sm:text-md
-                  text-white font-medium
-                  shadow-sm transition
-                  hover:opacity-95 active:opacity-90
-                "
+                    className="w-full sm:w-auto rounded-full px-7 sm:px-8 py-4 text-base sm:text-md text-white font-medium shadow-sm transition hover:opacity-95 active:opacity-90"
                     style={{
                       background:
                         "linear-gradient(to bottom, #5eb9f0, #3886f4)",
                     }}
                   >
-                    Reserva consultoría gratuita (15’)
+                    {t("cta.banner.primary.label")}
                   </Link>
                   <Link
-                    to="https://calendly.com/ayub-tutumsec/30min"
-                    aria-label="asd"
+                    to={t("cta.banner.secondary.href")}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="
-                  w-full sm:w-auto
-                  rounded-full px-7 sm:px-8 py-4 text-base sm:text-md
-                  text-white font-medium
-                  shadow-sm transition
-                  hover:opacity-95 active:opacity-90
-                "
+                    className="w-full sm:w-auto rounded-full px-7 sm:px-8 py-4 text-base sm:text-md text-white font-medium shadow-sm transition hover:opacity-95 active:opacity-90"
                     style={{
                       background:
                         "linear-gradient(to bottom, #5eb9f0, #3886f4)",
                     }}
                   >
-                    Solicita evaluación ISO 27001{" "}
+                    {t("cta.banner.secondary.label")}
                   </Link>
                 </div>
               </div>
@@ -396,7 +342,7 @@ const TecnologiaSaas = () => {
               />
             </div>
           </div>
-        </section>{" "}
+        </section>
       </main>
       <Footer />
     </>

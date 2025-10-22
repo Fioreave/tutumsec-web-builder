@@ -1,0 +1,57 @@
+{
+  "seo.title": "SMB cybersecurity | TutumSec",
+  "seo.description": "Structure, clear priorities and evidence for leadership: fewer incidents and realistic recovery times.",
+  "seo.canonical": "https://tutumsec.com/en/sectors/smb",
+
+  "hero.title": "Cybersecurity for SMBs: order, control and results",
+  "hero.subtitle": "Structure, clear priorities and evidence for leadership: fewer incidents and realistic recovery times.",
+
+  "challenge.badge": "The current challenge",
+  "challenge.imgAlt": "Cybersecurity for SMBs",
+  "challenge.items.0": "<span class='font-medium text-slate-900'>Lean teams</span> with too many disconnected tools.",
+  "challenge.items.1": "<span class='font-medium text-slate-900'>Over-reliance</span> on one person or a single provider for “everything”.",
+  "challenge.items.2": "<span class='font-medium text-slate-900'>Untested backups</span> and uncertainty about timely recovery.",
+  "challenge.items.3": "<span class='font-medium text-slate-900'>Foggy compliance</span> (NIS2/ISO 27001) with little focus on evidence.",
+  "challenge.items.4": "<span class='font-medium text-slate-900'>Growing exposure</span> via email, cloud and remote access.",
+  "challenge.cta.label": "See how we tackle it",
+  "challenge.cta.href": "#solucion",
+
+  "solution.title": "Our solution",
+  "solution.cards.0.t": "vCISO",
+  "solution.cards.0.d": "Governance and impact-based plan (4–6 weeks).",
+  "solution.cards.0.href": "/descubrimiento-ot",
+  "solution.cards.1.t": "Audit-to-Comply",
+  "solution.cards.1.d": "Offensive audit + actions for NIS2/ISO 27001.",
+  "solution.cards.1.href": "/zonas-y-conductos",
+  "solution.cards.2.t": "MDR 24/7",
+  "solution.cards.2.d": "Detection and response with clear, jargon-free reports.",
+  "solution.cards.2.href": "/deteccion-ot",
+  "solution.cards.3.t": "Recovery",
+  "solution.cards.3.d": "Immutable backups, an isolated copy and monthly tests.",
+  "solution.cards.3.href": "/drp-industrial",
+  "solution.cards.4.t": "People",
+  "solution.cards.4.d": "Short training and reminders to build habits.",
+  "solution.cards.4.href": "/gobierno-iec-62443",
+
+  "benefits.title": "Immediate benefits",
+  "benefits.items.0": "Fewer incidents and fewer outages.",
+  "benefits.items.1": "Meet NIS2/ISO 27001 with clear steps and evidence.",
+  "benefits.items.2": "Everything documented: less dependence on “heroes”.",
+  "benefits.items.3": "More trust from customers, auditors and insurers.",
+
+  "faq.title": "Frequently asked questions",
+  "faq.0.q": "Do I need to replace all my tech?",
+  "faq.0.a": "No. We start with what you already use and only add what’s essential.",
+  "faq.1.q": "When will I see results?",
+  "faq.1.a": "Within the first 4–6-week block: solid basics and a prioritized improvement list.",
+  "faq.2.q": "Do you train the team?",
+  "faq.2.a": "Yes. Short sessions, reminders and simple drills to build habits.",
+
+  "cta.banner.title": "Want tailored guidance?",
+  "cta.banner.primary.label": "Book a free consult (15’)",
+  "cta.banner.primary.href": "https://calendly.com/ayub-tutumsec/30min",
+  "cta.banner.secondary.label": "Request a DORA/NIS2 assessment",
+  "cta.banner.secondary.href": "https://calendly.com/ayub-tutumsec/30min",
+
+  "common.explore": "Explore"
+}

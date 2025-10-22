@@ -1,3 +1,4 @@
+// Contacto.tsx — con i18n (t)
 "use client";
 
 import React, { useEffect, useState } from "react";
@@ -15,6 +16,7 @@ import {
   AlertTriangle,
   Loader2,
 } from "lucide-react";
+import { useTranslations } from "@/i18n/useTranslations";
 
 declare global {
   interface Window {
@@ -27,9 +29,7 @@ declare global {
 
 const API_URL = `${import.meta.env.VITE_API_URL}/api/contact`;
 const RECAPTCHA_SITE_KEY = import.meta.env.VITE_RECAPTCHA_SITE_KEY as string;
-const POLICY_URL = "/politica-de-privacidad";
 
-/** Sedes */
 const locations = [
   {
     name: "Barcelona",
@@ -58,6 +58,8 @@ const locations = [
 ];
 
 const Contacto: React.FC = () => {
+  const { t } = useTranslations(["contacto"]);
+
   // Form
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
@@ -85,7 +87,7 @@ const Contacto: React.FC = () => {
   const getRecaptchaToken = (): Promise<string> =>
     new Promise((resolve, reject) => {
       if (!RECAPTCHA_SITE_KEY)
-        return reject(new Error("Captcha no disponible"));
+        return reject(new Error(t("errors.captchaUnavailable")));
       const run = () =>
         window
           .grecaptcha!.execute(RECAPTCHA_SITE_KEY, { action: "contact" })
@@ -97,19 +99,10 @@ const Contacto: React.FC = () => {
           () =>
             window.grecaptcha
               ? window.grecaptcha.ready(run)
-              : reject(new Error("Captcha no cargó")),
+              : reject(new Error(t("errors.captchaNotLoaded"))),
           800
         );
     });
-
-  const downloadPdf = (path: string, name: string) => {
-    const link = document.createElement("a");
-    link.href = path;
-    link.download = name;
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-  };
 
   const resetForm = () => {
     setFirstName("");
@@ -125,7 +118,7 @@ const Contacto: React.FC = () => {
     setErrorMsg(null);
 
     if (!privacy) {
-      setErrorMsg("Debes aceptar la política de privacidad.");
+      setErrorMsg(t("errors.privacyRequired"));
       return;
     }
 
@@ -134,7 +127,7 @@ const Contacto: React.FC = () => {
       const recaptcha_token = await getRecaptchaToken();
 
       const controller = new AbortController();
-      const t = setTimeout(() => controller.abort(), 15000); // 15s timeout
+      const timeout = setTimeout(() => controller.abort(), 15000);
 
       const res = await fetch(API_URL, {
         method: "POST",
@@ -152,7 +145,7 @@ const Contacto: React.FC = () => {
         }),
         signal: controller.signal,
       });
-      clearTimeout(t);
+      clearTimeout(timeout);
 
       const json = await res.json().catch(() => ({}));
 
@@ -161,20 +154,15 @@ const Contacto: React.FC = () => {
           (json?.errors && Object.values(json.errors).join(" · ")) ||
           json?.message ||
           json?.error ||
-          "No se pudo enviar el formulario.";
+          t("errors.submitFailed");
         throw new Error(msg);
       }
 
       setSentOk(true);
       resetForm();
-      downloadPdf("/checklist-nis2.pdf", "checklist-nis2.pdf");
     } catch (err: any) {
-      if (err?.name === "AbortError")
-        setErrorMsg("Tiempo de espera agotado. Inténtalo de nuevo.");
-      else
-        setErrorMsg(
-          err?.message || "Ha ocurrido un error. Inténtalo de nuevo."
-        );
+      if (err?.name === "AbortError") setErrorMsg(t("errors.timeout"));
+      else setErrorMsg(err?.message || t("errors.generic"));
     } finally {
       setIsSubmitting(false);
     }
@@ -187,10 +175,11 @@ const Contacto: React.FC = () => {
         <div className="container mx-auto px-4 py-12">
           {/* Header */}
           <div className="text-center mb-12">
-            <h1 className="text-4xl font-bold text-primary mb-4">Contacto</h1>
+            <h1 className="text-4xl font-bold text-primary mb-4">
+              {t("hero.title")}
+            </h1>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Ponte en contacto con nosotros para discutir tus necesidades de
-              ciberseguridad
+              {t("hero.subtitle")}
             </p>
           </div>
 
@@ -198,7 +187,7 @@ const Contacto: React.FC = () => {
           <div className="mx-auto w-full max-w-[800px]">
             <Card>
               <CardHeader>
-                <CardTitle>Envíanos un mensaje</CardTitle>
+                <CardTitle>{t("form.title")}</CardTitle>
               </CardHeader>
               <CardContent>
                 {sentOk ? (
@@ -206,19 +195,18 @@ const Contacto: React.FC = () => {
                     <div className="flex items-center gap-3">
                       <CheckCircle2 className="h-6 w-6 text-primary" />
                       <h3 className="text-lg font-semibold">
-                        ¡Mensaje enviado!
+                        {t("success.title")}
                       </h3>
                     </div>
                     <p className="mt-2 text-sm text-muted-foreground">
-                      Gracias por escribirnos. Un consultor se pondrá en
-                      contacto contigo a la brevedad.
+                      {t("success.subtitle")}
                     </p>
                     <div className="mt-4">
                       <Button
                         variant="secondary"
                         onClick={() => setSentOk(false)}
                       >
-                        Enviar otro mensaje
+                        {t("success.sendAnother")}
                       </Button>
                     </div>
                   </div>
@@ -226,10 +214,12 @@ const Contacto: React.FC = () => {
                   <form className="space-y-4" onSubmit={handleSubmit}>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                       <div>
-                        <Label htmlFor="nombre">Nombre *</Label>
+                        <Label htmlFor="nombre">
+                          {t("form.firstName.label")} *
+                        </Label>
                         <Input
                           id="nombre"
-                          placeholder="Tu nombre"
+                          placeholder={t("form.firstName.placeholder")}
                           value={firstName}
                           onChange={(e) => setFirstName(e.target.value)}
                           required
@@ -237,10 +227,12 @@ const Contacto: React.FC = () => {
                         />
                       </div>
                       <div>
-                        <Label htmlFor="apellidos">Apellidos</Label>
+                        <Label htmlFor="apellidos">
+                          {t("form.lastName.label")}
+                        </Label>
                         <Input
                           id="apellidos"
-                          placeholder="Tus apellidos"
+                          placeholder={t("form.lastName.placeholder")}
                           value={lastName}
                           onChange={(e) => setLastName(e.target.value)}
                           className="mt-1"
@@ -249,11 +241,11 @@ const Contacto: React.FC = () => {
                     </div>
 
                     <div>
-                      <Label htmlFor="email">Email *</Label>
+                      <Label htmlFor="email">{t("form.email.label")} *</Label>
                       <Input
                         id="email"
                         type="email"
-                        placeholder="tu@email.com"
+                        placeholder={t("form.email.placeholder")}
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
                         required
@@ -262,10 +254,10 @@ const Contacto: React.FC = () => {
                     </div>
 
                     <div>
-                      <Label htmlFor="empresa">Empresa</Label>
+                      <Label htmlFor="empresa">{t("form.company.label")}</Label>
                       <Input
                         id="empresa"
-                        placeholder="Tu empresa"
+                        placeholder={t("form.company.placeholder")}
                         value={company}
                         onChange={(e) => setCompany(e.target.value)}
                         className="mt-1"
@@ -273,10 +265,12 @@ const Contacto: React.FC = () => {
                     </div>
 
                     <div>
-                      <Label htmlFor="mensaje">Mensaje *</Label>
+                      <Label htmlFor="mensaje">
+                        {t("form.message.label")} *
+                      </Label>
                       <Textarea
                         id="mensaje"
-                        placeholder="Cuéntanos sobre tu proyecto..."
+                        placeholder={t("form.message.placeholder")}
                         rows={6}
                         value={message}
                         onChange={(e) => setMessage(e.target.value)}
@@ -294,16 +288,16 @@ const Contacto: React.FC = () => {
                         className="mt-1"
                       />
                       <span>
-                        Acepto la{" "}
+                        {t("form.privacy.prefix")}{" "}
                         <a
-                          href={POLICY_URL}
+                          href={t("policy.url")}
                           target="_blank"
                           rel="noopener noreferrer"
                           className="underline"
                         >
-                          política de privacidad
+                          {t("form.privacy.link")}
                         </a>
-                        .
+                        {t("form.privacy.suffix")}
                       </span>
                     </label>
 
@@ -321,10 +315,11 @@ const Contacto: React.FC = () => {
                     >
                       {isSubmitting ? (
                         <span className="inline-flex items-center gap-2">
-                          <Loader2 className="h-4 w-4 animate-spin" /> Enviando…
+                          <Loader2 className="h-4 w-4 animate-spin" />{" "}
+                          {t("form.submitting")}
                         </span>
                       ) : (
-                        "Enviar mensaje"
+                        t("form.submit")
                       )}
                     </Button>
                   </form>
@@ -337,7 +332,7 @@ const Contacto: React.FC = () => {
           <section>
             <div className="text-left mt-20">
               <h3 className="text-4xl font-bold text-primary">
-                Nuestras sedes
+                {t("locations.title")}
               </h3>
             </div>
 
@@ -355,13 +350,12 @@ const Contacto: React.FC = () => {
                       <div className="overflow-hidden border">
                         <iframe
                           src={loc.mapSrc}
-                          title={`Mapa ${loc.name}`}
+                          title={t("locations.mapTitle", { city: loc.name })}
                           loading="lazy"
                           className="w-full h-[120px] filter grayscale contrast-110 brightness-95"
                           referrerPolicy="no-referrer-when-downgrade"
                         />
                       </div>
-
                       <div className="space-y-2 text-sm">
                         <p className="flex items-start gap-2 text-muted-foreground">
                           <MapPin className="h-4 w-4 mt-0.5" />

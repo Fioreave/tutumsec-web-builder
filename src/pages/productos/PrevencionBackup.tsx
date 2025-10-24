@@ -15,10 +15,22 @@ import {
   Shield,
   Globe,
   Cloud,
+  ArrowRight,
+  ShieldCheck,
+  LineChart,
+  AlarmClock,
 } from "lucide-react";
 import PartnersSection from "../PartnersSection";
 import { Link } from "react-router-dom";
 import { useTranslations } from "@/i18n/useTranslations";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 
 const PrevencionBackup: React.FC = () => {
   const { t } = useTranslations(["prevencion"]);
@@ -46,7 +58,32 @@ const PrevencionBackup: React.FC = () => {
     t("base.right.3"),
     t("base.right.4"),
   ];
-
+  const crossSellServices = [
+    {
+      title: "Consultoría CISO (vCISO)",
+      description: "Gobierno, KPIs y cultura",
+      href: "/es/servicios/consultoria-ciso",
+      icon: LineChart,
+    },
+    {
+      title: "Transformación Digital Segura",
+      description: "Automatizacion & IA alineada al negocio",
+      href: "/es/servicios/auditoria-compliance-nis2",
+      icon: Zap,
+    },
+    {
+      title: "Auditoría & Compliance NIS2",
+      description: "Pentesting ofensivo + Gap-Analysis + plan de adecuación ",
+      href: "/es/servicios/auditoria-compliance-nis2",
+      icon: ShieldCheck,
+    },
+    {
+      title: "SOC / MDR 24×7",
+      description: "Vigilancia y respuesta gestionada",
+      href: "/es/productos/deteccion-24x7",
+      icon: AlarmClock,
+    },
+  ];
   const outcomes = [
     {
       title: t("outcomes.0.title"),
@@ -199,9 +236,9 @@ const PrevencionBackup: React.FC = () => {
 
           {/* ¿PARA QUIÉN ES? */}
           <section className="py-20">
-            <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-10 items-start">
-              <div className="px-2">
-                <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-8">
+            <div className="max-w-6xl px-4 mx-auto grid lg:grid-cols-2 gap-10 items-start">
+              <div className="">
+                <h2 className="text-4xl lg:text-4xl font-bold text-gray-900 mb-6">
                   {t("forWho.title")}
                 </h2>
               </div>
@@ -282,13 +319,13 @@ const PrevencionBackup: React.FC = () => {
           {/* LO QUE VAS A CONSEGUIR */}
           <section className="py-20 px-6 bg-tutumsec-gray-50">
             <div className="max-w-6xl mx-auto">
-              <div className="text-center mb-16">
-                <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6 animate-slide-up leading-relaxed">
+              <div className="text-center mb-6">
+                <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-2 animate-slide-up leading-relaxed">
                   {t("outcomes.title")}
                 </h2>
               </div>
 
-              <div className="grid grid-cols-3">
+              <div className="grid grid-cols-1 md:grid-cols-3">
                 {outcomes.map((item, index) => (
                   <div
                     key={index}
@@ -383,7 +420,7 @@ const PrevencionBackup: React.FC = () => {
               </div>
 
               <div className="mt-12 text-center">
-                <p className="text-sm text-gray-500 italic">
+                <p className="text-sm text-gray-900 italic">
                   {t("solution.note")}
                 </p>
               </div>
@@ -429,6 +466,54 @@ const PrevencionBackup: React.FC = () => {
                     </div>
                   ))}
                 </div>
+              </div>
+            </div>
+          </section>
+
+          {/* CULTURA + CROSS SELL */}
+          <section className="py-20 bg-slate-50">
+            <div className="max-w-6xl mx-auto px-6">
+              <h2 className="text-4xl text-center font-bold text-primary">
+                Servicios{" "}
+              </h2>
+              <div className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                {crossSellServices.map((s, i) => {
+                  const Icon = s.icon;
+                  const url = s.href ?? "#";
+                  return (
+                    <Card
+                      key={i}
+                      className="h-full rounded-2xl border border-slate-200 bg-white shadow-sm hover:shadow-md transition-shadow flex flex-col"
+                    >
+                      <CardHeader className="items-center text-center">
+                        <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-blue-50">
+                          {Icon ? (
+                            <Icon className="h-7 w-7 text-blue-600" />
+                          ) : null}
+                        </div>
+                        <CardTitle className="text-xl font-semibold text-slate-900">
+                          {s.title}
+                        </CardTitle>
+                        <CardDescription className="mt-3 text-slate-600 leading-relaxed">
+                          {s.description}
+                        </CardDescription>
+                      </CardHeader>
+                      <CardFooter className="mt-auto px-6 pb-6">
+                        <Button
+                          asChild
+                          variant="secondary"
+                          className="w-full group"
+                          aria-label={`${t("cross.cta")} ${s.title}`}
+                        >
+                          <Link to={url}>
+                            {t("cross.cta")}
+                            <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-0.5" />
+                          </Link>
+                        </Button>
+                      </CardFooter>
+                    </Card>
+                  );
+                })}
               </div>
             </div>
           </section>

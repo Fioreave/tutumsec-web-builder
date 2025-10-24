@@ -5,7 +5,19 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card as UICard, CardContent } from "@/components/ui/card";
-import { Search, Settings, Map, TrendingUp, Shield, Clock } from "lucide-react";
+import {
+  Search,
+  Settings,
+  Map,
+  TrendingUp,
+  Shield,
+  Clock,
+  ShieldCheck,
+  Zap,
+  AlarmClock,
+  ArrowRight,
+  LineChart,
+} from "lucide-react";
 import { useTranslations } from "@/i18n/useTranslations";
 import { Link } from "react-router-dom";
 import PartnersSection from "../PartnersSection";
@@ -15,6 +27,13 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import {
+  Card,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 
 const handleCalendlyClick = () => {
   const calendlyUrl =
@@ -25,7 +44,7 @@ const handleCalendlyClick = () => {
 };
 
 const AuditoriaCompliance = () => {
-  const { t } = useTranslations(["audit"]);
+  const { t } = useTranslations(["audit", "crossSellServices"]);
 
   const highlights = [
     {
@@ -67,6 +86,27 @@ const AuditoriaCompliance = () => {
       title: t("process.steps.3.title"),
       description: t("process.steps.3.desc"),
       icon: TrendingUp,
+    },
+  ];
+
+  const crossSellServices = [
+    {
+      title: t("crossSellServices.0.title"),
+      description: t("crossSellServices.0.description"),
+      href: t("crossSellServices.0.href"),
+      icon: LineChart,
+    },
+    {
+      title: t("crossSellServices.2.title"),
+      description: t("crossSellServices.2.description"),
+      href: t("crossSellServices.2.href"),
+      icon: Zap,
+    },
+    {
+      title: t("crossSellServices.3.title"),
+      description: t("crossSellServices.3.description"),
+      href: t("crossSellServices.3.href"),
+      icon: AlarmClock,
     },
   ];
 
@@ -134,7 +174,7 @@ const AuditoriaCompliance = () => {
       </Helmet>
 
       <Navbar />
-      <main className="min-h-screen pt-20">
+      <main className="min-h-screen ">
         {/* HERO */}
         <section className="relative min-h-screen overflow-hidden px-6 flex items-center">
           <div className="absolute inset-0 -z-20 bg-[#0a0f1c]" />
@@ -294,7 +334,7 @@ const AuditoriaCompliance = () => {
           <h2 className="container text-5xl lg:text-5xl font-bold text-blue-950 mb-10">
             {t("how.heading")}
           </h2>
-          <div className="container grid grid-cols-4 md:grid-cols-4 sm:grid-cols-1 gap-6 items-stretch">
+          <div className="container grid grid-cols-1 lg:grid-cols-4 lg:grid-cols-4 gap-6 items-stretch">
             {highlights.map((h, idx) => (
               <div
                 key={idx}
@@ -316,6 +356,71 @@ const AuditoriaCompliance = () => {
                 </div>
               </div>
             ))}
+          </div>
+        </section>
+
+        {/* BLOQUE 10 · Enlaces internos */}
+        <section className="py-20 ">
+          <div className="max-w-6xl mx-auto px-6">
+            <h2 className="text-5xl text-center font-bold text-primary">
+              {t("h2.crossSell")}
+            </h2>
+
+            <div className="mt-12 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-6">
+              {crossSellServices.map((s, i) => {
+                const Icon = s.icon;
+                const url = s.href ?? "#";
+                return (
+                  <Card
+                    key={i}
+                    className="h-full rounded-2xl border border-slate-200 bg-white shadow-sm hover:shadow-md transition-shadow flex flex-col"
+                  >
+                    <CardHeader className="items-center text-center">
+                      {/* Icono */}
+                      <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-blue-50">
+                        {Icon ? (
+                          <Icon className="h-7 w-7 text-primary" />
+                        ) : (
+                          <svg
+                            className="h-7 w-7 text-blue-600"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="2"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                          >
+                            <circle cx="11" cy="11" r="8" />
+                            <path d="m21 21-4.3-4.3" />
+                          </svg>
+                        )}
+                      </div>
+
+                      <CardTitle className="text-xl font-semibold text-slate-900">
+                        {s.title}
+                      </CardTitle>
+                      <CardDescription className="mt-3 text-slate-600 leading-relaxed">
+                        {s.description}
+                      </CardDescription>
+                    </CardHeader>
+
+                    <CardFooter className="mt-auto px-6 pb-6">
+                      <Button
+                        asChild
+                        variant="secondary"
+                        className="w-full group"
+                        aria-label={`Saber más sobre ${s.title}`}
+                      >
+                        <Link to={url}>
+                          Saber más
+                          <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-0.5" />
+                        </Link>
+                      </Button>
+                    </CardFooter>
+                  </Card>
+                );
+              })}
+            </div>
           </div>
         </section>
 
@@ -364,7 +469,7 @@ const AuditoriaCompliance = () => {
           </div>
 
           <div className="w-full pt-20 text-center max-w-6xl mt-10 mx-auto relative">
-            <h2 className="text-4xl font-bold mb-10 px-20 ">
+            <h2 className="text-xl md:text-4xl font-bold mb-10  ">
               {t("ctaFinal.title")}
             </h2>
             <Link

@@ -99,7 +99,7 @@ const Navbar = () => {
   ];
 
   const sobreNosotrosItems = [
-    { title: t("nav.about.history"), path: L("/sobre-nosotros/historia") },
+    { title: t("nav.about.history"), path: L("/historia") },
     {
       title: t("nav.about.teamValues"),
       path: L("/sobre-nosotros/equipo-valores"),
@@ -111,19 +111,28 @@ const Navbar = () => {
       <div className="max-w-8xl mx-auto px-4 sm:px-10 lg:px-20">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <div className="flex items-center">
-            <Link to={L("/")}>
+          <div
+            className={`flex items-center shrink-0 ${
+              isMenuOpen ? "h-10" : "h-11 sm:h-12 lg:h-16 xl:h-18"
+            }`}
+          >
+            <Link
+              to={L("/")}
+              className="inline-flex items-center min-w-[150px] sm:min-w-[150px] lg:min-w-[180px]"
+            >
               <img
-                src="/uploads/tutumsec.png"
+                src="/uploads/tutumsec_logo.svg"
                 alt="TutumSec Logo"
-                className="h-12 w-auto"
+                className="block h-full w-auto"
+                loading="eager"
+                decoding="async"
               />
             </Link>
           </div>
 
           {/* Desktop Navigation */}
           <div className="hidden md:block">
-            <div className="flex items-baseline space-x-4 whitespace-nowrap">
+            <div className="flex items-baseline space-x-2 whitespace-nowrap">
               <NavbarDropdown
                 title={t("nav.menu.services")}
                 items={serviciosItems}
@@ -250,11 +259,6 @@ const Navbar = () => {
             >
               {t("nav.menu.contact")}
             </Link>
-
-            {/* Selector de idioma en menú móvil */}
-            <div className="px-3 mt-3">
-              <LanguageSelector />
-            </div>
 
             {/* CTA */}
             <div className="flex items-center gap-4">

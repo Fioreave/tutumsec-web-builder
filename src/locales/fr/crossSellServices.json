@@ -1,0 +1,18 @@
+{
+  "crossSellServices.0.title": "Conseil CISO (vCISO)",
+  "crossSellServices.0.description": "Gouvernance, KPI et culture",
+  "crossSellServices.0.href": "/es/servicios/consultoria-ciso",
+
+  "crossSellServices.1.title": "Audit & Conformité NIS2",
+  "crossSellServices.1.description": "Gap-Analysis + plan d’adéquation",
+  "crossSellServices.1.href": "/es/servicios/auditoria-compliance-nis2",
+
+  "crossSellServices.2.title": "Transformation Numérique Sécurisée",
+  "crossSellServices.2.description": "Automatisation & IA alignées au business",
+  "crossSellServices.2.href": "/es/servicios/auditoria-compliance-nis2",
+
+  "crossSellServices.3.title": "SOC / MDR 24×7",
+  "crossSellServices.3.description": "Surveillance et réponse gérées",
+  "crossSellServices.3.href": "/es/productos/deteccion-24x7",
+  "h2.crossSell": "Complétez votre stratégie"
+}

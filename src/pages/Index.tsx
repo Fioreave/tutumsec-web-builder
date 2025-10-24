@@ -39,10 +39,10 @@ const Index = () => {
       <main className="pt-16">
         <HeroSection />
         <BenefitsSection />
-        <ProblemsSection />
-        <RisksSection />
-        <ResultsSection />
         <ServicesSection />
+        {/*<ProblemsSection />*/}
+        <ResultsSection />
+        <RisksSection />
         <ProcessSection />
         <TestimonialsSection />
         <CTASection />

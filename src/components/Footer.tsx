@@ -1,56 +1,51 @@
-// src/components/Footer.tsx
 import React from "react";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
 import { MapPin, Mail, Linkedin } from "lucide-react";
 import { Link } from "react-router-dom";
-import { useTranslations } from "@/i18n/useTranslations";
-import { useLangLink } from "@/i18n/useLangLink";
 
-const Footer: React.FC = () => {
-  const { t } = useTranslations(["common"]);
-  const L = useLangLink();
-
+const Footer = () => {
   const certifications = [
-    t("footer.certs.iso27001"),
-    t("footer.certs.rgpd"),
-    t("footer.certs.soc2"),
-    t("footer.certs.cissp"),
+    "ISO 27001 Certificado",
+    "Cumplimiento RGPD",
+    "SOC 2 Tipo II",
+    "Equipo Certificado CISSP",
   ];
 
   return (
     <footer className="bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white">
       {/* Main Footer Content */}
       <div className="max-w-7xl mx-auto px-2 py-10">
-        <div className="grid lg:grid-cols-5 gap-6 mb-12">
-          {/* Brand */}
-          <div className="lg:col-span-2">
+        {/* IMPORTANT: grid responsive para no romper en md/lg */}
+        <div className="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-5 gap-6 mb-12">
+          {/* Brand Section */}
+          <div className="md:col-span-2 lg:col-span-2">
             <div className="flex items-center mb-6 group">
               <img
                 src="/uploads/tutumsec-negativo.png"
-                alt={t("footer.logoAlt")}
+                alt="TutumSec Logo"
                 className="h-16 w-auto mr-3 transition-all duration-500 group-hover:scale-110 filter brightness-110"
               />
             </div>
-
             <p className="text-gray-300 mb-6 leading-relaxed transition-colors duration-300 hover:text-gray-200">
-              {t("footer.brandCopy")}
+              La seguridad digital es nuestro hilo conductor. Expertos en
+              ciberseguridad y cumplimiento normativo para empresas que exigen
+              más.
             </p>
-
             <div className="space-y-3">
               <div className="flex items-center text-gray-300 transition-all duration-300 hover:text-blue-400 hover:translate-x-1">
                 <Mail className="w-4 h-4 mr-3 text-blue-400" />
-                <span className="text-sm">{t("footer.email")}</span>
+                <span className="text-sm">hola@tutumsec.io</span>
               </div>
-
               <div className="flex items-center text-gray-300 transition-all duration-300 hover:text-blue-400 hover:translate-x-1">
                 <MapPin className="w-4 h-4 mr-3 text-blue-400" />
-                <span className="text-sm">{t("footer.location")}</span>
+                <span className="text-sm">Barcelona - Girona - Andorra</span>
               </div>
-
               <div className="pt-6">
                 <a
                   target="_blank"
                   rel="noopener noreferrer"
-                  aria-label={t("footer.linkedinAria")}
+                  aria-label="TutumSec en LinkedIn (se abre en una pestaña nueva)"
                   href="https://www.linkedin.com/company/tutumsec/posts/?feedView=all"
                   className="w-10 h-10 bg-gradient-to-r from-blue-400 to-blue-500 rounded-full flex items-center justify-center hover:from-blue-500 hover:to-blue-600 transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-110"
                 >
@@ -60,90 +55,76 @@ const Footer: React.FC = () => {
             </div>
           </div>
 
-          {/* Services */}
-          <div>
-            <h4 className="text-lg font-semibold mb-6 text-white">
-              {t("footer.col.services")}
-            </h4>
+          {/* Services — oculto en móvil, visible md+ */}
+          <div className="hidden md:block">
+            <h4 className="text-lg font-semibold mb-6 text-white">Servicios</h4>
             <ul className="space-y-3 text-sm text-gray-300">
               <li className="hover:text-blue-400 transition-all duration-300 hover:translate-x-2 block">
-                <Link to={L("/servicios/consultoria-ciso")}>
-                  {t("footer.links.consultoriaCiso")}
+                <Link to="/es/servicios/consultoria-ciso">
+                  Consultoría CISO
                 </Link>
               </li>
               <li className="hover:text-blue-400 transition-all duration-300 hover:translate-x-2 block">
-                <Link to={L("/servicios/auditoria-compliance-nis2")}>
-                  {t("footer.links.auditoriaNis2")}
+                <Link to="/es/servicios/auditoria-compliance-nis2">
+                  Auditoría & Compliance NIS2
                 </Link>
               </li>
               <li className="hover:text-blue-400 transition-all duration-300 hover:translate-x-2 block">
-                <Link to={L("/servicios/transformacion-digital-estrategica")}>
-                  {t("footer.links.transformacionDigital")}
+                <Link to="/es/servicios/transformacion-digital-estrategica">
+                  Transformación Digital Estratégica
                 </Link>
               </li>
               <li className="hover:text-blue-400 transition-all duration-300 hover:translate-x-2 block">
-                <Link to={L("/servicios/formacion-concienciacion")}>
-                  {t("footer.links.formacion")}
+                <Link to="/es/servicios/formacion-concienciacion">
+                  Formación y Concienciación
                 </Link>
               </li>
               <li className="hover:text-blue-400 transition-all duration-300 hover:translate-x-2 block">
-                <Link to={L("/servicios/oficina-seguridad-informacion-nis2")}>
-                  {t("footer.links.oficinaSeguridad")}
+                <Link to="/es/servicios/oficina-seguridad-informacion-nis2">
+                  Oficina Seguridad Información
                 </Link>
               </li>
             </ul>
           </div>
 
-          {/* Products */}
-          <div>
-            <h4 className="text-lg font-semibold mb-6 text-white">
-              {t("footer.col.products")}
-            </h4>
+          {/* Products — oculto en móvil, visible md+ */}
+          <div className="hidden md:block">
+            <h4 className="text-lg font-semibold mb-6 text-white">Productos</h4>
             <ul className="space-y-3 text-sm text-gray-300">
               <li className="hover:text-blue-400 transition-all duration-300 hover:translate-x-2 block">
-                <Link to={L("/productos/deteccion-24x7")}>
-                  {t("footer.links.deteccion")}
+                <Link to="/es/productos/deteccion-24x7">Detección 24x7</Link>
+              </li>
+              <li className="hover:text-blue-400 transition-all duration-300 hover:translate-x-2 block">
+                <Link to="/es/productos/prevencion">Prevención</Link>
+              </li>
+              <li className="hover:text-blue-400 transition-all duration-300 hover:translate-x-2 block">
+                <Link to="/es/productos/incidente-respuesta-retainer">
+                  Respuesta &lt;15'
                 </Link>
               </li>
               <li className="hover:text-blue-400 transition-all duration-300 hover:translate-x-2 block">
-                <Link to={L("/productos/prevencion")}>
-                  {t("footer.links.prevencion")}
-                </Link>
-              </li>
-              <li className="hover:text-blue-400 transition-all duration-300 hover:translate-x-2 block">
-                <Link to={L("/productos/incidente-respuesta-retainer")}>
-                  {t("footer.links.respuesta")}
-                </Link>
-              </li>
-              <li className="hover:text-blue-400 transition-all duration-300 hover:translate-x-2 block">
-                <Link to={L("/productos/recuperacion-backup")}>
-                  {t("footer.links.recuperacion")}
-                </Link>
+                <Link to="/es/productos/recuperacion-backup">Recuperación</Link>
               </li>
             </ul>
           </div>
 
-          {/* Company */}
-          <div>
-            <h4 className="text-lg font-semibold mb-6 text-white">
-              {t("footer.col.company")}
-            </h4>
+          {/* Company — oculto en móvil, visible md+ */}
+          <div className="hidden md:block">
+            <h4 className="text-lg font-semibold mb-6 text-white">Empresa</h4>
             <ul className="space-y-3 text-sm text-gray-300">
               <li className="hover:text-blue-400 transition-all duration-300 hover:translate-x-2 block">
-                <Link to={L("/sobre-nosotros/historia")}>
-                  {t("footer.links.historia")}
+                <Link to="/es/sobre-nosotros/historia">Historia</Link>
+              </li>
+              <li className="hover:text-blue-400 transition-all duration-300 hover:translate-x-2 block">
+                <Link to="/es/sobre-nosotros/equipo-valores">
+                  Equipo y Valores
                 </Link>
               </li>
               <li className="hover:text-blue-400 transition-all duration-300 hover:translate-x-2 block">
-                <Link to={L("/sobre-nosotros/equipo-valores")}>
-                  {t("footer.links.equipoValores")}
-                </Link>
+                <Link to="/es/blog">Blog</Link>
               </li>
               <li className="hover:text-blue-400 transition-all duration-300 hover:translate-x-2 block">
-                <Link to={L("/recursos/blog")}>{t("footer.links.blog")}</Link>
-              </li>
-              <li className="hover:text-blue-400 transition-all duration-300 hover:translate-x-2 block">
-                <Link to={L("/contacto")}>{t("footer.links.contacto")}</Link>
+                <Link to="/es/contacto">Contacto</Link>
               </li>
             </ul>
           </div>
@@ -158,36 +139,36 @@ const Footer: React.FC = () => {
             {certifications.map((cert, index) => (
               <div
                 key={index}
-                className="flex items-center text-sm text-green-400 transition-all duration-300 hover:scale-105 animate-fade-in"
+                className="flex items-center text-sm text-green-400 transition-all duration-300 hover:scale-105"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
                 <div
-                  className="w-2 h-2 bg-green-400 rounded-full mr-2 animate-gentle-bounce"
+                  className="w-2 h-2 bg-green-400 rounded-full mr-2"
                   style={{ animationDelay: `${index * 0.5}s` }}
-                />
+                ></div>
                 {cert}
               </div>
             ))}
           </div>
 
-          {/* Social & legal */}
+          {/* Social Links & Copyright */}
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="text-sm text-gray-400 mb-4 md:mb-0">
-              © {new Date().getFullYear()} TutumSec. {t("footer.rights")} |
+              © 2025 TutumSec. Todos los derechos reservados. |
               <a
                 target="_blank"
-                href={L("/privacy-policy")}
+                href="/privacy-policy"
                 className="hover:text-blue-400 transition-colors duration-300 ml-1"
               >
-                {t("footer.privacy")}
+                Política de Privacidad
               </a>{" "}
               |
               <a
                 target="_blank"
-                href={L("/aviso-legal")}
+                href="/aviso-legal"
                 className="hover:text-blue-400 transition-colors duration-300 ml-1"
               >
-                {t("footer.legal")}
+                Aviso Legal{" "}
               </a>
             </div>
 
@@ -196,33 +177,32 @@ const Footer: React.FC = () => {
                 <div className="transition-all duration-300 hover:scale-105">
                   <img
                     src="/uploads/certifications/iso27001.svg"
-                    alt={t("footer.isoAlt")}
+                    alt="ISO 27001 Certificado"
                     className="h-12 px-2 py-2 w-auto opacity-60 hover:opacity-80 transition-opacity duration-300"
                   />
                 </div>
                 <div className="transition-all duration-300 hover:scale-105">
                   <img
                     src="/uploads/certifications/incibe.svg"
-                    alt={t("footer.incibeAlt")}
+                    alt="INCIBE Certificado"
                     className="h-12 px-2 py-2 w-auto opacity-60 hover:opacity-80 transition-opacity duration-300"
                   />
                 </div>
                 <div className="transition-all duration-300 hover:scale-105">
                   <img
                     src="/uploads/certifications/ASCICAT.svg"
-                    alt={t("footer.ascicatAlt")}
+                    alt="ASCICAT Certificado"
                     className="h-12 px-2 py-2 w-auto opacity-60 hover:opacity-80 transition-opacity duration-300"
                   />
                 </div>
                 <div className="transition-all duration-300 hover:scale-105">
                   <img
                     src="/uploads/certifications/agenciacat.svg"
-                    alt={t("footer.agenciacatAlt")}
+                    alt="Agencia Catalana Certificado"
                     className="h-12 px-2 py-2 w-auto opacity-60 hover:opacity-80 transition-opacity duration-300"
                   />
                 </div>
               </div>
-              {/* redes extra opcionales */}
             </div>
           </div>
         </div>

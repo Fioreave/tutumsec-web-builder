@@ -92,7 +92,7 @@
   "hunting.title": "Proactive hunting on critical TTPs",
   "hunting.text": "Recurring MITRE ATT&CK-based behavior search focused on initial access, lateral movement, privilege escalation and exfiltration. Findings become actions and new rules for your environment.",
 
-  "report.titleLine1": "Weekly reporting and",
+  "report.titleLine1": "Monthly reporting and",
   "report.titleLine2": "executive focus",
   "report.0.title": "Monthly report:",
   "report.0.desc": "Incidents, actions taken, recommendations.",

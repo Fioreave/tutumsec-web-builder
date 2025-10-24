@@ -74,25 +74,25 @@ const Pymes: React.FC = () => {
       <Navbar />
       <main className="min-h-screen ">
         {/* HERO */}
-        <section className="relative min-h-[500px] mx-35 md:mx-20 overflow-hidden px-6 flex items-center">
+        <section className="relative overflow-hidden flex items-center pt-20">
           <div
             className="absolute inset-0 -z-10 bg-cover bg-center bg-no-repeat"
             style={{
-              backgroundImage: "url('/uploads/background/background6.png')",
+              backgroundImage: "url('/uploads/background/background6.svg')",
             }}
-            aria-hidden
           />
-          <div className="absolute inset-0 bg-black/50 -z-10" aria-hidden />
-          <div className="mx-20 max-w-4xl text-left relative">
-            <h1 className="text-4xl lg:text-5xl font-medium text-white mb-2 leading-tight animate-slide-up pb-2">
-              {t("hero.title")}
-            </h1>
-            <h2 className="text-2xl lg:text-2xl text-white mb-6 leading-tight animate-slide-up pb-2">
-              {t("hero.subtitle")}
-            </h2>
+          <div className="absolute inset-0 bg-black/50 -z-10" />
+          <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-20">
+            <div className="max-w-4xl">
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-medium text-white mb-3 leading-tight animate-slide-up">
+                {t("hero.title")}
+              </h1>
+              <h2 className="text-lg sm:text-xl lg:text-2xl text-white/95 mb-6 leading-snug animate-slide-up">
+                {t("hero.subtitle")}
+              </h2>
+            </div>
           </div>
         </section>
-
         {/* RETO ACTUAL */}
         <section className="relative py-10 lg:py-20">
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
@@ -242,15 +242,16 @@ const Pymes: React.FC = () => {
                         {card.d}
                       </p>
                     </div>
-                    <div className="mt-auto pt-5">
+                    {/*<div className="mt-auto pt-5">
                       <a
                         href={card.href}
                         className="inline-flex w-full items-center justify-center rounded-full px-4 py-2 text-sm font-medium shadow-sm transition-all bg-primary text-white hover:brightness-110 active:brightness-95"
                       >
-                        {t("common.explore")} <span className="ml-2">→</span>
+                        {t("common.explore", "Explorar")}{" "}
+                        <span className="ml-2">→</span>
                       </a>
                     </div>
-                    <div className="pointer-events-none absolute -bottom-4 left-6 right-6 h-8 rounded-full bg-primary/25 blur-xl" />
+                    <div className="pointer-events-none absolute -bottom-4 left-6 right-6 h-8 rounded-full bg-primary/25 blur-xl" />*/}
                   </motion.article>
                 );
               })}
@@ -259,7 +260,7 @@ const Pymes: React.FC = () => {
         </section>
 
         {/* BENEFICIOS */}
-        <section className="py-20 relative -z-10 bg-white">
+        <section className="py-20 px-4 relative -z-10 bg-white">
           <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-10 items-start">
             <div className="px-2">
               <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-8">

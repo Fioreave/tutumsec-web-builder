@@ -18,10 +18,22 @@ import {
   Cog,
   Network,
   AlertTriangle,
+  LineChart,
+  ShieldCheck,
+  AlarmClock,
+  ArrowRight,
 } from "lucide-react";
 import PartnersSection from "../PartnersSection";
 import { Link } from "react-router-dom";
 import { useTranslations } from "@/i18n/useTranslations";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 
 const Deteccion24x7: React.FC = () => {
   const { t } = useTranslations(["deteccion"]);
@@ -44,6 +56,33 @@ const Deteccion24x7: React.FC = () => {
     { question: t("faq.2.q"), answer: t("faq.2.a") },
     { question: t("faq.3.q"), answer: t("faq.3.a") },
     { question: t("faq.4.q"), answer: t("faq.4.a") },
+  ];
+
+  const crossSellServices = [
+    {
+      title: "Consultoría CISO (vCISO)",
+      description: "Gobierno, KPIs y cultura",
+      href: "/es/servicios/consultoria-ciso",
+      icon: LineChart,
+    },
+    {
+      title: "Transformación Digital Segura",
+      description: "Automatizacion & IA alineada al negocio",
+      href: "/es/servicios/auditoria-compliance-nis2",
+      icon: Zap,
+    },
+    {
+      title: "Auditoría & Compliance NIS2",
+      description: "Pentesting ofensivo + Gap-Analysis + plan de adecuación ",
+      href: "/es/servicios/auditoria-compliance-nis2",
+      icon: ShieldCheck,
+    },
+    {
+      title: "SOC / MDR 24×7",
+      description: "Vigilancia y respuesta gestionada",
+      href: "/es/productos/deteccion-24x7",
+      icon: AlarmClock,
+    },
   ];
 
   const coverage = [
@@ -242,10 +281,10 @@ const Deteccion24x7: React.FC = () => {
           </section>
 
           {/* PROCESO */}
-          <section className="py-20">
+          <section className="py-20 px-4">
             <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-10 items-start">
-              <div className="px-2">
-                <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-8">
+              <div className="">
+                <h2 className="text-4xl lg:text-4xl font-bold text-gray-900 mb-8">
                   {t("process.title")}
                 </h2>
               </div>
@@ -298,7 +337,7 @@ const Deteccion24x7: React.FC = () => {
           <section className="py-20 px-6 bg-tutumsec-gray-50">
             <div className="max-w-6xl mx-auto">
               <div className="text-center mb-16">
-                <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6 animate-slide-up leading-relaxed">
+                <h2 className="text-3xl lg:text-5xl font-bold text-gray-900 mb-6 animate-slide-up leading-relaxed">
                   {t("differs.title")}
                 </h2>
               </div>
@@ -410,15 +449,15 @@ const Deteccion24x7: React.FC = () => {
           </section>
 
           {/* ONBOARDING */}
-          <section className="py-20 px-6 bg-white">
+          <section className="py-12 px-4 lg:py-20 lg:px-6 bg-white">
             <div className="max-w-6xl mx-auto">
-              <div className="text-center mb-16">
-                <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-relaxed">
+              <div className="text-center mb-10 lg:mb-16">
+                <h2 className="text-2xl sm:text-3xl lg:text-5xl font-bold text-gray-900 mb-4 lg:mb-6 leading-snug lg:leading-relaxed">
                   {t("onboarding.title")}
                 </h2>
               </div>
 
-              <div className="space-y-6">
+              <div className="space-y-4 lg:space-y-6">
                 {[
                   {
                     period: t("onboarding.0.period"),
@@ -447,21 +486,21 @@ const Deteccion24x7: React.FC = () => {
                 ].map((item, index) => (
                   <div
                     key={index}
-                    className={`bg-gradient-to-r ${item.gradient} p-8 rounded-2xl text-white relative group`}
+                    className={`bg-gradient-to-r ${item.gradient} p-5 md:p-6 lg:p-8 rounded-xl lg:rounded-2xl text-white relative group`}
                   >
-                    <div className="flex items-start gap-6">
-                      <div className="text-4xl font-bold opacity-80 min-w-[6ch]">
+                    <div className="flex flex-col lg:flex-row items-start gap-3 lg:gap-6">
+                      <div className="text-2xl md:text-3xl lg:text-4xl font-bold opacity-80 min-w-0 lg:min-w-[6ch]">
                         {item.period}
                       </div>
                       <div className="flex-1">
-                        <h3 className="text-xl font-semibold mb-2">
+                        <h3 className="text-lg lg:text-xl font-semibold mb-1.5 lg:mb-2 leading-snug">
                           {item.title}
                         </h3>
-                        <p className="text-gray-200 leading-relaxed">
+                        <p className="text-sm lg:text-base text-gray-100 lg:text-gray-200 leading-relaxed">
                           {item.description}
                         </p>
                       </div>
-                      <div className="text-white opacity-60">
+                      <div className="text-white opacity-60 hidden lg:block">
                         <CheckCircle className="w-8 h-8" />
                       </div>
                     </div>
@@ -510,15 +549,15 @@ const Deteccion24x7: React.FC = () => {
           </section>
 
           {/* HUNTING */}
-          <section className="py-20 px-6 bg-gray-500/5 text-blue">
-            <div className="max-w-6xl mx-auto grid lg:grid-cols-3 gap-12 items-center">
-              <div className="transform col-span-1 transition-all duration-700 hover:translate-x-2">
-                <h2 className="text-3xl lg:text-3xl mb-2 font-bold transition-colors duration-500 hover:text-primary-light leading-relaxed">
+          <section className="py-12 px-4 lg:py-20 lg:px-6 bg-gray-500/5 text-blue">
+            <div className="max-w-6xl mx-auto grid gap-6 lg:grid-cols-3 lg:gap-12 lg:items-center">
+              <div className="transform transition-all duration-700 hover:translate-x-2">
+                <h2 className="text-2xl sm:text-3xl lg:text-3xl mb-2 font-bold transition-colors duration-500 hover:text-primary-light leading-snug lg:leading-relaxed">
                   {t("hunting.title")}
                 </h2>
               </div>
-              <div className="border-l-4 col-span-2 ml-20 border-blue-400 text-sm pl-6 prose prose-lg max-w-none text-left">
-                <p>{t("hunting.text")}</p>
+              <div className="lg:col-span-2 lg:ml-20 border-t lg:border-t-0 lg:border-l-4 border-blue-400 text-sm pt-4 lg:pt-0 pl-0 lg:pl-6 prose prose-base lg:prose-lg max-w-none text-left">
+                <p className="m-0">{t("hunting.text")}</p>
               </div>
             </div>
           </section>
@@ -565,6 +604,53 @@ const Deteccion24x7: React.FC = () => {
             </div>
           </section>
 
+          {/* CULTURA + CROSS SELL */}
+          <section className="py-20 bg-slate-50">
+            <div className="max-w-6xl mx-auto px-6">
+              <h2 className="text-4xl text-center font-bold text-primary">
+                Servicios{" "}
+              </h2>
+              <div className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                {crossSellServices.map((s, i) => {
+                  const Icon = s.icon;
+                  const url = s.href ?? "#";
+                  return (
+                    <Card
+                      key={i}
+                      className="h-full rounded-2xl border border-slate-200 bg-white shadow-sm hover:shadow-md transition-shadow flex flex-col"
+                    >
+                      <CardHeader className="items-center text-center">
+                        <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-blue-50">
+                          {Icon ? (
+                            <Icon className="h-7 w-7 text-blue-600" />
+                          ) : null}
+                        </div>
+                        <CardTitle className="text-xl font-semibold text-slate-900">
+                          {s.title}
+                        </CardTitle>
+                        <CardDescription className="mt-3 text-slate-600 leading-relaxed">
+                          {s.description}
+                        </CardDescription>
+                      </CardHeader>
+                      <CardFooter className="mt-auto px-6 pb-6">
+                        <Button
+                          asChild
+                          variant="secondary"
+                          className="w-full group"
+                          aria-label={`${t("cross.cta")} ${s.title}`}
+                        >
+                          <Link to={url}>
+                            {t("cross.cta")}
+                            <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-0.5" />
+                          </Link>
+                        </Button>
+                      </CardFooter>
+                    </Card>
+                  );
+                })}
+              </div>
+            </div>
+          </section>
           {/* FAQ + CTA */}
           <section className="py-20 px-6 bg-gray-100 relative overflow-hidden bg-[url('/uploads/background.png')] bg-cover bg-center">
             <div className="max-w-4xl mx-auto">
@@ -604,7 +690,7 @@ const Deteccion24x7: React.FC = () => {
                       to={t("hero.cta1.href")}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="px-6 py-2 rounded-full text-lg text-white font-medium transition-transform whitespace-nowrap hover:scale-[1.03] shadow-[0_8px_30px_rgba(59,130,246,0.35)]"
+                      className="px-6 py-2 rounded-full text-sm lg:text-lg text-white font-medium transition-transform whitespace-nowrap hover:scale-[1.03] shadow-[0_8px_30px_rgba(59,130,246,0.35)]"
                       style={{
                         background:
                           "linear-gradient(180deg, #60a5fa 0%, #3b82f6 100%)",

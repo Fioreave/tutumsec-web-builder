@@ -44,6 +44,9 @@ import TecnologiaSaas from "./pages/industrias/TecnologiaSaas";
 import SectorPublico from "./pages/industrias/SectorPublico";
 import Pymes from "./pages/industrias/Pymes";
 
+import Historia from "./pages/sobre-nosotros/Historia";
+import EquipoValores from "./pages/sobre-nosotros/EquipoValores";
+
 // Recursos
 import Recursos from "./pages/recursos/Recursos";
 import CasosExito from "./pages/recursos/CasosExito";
@@ -205,6 +208,10 @@ const App = () => (
                 element={<SectorPublico />}
               />
               <Route path="industrias/pymes/" element={<Pymes />} />
+
+              {/* Sobre Nosotros */}
+              <Route path="Historia/" element={<Historia />} />
+              <Route path="equipo-valores/" element={<EquipoValores />} />
 
               {/* Recursos */}
               <Route path="recursos/" element={<Recursos />} />

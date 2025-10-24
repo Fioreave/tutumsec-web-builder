@@ -34,187 +34,127 @@ import {
   ShieldCheck,
   LineChart,
   ArrowRight,
+  Zap,
 } from "lucide-react";
 import { Link } from "react-router-dom";
 import PartnersSection from "../PartnersSection";
-
-const crossSellServices = [
-  {
-    title: "Consultoría CISO (vCISO)",
-    description: "Gobierno, KPIs y cultura",
-    href: "/es/servicios/consultoria-ciso",
-    icon: LineChart,
-  },
-  {
-    title: "Auditoría & Compliance NIS2",
-    description: "Gap-Analysis + plan de adecuación",
-    href: "/es/servicios/auditoria-compliance-nis2",
-    icon: ShieldCheck,
-  },
-  {
-    title: "Auditoría técnica & Pentesting",
-    description: "Validación ofensiva",
-    href: "/es/servicios/auditoria-compliance-nis2",
-    icon: Bug,
-  },
-  {
-    title: "SOC / MDR 24×7",
-    description: "Vigilancia y respuesta gestionada",
-    href: "/es/productos/deteccion-24x7",
-    icon: AlarmClock,
-  },
-];
-
-const faqs = [
-  {
-    question: "¿Es obligatorio tener una OSI con NIS2?",
-    answer:
-      "No impone un nombre concreto, pero exige gobernanza, medidas y reporting; una OSI formaliza y prueba el cumplimiento.",
-  },
-  {
-    question: "¿Cuáles son los plazos de notificación?",
-    answer:
-      "Alerta 24 h, notificación 72 h, informe 1 mes (o intermedio si procede).",
-  },
-  {
-    question: "¿Qué sanciones hay?",
-    answer: "Hasta 10 M€ o 2 % (esenciales) y 7 M€ o 1,4 % (importantes).",
-  },
-];
-
-const methodologySteps = [
-  "Oficina completa: No solo CISO, gobernanza + cumplimiento + evidencias listas.",
-  "Enfoque humano y ejecutivo: Formamos a la dirección para la toma de decisiones informadas.",
-  "Alineado con marcos locales: ISO 27001, ENS y guías de INCIBE-CERT.",
-];
+import { useTranslations } from "@/i18n/useTranslations";
 
 const OficinaSeguridad = () => {
+  const { t } = useTranslations(["oficina"]); // namespace del JSON que pasaste
+
+  // cross-sell (iconos iguales; textos y href desde tus keys `cross.*`)
+  const crossSellServices = [
+    {
+      title: t("cross.vciso.title"),
+      description: t("cross.vciso.desc"),
+      href: t("cross.vciso.href"),
+      icon: LineChart,
+    },
+    {
+      title: t("cross.audit.title"),
+      description: t("cross.audit.desc"),
+      href: t("cross.audit.href"),
+      icon: ShieldCheck,
+    },
+    {
+      title: t("cross.pentest.title"),
+      description: t("cross.pentest.desc"),
+      href: t("cross.pentest.href"),
+      icon: Zap,
+    },
+    {
+      title: t("cross.mdr.title"),
+      description: t("cross.mdr.desc"),
+      href: t("cross.mdr.href"),
+      icon: AlarmClock,
+    },
+  ];
+
+  // FAQ
+  const faqs = [
+    { question: t("faq.q1"), answer: t("faq.a1") },
+    { question: t("faq.q2"), answer: t("faq.a2") },
+    { question: t("faq.q3"), answer: t("faq.a3") },
+  ];
+
+  // para JSON-LD (mismas preguntas/respuestas)
   const faqStructuredData = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    mainEntity: [
-      {
-        "@type": "Question",
-        name: "¿Es obligatorio tener una OSI con NIS2?",
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: "No impone un nombre concreto, pero exige gobernanza, medidas y reporting; una OSI formaliza y prueba el cumplimiento.",
-        },
-      },
-      {
-        "@type": "Question",
-        name: "¿Cuáles son los plazos de notificación?",
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: "Alerta 24 h, notificación 72 h, informe 1 mes (o intermedio si procede).",
-        },
-      },
-      {
-        "@type": "Question",
-        name: "¿Qué sanciones hay?",
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: "Hasta 10 M€ o 2 % (esenciales) y 7 M€ o 1,4 % (importantes).",
-        },
-      },
-    ],
+    mainEntity: faqs.map((f) => ({
+      "@type": "Question",
+      name: f.question,
+      acceptedAnswer: { "@type": "Answer", text: f.answer },
+    })),
   };
 
+  // quick wins del hero
   const quickWins = [
-    "Aprobamos con tu dirección el charter OSI y el plan de riesgos.",
-    "Runbooks NIS2 con alerta temprana en 24 h y notificación a 72 h.",
-    "Tablero C-Level con KPIs de ciberseguridad y evidencias de cumplimiento.",
+    t("hero.quickWins.0"),
+    t("hero.quickWins.1"),
+    t("hero.quickWins.2"),
   ];
+
+  // pasos metodología
   const steps = [
     {
-      title: "Diagnóstico OSI & Gap NIS2",
-      description:
-        "(políticas, riesgos, cadena de suministro, incident response).",
+      title: t("method.steps.0.title"),
+      description: t("method.steps.0.desc"),
       number: "1",
     },
     {
-      title: "Hoja de ruta 12-36 meses",
-      description: "con prioridades/ROI y métricas.",
+      title: t("method.steps.1.title"),
+      description: t("method.steps.1.desc"),
       number: "2",
     },
     {
-      title: "Implantación",
-      description: "Políticas, procesos y herramientas personalizadas",
+      title: t("method.steps.2.title"),
+      description: t("method.steps.2.desc"),
       number: "3",
     },
     {
-      title: "Operación continua",
-      description:
-        "(comité OSI trimestral, auditoría interna, ejercicios de crisis y mejora continua).",
+      title: t("method.steps.3.title"),
+      description: t("method.steps.3.desc"),
       number: "4",
     },
   ];
 
-  const servicios = [
-    {
-      title: "Consultoría CISO",
-      description: "(vCISO / CISO as a Service)",
-    },
-    {
-      title: "Auditoría & Compliance NIS2",
-      description: "Gap-Analysis completo",
-    },
-    {
-      title: "Transformación Digital Estratégica",
-      description: "Digitalización segura",
-    },
-    {
-      title: "Detección 24/7",
-      description: "(SOC/MDR/XDR)",
-    },
+  // entregables
+  const deliverables = [
+    t("deliverables.0"),
+    t("deliverables.1"),
+    t("deliverables.2"),
+    t("deliverables.3"),
+    t("deliverables.4"),
+    t("deliverables.5"),
   ];
 
+  // por qué nos eligen (tarjetas gradiente)
+  const why = [t("why.0"), t("why.1"), t("why.2")];
+
+  // schema service
   const serviceStructuredData = {
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
-    name: "Oficina de Seguridad de la Información (OSI) – NIS2",
-    description:
-      "Diseñamos y operamos tu Oficina de Seguridad de la Información para cumplir NIS2: gobernanza, políticas, gestión de riesgos, notificación 24/72 h, formación y auditoría continua.",
-    provider: {
-      "@type": "Organization",
-      name: "TutumSec",
-    },
+    name: t("schema.name"),
+    description: t("schema.description"),
+    provider: { "@type": "Organization", name: "TutumSec" },
     areaServed: ["ES-CT", "ES-GI", "AD", "ES"],
   };
 
   return (
     <>
       <Helmet>
-        <title>
-          Oficina de Seguridad de la Información (OSI) · Cumplimiento NIS2 |
-          TutumSec
-        </title>
-        <meta
-          name="description"
-          content="Diseñamos y operamos tu Oficina de Seguridad de la Información para cumplir NIS2: gobernanza, políticas, gestión de riesgos, notificación 24/72 h, formación y auditoría continua. Barcelona, Cataluña, Andorra y España."
-        />
-        <link
-          rel="canonical"
-          href="https://tutumsec.com/servicios/oficina-seguridad-informacion-nis2"
-        />
+        <title>{t("seo.title")}</title>
+        <meta name="description" content={t("seo.description")} />
+        <link rel="canonical" href={t("seo.canonical")} />
         <script type="application/ld+json">
           {JSON.stringify([faqStructuredData, serviceStructuredData])}
         </script>
-        <link
-          rel="alternate"
-          href="https://tutumsec.com/ca/serveis/oficina-seguretat-informacio-nis2"
-          hrefLang="ca"
-        />
-        <link
-          rel="alternate"
-          href="https://tutumsec.com/en/services/information-security-office-nis2"
-          hrefLang="en"
-        />
-        <link
-          rel="alternate"
-          href="https://tutumsec.com/servicios/oficina-seguridad-informacion-nis2"
-          hrefLang="es"
-        />
+        <link rel="alternate" href={t("seo.alt.ca")} hrefLang="ca" />
+        <link rel="alternate" href={t("seo.alt.en")} hrefLang="en" />
+        <link rel="alternate" href={t("seo.alt.es")} hrefLang="es" />
       </Helmet>
 
       <Navbar />
@@ -244,18 +184,16 @@ const OficinaSeguridad = () => {
 
             {/* contenido centrado */}
             <div
-              className="w-full grid place-items-center text-center px-6"
-              style={{ minHeight: "calc(100vh - 96px)" }} // ajusta 96px al alto real de tu navbar si es fija
+              className="w-full grid place-items-center text-center px-2"
+              style={{ minHeight: "calc(100vh - 96px)" }}
             >
-              <div className="relative z-30  ">
-                <h1 className="mx-auto max-w-6xl text-4xl md:text-5xl font-bold text-white mb-4">
-                  Oficina de Seguridad de la
-                  <br /> Información (OSI) para cumplir NIS2
+              <div className="relative z-30">
+                <h1 className="mx-auto text-3xl md:text-5xl font-bold text-white mb-4">
+                  {t("hero.title")}
                 </h1>
 
-                <h2 className="mx-auto max-w-5xl text-xl md:text-2xl text-white/80 mb-8">
-                  Gobernanza, riesgo y cumplimiento activados <br /> desde el
-                  día uno: políticas, métricas y respuesta en 24/72 h.
+                <h2 className="mx-auto  text-xl md:text-2xl text-white/80 mb-8">
+                  {t("hero.subtitle")}
                 </h2>
 
                 <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
@@ -263,33 +201,34 @@ const OficinaSeguridad = () => {
                     to="https://calendly.com/ayub-tutumsec/30min"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="px-6 py-2 rounded-full text-lg text-white font-medium transition-transform whitespace-nowrap hover:scale-[1.03] shadow-[0_8px_30px_rgba(59,130,246,0.35)]"
+                    className="px-6 py-2 rounded-full text-md md:text-lg text-white font-medium transition-transform whitespace-nowrap hover:scale-[1.03] shadow-[0_8px_30px_rgba(59,130,246,0.35)]"
                     style={{
                       background:
-                        "linear-gradient(180deg, #60a5fa 0%, #3b82f6 100%)", // blue-400 -> blue-500
+                        "linear-gradient(180deg, #60a5fa 0%, #3b82f6 100%)",
                     }}
                   >
-                    Reserva tu consultoría gratuita →
+                    {t("hero.cta1")}
                   </Link>
                   <Button
                     variant="outline"
                     size="lg"
-                    className="text-lg rounded-full px-8 bg-white/10 text-white border-white/20 hover:bg-white/20"
+                    className="text-md md:text-lg rounded-full px-8 bg-white/10 text-white border-white/20 hover:bg-white/20"
                   >
-                    Descarga "Checklist OSI NIS2 (24/72/30)"
+                    {t("hero.cta2")}
                   </Button>
                 </div>
               </div>
-
-              <div className="absolute bottom-8 left-0 w-full">
-                <div className="grid lg:grid-cols-3 gap-12 px-6 py-6 items-center text-left space-y-2">
-                  {quickWins.map((win, i) => (
-                    <li key={i} className="flex items-start text-white">
-                      <CheckCircle className="w-5 h-5 text-blue-300 mr-2 mt-0.5 flex-shrink-0" />
-                      <span>{win}</span>
-                    </li>
-                  ))}
-                </div>
+              <div className="hidden md:grid md:grid-cols-3 gap-6 mb-2">
+                <div className="absolute bottom-8 left-0 w-full">
+                  <div className="grid lg:grid-cols-3 gap-12 px-6 py-6 items-center text-left space-y-2">
+                    {quickWins.map((win, i) => (
+                      <li key={i} className="flex items-start text-white">
+                        <CheckCircle className="w-5 h-5 text-blue-300 mr-2 mt-0.5 flex-shrink-0" />
+                        <span>{win}</span>
+                      </li>
+                    ))}
+                  </div>
+                </div>{" "}
               </div>
             </div>
           </section>
@@ -298,7 +237,7 @@ const OficinaSeguridad = () => {
           <section className="py-20">
             <div className="max-w-6xl mx-auto">
               <h2 className="text-3xl font-bold text-center mb-12">
-                La OSI que alinea seguridad con negocio
+                {t("osi.heading")}
               </h2>
 
               <div className="grid md:grid-cols-2 gap-8">
@@ -306,13 +245,10 @@ const OficinaSeguridad = () => {
                   <CardContent className="p-6">
                     <Settings className="w-12 h-12 text-primary mb-4" />
                     <h3 className="text-xl font-semibold mb-3">
-                      Gobernanza y políticas
+                      {t("osi.cards.0.title")}
                     </h3>
                     <p className="text-muted-foreground">
-                      Definimos el marco de gobierno (roles, RACI, comités),
-                      políticas y procedimientos (accesos, cifrado, continuidad,
-                      comunicaciones seguras, MFA) alineados con NIS2/ISO
-                      27001/ENS.
+                      {t("osi.cards.0.desc")}
                     </p>
                   </CardContent>
                 </Card>
@@ -321,12 +257,10 @@ const OficinaSeguridad = () => {
                   <CardContent className="p-6">
                     <Shield className="w-12 h-12 text-primary mb-4" />
                     <h3 className="text-xl font-semibold mb-3">
-                      Gestión de riesgos y cadena de suministro
+                      {t("osi.cards.1.title")}
                     </h3>
                     <p className="text-muted-foreground">
-                      Mapa de activos críticos, análisis de riesgos, controles y
-                      due diligence a proveedores con cláusulas NIS2 y
-                      evidencias de cumplimiento.
+                      {t("osi.cards.1.desc")}
                     </p>
                   </CardContent>
                 </Card>
@@ -335,12 +269,10 @@ const OficinaSeguridad = () => {
                   <CardContent className="p-6">
                     <Clock className="w-12 h-12 text-primary mb-4" />
                     <h3 className="text-xl font-semibold mb-3">
-                      Respuesta e informes 24/72/30
+                      {t("osi.cards.2.title")}
                     </h3>
                     <p className="text-muted-foreground">
-                      Playbooks para alerta temprana, notificación y reporte
-                      final; laboratorio de evidencias para
-                      auditorías/regulador.
+                      {t("osi.cards.2.desc")}
                     </p>
                   </CardContent>
                 </Card>
@@ -349,12 +281,10 @@ const OficinaSeguridad = () => {
                   <CardContent className="p-6">
                     <Users className="w-12 h-12 text-primary mb-4" />
                     <h3 className="text-xl font-semibold mb-3">
-                      Cultura y formación continua
+                      {t("osi.cards.3.title")}
                     </h3>
                     <p className="text-muted-foreground">
-                      Plan de concienciación por rol (dirección, managers,
-                      staff, OT, IT) con simulaciones de phishing y talleres
-                      ejecutivos.
+                      {t("osi.cards.3.desc")}
                     </p>
                   </CardContent>
                 </Card>
@@ -362,89 +292,68 @@ const OficinaSeguridad = () => {
             </div>
           </section>
 
-          {/* BLOQUE 2 · DOLOR → IMPACTO NEGOCIO */}
+          {/* BLOQUE 2 · DOLOR */}
           <section className=" py-20 px-6 text-blue">
             <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
               <div className="transform transition-all duration-700 hover:translate-x-2">
                 <h2 className="text-3xl lg:text-4xl mb-2 font-bold transition-colors duration-500 hover:text-primary-light leading-relaxed">
-                  ¿Tu empresa podría notificar un incidente en 24 horas hoy?
+                  {t("pain.heading")}
                 </h2>
               </div>
               <div className="border-l-4 border-blue-400 text-sm pl-6 prose prose-lg max-w-none text-left">
-                <p>
-                  Con NIS2, las entidades deben cumplir medidas técnicas y
-                  organizativas y reportar incidentes significativos siguiendo
-                  plazos estrictos (24 h/72 h/1 mes). Además, la dirección es
-                  responsable de aprobar y supervisar la gestión de riesgos. No
-                  llegar a tiempo o carecer de evidencias puede traducirse en
-                  sanciones y en pérdida de confianza de clientes y reguladores.
-                </p>
+                <p>{t("pain.body")}</p>
               </div>
             </div>
           </section>
 
+          {/* METODOLOGÍA */}
           <section className="py-20 px-6 bg-tutumsec-gray-50">
             <div className="max-w-6xl mx-auto">
               <div className="text-center mb-16">
-                <h2 className="text-6xl lg:text-4xl font-bold text-blue-500 mb-6">
-                  Metodología en 4 pasos
+                <h2 className="text-3xl lg:text-4xl font-bold text-blue-500 mb-6">
+                  {t("method.heading")}
                 </h2>
-                {/*<p className="text-xl text-gray-600 mb-4">
-            4 pasos PDCA + Zero Trust
-          </p>
-          <p className="text-lg text-gray-500">
-            Basado en marcos CIS, ISO 27001, NIST i ENS
-          </p>*/}
               </div>
 
               <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                {steps.map((step, index) => {
-                  return (
-                    <div
-                      key={index}
-                      className="bg-white p-8 rounded-2xl border border-gray-200 group hover:shadow-lg transition-all duration-500 hover:-translate-y-2 animate-fade-in relative"
-                      style={{
-                        animationDelay: `${index * 0.15}s`,
-                        animationFillMode: "forwards",
-                        opacity: 0,
-                      }}
-                    >
-                      <div className="text-center">
-                        <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-primary/20 transition-colors duration-300 relative">
-                          <span className="w-8 h-8 text-primary text-2xl font-bold items-center">
-                            {step.number}
-                          </span>
-                        </div>
-                        <h3 className="text-lg font-semibold text-gray-800 mb-3 transition-colors duration-300 group-hover:text-primary leading-tight">
-                          {step.title}
-                        </h3>
-                        <p className="text-gray-600 text-sm leading-relaxed transition-colors duration-300 group-hover:text-gray-700">
-                          {step.description}
-                        </p>
+                {steps.map((step, index) => (
+                  <div
+                    key={index}
+                    className="bg-white p-8 rounded-2xl border border-gray-200 group hover:shadow-lg transition-all duration-500 hover:-translate-y-2 animate-fade-in relative"
+                    style={{
+                      animationDelay: `${index * 0.15}s`,
+                      animationFillMode: "forwards",
+                      opacity: 0,
+                    }}
+                  >
+                    <div className="text-center">
+                      <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-primary/20 transition-colors duration-300 relative">
+                        <span className="w-8 h-8 text-primary text-2xl font-bold items-center">
+                          {step.number}
+                        </span>
                       </div>
+                      <h3 className="text-lg font-semibold text-gray-800 mb-3 transition-colors duration-300 group-hover:text-primary leading-tight">
+                        {step.title}
+                      </h3>
+                      <p className="text-gray-600 text-sm leading-relaxed transition-colors duration-300 group-hover:text-gray-700">
+                        {step.description}
+                      </p>
                     </div>
-                  );
-                })}
+                  </div>
+                ))}
               </div>
             </div>
           </section>
 
-          {/* BLOQUE 5 · ENTREGABLES */}
-          <section className="py-12">
+          {/* ENTREGABLES */}
+          <section className="py-12 px-4">
             <div className="max-w-4xl mx-auto">
               <h2 className="text-3xl font-bold text-center mb-12">
-                Entregables "listos para inspección"
+                {t("deliverables.heading")}
               </h2>
 
               <div className="grid md:grid-cols-2 gap-6">
-                {[
-                  "Charter OSI + organigrama y RACI.",
-                  "Políticas: control de accesos, cifrado, copias y DR, comunicaciones seguras, gestión de incidentes.",
-                  "Registro de riesgos + plan de tratamiento y evidencias.",
-                  "Runbooks NIS2 (24/72/30) + plantillas de reporte al CSIRT/autoridad.",
-                  "Plan de formación & microlearning con simulación de phishing.",
-                  "Cuadro de mando (KPIs: MTTR, cumplimiento de controles, % proveedores evaluados).",
-                ].map((item, index) => (
+                {deliverables.map((item, index) => (
                   <div key={index} className="flex items-start gap-3">
                     <FileText className="w-5 h-5 text-primary mt-1 flex-shrink-0" />
                     <span className="text-muted-foreground">{item}</span>
@@ -454,23 +363,20 @@ const OficinaSeguridad = () => {
             </div>
           </section>
 
-          <section className="py-20">
+          {/* WHY */}
+          <section className="py-20 px-4">
             <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-10 items-start">
-              {/* Columna izquierda: título + subtítulo opcional */}
               <div className="px-2">
                 <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-8">
-                  ¿Por qué nos eligen?
+                  {t("why.heading")}
                 </h2>
               </div>
 
-              {/* Columna derecha: tarjetas gradiente como en tu “Resultados” */}
               <div className="space-y-6">
-                {methodologySteps.map((raw, i) => {
-                  // Partimos solo para formatear visualmente (NO tocamos el texto)
+                {why.map((raw, i) => {
                   const [titlePart, ...rest] = raw.split(":");
                   const title = titlePart.trim();
-                  const desc = rest.join(":").trim(); // puede quedar vacío si no hay ":" (2º paso)
-                  // Paletas en azul (como tu screenshot)
+                  const desc = rest.join(":").trim();
                   const gradients = [
                     "from-[#2563eb] via-[#1e3a8a] to-[#0b1220]",
                     "from-[#1f3b8a] via-[#1d3fa7] to-[#1b2b59]",
@@ -486,14 +392,12 @@ const OficinaSeguridad = () => {
                       className={`relative w-full rounded-2xl p-6 md:p-8 text-white bg-gradient-to-r ${g} shadow-lg`}
                     >
                       <div className="flex items-start gap-6">
-                        {/* Número grande a la izquierda */}
                         <div className="shrink-0">
                           <div className="text-5xl md:text-6xl font-extrabold leading-none opacity-90">
                             {i + 1}
                           </div>
                         </div>
 
-                        {/* Texto a la derecha */}
                         <div className="flex-1">
                           <div className="text-lg md:text-xl font-semibold">
                             {title}
@@ -506,7 +410,6 @@ const OficinaSeguridad = () => {
                           )}
                         </div>
 
-                        {/* Flecha decorativa (como en Resultados) */}
                         <ArrowUpRight className="w-6 h-6 opacity-70 mt-1" />
                       </div>
                     </div>
@@ -516,41 +419,11 @@ const OficinaSeguridad = () => {
             </div>
           </section>
 
-          {/* BLOQUE 7 · CASOS DE ÉXITO 
-          <section className="py-12">
-            <div className="max-w-4xl mx-auto">
-              <div className="grid md:grid-cols-2 gap-8">
-                <Card>
-                  <CardContent className="p-6">
-                    <h3 className="text-lg font-semibold mb-3">
-                      Industria regulada (NIS2)
-                    </h3>
-                    <p className="text-muted-foreground">
-                      Comité OSI creado, políticas y runbooks 24/72; inspección
-                      superada con observaciones menores.
-                    </p>
-                  </CardContent>
-                </Card>
-                <Card>
-                  <CardContent className="p-6">
-                    <h3 className="text-lg font-semibold mb-3">
-                      Grupo multisector
-                    </h3>
-                    <p className="text-muted-foreground">
-                      Evaluación de proveedores críticos, cláusulas
-                      contractuales NIS2 y tablero de riesgos en dirección.
-                    </p>
-                  </CardContent>
-                </Card>
-              </div>
-            </div>
-          </section>*/}
-
-          {/* BLOQUE 10 · Enlaces internos */}
+          {/* SERVICIOS (cross-sell) */}
           <section className="py-20 bg-slate-50">
             <div className="max-w-6xl mx-auto px-6">
-              <h2 className="text-4xl text-center font-bold text-blue-600">
-                Servicios{" "}
+              <h2 className="text-4xl text-center font-bold text-primary">
+                {t("cross.heading")}
               </h2>
 
               <div className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -563,10 +436,9 @@ const OficinaSeguridad = () => {
                       className="h-full rounded-2xl border border-slate-200 bg-white shadow-sm hover:shadow-md transition-shadow flex flex-col"
                     >
                       <CardHeader className="items-center text-center">
-                        {/* Icono */}
                         <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-blue-50">
                           {Icon ? (
-                            <Icon className="h-7 w-7 text-blue-600" />
+                            <Icon className="h-7 w-7 text-primary" />
                           ) : (
                             <svg
                               className="h-7 w-7 text-blue-600"
@@ -596,10 +468,10 @@ const OficinaSeguridad = () => {
                           asChild
                           variant="secondary"
                           className="w-full group"
-                          aria-label={`Saber más sobre ${s.title}`}
+                          aria-label={`${t("cross.cta")} ${s.title}`}
                         >
                           <Link to={url}>
-                            Saber más
+                            {t("cross.cta")}
                             <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-0.5" />
                           </Link>
                         </Button>
@@ -611,12 +483,12 @@ const OficinaSeguridad = () => {
             </div>
           </section>
 
-          {/* === BLOQUE 9 · FAQ (mismo patrón visual que la home) === */}
+          {/* FAQ */}
           <section className="py-20 px-6 bg-gray-100 relative overflow-hidden bg-[url('/uploads/background.png')] bg-cover bg-center">
             <div className="max-w-4xl mx-auto">
               <div className="text-center mb-16">
                 <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6 animate-slide-up leading-relaxed">
-                  Preguntas frecuentes
+                  {t("faq.heading")}
                 </h2>
               </div>
 
@@ -643,39 +515,32 @@ const OficinaSeguridad = () => {
               <div className="bg-gradient-to-r from-black via-blue-900 to-blue-800 rounded-[2rem] p-12 relative overflow-hidden mx-auto max-w-5xl">
                 <div className="relative z-10 max-w-3xl text-center mx-auto">
                   <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6">
-                    ¿Empezamos?
+                    {t("cta.title")}
                   </h2>
                   <div className="flex flex-col sm:flex-row gap-4 justify-center mb-4">
                     <Link
                       to="https://calendly.com/ayub-tutumsec/30min"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="px-6 py-2 rounded-full text-lg text-white font-medium transition-transform whitespace-nowrap hover:scale-[1.03] shadow-[0_8px_30px_rgba(59,130,246,0.35)]"
+                      className="px-6 py-2 rounded-full text-sm lg:text-lg text-white font-medium transition-transform whitespace-nowrap hover:scale-[1.03] shadow-[0_8px_30px_rgba(59,130,246,0.35)]"
                       style={{
                         background:
-                          "linear-gradient(180deg, #60a5fa 0%, #3b82f6 100%)", // blue-400 -> blue-500
+                          "linear-gradient(180deg, #60a5fa 0%, #3b82f6 100%)",
                       }}
                     >
-                      Reserva tu consultoría gratuita →
+                      {t("cta.primary")}
                     </Link>
                     <Button
                       variant="outline"
-                      size="lg"
-                      className="bg-white/10 text-white rounded-full border-white/20 hover:bg-white/20"
+                      className="text-sm lg:text-lg bg-white/10 text-white  rounded-full border-white/20 hover:bg-white/20"
                     >
-                      Solicita ejemplo de "Charter OSI" (PDF)
+                      {t("cta.secondary")}
                     </Button>
                   </div>
-                  <Button variant="link" className="text-sm">
-                    Solicita ejemplo de "Charter OSI" (PDF)
-                  </Button>
+                  {/*<Button variant="link" className="text-sm">
+                    {t("cta.secondary")}
+                  </Button>*/}
                 </div>
-                {/*<img
-                  src="/uploads/abstract.png"
-                  alt=""
-                  className="absolute -right-8 -bottom-8 w-48 opacity-50"
-                  aria-hidden
-                />*/}
               </div>
             </div>
           </section>

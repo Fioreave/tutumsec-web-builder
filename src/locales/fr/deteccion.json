@@ -92,7 +92,7 @@
   "hunting.title": "Hunting proactif sur les TTPs critiques",
   "hunting.text": "Recherche récurrente (MITRE ATT&CK) axée sur l’accès initial, le mouvement latéral, l’élévation de privilèges et l’exfiltration. Les résultats deviennent des actions et de nouvelles règles.",
 
-  "report.titleLine1": "Reporting hebdomadaire et",
+  "report.titleLine1": "Reporting mensuel et",
   "report.titleLine2": "focus exécutif",
   "report.0.title": "Rapport mensuel :",
   "report.0.desc": "Incidents, actions menées, recommandations.",

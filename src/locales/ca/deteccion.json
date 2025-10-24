@@ -92,7 +92,7 @@
   "hunting.title": "Hunting proactiu sobre TTPs crítics",
   "hunting.text": "Cerca recurrent (MITRE ATT&CK) centrada en accés inicial, moviment lateral, escalada de privilegis i exfiltració. Els resultats esdevenen accions i noves regles per al teu entorn.",
 
-  "report.titleLine1": "Informe setmanal i",
+  "report.titleLine1": "Informe mensual i",
   "report.titleLine2": "focus executiu",
   "report.0.title": "Informe mensual:",
   "report.0.desc": "Incidents, accions realitzades, recomanacions.",

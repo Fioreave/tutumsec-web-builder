@@ -5,7 +5,18 @@ import Footer from "@/components/Footer";
 // import Breadcrumbs from "@/components/Breadcrumbs";
 import { Button } from "@/components/ui/button";
 // import { Card as UiCard, CardContent } from "@/components/ui/card";
-import { TrendingUp, Search, Settings, Map } from "lucide-react";
+import {
+  TrendingUp,
+  Search,
+  Settings,
+  Map,
+  LineChart,
+  ShieldCheck,
+  Bug,
+  AlarmClock,
+  ArrowRight,
+  Zap,
+} from "lucide-react";
 import { useTranslations } from "@/i18n/useTranslations";
 import { Link } from "react-router-dom";
 import {
@@ -15,6 +26,14 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import PartnersSection from "../PartnersSection";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 
 /* ----------------------------- Tipos auxiliares ---------------------------- */
 type BenefitItem = { title: string; benefit: string; href?: string };
@@ -87,7 +106,7 @@ const BenefitCard = ({
         style={{ backgroundImage: `url(${getImage(idx)})` }}
       />
       {/* Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-black/30 group-hover:from-black/80 transition-colors" />
+      <div className="absolute inset-0 bg-gradient-to-r from-black/50 via-black/50 to-black/30 group-hover:from-black/60 transition-colors" />
       {/* Contenido */}
       <div className="relative p-8 text-white flex items-start gap-5 h-full">
         <div className="flex-1">
@@ -96,26 +115,35 @@ const BenefitCard = ({
           </h4>
           <p className="text-white/90 leading-relaxed">{item.benefit}</p>
         </div>
-        <div className="ml-auto text-white/80" aria-hidden>
-          <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none">
-            <path
-              d="M7 17L17 7M17 7H7M17 7V17"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-          </svg>
-        </div>
       </div>
     </Wrapper>
   );
 };
 
-/* -------------------------------- Componente ------------------------------- */
 const ConsultoriaCiso = () => {
   // Usa el namespace plano "ciso"
-  const { t } = useTranslations(["ciso"]);
+  const { t } = useTranslations(["ciso", "crossSellServices"]);
+
+  const crossSellServices = [
+    {
+      title: t("crossSellServices.2.title"),
+      description: t("crossSellServices.2.description"),
+      href: t("crossSellServices.2.href"),
+      icon: Zap,
+    },
+    {
+      title: t("crossSellServices.1.title"),
+      description: t("crossSellServices.1.description"),
+      href: t("crossSellServices.1.href"),
+      icon: ShieldCheck,
+    },
+    {
+      title: t("crossSellServices.3.title"),
+      description: t("crossSellServices.3.description"),
+      href: t("crossSellServices.3.href"),
+      icon: AlarmClock,
+    },
+  ];
 
   // Stats (las 3 “píldoras” azules) desde keys planas benefits.step1..3
   const stats: StatItem[] = [
@@ -141,27 +169,22 @@ const ConsultoriaCiso = () => {
     {
       title: t("benefits.card1.title"),
       benefit: t("benefits.card1.desc"),
-      href: "/es/servicios/transformacion-digital-estrategica",
     },
     {
       title: t("benefits.card2.title"),
       benefit: t("benefits.card2.desc"),
-      href: "/es/servicios/transformacion-digital-estrategica",
     },
     {
       title: t("benefits.card3.title"),
       benefit: t("benefits.card3.desc"),
-      href: "/es/servicios/transformacion-digital-estrategica",
     },
     {
       title: t("benefits.card4.title"),
       benefit: t("benefits.card4.desc"),
-      href: "/es/servicios/transformacion-digital-estrategica",
     },
     {
       title: t("benefits.card5.title"),
       benefit: t("benefits.card5.desc"),
-      href: "/es/servicios/transformacion-digital-estrategica",
     },
   ];
 
@@ -272,10 +295,10 @@ const ConsultoriaCiso = () => {
             />
 
             <div className="max-w-4xl mx-auto text-center relative">
-              <h1 className="text-4xl lg:text-5xl font-bold text-white mb-6">
+              <h1 className="text-4xl lg:text-5xl sm:text-2xl font-bold text-white mb-6">
                 {t("hero.title")}
               </h1>
-              <h2 className="text-xl lg:text-xl text-muted mb-8">
+              <h2 className="text-md lg:text-xl text-muted mb-8">
                 {t("hero.subtitle")}
               </h2>
 
@@ -313,7 +336,7 @@ const ConsultoriaCiso = () => {
 
           {/* STATS */}
           <section className="pt-20 pb-20">
-            <div className="container max-w-7xl grid grid-cols-3 md:grid-cols-3 sm:grid-cols-1 gap-6 items-stretch">
+            <div className="container max-w-7xl grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-6 items-stretch">
               {stats.map((s, idx) => (
                 <div
                   key={idx}
@@ -374,6 +397,70 @@ const ConsultoriaCiso = () => {
                     ariaGoToLabel={(title) => `Ir a ${title}`}
                   />
                 ))}
+              </div>
+            </div>
+          </section>
+          {/* BLOQUE 10 · Enlaces internos */}
+          <section className="py-20 ">
+            <div className="max-w-6xl mx-auto px-6">
+              <h2 className="text-5xl text-center font-bold text-primary">
+                {t("h2.crossSell")}
+              </h2>
+
+              <div className="mt-12 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-6">
+                {crossSellServices.map((s, i) => {
+                  const Icon = s.icon;
+                  const url = s.href ?? "#";
+                  return (
+                    <Card
+                      key={i}
+                      className="h-full rounded-2xl border border-slate-200 bg-white shadow-sm hover:shadow-md transition-shadow flex flex-col"
+                    >
+                      <CardHeader className="items-center text-center">
+                        {/* Icono */}
+                        <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-blue-50">
+                          {Icon ? (
+                            <Icon className="h-7 w-7 text-primary" />
+                          ) : (
+                            <svg
+                              className="h-7 w-7 text-blue-600"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              stroke="currentColor"
+                              strokeWidth="2"
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                            >
+                              <circle cx="11" cy="11" r="8" />
+                              <path d="m21 21-4.3-4.3" />
+                            </svg>
+                          )}
+                        </div>
+
+                        <CardTitle className="text-xl font-semibold text-slate-900">
+                          {s.title}
+                        </CardTitle>
+                        <CardDescription className="mt-3 text-slate-600 leading-relaxed">
+                          {s.description}
+                        </CardDescription>
+                      </CardHeader>
+
+                      <CardFooter className="mt-auto px-6 pb-6">
+                        <Button
+                          asChild
+                          variant="secondary"
+                          className="w-full group"
+                          aria-label={`Saber más sobre ${s.title}`}
+                        >
+                          <Link to={url}>
+                            Saber más
+                            <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-0.5" />
+                          </Link>
+                        </Button>
+                      </CardFooter>
+                    </Card>
+                  );
+                })}
               </div>
             </div>
           </section>

@@ -19,34 +19,37 @@ const PartnersSection: React.FC = () => {
   const strip = [...logos, ...logos];
 
   return (
-    <section className="relative w-full overflow-hidden py-10 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
+    <section className="relative w-full overflow-hidden py-7 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
       <div className="relative">
         <ul
           className="partners-track flex items-center will-change-transform"
-          // velocidad por defecto si el CSS no carga
           style={{ animationDuration: "30s" }}
         >
-          {strip.map((logo, i) => (
-            <li
-              key={i}
-              // Espaciado responsive (menos en móvil/tablet)
-              className="shrink-0 mr-8 sm:mr-10 md:mr-12 lg:mr-16"
-            >
-              <img
-                src={logo.src}
-                alt={logo.alt}
-                loading="lazy"
-                // Altura responsive: móvil más pequeño, tablet mediano, desktop mayor
-                className="block h-6 sm:h-7 md:h-8 lg:h-10 xl:h-12 w-auto opacity-80 hover:opacity-100 transition-opacity"
-              />
-            </li>
-          ))}
+          {strip.map((logo, i) => {
+            // Verificamos si el logo debe ser más pequeño
+            const isSmall = ["Fortinet", "Veeam", "Bitdefender"].includes(
+              logo.alt
+            );
+
+            return (
+              <li key={i} className="shrink-0 mr-8 sm:mr-10 md:mr-12 lg:mr-16">
+                <img
+                  src={logo.src}
+                  alt={logo.alt}
+                  loading="lazy"
+                  className={`block w-auto opacity-80 hover:opacity-100 transition-opacity ${
+                    isSmall
+                      ? "h-4 sm:h-5 md:h-6 lg:h-7 xl:h-8" // más pequeños
+                      : "h-5 sm:h-6 md:h-7 lg:h-8 xl:h-9" // tamaño normal
+                  }`}
+                />
+              </li>
+            );
+          })}
         </ul>
       </div>
 
-      {/* CSS de animación y ajustes responsive extra */}
       <style>{`
-        /* Hace que el UL mida por su contenido para un scroll continuo sin saltos */
         .partners-track {
           width: max-content;
           animation-name: partners-marquee;
@@ -54,8 +57,6 @@ const PartnersSection: React.FC = () => {
           animation-iteration-count: infinite;
         }
 
-        /* Ajuste fino de la velocidad por tamaño de pantalla:
-           - En móvil/tablet acelera un poco para que no se sienta pesado */
         @media (max-width: 1024px) {
           .partners-track { animation-duration: 26s; }
         }

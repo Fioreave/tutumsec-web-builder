@@ -35,7 +35,8 @@ export type NS =
   | "cookies"
   | "cookiebanner"
   | "legal"
-  | "privacidad";
+  | "privacidad"
+  | "crossSellServices";
 
 type CacheKey = `${Language}:${NS}`;
 const nsCache = new Map<CacheKey, Dict>();

@@ -23,7 +23,7 @@
   "steps.2.desc": "Analyse technique et chronologie de l’incident (forensique selon cadrage/priorités du cas).\nRecommandations priorisées par le risque et appui aux notifications réglementaires si besoin.",
 
   "cta.proposal.label": "Demander une proposition sur mesure",
-  "cta.proposal.href": "/contact",
+  "cta.proposal.href": "/fr/contact",
 
   "cogestion.title": "Cogestion réelle et gouvernance active",
   "cogestion.0": "Canal direct et règles claires dès le départ.",

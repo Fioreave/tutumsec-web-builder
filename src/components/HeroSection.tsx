@@ -25,7 +25,7 @@ const HeroSection = () => {
 
       <div className="max-w-5xl mx-auto text-center relative">
         <h1
-          className="md:text-6xl text-3xl font-bold text-white mb-8 leading-tight animate-slide-up pb-2"
+          className="md:text-6xl text-4xl font-bold text-white mb-8 leading-tight animate-slide-up pb-2"
           style={{ whiteSpace: "pre-line" }} /* para \n */
         >
           {t("hero.title")}

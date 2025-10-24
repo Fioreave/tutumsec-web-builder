@@ -24,6 +24,7 @@ import {
   Bug,
   AlarmClock,
   ArrowRight,
+  Zap,
 } from "lucide-react";
 import RoleItinerariesCarousel from "./RoleItinerariesGrid";
 import { Link } from "react-router-dom";
@@ -31,7 +32,7 @@ import PartnersSection from "../PartnersSection";
 import { useTranslations } from "@/i18n/useTranslations";
 
 const FormacionConcienciacion = () => {
-  const { t } = useTranslations(["formacion"]);
+  const { t } = useTranslations(["formacion", "crossSellServices"]);
 
   const badges = [
     t("hero.badges.0"),
@@ -101,16 +102,16 @@ const FormacionConcienciacion = () => {
       icon: LineChart,
     },
     {
-      title: t("cross.audit.title"),
-      description: t("cross.audit.desc"),
-      href: t("cross.audit.href"),
-      icon: ShieldCheck,
+      title: "Transformación Digital Segura",
+      description: "Automatizacion & IA alineada al negocio",
+      href: "/servicios/auditoria-compliance-nis2",
+      icon: Zap,
     },
     {
-      title: t("cross.pentest.title"),
-      description: t("cross.pentest.desc"),
-      href: t("cross.pentest.href"),
-      icon: Bug,
+      title: t("cross.audit.title"),
+      description: t("cross.audit.desc"),
+      href: "Pentesting ofensivo + Gap-Analysis + plan de adecuación",
+      icon: ShieldCheck,
     },
     {
       title: t("cross.mdr.title"),
@@ -128,7 +129,7 @@ const FormacionConcienciacion = () => {
       <main className="min-h-screen bg-background">
         <div>
           {/* HERO */}
-          <section className="relative min-h-screen isolate overflow-hidden mt-6 ">
+          <section className="relative lg:min-h-screen lg:mt-20 isolate overflow-hidden mt-6 ">
             <div className="absolute inset-0 z-0 bg-[#0a0f1c]" />
             <div
               className="absolute inset-0 z-10"
@@ -147,24 +148,25 @@ const FormacionConcienciacion = () => {
             />
 
             <div>
-              <div className="relative z-30 px-6 pt-12 md:pt-16 text-center mt-20">
-                <h1 className="container max-w-6xl text-4xl md:text-5xl font-bold text-white mb-4 mt-20 pt-20">
+              <div className="relative z-30 px-6 md:pt-16 text-center mb-12 mt-20">
+                <h1 className=" max-w-7xl text-3xl md:text-5xl font-bold text-white mb-4 mt-20 ">
                   {t("hero.title")}
                 </h1>
-                <h2 className="container max-w-5xl text-xl md:text-2xl text-white/80 mb-8">
+                <h2 className="container max-w-5xl sm:text-md md:text-2xl text-white/80 mb-8">
                   {t("hero.subtitle")}
                 </h2>
-
-                <div className="flex flex-wrap justify-center gap-2 mb-8">
-                  {badges.map((badge, i) => (
-                    <Badge
-                      key={i}
-                      variant="outline"
-                      className="text-sm bg-white/10 border-white/20 text-white"
-                    >
-                      {badge}
-                    </Badge>
-                  ))}
+                <div className="hidden md:grid md:grid-cols-3 gap-6 mb-2">
+                  <div className="flex flex-wrap justify-center gap-2 mb-8">
+                    {badges.map((badge, i) => (
+                      <Badge
+                        key={i}
+                        variant="outline"
+                        className="text-sm bg-white/10 border-white/20 text-white"
+                      >
+                        {badge}
+                      </Badge>
+                    ))}
+                  </div>{" "}
                 </div>
 
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -189,16 +191,17 @@ const FormacionConcienciacion = () => {
                   </Button>
                 </div>
               </div>
-
-              <div className="absolute bottom-8 left-0 w-full">
-                <div className="grid lg:grid-cols-3 gap-12 px-6 py-6 items-center text-left space-y-2">
-                  {quickWins.map((win, i) => (
-                    <li key={i} className="flex items-start text-white">
-                      <CheckCircle className="w-5 h-5 text-blue-300 mr-2 mt-0.5 flex-shrink-0" />
-                      <span>{win}</span>
-                    </li>
-                  ))}
-                </div>
+              <div className="hidden md:grid md:grid-cols-3 gap-6 mb-2">
+                <div className="absolute bottom-8 left-0 w-full">
+                  <div className="grid lg:grid-cols-3 gap-12 px-6 py-6 items-center text-left space-y-2">
+                    {quickWins.map((win, i) => (
+                      <li key={i} className="flex items-start text-white">
+                        <CheckCircle className="w-5 h-5 text-blue-300 mr-2 mt-0.5 flex-shrink-0" />
+                        <span>{win}</span>
+                      </li>
+                    ))}
+                  </div>
+                </div>{" "}
               </div>
             </div>
           </section>
@@ -209,7 +212,7 @@ const FormacionConcienciacion = () => {
           <section className=" py-2 px-6 text-blue">
             <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
               <div className="transform transition-all duration-700 hover:translate-x-2">
-                <h2 className="text-3xl lg:text-4xl mb-2 font-bold transition-colors duration-500 hover:text-primary-light leading-relaxed">
+                <h2 className="text-2xl lg:text-4xl mb-2 font-bold transition-colors duration-500 hover:text-primary-light leading-tight">
                   {t("problem.heading")}
                 </h2>
               </div>
@@ -319,12 +322,12 @@ const FormacionConcienciacion = () => {
           </section>
 
           {/* RESULTADOS */}
-          <section className="py-16">
+          <section className="py-16 px-4">
             <div className="max-w-6xl mx-auto">
               <h2 className="text-4xl font-extrabold text-foreground mb-8">
                 {t("results.heading")}
               </h2>
-              <div className="grid md:grid-cols-3 gap-6">
+              <div className="grid md:grid-cols-3  gap-6">
                 {expectedResults.map((text, i) => {
                   const gradients = [
                     "from-[#3B82F6] to-[#1E3A8A]",
@@ -360,7 +363,7 @@ const FormacionConcienciacion = () => {
           {/* CULTURA + CROSS SELL */}
           <section className="py-20 bg-slate-50">
             <div className="max-w-6xl mx-auto px-6">
-              <h2 className="text-4xl text-center font-bold text-blue-600">
+              <h2 className="text-4xl text-center font-bold text-primary">
                 {t("culture.heading")}
               </h2>
               <div className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -443,7 +446,7 @@ const FormacionConcienciacion = () => {
                       to="https://calendly.com/ayub-tutumsec/30min"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="px-6 py-2 rounded-full text-lg text-white font-medium transition-transform whitespace-nowrap hover:scale-[1.03] shadow-[0_8px_30px_rgba(59,130,246,0.35)]"
+                      className="px-4 py-3 text-sm rounded-full md:text-lg lg:text-lg text-white font-medium transition-transform whitespace-nowrap hover:scale-[1.03] shadow-[0_8px_30px_rgba(59,130,246,0.35)]"
                       style={{
                         background:
                           "linear-gradient(180deg, #60a5fa 0%, #3b82f6 100%)",

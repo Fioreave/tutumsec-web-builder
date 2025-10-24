@@ -4,7 +4,6 @@ import { Helmet } from "react-helmet-async";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
 import {
   CheckCircle,
   Zap,
@@ -15,13 +14,50 @@ import {
   Search,
   Map,
   Settings,
+  AlarmClock,
+  ShieldCheck,
+  LineChart,
+  ArrowRight,
 } from "lucide-react";
 import { Link } from "react-router-dom";
 import PartnersSection from "../PartnersSection";
 import { useTranslations } from "@/i18n/useTranslations";
+import {
+  Card,
+  CardHeader,
+  CardTitle,
+  CardDescription,
+  CardContent,
+  CardFooter,
+} from "@/components/ui/card";
 
 const TransformacionDigital = () => {
-  const { t } = useTranslations(["transformacion"]);
+  const { t } = useTranslations([
+    "transformacion",
+    "formacion",
+    "crossSellServices",
+  ]);
+
+  const crossSellServices = [
+    {
+      title: t("crossSellServices.0.title"),
+      description: t("crossSellServices.0.description"),
+      href: t("crossSellServices.0.href"),
+      icon: LineChart,
+    },
+    {
+      title: t("crossSellServices.1.title"),
+      description: t("crossSellServices.1.description"),
+      href: t("crossSellServices.1.href"),
+      icon: ShieldCheck,
+    },
+    {
+      title: t("crossSellServices.3.title"),
+      description: t("crossSellServices.3.description"),
+      href: t("crossSellServices.3.href"),
+      icon: AlarmClock,
+    },
+  ];
 
   // FAQs
   const faqs = [
@@ -128,7 +164,7 @@ const TransformacionDigital = () => {
 
             <div className="max-w-5xl mx-auto text-center relative z-30">
               <h1
-                className="text-5xl lg:text-6xl font-bold text-white mb-6 leading-relaxed"
+                className="text-2xl lg:text-6xl mt-20 font-bold text-white mb-6 leading-relaxed"
                 style={{ lineHeight: "1.2" }}
               >
                 {t("hero.title")}
@@ -137,25 +173,27 @@ const TransformacionDigital = () => {
                 {t("hero.subtitle")}
               </h2>
 
-              <div className="grid md:grid-cols-3 gap-6 mb-8">
-                <div className="flex items-center justify-center gap-2 p-4 backdrop-blur rounded-lg">
-                  <CheckCircle className="w-5 h-5 text-primary" />
-                  <span className="text-sm font-medium text-white">
-                    {t("hero.bullets.0")}
-                  </span>
-                </div>
-                <div className="flex items-center justify-center gap-2 p-4 backdrop-blur rounded-lg">
-                  <CheckCircle className="w-5 h-5 text-primary" />
-                  <span className="text-sm font-medium text-white">
-                    {t("hero.bullets.1")}
-                  </span>
-                </div>
-                <div className="flex items-center justify-center gap-2 p-4 backdrop-blur rounded-lg">
-                  <CheckCircle className="w-5 h-5 text-primary" />
-                  <span className="text-sm font-medium text-white">
-                    {t("hero.bullets.2")}
-                  </span>
-                </div>
+              <div className="grid md:grid-cols-3 gap-6 mb-2">
+                <div className="hidden md:grid md:grid-cols-3 gap-6 mb-2">
+                  <div className="flex items-center justify-center gap-2 p-2 backdrop-blur rounded-lg">
+                    <CheckCircle className="w-5 h-5 text-primary" />
+                    <span className="text-sm font-medium text-white">
+                      {t("hero.bullets.0")}
+                    </span>
+                  </div>
+                  <div className="flex items-center justify-center gap-2 p-2 backdrop-blur rounded-lg">
+                    <CheckCircle className="w-5 h-5 text-primary" />
+                    <span className="text-sm font-medium text-white">
+                      {t("hero.bullets.1")}
+                    </span>
+                  </div>
+                  <div className="flex items-center justify-center gap-2 p-2 backdrop-blur rounded-lg">
+                    <CheckCircle className="w-5 h-5 text-primary" />
+                    <span className="text-sm font-medium text-white">
+                      {t("hero.bullets.2")}
+                    </span>
+                  </div>
+                </div>{" "}
               </div>
 
               <div
@@ -203,7 +241,7 @@ const TransformacionDigital = () => {
           </section>
 
           {/* Beneficios */}
-          <section className="py-12">
+          <section className="py-12 px-4">
             <div className="max-w-6xl mx-auto">
               <h2 className="text-3xl font-bold text-center mb-12">
                 {t("benefits.heading")}
@@ -298,6 +336,53 @@ const TransformacionDigital = () => {
               </div>
             </div>
           </section>
+          {/* CULTURA + CROSS SELL */}
+          <section className="py-20 bg-slate-50">
+            <div className="max-w-6xl mx-auto px-6">
+              <h2 className="text-4xl text-center font-bold text-primary">
+                {t("h2.crossSell")}
+              </h2>
+              <div className="mt-12 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-6">
+                {crossSellServices.map((s, i) => {
+                  const Icon = s.icon;
+                  const url = s.href ?? "#";
+                  return (
+                    <Card
+                      key={i}
+                      className="h-full rounded-2xl border border-slate-200 bg-white shadow-sm hover:shadow-md transition-shadow flex flex-col"
+                    >
+                      <CardHeader className="items-center text-center">
+                        <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-blue-50">
+                          {Icon ? (
+                            <Icon className="h-7 w-7 text-primary" />
+                          ) : null}
+                        </div>
+                        <CardTitle className="text-xl font-semibold text-slate-900">
+                          {s.title}
+                        </CardTitle>
+                        <CardDescription className="mt-3 text-slate-600 leading-relaxed">
+                          {s.description}
+                        </CardDescription>
+                      </CardHeader>
+                      <CardFooter className="mt-auto px-6 pb-6">
+                        <Button
+                          asChild
+                          variant="secondary"
+                          className="w-full group"
+                          aria-label={`${t("cross.cta")} ${s.title}`}
+                        >
+                          <Link to={url}>
+                            {t("cross.cta")}
+                            <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-0.5" />
+                          </Link>
+                        </Button>
+                      </CardFooter>
+                    </Card>
+                  );
+                })}
+              </div>
+            </div>
+          </section>
 
           {/* Proceso */}
           <section className="py-20 px-6 bg-tutumsec-gray-50">
@@ -343,7 +428,7 @@ const TransformacionDigital = () => {
           <section className="py-20 px-6 bg-gray-100 relative overflow-hidden bg-[url('/uploads/background.png')] bg-cover bg-center">
             <div className="max-w-4xl mx-auto">
               <div className="text-center mb-16">
-                <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6 animate-slide-up leading-relaxed">
+                <h2 className="text-3xl lg:text-5xl font-bold text-gray-900 mb-6 animate-slide-up leading-relaxed">
                   {t("faq.heading")}
                 </h2>
               </div>
@@ -381,11 +466,7 @@ const TransformacionDigital = () => {
                 }}
               />
             </div>
-          </section>
-
-          {/* CTA final */}
-          <section className="py-20 px-6 bg-gray-200">
-            <div className="max-w-6xl mx-auto relative">
+            <div className="max-w-6xl mt-20 mx-auto relative">
               <div className="bg-gradient-to-r from-black via-blue-900 to-blue-800 rounded-[2rem] p-12 relative overflow-hidden mx-auto max-w-5xl">
                 <div className="relative z-10 max-w-3xl text-center mx-auto">
                   <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6">
@@ -407,7 +488,7 @@ const TransformacionDigital = () => {
                   </div>
                 </div>
               </div>
-              <div className="absolute -bottom-5 right-14 w-48 h-48 opacity-70">
+              <div className="hidden sm:block absolute -bottom-5 right-14 w-48 h-48 opacity-70">
                 <img
                   src="/uploads/abstract.png"
                   alt=""

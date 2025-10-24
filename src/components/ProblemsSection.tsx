@@ -32,15 +32,15 @@ const ProblemsSection = () => {
     <section className="py-20 px-6 bg-tutumsec-gray-50">
       <div className="max-w-6xl mx-auto">
         <div className="px-4 pt-10 pb-6">
-          <h2 className="text-3xl md:text-4xl mx-6 font-semibold text-[#0b1f36] tracking-tight ">
-            {t("problems.heading")}
-          </h2>
-          <p className="mt-3 max-w-4xl mx-6 text-lg text-[#0b1f36] pt-2 pb-6">
+          <h2 className="text-3xl md:text-3xl text-center mx-6 font-semibold text-[#0b1f36] tracking-tight ">
             {t("problems.lead")}
-          </p>
+          </h2>
+          {/*<p className="mt-3 max-w-4xl mx-6 text-lg text-[#0b1f36] pt-2 pb-6">
+            {t("problems.heading")}
+          </p>*/}
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8">
+        {/*<div className="grid md:grid-cols-2 gap-8">
           {problems.map((problem, index) => {
             const IconComponent = problem.icon;
             return (
@@ -69,7 +69,7 @@ const ProblemsSection = () => {
               </div>
             );
           })}
-        </div>
+        </div>*/}
       </div>
     </section>
   );

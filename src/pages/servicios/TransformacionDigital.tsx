@@ -32,11 +32,7 @@ import {
 } from "@/components/ui/card";
 
 const TransformacionDigital = () => {
-  const { t } = useTranslations([
-    "transformacion",
-    "formacion",
-    "crossSellServices",
-  ]);
+  const { t } = useTranslations(["transformacion", "crossSellServices"]);
 
   const crossSellServices = [
     {
@@ -143,38 +139,48 @@ const TransformacionDigital = () => {
       <main className="min-h-screen bg-background">
         <div>
           {/* HERO */}
-          <section className="relative isolate min-h-[72vh] md:min-h-screen overflow-hidden px-6 flex items-center">
+          <section className="relative isolate overflow-hidden flex items-center justify-center mt-6 md:mt-10 lg:mt-20">
+            {/* altura: móvil más corto, desktop full-screen */}
             <div className="absolute inset-0 z-0 bg-[#0a0f1c]" />
+
+            {/* gradiente */}
             <div
               className="absolute inset-0 z-10"
               style={{
                 background:
-                  "linear-gradient(120deg, rgba(14,24,46,0) 0%, rgba(89,116,189,0.35) 45%, rgba(182,185,193,0) 100%)",
+                  "linear-gradient(120deg, rgba(14,24,46,0.08) 0%, rgba(89,116,189,0.35) 45%, rgba(182,185,193,0.05) 100%)",
               }}
             />
-            <div className="pointer-events-none absolute -top-24 -left-24 w-[60vw] h-[60vw] bg-blue-600/20 rounded-full blur-3xl z-10" />
-            <div className="pointer-events-none absolute -right-40 top-10 w-[50vw] h-[50vw] bg-blue-400/20 rounded-full blur-3xl z-10" />
-            <div className="pointer-events-none absolute bottom-[-20%] left-[20%] w-[45vw] h-[45vw] bg-indigo-500/20 rounded-full blur-3xl z-10" />
+
+            {/* glows responsive */}
+            <div className="pointer-events-none absolute -top-24 -left-24 w-[80vw] h-[80vw] sm:w-[60vw] sm:h-[60vw] bg-blue-600/20 rounded-full blur-xl sm:blur-3xl z-10" />
+            <div className="pointer-events-none absolute -right-40 top-10 w-[70vw] h-[70vw] sm:w-[50vw] sm:h-[50vw] bg-blue-400/20 rounded-full blur-xl sm:blur-3xl z-10" />
+            <div className="pointer-events-none absolute bottom-[-20%] left-[20%] w-[65vw] h-[65vw] sm:w-[45vw] sm:h-[45vw] bg-indigo-500/20 rounded-full blur-xl sm:blur-3xl z-10" />
+
+            {/* hilo: oculto en móvil para rendimiento */}
             <img
               src="/uploads/hilo.png"
               alt=""
               aria-hidden
-              className="pointer-events-none select-none absolute left-0 -top-20 w-[1200px] max-w-none opacity-60 mix-blend-screen z-20"
+              className="hidden sm:block pointer-events-none select-none absolute left-0 -top-20 w-[1200px] max-w-none opacity-60 mix-blend-screen z-20"
             />
 
-            <div className="max-w-5xl mx-auto text-center relative z-30">
-              <h1
-                className="text-2xl lg:text-6xl mt-20 font-bold text-white mb-6 leading-relaxed"
-                style={{ lineHeight: "1.2" }}
-              >
-                {t("hero.title")}
-              </h1>
-              <h2 className="text-xl lg:text-2xl text-white/80 mb-8">
-                {t("hero.subtitle")}
-              </h2>
+            {/* contenedor de contenido centrado */}
+            <div className="relative z-30 w-full min-h-[70vh] md:min-h-screen px-4 sm:px-6 flex items-center">
+              <div className="max-w-5xl mx-auto text-center">
+                <h1
+                  className="font-bold text-white mb-6 leading-tight text-[clamp(28px,5vw,56px)]"
+                  style={{ lineHeight: "1.2" }}
+                >
+                  {t("hero.title")}
+                </h1>
 
-              <div className="grid md:grid-cols-3 gap-6 mb-2">
-                <div className="hidden md:grid md:grid-cols-3 gap-6 mb-2">
+                <h2 className="text-white/80 mb-8 leading-relaxed text-[clamp(16px,2.5vw,24px)]">
+                  {t("hero.subtitle")}
+                </h2>
+
+                {/* bullets: ocultos en mobile, visibles desde md */}
+                <div className="hidden md:grid md:grid-cols-3 gap-4 lg:gap-6 mb-6">
                   <div className="flex items-center justify-center gap-2 p-2 backdrop-blur rounded-lg">
                     <CheckCircle className="w-5 h-5 text-primary" />
                     <span className="text-sm font-medium text-white">
@@ -193,35 +199,37 @@ const TransformacionDigital = () => {
                       {t("hero.bullets.2")}
                     </span>
                   </div>
-                </div>{" "}
-              </div>
+                </div>
 
-              <div
-                className="flex flex-col sm:flex-row gap-4 justify-center items-center opacity-0 animate-fade-in"
-                style={{
-                  animationDelay: "0.9s",
-                  animationFillMode: "forwards",
-                }}
-              >
-                <Link
-                  to="https://calendly.com/ayub-tutumsec/30min"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="px-6 py-2 rounded-full text-lg text-white font-medium transition-transform whitespace-nowrap hover:scale-[1.03] shadow-[0_8px_30px_rgba(59,130,246,0.35)]"
+                {/* CTAs: full width en móvil, animación suave */}
+                <div
+                  className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-stretch sm:items-center opacity-0 animate-fade-in"
                   style={{
-                    background:
-                      "linear-gradient(180deg, #60a5fa 0%, #3b82f6 100%)",
+                    animationDelay: "0.9s",
+                    animationFillMode: "forwards",
                   }}
                 >
-                  {t("hero.cta1")}
-                </Link>
-                <Button
-                  variant="outline"
-                  size="lg"
-                  className="px-4 py-2 text-md rounded-full"
-                >
-                  {t("hero.cta2")}
-                </Button>
+                  <Link
+                    to="https://calendly.com/ayub-tutumsec/30min"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full sm:w-auto px-6 py-3 rounded-full text-base sm:text-lg text-white font-medium transition-transform whitespace-nowrap hover:scale-[1.02] shadow-[0_8px_30px_rgba(59,130,246,0.35)]"
+                    style={{
+                      background:
+                        "linear-gradient(180deg, #60a5fa 0%, #3b82f6 100%)",
+                    }}
+                  >
+                    {t("hero.cta1")}
+                  </Link>
+
+                  <Button
+                    variant="outline"
+                    size="lg"
+                    className="w-full sm:w-auto px-6 sm:px-8 py-3 text-base sm:text-lg rounded-full bg-white/10 text-white border-white/20 hover:bg-white/20"
+                  >
+                    {t("hero.cta2")}
+                  </Button>
+                </div>
               </div>
             </div>
           </section>

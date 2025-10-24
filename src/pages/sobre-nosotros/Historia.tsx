@@ -121,35 +121,36 @@ const Historia: React.FC = () => {
       <Navbar />
       <main className="min-h-screen ">
         {/* HERO */}
-        <section className="relative min-h-[500px] mx-36 overflow-hidden px-6 flex items-center">
+        <section className="relative overflow-hidden flex items-center pt-20">
           <div
             className="absolute inset-0 -z-10 bg-cover bg-center bg-no-repeat"
             style={{
               backgroundImage: "url('/uploads/background/background2.png')",
             }}
-            aria-hidden
           />
-          <div className="absolute inset-0 bg-black/50 -z-10" aria-hidden />
-          <div className="mx-20 max-w-4xl text-left relative">
-            <h1 className="animate-slide-up text-6xl mb-6 font-bold text-white mx-auto bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">
-              {t("hero.title")}
-            </h1>
-            <h2 className="mt-2 animate-slide-up max-w-3xl text-white text-medium text-xl m-2">
-              {t("hero.subtitle")}
-            </h2>
+          <div className="absolute inset-0 bg-black/50 -z-10" />
+          <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-20">
+            <div className="max-w-4xl">
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-medium text-white mb-3 leading-tight animate-slide-up">
+                {t("hero.title")}
+              </h1>
+              <h2 className="text-lg sm:text-xl lg:text-2xl text-white/95 mb-6 leading-snug animate-slide-up">
+                {t("hero.subtitle")}
+              </h2>
+            </div>
           </div>
         </section>
 
         {/* INHERIT */}
         <section className="pb-6 bg-white mt-20">
-          <div className="max-w-6xl mx-auto">
+          <div className="max-w-6xl mx-auto px-4">
             <div className="mb-10 text-center lg:text-left">
               <h2 className="text-4xl lg:text-5xl font-bold text-gray-900">
                 {t("inherit.title")}
               </h2>
             </div>
 
-            <div className="grid grid-cols-3 md:grid-cols-3 sm:grid-cols-1 gap-6 items-stretch">
+            <div className="grid grid-cols-1 md:grid-cols-3 sm:grid-cols-1 gap-6 items-stretch">
               {steps.map((step, idx) => (
                 <div
                   key={idx}

@@ -129,34 +129,45 @@ const FormacionConcienciacion = () => {
       <main className="min-h-screen bg-background">
         <div>
           {/* HERO */}
-          <section className="relative lg:min-h-screen lg:mt-20 isolate overflow-hidden mt-6 ">
+          <section className="relative isolate overflow-hidden mt-6">
+            {/* base */}
             <div className="absolute inset-0 z-0 bg-[#0a0f1c]" />
+
+            {/* gradiente */}
             <div
               className="absolute inset-0 z-10"
               style={{
                 background:
-                  "linear-gradient(120deg, rgba(14,24,46,0) 0%, rgba(89,116,189,0.35) 45%, rgba(182,185,193,0) 100%)",
+                  "linear-gradient(120deg, rgba(14,24,46,0.08) 0%, rgba(89,116,189,0.35) 45%, rgba(182,185,193,0.05) 100%)",
               }}
             />
-            <div className="pointer-events-none absolute -top-24 -left-24 w-[60vw] h-[60vw] bg-blue-600/20 rounded-full blur-3xl z-10" />
-            <div className="pointer-events-none absolute -right-40 top-10 w-[50vw] h-[50vw] bg-blue-400/20 rounded-full blur-3xl z-10" />
+
+            {/* glows */}
+            <div className="pointer-events-none absolute -top-24 -left-24 w-[80vw] h-[80vw] sm:w-[60vw] sm:h-[60vw] bg-blue-600/20 rounded-full blur-xl sm:blur-3xl z-10" />
+            <div className="pointer-events-none absolute -right-40 top-10 w-[70vw] h-[70vw] sm:w-[50vw] sm:h-[50vw] bg-blue-400/20 rounded-full blur-xl sm:blur-3xl z-10" />
+
+            {/* hilo (solo desktop/tablet) */}
             <img
               src="/uploads/hilo.png"
               alt=""
               aria-hidden
-              className="pointer-events-none select-none absolute left-0 -top-12 w-[1200px] max-w-none opacity-60 mix-blend-screen z-20"
+              className="hidden sm:block pointer-events-none select-none absolute left-0 -top-12 w-[1200px] max-w-none opacity-60 mix-blend-screen z-20"
             />
 
-            <div>
-              <div className="relative z-30 px-6 md:pt-16 text-center mb-12 mt-20">
-                <h1 className=" max-w-7xl text-3xl md:text-5xl font-bold text-white mb-4 mt-20 ">
-                  {t("hero.title")}
-                </h1>
-                <h2 className="container max-w-5xl sm:text-md md:text-2xl text-white/80 mb-8">
-                  {t("hero.subtitle")}
-                </h2>
-                <div className="hidden md:grid md:grid-cols-3 gap-6 mb-2">
-                  <div className="flex flex-wrap justify-center gap-2 mb-8">
+            {/* contenedor full-screen en desktop */}
+            <div className="relative z-30 w-full">
+              <div className="min-h-[70vh] lg:min-h-screen flex flex-col items-center justify-center text-center px-4 sm:px-6">
+                <div className="max-w-6xl mx-auto">
+                  <h1 className="font-bold text-white mb-4 mt-6 md:mt-10 leading-tight text-[clamp(28px,5vw,48px)]">
+                    {t("hero.title")}
+                  </h1>
+
+                  <h2 className="mx-auto max-w-5xl text-white/80 mb-8 leading-relaxed text-[clamp(16px,2.6vw,24px)]">
+                    {t("hero.subtitle")}
+                  </h2>
+
+                  {/* badges: ocultos en mobile */}
+                  <div className="hidden md:flex justify-center flex-wrap gap-2 mb-8">
                     {badges.map((badge, i) => (
                       <Badge
                         key={i}
@@ -166,42 +177,43 @@ const FormacionConcienciacion = () => {
                         {badge}
                       </Badge>
                     ))}
-                  </div>{" "}
+                  </div>
+
+                  {/* CTAs */}
+                  <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
+                    <Link
+                      to="https://calendly.com/ayub-tutumsec/30min"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-full sm:w-auto px-6 py-3 rounded-full text-base sm:text-lg text-white font-medium transition-transform whitespace-nowrap hover:scale-[1.02] shadow-[0_8px_30px_rgba(59,130,246,0.35)]"
+                      style={{
+                        background:
+                          "linear-gradient(180deg, #60a5fa 0%, #3b82f6 100%)",
+                      }}
+                    >
+                      {t("hero.cta1")}
+                    </Link>
+                    <Button
+                      variant="outline"
+                      size="lg"
+                      className="w-full sm:w-auto text-base sm:text-lg rounded-full px-6 sm:px-8 bg-white/10 text-white border-white/20 hover:bg-white/20"
+                    >
+                      {t("hero.cta2")}
+                    </Button>
+                  </div>
                 </div>
 
-                <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <Link
-                    to="https://calendly.com/ayub-tutumsec/30min"
-                    className="px-6 py-2 rounded-full text-lg text-white font-medium transition-transform whitespace-nowrap hover:scale-[1.03] shadow-[0_8px_30px_rgba(59,130,246,0.35)]"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    style={{
-                      background:
-                        "linear-gradient(180deg, #60a5fa 0%, #3b82f6 100%)",
-                    }}
-                  >
-                    {t("hero.cta1")}
-                  </Link>
-                  <Button
-                    variant="outline"
-                    size="lg"
-                    className="text-lg rounded-full px-8 bg-white/10 text-white border-white/20 hover:bg-white/20"
-                  >
-                    {t("hero.cta2")}
-                  </Button>
-                </div>
-              </div>
-              <div className="hidden md:grid md:grid-cols-3 gap-6 mb-2">
-                <div className="absolute bottom-8 left-0 w-full">
-                  <div className="grid lg:grid-cols-3 gap-12 px-6 py-6 items-center text-left space-y-2">
+                {/* QUICK WINS: ocultos en mobile, anclados abajo */}
+                <div className="hidden md:block absolute bottom-6 left-0 w-full z-30">
+                  <ul className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 px-6 py-6 items-center text-left">
                     {quickWins.map((win, i) => (
                       <li key={i} className="flex items-start text-white">
                         <CheckCircle className="w-5 h-5 text-blue-300 mr-2 mt-0.5 flex-shrink-0" />
                         <span>{win}</span>
                       </li>
                     ))}
-                  </div>
-                </div>{" "}
+                  </ul>
+                </div>
               </div>
             </div>
           </section>

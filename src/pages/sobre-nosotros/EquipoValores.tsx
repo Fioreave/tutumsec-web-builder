@@ -104,30 +104,29 @@ const EquipoValores: React.FC = () => {
 
       <Navbar />
       <main className="min-h-screen ">
-        {/* HERO */}
-        <section className="relative min-h-[500px] mx-36 overflow-hidden px-6 flex items-center">
+        <section className="relative overflow-hidden flex items-center pt-20">
           <div
             className="absolute inset-0 -z-10 bg-cover bg-center bg-no-repeat"
             style={{
               backgroundImage: "url('/uploads/background/background2.png')",
             }}
-            aria-hidden
           />
-          <div className="absolute inset-0 bg-black/50 -z-10" aria-hidden />
-
-          <div className="mx-20 max-w-4xl text-left relative">
-            <h1 className="animate-slide-up text-6xl mb-6 font-bold text-white mx-auto bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">
-              {t("hero.title")}
-            </h1>
-            <h2 className="mt-2 animate-slide-up max-w-3xl text-white text-medium text-xl m-2">
-              {t("hero.subtitle")}
-            </h2>
+          <div className="absolute inset-0 bg-black/50 -z-10" />
+          <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-20">
+            <div className="max-w-4xl">
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-medium text-white mb-3 leading-tight animate-slide-up">
+                {t("hero.title")}
+              </h1>
+              <h2 className="text-lg sm:text-xl lg:text-2xl text-white/95 mb-6 leading-snug animate-slide-up">
+                {t("hero.subtitle")}
+              </h2>
+            </div>
           </div>
         </section>
 
         {/* TEAM BLOCK */}
-        <section className="pb-6 bg-white mt-20">
-          <div className="grid grid-cols-2 max-w-6xl mx-auto">
+        <section className="pb-6 px-4 bg-white mt-20">
+          <div className="grid grid-cols-1 md:grid-cols-2 max-w-6xl mx-auto">
             <div className="mb-10 text-center lg:text-left">
               <h2 className="text-4xl lg:text-5xl font-bold text-gray-900">
                 {t("team.title")}
@@ -261,22 +260,28 @@ const EquipoValores: React.FC = () => {
         </section>
 
         {/* VALUES */}
-        <section className="bg-muted/50 pt-20 pb-20">
-          <div className="pb-6 flex justify-center content-center container max-w-6xl grid md:grid-cols-6">
-            <div className="col-span-2 mr-20">
-              <h2 className="text-4xl font-bold text-primary mb-2">
-                {t("values.title")}
-              </h2>
-            </div>
+        <section className="bg-muted/50 py-16 sm:py-20">
+          <div className="container max-w-6xl mx-auto px-4">
+            <div className="grid items-start gap-8 md:grid-cols-6">
+              {/* Título */}
+              <div className="md:col-span-2 md:mr-12">
+                <h2 className="text-3xl sm:text-4xl font-bold text-primary mb-2 text-center md:text-left">
+                  {t("values.title")}
+                </h2>
+              </div>
 
-            <div className="ml-24 col-span-4">
-              <div className="space-y-6 pt-6">
-                {values.map((item, index) => (
-                  <div key={index} className="flex items-start">
-                    <CheckCircle className="w-6 h-6 text-primary mr-3 mt-1 flex-shrink-0" />
-                    <p className="text-foreground">{item}</p>
-                  </div>
-                ))}
+              {/* Lista */}
+              <div className="md:col-span-4 md:ml-12">
+                <div className="space-y-4 sm:space-y-6 md:pt-6">
+                  {values.map((item, index) => (
+                    <div key={index} className="flex items-start">
+                      <CheckCircle className="w-5 h-5 sm:w-6 sm:h-6 text-primary mr-3 mt-1 flex-shrink-0" />
+                      <p className="text-foreground text-sm sm:text-base">
+                        {item}
+                      </p>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
           </div>

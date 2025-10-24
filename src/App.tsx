@@ -210,8 +210,12 @@ const App = () => (
               <Route path="industrias/pymes/" element={<Pymes />} />
 
               {/* Sobre Nosotros */}
-              <Route path="Historia/" element={<Historia />} />
-              <Route path="equipo-valores/" element={<EquipoValores />} />
+
+              <Route path="sobre-nosotros/historia/" element={<Historia />} />
+              <Route
+                path="sobre-nosotros/equipo-valores/"
+                element={<EquipoValores />}
+              />
 
               {/* Recursos */}
               <Route path="recursos/" element={<Recursos />} />

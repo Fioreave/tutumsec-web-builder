@@ -99,7 +99,7 @@ const Navbar = () => {
   ];
 
   const sobreNosotrosItems = [
-    { title: t("nav.about.history"), path: L("/historia") },
+    { title: t("nav.about.history"), path: L("/sobre-nosotros/historia") },
     {
       title: t("nav.about.teamValues"),
       path: L("/sobre-nosotros/equipo-valores"),

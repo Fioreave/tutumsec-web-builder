@@ -73,6 +73,7 @@ const SectorPublico: React.FC = () => {
             </div>
           </div>
         </section>
+
         {/* RETO ACTUAL */}
         <section className="relative py-10 lg:py-20">
           <div className="mx-auto max-w-7xl px-6 lg:px-8">

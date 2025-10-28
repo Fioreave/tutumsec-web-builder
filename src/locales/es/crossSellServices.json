@@ -9,10 +9,11 @@
 
   "crossSellServices.2.title": "Transformación Digital Segura",
   "crossSellServices.2.description": "Automatizacion & IA alineada al negocio",
-  "crossSellServices.2.href": "/es/servicios/auditoria-compliance-nis2",
+  "crossSellServices.2.href": "/es/servicios/transformacion-digital-estrategica",
 
   "crossSellServices.3.title": "SOC / MDR 24×7",
   "crossSellServices.3.description": "Vigilancia y respuesta gestionada",
   "crossSellServices.3.href": "/es/productos/deteccion-24x7",
-  "h2.crossSell": "Completa tu estrategia"
+  "h2.crossSell": "Completa tu estrategia",
+  "crossSellServices.cta": "Saber más"
 }

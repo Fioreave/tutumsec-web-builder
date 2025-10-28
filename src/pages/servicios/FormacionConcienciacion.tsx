@@ -96,27 +96,27 @@ const FormacionConcienciacion = () => {
 
   const crossSellServices = [
     {
-      title: t("cross.vciso.title"),
-      description: t("cross.vciso.desc"),
-      href: t("cross.vciso.href"),
+      title: t("crossSellServices.0.title"),
+      description: t("crossSellServices.0.desc"),
+      href: t("crossSellServices.0.href"),
       icon: LineChart,
     },
     {
-      title: "Transformación Digital Segura",
-      description: "Automatizacion & IA alineada al negocio",
-      href: "/servicios/auditoria-compliance-nis2",
+      title: t("crossSellServices.2.title"),
+      description: t("crossSellServices.2.desc"),
+      href: t("crossSellServices.2.href"),
       icon: Zap,
     },
     {
-      title: t("cross.audit.title"),
-      description: t("cross.audit.desc"),
-      href: "Pentesting ofensivo + Gap-Analysis + plan de adecuación",
+      title: t("crossSellServices.1.title"),
+      description: t("crossSellServices.1.desc"),
+      href: t("crossSellServices.1.href"),
       icon: ShieldCheck,
     },
     {
-      title: t("cross.mdr.title"),
-      description: t("cross.mdr.desc"),
-      href: t("cross.mdr.href"),
+      title: t("crossSellServices.3.title"),
+      description: t("crossSellServices.3.desc"),
+      href: t("crossSellServices.3.href"),
       icon: AlarmClock,
     },
   ];

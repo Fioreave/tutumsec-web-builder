@@ -3,7 +3,6 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { Menu, X, ChevronDown, ChevronRight } from "lucide-react";
 import NavbarDropdown from "./NavbarDropdown";
-import LanguageSelector from "./LanguageSelector";
 import { useTranslations } from "@/i18n/useTranslations";
 import { useLanguage } from "@/i18n/LanguageContext";
 
@@ -111,19 +110,15 @@ const Navbar = () => {
       <div className="max-w-8xl mx-auto px-4 sm:px-10 lg:px-20">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <div
-            className={`flex items-center shrink-0 ${
-              isMenuOpen ? "h-10" : "h-11 sm:h-12 lg:h-16 xl:h-18"
-            }`}
-          >
+          <div className="flex items-center shrink-0">
             <Link
               to={L("/")}
-              className="inline-flex items-center min-w-[150px] sm:min-w-[150px] lg:min-w-[180px]"
+              className="inline-flex items-center"
             >
               <img
                 src="/uploads/tutumsec_logo.svg"
                 alt="TutumSec Logo"
-                className="block h-full w-auto"
+                className="h-12 w-auto"
                 loading="eager"
                 decoding="async"
               />
@@ -163,8 +158,7 @@ const Navbar = () => {
           </div>
 
           {/* Right / CTA (desktop) */}
-          <div className="hidden md:flex items-center space-x-4">
-            <LanguageSelector />
+          <div className="hidden md:flex items-center">
             <a
               href="https://calendly.com/ayub-tutumsec/30min"
               target="_blank"
@@ -179,8 +173,7 @@ const Navbar = () => {
           </div>
 
           {/* Botón móvil */}
-          <div className="md:hidden flex items-center space-x-2">
-            <LanguageSelector />
+          <div className="md:hidden flex items-center">
             <button
               onClick={toggleMenu}
               className="text-gray-700 hover:text-blue-600 focus:outline-none focus:text-blue-600"

@@ -19,9 +19,11 @@ import {
   Star,
 } from "lucide-react";
 import { useTranslations } from "@/i18n/useTranslations";
+import { useLangLink } from "@/i18n/useLangLink";
 
 const Historia: React.FC = () => {
   const { t } = useTranslations(["historia"]);
+  const L = useLangLink();
 
   const steps = [
     {
@@ -52,37 +54,37 @@ const Historia: React.FC = () => {
     {
       category: t("services.items.0.label"),
       icon: Shield,
-      href: t("services.items.0.href"),
+      href: L(t("services.items.0.href")),
     },
     {
       category: t("services.items.1.label"),
       icon: Search,
-      href: t("services.items.1.href"),
+      href: L(t("services.items.1.href")),
     },
     {
       category: t("services.items.2.label"),
       icon: Monitor,
-      href: t("services.items.2.href"),
+      href: L(t("services.items.2.href")),
     },
     {
       category: t("services.items.3.label"),
       icon: Cog,
-      href: t("services.items.3.href"),
+      href: L(t("services.items.3.href")),
     },
     {
       category: t("services.items.4.label"),
       icon: Building,
-      href: t("services.items.4.href"),
+      href: L(t("services.items.4.href")),
     },
     {
       category: t("services.items.5.label"),
       icon: Headphones,
-      href: t("services.items.5.href"),
+      href: L(t("services.items.5.href")),
     },
     {
       category: t("services.items.6.label"),
       icon: Book,
-      href: t("services.items.6.href"),
+      href: L(t("services.items.6.href")),
     },
   ] as const;
 

@@ -21,9 +21,7 @@ function useL() {
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [expandedSections, setExpandedSections] = useState<
-    Record<string, boolean>
-  >({});
+  const [expandedSections, setExpandedSections] = useState<Record<string, boolean>>({});
   const { t } = useTranslations(["common"]);
   const L = useL();
 
@@ -93,9 +91,7 @@ const Navbar = () => {
     { title: t("nav.industries.smb"), path: L("/industrias/pymes") },
   ];
 
-  const recursosItems = [
-    { title: t("nav.resources.blog"), path: "https://tutumsec.io/blog" },
-  ];
+  const recursosItems = [{ title: t("nav.resources.blog"), path: "https://tutumsec.io/blog" }];
 
   const sobreNosotrosItems = [
     { title: t("nav.about.history"), path: L("/sobre-nosotros/historia") },
@@ -111,14 +107,11 @@ const Navbar = () => {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <div className="flex items-center shrink-0">
-            <Link
-              to={L("/")}
-              className="inline-flex items-center"
-            >
+            <Link to={L("/")} className="inline-flex items-center">
               <img
                 src="/uploads/tutumsec_logo.svg"
                 alt="TutumSec Logo"
-                className="h-16 w-auto"
+                className="h-12 w-auto"
                 loading="eager"
                 decoding="async"
               />
@@ -128,26 +121,11 @@ const Navbar = () => {
           {/* Desktop Navigation */}
           <div className="hidden md:block">
             <div className="flex items-baseline space-x-2 whitespace-nowrap">
-              <NavbarDropdown
-                title={t("nav.menu.services")}
-                items={serviciosItems}
-              />
-              <NavbarDropdown
-                title={t("nav.menu.products")}
-                items={productosItems}
-              />
-              <NavbarDropdown
-                title={t("nav.menu.industries")}
-                items={industriasItems}
-              />
-              <NavbarDropdown
-                title={t("nav.menu.resources")}
-                items={recursosItems}
-              />
-              <NavbarDropdown
-                title={t("nav.menu.about")}
-                items={sobreNosotrosItems}
-              />
+              <NavbarDropdown title={t("nav.menu.services")} items={serviciosItems} />
+              <NavbarDropdown title={t("nav.menu.products")} items={productosItems} />
+              <NavbarDropdown title={t("nav.menu.industries")} items={industriasItems} />
+              <NavbarDropdown title={t("nav.menu.resources")} items={recursosItems} />
+              <NavbarDropdown title={t("nav.menu.about")} items={sobreNosotrosItems} />
               <Link
                 to={L("/contacto")}
                 className="text-gray-800 hover:text-blue-600 px-3 py-2 text-md font-medium transition-colors"
@@ -224,11 +202,7 @@ const Navbar = () => {
                   className="w-full flex items-center justify-between text-gray-700 font-semibold px-3 py-2 text-base hover:text-blue-600 transition-colors"
                 >
                   {title}
-                  {expandedSections[key] ? (
-                    <ChevronDown className="h-4 w-4" />
-                  ) : (
-                    <ChevronRight className="h-4 w-4" />
-                  )}
+                  {expandedSections[key] ? <ChevronDown className="h-4 w-4" /> : <ChevronRight className="h-4 w-4" />}
                 </button>
                 {expandedSections[key] &&
                   items.map((item, index) => (

@@ -111,7 +111,7 @@ const Navbar = () => {
               <img
                 src="/uploads/tutumsec_logo.svg"
                 alt="TutumSec Logo"
-                className="h-full w-full"
+                className="h-20 "
                 loading="eager"
                 decoding="async"
               />

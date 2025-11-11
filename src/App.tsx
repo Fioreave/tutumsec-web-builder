@@ -70,13 +70,17 @@ type Supported = (typeof SUPPORTED_LANGS)[number];
 const DEFAULT_LANG: Supported = "es";
 
 // Detecta idioma del navegador (dos letras) y lo normaliza a Supported
+// TEMPORALMENTE DESACTIVADO - Solo usar español
 function detectDefaultLang(): Supported {
-  const raw =
-    typeof navigator !== "undefined" && navigator.language
-      ? navigator.language.toLowerCase()
-      : DEFAULT_LANG;
-  const two = raw.slice(0, 2) as Supported;
-  return SUPPORTED_LANGS.includes(two) ? two : DEFAULT_LANG;
+  // const raw =
+  //   typeof navigator !== "undefined" && navigator.language
+  //     ? navigator.language.toLowerCase()
+  //     : DEFAULT_LANG;
+  // const two = raw.slice(0, 2) as Supported;
+  // return SUPPORTED_LANGS.includes(two) ? two : DEFAULT_LANG;
+  
+  // Forzar español temporalmente
+  return "es";
 }
 
 // Redirige "/" -> "/:lang/"

@@ -47,15 +47,18 @@ function getLanguageFromPath(pathname: string): Language {
     return seg as Language;
 
   // si no hay locale en la url, intenta localStorage o navegador
-  const ls = (localStorage.getItem("locale") as Language) || null;
-  if (ls && (SUPPORTED as readonly string[]).includes(ls)) return ls;
+  // TEMPORALMENTE DESACTIVADO - Solo usar español
+  // const ls = (localStorage.getItem("locale") as Language) || null;
+  // if (ls && (SUPPORTED as readonly string[]).includes(ls)) return ls;
 
-  const nav = (
-    typeof navigator !== "undefined" ? navigator.language : "es"
-  ).toLowerCase();
-  if (nav.startsWith("ca")) return "ca";
-  if (nav.startsWith("en")) return "en";
-  if (nav.startsWith("fr")) return "fr";
+  // const nav = (
+  //   typeof navigator !== "undefined" ? navigator.language : "es"
+  // ).toLowerCase();
+  // if (nav.startsWith("ca")) return "ca";
+  // if (nav.startsWith("en")) return "en";
+  // if (nav.startsWith("fr")) return "fr";
+  
+  // Forzar español temporalmente (ignora navegador y localStorage)
   return "es";
 }
 
